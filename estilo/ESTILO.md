@@ -1,18 +1,44 @@
 # Estilo de edição
 
-## Paleta da empresa
+## Marca: PHcont, Assessoria e Consultoria Contábil
 
-| Cor | Hex (provisório) | Uso |
+Arquivos em `estilo/marca/`:
+- `logo_branca_transparente.png`: para fundos escuros (marinho/preto).
+- `logo_marinho_transparente.png`: para fundos claros (off-white/cinza).
+- `logo_original.jpg` e `feed_instagram.jpg`: originais de referência.
+
+### Paleta (cores tiradas da logo e do feed)
+
+| Cor | Hex | Uso |
 |---|---|---|
-| Azul-marinho | `#0F1E3D` | Fundo principal das telas de motion e dos painéis |
-| Bordô | `#7A1F2B` | Cor de destaque: palavra-chave da legenda, telas cheias de impacto, barras e números em destaque |
-| Dourado | `#C8A24A` | Detalhes finos: linhas, rótulos "Passo 1", ponto final dos títulos, ícones |
-| Branco | `#F5F2EC` (off-white) / `#FFFFFF` | Texto principal e fundo das telas claras |
-| Preto | `#0B0B0D` | Fundo alternativo, sombras e texto sobre as telas claras |
+| Azul-marinho | `#1F2B42` | Fundo dos painéis e telas escuras, caixa de texto de destaque, logo em fundo claro |
+| Marinho profundo | `#18243A` | Gradientes e sombras sobre o marinho |
+| Bordô | `#7A2A33` | Caixa de destaque atrás da palavra-chave, telas de impacto, palavra-chave da legenda |
+| Bordô da logo | `#831C17` | Linha/sublinhado fino (igual ao traço embaixo de "CONT") |
+| Dourado | `#BBA372` | Itálico de destaque nos títulos serifados, rótulos pequenos, linhas finas, bolinha-guia |
+| Off-white | `#EEEDE9` | Fundo das telas claras |
+| Cinza claro | `#D9D9D9` | Fundo alternativo claro |
+| Branco | `#F7F5F6` | Texto sobre escuro, logo em fundo escuro |
+| Preto | `#000000` | Fundo da vinheta da logo, fundo alternativo |
 
-> Os hex são aproximados. Se a empresa tiver os códigos oficiais (manual da marca), substituir aqui.
+Regra de proporção: fundo escuro (marinho/preto) ou claro (off-white), e pouca cor de destaque (bordô/dourado).
 
-Regra de proporção: muito fundo escuro (marinho/preto) ou claro (off-white), e pouca cor de destaque (bordô/dourado), como as referências fazem com o laranja.
+### Linguagem visual do feed (aplicar no vídeo)
+
+- **Títulos com caixa de cor:** texto em sans bold sobre caixas retas, com a 1ª linha em caixa **marinho** e a palavra-chave em caixa **bordô** (ex.: "Conheça a / PHcont", "Lucro no papel e / caixa vazio?"). As caixas entram deslizando.
+- **Títulos editoriais:** serifada clássica em branco ou marinho, com a parte final em **itálico dourado** (ex.: "O PIS sobre a folha *deixa de existir*").
+- **Rótulo acima do título:** caixa-alta pequena, espaçada, em dourado ou bordô ("REFORMA TRIBUTÁRIA · 01/01/2027", "DEPARTAMENTO PESSOAL").
+- **Sublinhado bordô** curto embaixo de títulos e números, como na logo.
+- **Fotos e vídeos com gradiente marinho** na parte de baixo, para o texto ficar legível.
+- Logo da PHcont discreta no canto ou ao fundo, e vinheta final com a logo.
+
+### Fontes (gratuitas, parecidas com as do feed)
+
+- **Serifada (títulos editoriais, números):** Playfair Display ou Libre Caslon, com itálico para o destaque dourado.
+- **Sans bold (títulos com caixa e legendas):** Poppins SemiBold/Bold.
+- **Rótulos pequenos:** Poppins ou Inter em caixa-alta espaçada.
+
+> Se a empresa tiver as fontes oficiais, trocar aqui.
 
 ## Formatos
 
@@ -33,7 +59,7 @@ Ritmo: troca de layout ou elemento novo a cada 1–3 s; sem pausas nem respiros.
 ## Legendas
 
 - **Talking head (ref. 4):** 1 a 2 palavras por vez, centralizadas no terço inferior do rosto; sans-serif limpa, branco; palavra-chave em **bordô** (ou dourado quando o fundo for escuro demais para o bordô).
-- **Tutorial / tela gravada (ref. 3):** caixa branca fixa no topo com o título do vídeo (texto preto); legenda embaixo em itálico, cor de destaque **dourado**, frases curtas.
+- **Tutorial / tela gravada (ref. 3):** caixa branca fixa no topo com o título do vídeo (texto preto); legenda embaixo em itálico, cor de destaque **dourado** `#BBA372`, frases curtas.
 
 ## Motion design (refs. 1 e 2)
 
@@ -42,7 +68,7 @@ Ritmo: troca de layout ou elemento novo a cada 1–3 s; sem pausas nem respiros.
 - **Elemento-guia:** um ponto/bolinha (dourado ou bordô) que atravessa as cenas e liga uma ideia à outra.
 - **Padrões geométricos** (círculos, meias-luas, quadrados) em bordô/marinho/branco/preto; podem ganhar volume em 3D.
 - **Dados:** números grandes com rótulo mono ("QUADROS", "POR SEGUNDO"), barras com uma barra destacada em bordô, ondas de áudio finas.
-- **Fechamento:** cartão com o nome/logo da marca em fundo off-white, título grande e subtítulo mono.
+- **Fechamento:** vinheta com a logo da PHcont (branca no preto/marinho, ou marinho no off-white), título grande e subtítulo mono.
 - **Transições:** cortes secos no ritmo, palavras que entram letra a letra, zoom/rotação de câmera em texto circular, máscaras deslizando. Sem transições "de programa" (estrela, cortina).
 
 ## Áudio
