@@ -1,0 +1,440 @@
+[
+  {
+    "text": "Imposto",
+    "start": 0.16,
+    "end": 0.61,
+    "id": "w0"
+  },
+  {
+    "text": "alto",
+    "start": 0.61,
+    "end": 0.96,
+    "id": "w1"
+  },
+  {
+    "text": "não",
+    "start": 0.96,
+    "end": 1.22,
+    "id": "w2"
+  },
+  {
+    "text": "é",
+    "start": 1.22,
+    "end": 1.3,
+    "id": "w3"
+  },
+  {
+    "text": "destino,",
+    "start": 1.3,
+    "end": 2.07,
+    "id": "w4"
+  },
+  {
+    "text": "muitas",
+    "start": 2.07,
+    "end": 2.48,
+    "id": "w5"
+  },
+  {
+    "text": "vezes",
+    "start": 2.48,
+    "end": 2.65,
+    "id": "w6"
+  },
+  {
+    "text": "é",
+    "start": 2.86,
+    "end": 2.88,
+    "id": "w7"
+  },
+  {
+    "text": "falta",
+    "start": 2.88,
+    "end": 3.22,
+    "id": "w8"
+  },
+  {
+    "text": "de",
+    "start": 3.22,
+    "end": 3.35,
+    "id": "w9"
+  },
+  {
+    "text": "planejamento",
+    "start": 3.35,
+    "end": 4.08,
+    "id": "w10"
+  },
+  {
+    "text": "Todo",
+    "start": 4.38,
+    "end": 4.55,
+    "id": "w11"
+  },
+  {
+    "text": "mês",
+    "start": 4.55,
+    "end": 4.8,
+    "id": "w12"
+  },
+  {
+    "text": "a",
+    "start": 4.8,
+    "end": 4.88,
+    "id": "w13"
+  },
+  {
+    "text": "gente",
+    "start": 4.88,
+    "end": 5.3,
+    "id": "w14"
+  },
+  {
+    "text": "vê",
+    "start": 5.3,
+    "end": 5.47,
+    "id": "w15"
+  },
+  {
+    "text": "uma",
+    "start": 5.47,
+    "end": 5.6,
+    "id": "w16"
+  },
+  {
+    "text": "empresa",
+    "start": 5.71,
+    "end": 6.31,
+    "id": "w17"
+  },
+  {
+    "text": "boa,",
+    "start": 6.31,
+    "end": 6.75,
+    "id": "w18"
+  },
+  {
+    "text": "que",
+    "start": 6.75,
+    "end": 6.9,
+    "id": "w19"
+  },
+  {
+    "text": "fatura",
+    "start": 7.08,
+    "end": 7.44,
+    "id": "w20"
+  },
+  {
+    "text": "bem,",
+    "start": 7.44,
+    "end": 7.79,
+    "id": "w21"
+  },
+  {
+    "text": "mas",
+    "start": 7.79,
+    "end": 7.96,
+    "id": "w22"
+  },
+  {
+    "text": "que",
+    "start": 7.96,
+    "end": 8.13,
+    "id": "w23"
+  },
+  {
+    "text": "sobra",
+    "start": 8.13,
+    "end": 8.36,
+    "id": "w24"
+  },
+  {
+    "text": "pouco",
+    "start": 8.52,
+    "end": 8.69,
+    "id": "w25"
+  },
+  {
+    "text": "no",
+    "start": 8.69,
+    "end": 8.8,
+    "id": "w26"
+  },
+  {
+    "text": "caixa",
+    "start": 8.8,
+    "end": 9.02,
+    "id": "w27"
+  },
+  {
+    "text": "Às",
+    "start": 9.2,
+    "end": 9.28,
+    "id": "w28"
+  },
+  {
+    "text": "vezes",
+    "start": 9.29,
+    "end": 9.69,
+    "id": "w29"
+  },
+  {
+    "text": "isso",
+    "start": 9.69,
+    "end": 10.02,
+    "id": "w30"
+  },
+  {
+    "text": "não",
+    "start": 10.02,
+    "end": 10.27,
+    "id": "w31"
+  },
+  {
+    "text": "é",
+    "start": 10.27,
+    "end": 10.35,
+    "id": "w32"
+  },
+  {
+    "text": "nem",
+    "start": 10.35,
+    "end": 10.5,
+    "id": "w33"
+  },
+  {
+    "text": "sobre",
+    "start": 10.58,
+    "end": 10.91,
+    "id": "w34"
+  },
+  {
+    "text": "vendas,",
+    "start": 11.12,
+    "end": 11.66,
+    "id": "w35"
+  },
+  {
+    "text": "é",
+    "start": 11.66,
+    "end": 11.72,
+    "id": "w36"
+  },
+  {
+    "text": "sobre",
+    "start": 11.72,
+    "end": 12.02,
+    "id": "w37"
+  },
+  {
+    "text": "como",
+    "start": 12.02,
+    "end": 12.26,
+    "id": "w38"
+  },
+  {
+    "text": "a",
+    "start": 12.26,
+    "end": 12.33,
+    "id": "w39"
+  },
+  {
+    "text": "empresa",
+    "start": 12.33,
+    "end": 12.74,
+    "id": "w40"
+  },
+  {
+    "text": "está",
+    "start": 12.74,
+    "end": 12.97,
+    "id": "w41"
+  },
+  {
+    "text": "tributada",
+    "start": 12.97,
+    "end": 13.56,
+    "id": "w42"
+  },
+  {
+    "text": "Imagina",
+    "start": 13.72,
+    "end": 14.02,
+    "id": "w43"
+  },
+  {
+    "text": "fechar",
+    "start": 14.12,
+    "end": 14.33,
+    "id": "w44"
+  },
+  {
+    "text": "o",
+    "start": 14.43,
+    "end": 14.49,
+    "id": "w45"
+  },
+  {
+    "text": "mês",
+    "start": 14.49,
+    "end": 14.69,
+    "id": "w46"
+  },
+  {
+    "text": "pagando",
+    "start": 14.69,
+    "end": 15.16,
+    "id": "w47"
+  },
+  {
+    "text": "exatamente",
+    "start": 15.16,
+    "end": 15.84,
+    "id": "w48"
+  },
+  {
+    "text": "o",
+    "start": 15.84,
+    "end": 15.9,
+    "id": "w49"
+  },
+  {
+    "text": "que",
+    "start": 15.9,
+    "end": 16.09,
+    "id": "w50"
+  },
+  {
+    "text": "deve,",
+    "start": 16.09,
+    "end": 16.51,
+    "id": "w51"
+  },
+  {
+    "text": "nem",
+    "start": 16.6,
+    "end": 16.79,
+    "id": "w52"
+  },
+  {
+    "text": "um",
+    "start": 16.79,
+    "end": 16.92,
+    "id": "w53"
+  },
+  {
+    "text": "real",
+    "start": 16.92,
+    "end": 17.19,
+    "id": "w54"
+  },
+  {
+    "text": "mais",
+    "start": 17.19,
+    "end": 17.48,
+    "id": "w55"
+  },
+  {
+    "text": "Ereinvestir",
+    "start": 17.55,
+    "end": 18.25,
+    "id": "w56"
+  },
+  {
+    "text": "essa",
+    "start": 18.25,
+    "end": 18.53,
+    "id": "w57"
+  },
+  {
+    "text": "diferença",
+    "start": 18.53,
+    "end": 19.16,
+    "id": "w58"
+  },
+  {
+    "text": "no",
+    "start": 19.16,
+    "end": 19.27,
+    "id": "w59"
+  },
+  {
+    "text": "seu",
+    "start": 19.47,
+    "end": 19.52,
+    "id": "w60"
+  },
+  {
+    "text": "negócio",
+    "start": 19.52,
+    "end": 20.08,
+    "id": "w61"
+  },
+  {
+    "text": "Agente",
+    "start": 20.24,
+    "end": 20.56,
+    "id": "w62"
+  },
+  {
+    "text": "de",
+    "start": 20.64,
+    "end": 20.73,
+    "id": "w63"
+  },
+  {
+    "text": "uma",
+    "start": 20.73,
+    "end": 20.96,
+    "id": "w64"
+  },
+  {
+    "text": "análise",
+    "start": 20.96,
+    "end": 21.46,
+    "id": "w65"
+  },
+  {
+    "text": "com",
+    "start": 21.54,
+    "end": 21.78,
+    "id": "w66"
+  },
+  {
+    "text": "a",
+    "start": 21.78,
+    "end": 21.84,
+    "id": "w67"
+  },
+  {
+    "text": "PH",
+    "start": 21.85,
+    "end": 21.87,
+    "id": "w68"
+  },
+  {
+    "text": "Count,",
+    "start": 22.08,
+    "end": 22.57,
+    "id": "w69"
+  },
+  {
+    "text": "link",
+    "start": 22.57,
+    "end": 22.73,
+    "id": "w70"
+  },
+  {
+    "text": "aqui",
+    "start": 22.76,
+    "end": 22.77,
+    "id": "w71"
+  },
+  {
+    "text": "embaixo",
+    "start": 22.94,
+    "end": 23.23,
+    "id": "w72"
+  }
+]

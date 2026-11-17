@@ -1,0 +1,21 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #pn-caixa { position: absolute; left: 0; top: 0; width: 1080px; height: 1000px;
+      background: linear-gradient(180deg, #1f2b42 0%, #18243a 100%); }
+    #pn-linha { position: absolute; left: 0; bottom: 0; width: 1080px; height: 6px; background: #831c17; }
+    #pn-logo { position: absolute; right: 200px; top: 296px; width: 84px; }
+  </style>
+  <div id="root" data-composition-id="painel" data-width="1080" data-height="1920">
+    <div id="pn-clip" class="clip" data-start="0" data-duration="16.2"><div id="pn-caixa">
+      <img id="pn-logo" src="assets/logo_branca.png" alt="PHcont" />
+      <div id="pn-linha"></div>
+    </div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#pn-caixa", { y: -1000 }, { y: 0, duration: 0.5, ease: "power3.out" }, 0);
+    tl.to("#pn-caixa", { y: -1000, duration: 0.4, ease: "power3.inOut" }, 15.8);
+    window.__timelines["painel"] = tl;
+  </script>
+</template>

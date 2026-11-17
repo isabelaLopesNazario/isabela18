@@ -1,0 +1,20 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    .c-linha { position: absolute; left: 120px; font-family: "Poppins", sans-serif; font-weight: 700; font-size: 66px; line-height: 1; color: #f7f5f6; padding: 18px 28px 14px; white-space: nowrap; }
+    #c-l1 { top: 296px; background: #1f2b42; }
+    #c-l2 { top: 394px; background: #7a2a33; }
+  </style>
+  <div id="root" data-composition-id="cta" data-width="1080" data-height="1920">
+    <div id="c-c1" class="clip" data-start="0.4" data-duration="1.96"><div id="c-l1" class="c-linha"><span id="c-t1">Agende uma análise</span></div></div>
+    <div id="c-c2" class="clip" data-start="1.44" data-duration="0.92"><div id="c-l2" class="c-linha"><span id="c-t2">com a PHcont</span></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#c-l1", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.35, ease: "expo.out" }, 0.4);
+    tl.fromTo("#c-t1", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "expo.out" }, 0.44);
+    tl.fromTo("#c-l2", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.35, ease: "expo.out" }, 1.44);
+    tl.fromTo("#c-t2", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "expo.out" }, 1.48);
+    window.__timelines["cta"] = tl;
+  </script>
+</template>

@@ -1,38 +1,159 @@
 {
   "video": "bruto/video_bruto.mov",
   "resumo": "Vídeo institucional da PHcont (vertical, 27 s) sobre planejamento tributário: imposto alto muitas vezes é falta de planejamento, e não de vendas; a empresa fatura bem mas sobra pouco no caixa por estar mal tributada. Promessa: pagar exatamente o que deve e reinvestir a diferença. CTA: agendar uma análise com a PHcont pelo link.",
-  "status": "aguardando_aprovacao",
+  "status": "aprovado",
   "correcoes_transcricao": [
-    {"original": "Ereinvestir", "correto": "E reinvestir"},
-    {"original": "Agente de uma análise", "correto": "Agende uma análise"},
-    {"original": "PH Count", "correto": "PHcont"},
-    {"original": "nem um real ou mais", "correto": "nem um real a mais", "obs": "confirmar"}
+    {
+      "original": "Ereinvestir",
+      "correto": "E reinvestir"
+    },
+    {
+      "original": "Agente de uma análise",
+      "correto": "Agende uma análise"
+    },
+    {
+      "original": "PH Count",
+      "correto": "PHcont"
+    },
+    {
+      "original": "nem um real ou mais",
+      "correto": "nem um real a mais",
+      "obs": "usado: a mais"
+    }
   ],
   "global": {
     "formato": "1080x1920, 30 fps",
     "legenda": "1 a 2 palavras por vez, Poppins Bold branca no terço inferior; palavras-chave em caixa bordô: destino, planejamento, caixa, vendas, tributada, exatamente, diferença, análise, PHcont",
-    "audio": "voz normalizada a -14 LUFS; trilha instrumental discreta opcional (a confirmar)",
+    "audio": "voz normalizada a -14 LUFS; sem trilha",
     "logo": "logo branca discreta no canto superior durante o vídeo"
   },
   "cortes": [
-    {"id": "C1", "inicio": "00:00:04.200", "fim": "00:00:04.420", "tipo": "pausa_longa", "descricao": "Respiro entre 'planejamento' e 'Todo mês' (ESTILO pede sem respiros)"},
-    {"id": "C2", "inicio": "00:00:09.300", "fim": "00:00:09.760", "tipo": "pausa_longa", "descricao": "Pausa entre 'caixa' e 'Às vezes'"},
-    {"id": "C3", "inicio": "00:00:14.240", "fim": "00:00:14.680", "tipo": "pausa_longa", "descricao": "Silêncio no início do 2º take, antes de 'Imagina'"},
-    {"id": "C4", "inicio": "00:00:17.550", "fim": "00:00:17.800", "tipo": "pausa_longa", "descricao": "Pausa entre 'deve' e 'nem um real'"},
-    {"id": "C5", "inicio": "00:00:18.830", "fim": "00:00:19.130", "tipo": "pausa_longa", "descricao": "Pausa entre 'a mais' e 'E reinvestir'"},
-    {"id": "C6", "inicio": "00:00:24.130", "fim": "00:00:24.430", "tipo": "pausa_longa", "descricao": "Pausa entre 'PHcont' e 'link aqui embaixo'"}
+    {
+      "id": "C1",
+      "inicio": "00:00:04.200",
+      "fim": "00:00:04.420",
+      "tipo": "pausa_longa",
+      "descricao": "Respiro entre 'planejamento' e 'Todo mês' (ESTILO pede sem respiros)"
+    },
+    {
+      "id": "C2",
+      "inicio": "00:00:09.300",
+      "fim": "00:00:09.760",
+      "tipo": "pausa_longa",
+      "descricao": "Pausa entre 'caixa' e 'Às vezes'"
+    },
+    {
+      "id": "C3",
+      "inicio": "00:00:14.240",
+      "fim": "00:00:14.680",
+      "tipo": "pausa_longa",
+      "descricao": "Silêncio no início do 2º take, antes de 'Imagina'"
+    },
+    {
+      "id": "C4",
+      "inicio": "00:00:17.550",
+      "fim": "00:00:17.800",
+      "tipo": "pausa_longa",
+      "descricao": "Pausa entre 'deve' e 'nem um real'"
+    },
+    {
+      "id": "C5",
+      "inicio": "00:00:18.830",
+      "fim": "00:00:19.130",
+      "tipo": "pausa_longa",
+      "descricao": "Pausa entre 'a mais' e 'E reinvestir'"
+    },
+    {
+      "id": "C6",
+      "inicio": "00:00:24.130",
+      "fim": "00:00:24.430",
+      "tipo": "pausa_longa",
+      "descricao": "Pausa entre 'PHcont' e 'link aqui embaixo'"
+    }
   ],
   "elementos": [
-    {"id": "E1", "tipo": "zoom", "inicio": "00:00:00.000", "fim": "00:00:02.080", "descricao": "Gancho: zoom de impacto no rosto (100% → 115%) junto com o título"},
-    {"id": "E2", "tipo": "letreiro", "inicio": "00:00:00.160", "fim": "00:00:02.080", "descricao": "Título no topo em caixas deslizando: 1ª linha caixa marinho, 2ª caixa bordô", "texto": "Imposto alto | não é destino."},
-    {"id": "E3", "tipo": "letreiro", "inicio": "00:00:02.080", "fim": "00:00:04.200", "descricao": "Título editorial serifado branco com final em itálico dourado; rótulo pequeno dourado acima", "texto": "PLANEJAMENTO TRIBUTÁRIO | É falta de *planejamento*"},
-    {"id": "E4", "tipo": "grafico", "inicio": "00:00:04.420", "fim": "00:00:09.300", "descricao": "Tela dividida (painel marinho em cima, rosto embaixo). Duas barras: 'Faturamento' sobe alta em branco em 'fatura bem'; 'Caixa' fica baixinha em bordô em 'sobra pouco no caixa', com sublinhado bordô"},
-    {"id": "E5", "tipo": "letreiro", "inicio": "00:00:09.760", "fim": "00:00:14.240", "descricao": "Painel: 'Não é sobre vendas.' (vendas riscada em bordô ao ser dita) e depois 'É sobre como sua empresa é *tributada*.' com itálico dourado", "texto": "REGIME TRIBUTÁRIO | Não é sobre ~vendas~ | É sobre como a empresa é *tributada*"},
-    {"id": "E6", "tipo": "zoom", "inicio": "00:00:12.900", "fim": "00:00:14.240", "descricao": "Zoom de ênfase em 'tributada'"},
-    {"id": "E7", "tipo": "grafico", "inicio": "00:00:14.680", "fim": "00:00:18.830", "descricao": "Painel 'Fechamento do mês': linha 'Imposto devido' e 'Imposto pago' iguais; em 'nem um real a mais' aparece contador grande serifado 'R$ 0,00' com rótulo 'PAGO A MAIS' e sublinhado bordô"},
-    {"id": "E8", "tipo": "grafico", "inicio": "00:00:19.130", "fim": "00:00:21.730", "descricao": "Painel: barras crescendo com a última em dourado e seta subindo, título 'Reinvestir no seu *negócio*'"},
-    {"id": "E9", "tipo": "letreiro", "inicio": "00:00:21.730", "fim": "00:00:24.130", "descricao": "CTA no topo em caixas: marinho + bordô", "texto": "Agende uma análise | com a PHcont"},
-    {"id": "E10", "tipo": "letreiro", "inicio": "00:00:24.430", "fim": "00:00:25.210", "descricao": "Caixa 'Link aqui embaixo ↓' pulsando no terço inferior", "texto": "Link aqui embaixo ↓"},
-    {"id": "E11", "tipo": "letreiro", "inicio": "00:00:25.210", "fim": "00:00:27.050", "descricao": "Vinheta final: troca a tela da logo existente por uma animada (logo surge, sublinhado bordô se desenha, 'Link na bio' em dourado)", "texto": "PHcont | Link na bio"}
+    {
+      "id": "E1",
+      "tipo": "zoom",
+      "inicio": "00:00:00.000",
+      "fim": "00:00:02.080",
+      "descricao": "Gancho: zoom de impacto no rosto (100% → 115%) junto com o título"
+    },
+    {
+      "id": "E2",
+      "tipo": "letreiro",
+      "inicio": "00:00:00.160",
+      "fim": "00:00:02.080",
+      "descricao": "Título no topo em caixas deslizando: 1ª linha caixa marinho, 2ª caixa bordô",
+      "texto": "Imposto alto | não é destino."
+    },
+    {
+      "id": "E3",
+      "tipo": "letreiro",
+      "inicio": "00:00:02.080",
+      "fim": "00:00:04.200",
+      "descricao": "Título editorial serifado branco com final em itálico dourado; rótulo pequeno dourado acima",
+      "texto": "PLANEJAMENTO TRIBUTÁRIO | É falta de *planejamento*"
+    },
+    {
+      "id": "E4",
+      "tipo": "grafico",
+      "inicio": "00:00:04.420",
+      "fim": "00:00:09.300",
+      "descricao": "Tela dividida (painel marinho em cima, rosto embaixo). Duas barras: 'Faturamento' sobe alta em branco em 'fatura bem'; 'Caixa' fica baixinha em bordô em 'sobra pouco no caixa', com sublinhado bordô"
+    },
+    {
+      "id": "E5",
+      "tipo": "letreiro",
+      "inicio": "00:00:09.760",
+      "fim": "00:00:14.240",
+      "descricao": "Painel: 'Não é sobre vendas.' (vendas riscada em bordô ao ser dita) e depois 'É sobre como sua empresa é *tributada*.' com itálico dourado",
+      "texto": "REGIME TRIBUTÁRIO | Não é sobre ~vendas~ | É sobre como a empresa é *tributada*"
+    },
+    {
+      "id": "E6",
+      "tipo": "zoom",
+      "inicio": "00:00:12.900",
+      "fim": "00:00:14.240",
+      "descricao": "Zoom de ênfase em 'tributada'"
+    },
+    {
+      "id": "E7",
+      "tipo": "grafico",
+      "inicio": "00:00:14.680",
+      "fim": "00:00:18.830",
+      "descricao": "Painel 'Fechamento do mês': linha 'Imposto devido' e 'Imposto pago' iguais; em 'nem um real a mais' aparece contador grande serifado 'R$ 0,00' com rótulo 'PAGO A MAIS' e sublinhado bordô"
+    },
+    {
+      "id": "E8",
+      "tipo": "grafico",
+      "inicio": "00:00:19.130",
+      "fim": "00:00:21.730",
+      "descricao": "Painel: barras crescendo com a última em dourado e seta subindo, título 'Reinvestir no seu *negócio*'"
+    },
+    {
+      "id": "E9",
+      "tipo": "letreiro",
+      "inicio": "00:00:21.730",
+      "fim": "00:00:24.130",
+      "descricao": "CTA no topo em caixas: marinho + bordô",
+      "texto": "Agende uma análise | com a PHcont"
+    },
+    {
+      "id": "E10",
+      "tipo": "letreiro",
+      "inicio": "00:00:24.430",
+      "fim": "00:00:25.210",
+      "descricao": "Caixa 'Link aqui embaixo ↓' pulsando no terço inferior",
+      "texto": "Link aqui embaixo ↓"
+    },
+    {
+      "id": "E11",
+      "tipo": "letreiro",
+      "inicio": "00:00:25.210",
+      "fim": "00:00:27.050",
+      "descricao": "Vinheta final: troca a tela da logo existente por uma animada (logo surge, sublinhado bordô se desenha, 'Link na bio' em dourado)",
+      "texto": "PHcont | Link na bio"
+    }
   ]
 }
