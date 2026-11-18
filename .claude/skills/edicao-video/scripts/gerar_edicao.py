@@ -1,10 +1,24 @@
-"""MODELO aprovado (v10, vídeo "Planejamento tributário"). Para um vídeo novo, troque tempos, textos das cenas e a lista G da legenda.
-Versão 4 da edição PHcont: tela dividida (animação em cima, apresentadora embaixo),
-gráfico em tela cheia, movimentos suaves. Uso: python3 gerar_v4.py <pasta do projeto>"""
-import html, random, re, sys
+"""Gerador da edição no padrão aprovado (tela dividida, gráfico em tela cheia, transições leves).
+
+Uso:  python3 gerar_edicao.py <pasta do projeto> <marca.json da empresa>
+      (ex.: .claude/skills/phcont/marca.json  ou  .claude/skills/doctorfit/marca.json)
+
+O LAYOUT e o JEITO DE EDITAR são os mesmos para todas as empresas; as CORES, o texto da pílula e a logo vêm do
+marca.json. O código abaixo é escrito com a paleta de referência (a da PHcont) e, no fim, cada cor é trocada
+pela cor equivalente da marca escolhida.
+
+MODELO: os tempos, os textos das cenas e a lista G da legenda são os do vídeo "Planejamento tributário" (PHcont).
+Para um vídeo novo, troque esses dados.
+"""
+import html, json, random, re, sys
 from pathlib import Path
 
 P = Path(sys.argv[1])
+if len(sys.argv) < 3:
+    sys.exit("Informe o marca.json da empresa: python3 gerar_edicao.py <projeto> <marca.json>")
+MARCA = json.load(open(sys.argv[2], encoding="utf-8"))
+if "_a_preencher" in MARCA:
+    sys.exit(f"A identidade de {MARCA.get('nome')} ainda não foi preenchida: {MARCA['_a_preencher']}")
 C = P / "compositions"
 C.mkdir(exist_ok=True)
 for f in C.glob("*.html"):
@@ -372,4 +386,34 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
   </body>
 </html>
 """)
-print("ok")
+
+# ---------------------------------------------------------------- aplicar a marca
+REF = json.load(open(Path(__file__).with_name("marca_referencia.json"), encoding="utf-8"))
+
+def _rgb(h):
+    h = h.lstrip("#"); return tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+
+def aplicar_marca(texto):
+    """Troca, numa passada só, cada cor da paleta de referência pela cor da marca (hex e rgba)."""
+    troca_hex, troca_rgb = {}, {}
+    for chave, cor_ref in REF.items():
+        if str(cor_ref).startswith("#") and chave in MARCA:
+            troca_hex[cor_ref.lower()] = MARCA[chave]
+            troca_rgb[_rgb(cor_ref)] = _rgb(MARCA[chave])
+    texto = re.sub(r"#[0-9a-fA-F]{6}\b", lambda m: troca_hex.get(m.group(0).lower(), m.group(0)), texto)
+    def _rgba(m):
+        k = tuple(int(x) for x in m.group(1, 2, 3))
+        R, G_, B = troca_rgb.get(k, k)
+        return f"rgba({R},{G_},{B},"
+    texto = re.sub(r"rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,", _rgba, texto)
+    texto = texto.replace(REF["pilula"], MARCA["pilula"]).replace(REF["nome"], MARCA["nome"])
+    return texto.replace(REF["logo"], MARCA["logo"])
+
+usadas = {"fundo", "legendas", "progresso"} | {c for c, _, _ in CENAS}
+for f in C.glob("*.html"):
+    if f.stem not in usadas:
+        f.unlink()                       # cenas do modelo que este vídeo não usa
+    else:
+        f.write_text(aplicar_marca(f.read_text()))
+(P / "index.html").write_text(aplicar_marca((P / "index.html").read_text()))
+print(f"ok: marca {MARCA['nome']}")

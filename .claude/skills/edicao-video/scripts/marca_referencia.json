@@ -1,0 +1,20 @@
+{
+  "nome": "PHcont",
+  "pilula": "PHCONT",
+  "logo": "assets/logo_branca.png",
+  "destaque": "#c9ad6e",
+  "texto_sobre_destaque": "#0b1426",
+  "negativo": "#7a2a33",
+  "negativo_claro": "#a33a46",
+  "negativo_texto": "#d0606c",
+  "texto": "#f7f5f6",
+  "fundo_centro": "#1b2d55",
+  "fundo_meio": "#0f1c3a",
+  "fundo_borda": "#070d1c",
+  "escuro": "#091022",
+  "cartao": "#080e1e",
+  "pilula_fundo": "#060b18",
+  "grade": "#8caae6",
+  "estrela": "#e8dcc0",
+  "vidro": "#d2dcf0"
+}

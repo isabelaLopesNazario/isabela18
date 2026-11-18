@@ -81,7 +81,21 @@ padrão da skill da empresa no que ficou em aberto, avisando.
 ## 6. Montar no HyperFrames
 
 Carregue a skill `hyperframes` (contrato: `class="clip"`, `data-start`, `data-duration`, timelines GSAP pausadas,
-sem transform CSS em elemento animado). Comece pelo gerador da skill da empresa, quando existir.
+sem transform CSS em elemento animado).
+
+**O layout e o jeito de editar são os mesmos para todas as empresas**: tela dividida, gráfico em tela cheia, legenda
+entre as metades, transições leves e final calmo (detalhes na skill `phcont`, que foi onde esse padrão foi aprovado).
+O que muda de uma empresa para outra é **só cor, logo e o nome na pílula**, e isso vem do `marca.json` de cada
+empresa. Por isso existe um gerador único nesta skill:
+
+```bash
+cp <esta skill>/scripts/gerar_edicao.py <esta skill>/scripts/marca_referencia.json edicao/
+# no gerar_edicao.py: troque os tempos (CHART, CENAS, data-start dos vídeos), os textos das cenas e a lista G da legenda
+python3 gerar_edicao.py . <skill da empresa>/marca.json     # ex.: .claude/skills/doctorfit/marca.json
+```
+
+O gerador troca todas as cores da paleta de referência pelas da empresa e se recusa a rodar se o `marca.json` ainda
+estiver marcado como "a preencher". Copie a logo da empresa para `edicao/assets/` com o nome indicado em `"logo"`.
 
 ```bash
 hyperframes check --json
@@ -108,7 +122,7 @@ Boas práticas que valem para qualquer empresa (vieram dos ajustes da cliente):
 - **Travadas:** compare quadro a quadro em volta de cada corte e transição (`tblend=all_mode=difference,signalstats`,
   valor `YAVG` por quadro). Valores perto de 0 no render, quando a fonte tem movimento, são congelamento. Um pico
   isolado é um corte, e precisa coincidir com uma troca de layout.
-- Confira que **só** aparecem as cores e a logo da empresa certa.
+- Confira que **só** aparecem as cores e a logo da empresa certa (procure os hex da outra marca nos HTML gerados).
 
 ## 8. Entregar
 

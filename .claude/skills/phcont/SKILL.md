@@ -5,15 +5,18 @@ description: Identidade visual e padrão de edição aprovado da PHcont, Assesso
 
 # PHcont: identidade e padrão aprovado
 
+O layout descrito aqui é **o padrão de edição de todas as empresas**. A DoctorFit usa o mesmo layout, com as cores
+e a logo dela.
+
 **Palavra-chave:** `/phcont`. Siga o processo da skill **`edicao-video`** (baixar, transcrever, cortar, conferir,
 entregar). Esta skill diz **como o vídeo da PHcont deve ficar**.
 
 Arquivos:
-- `scripts/gerar_edicao.py`: gerador da versão aprovada (v10, vídeo "Planejamento tributário"). É o ponto de partida.
-  Copie para `edicao/` e troque os tempos (`CHART`, `CENAS`, `data-start` dos vídeos), os textos das cenas e a
-  lista `G` da legenda.
+- `marca.json`: cores, logo e texto da pílula da PHcont. Use com o gerador da skill `edicao-video`
+  (`python3 gerar_edicao.py . .claude/skills/phcont/marca.json`). Essa é a paleta de referência do gerador.
 - `references/estilo-completo.md`: manual de estilo com o histórico de feedback.
 - `assets/logo_branca_transparente.png` (fundo escuro), `assets/logo_marinho_transparente.png` (fundo claro).
+  No projeto, a logo branca vai em `edicao/assets/logo_branca.png`.
 
 Pastas da PHcont no repositório: `bruto/`, `trabalho/`, `edicao/`, `final/`, `estilo/` (na raiz).
 
