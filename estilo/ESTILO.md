@@ -108,3 +108,12 @@ Feedback da cliente na v1: título muito no alto e visual parecido demais com as
 - **Legenda** entre as duas metades (y ≈ 868), nunca sobre o corpo dela.
 - **Vibe leve:** nada de zoom brusco, efeito de mola ou "impulso". As entradas são suaves (sobe um pouco e aparece, ou entra em foco), e as cenas saem com um fade curto.
 - **Gráficos sobem devagar e de forma contínua** (cerca de 2 s, ease suave), nunca com tranco.
+
+## Versão final aprovada (v10): padrão para os próximos vídeos
+
+- **Começo:** apresentadora em tela cheia, sem animação; legenda na altura do cinto (y ≈ 1500).
+- **Meio:** tela dividida com a animação em cima (conteúdo ≈ y 200–750, etiqueta "● PHCONT" em y ≈ 196), legenda entre as metades (y ≈ 762) e a apresentadora embaixo (a partir de y 860, mostrando cabeça, ombros e tronco).
+- **Divisão:** sem linha grossa; degradê escuro suave com um fio dourado fino e um brilho leve.
+- **Gráfico principal** em tela cheia, com as barras subindo devagar (cerca de 2 s, ease suave).
+- **Final:** apresentadora em tela cheia no convite, depois uma dissolvência suave para a **tela da logo do vídeo bruto**, desacelerada, com "Link na bio!" parado cerca de 2 s.
+- **Transições:** só dissolvências e entradas suaves. Nada desliza, nada dá zoom brusco. Nos cortes entre gravações do bruto, a troca de layout acontece **exatamente no corte**, com a imagem nova entrando levemente aproximada e se acomodando, para não mostrar quadros parados.
