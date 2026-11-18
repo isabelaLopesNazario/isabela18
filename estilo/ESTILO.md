@@ -101,3 +101,10 @@ Feedback da cliente na v1: título muito no alto e visual parecido demais com as
 - **Legenda:** caixa-alta, Poppins 800, branca com sombra, 2–3 palavras, palavra-chave em caixa **dourada** com texto marinho; fixa em y ≈ 1130.
 - **Barra de progresso** dourada fina no topo.
 - **Final:** foto da apresentadora em círculo com borda dourada, título "Agende uma análise", botão com cursor clicando; vinheta com a logo no mesmo fundo.
+
+## Versão 4 (ajustes da cliente)
+
+- **Tela dividida o vídeo todo:** animação em cima, apresentadora embaixo, separadas por uma linha dourada. Só o gráfico ("fatura bem / sobra pouco") fica em tela cheia.
+- **Legenda** entre as duas metades (y ≈ 868), nunca sobre o corpo dela.
+- **Vibe leve:** nada de zoom brusco, efeito de mola ou "impulso". As entradas são suaves (sobe um pouco e aparece, ou entra em foco), e as cenas saem com um fade curto.
+- **Gráficos sobem devagar e de forma contínua** (cerca de 2 s, ease suave), nunca com tranco.

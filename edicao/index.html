@@ -20,7 +20,7 @@
       <!-- Metade de baixo: ela falando -->
       <div id="cam">
         <video id="fala1" class="clip" src="assets/fala.mp4" data-start="0" data-duration="4.98" data-media-start="0" data-track-index="1" muted playsinline></video>
-        <video id="fala2" class="clip" src="assets/fala.mp4" data-start="8.60" data-duration="14.64" data-media-start="8.60" data-track-index="1" muted playsinline></video>
+        <video id="fala2" class="clip" src="assets/fala.mp4" data-start="9.10" data-duration="14.14" data-media-start="9.10" data-track-index="1" muted playsinline></video>
       </div>
       <div id="fundo" data-composition-id="fundo" data-composition-src="compositions/fundo.html" data-start="0.00" data-duration="25.64" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:1"></div>
       <div id="abertura" data-composition-id="abertura" data-composition-src="compositions/abertura.html" data-start="0.00" data-duration="2.07" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
@@ -38,9 +38,9 @@
       const tl = gsap.timeline({ paused: true });
       // gráfico em tela cheia: a metade de baixo desce e depois volta, suave
       tl.fromTo("#cam", { y: 0 }, { y: 950, duration: 0.55, ease: "power2.inOut" }, 4.38);
-      tl.to("#cam", { y: 0, duration: 0.55, ease: "power2.inOut" }, 8.60);
+      tl.to("#cam", { y: 0, duration: 0.55, ease: "power2.inOut" }, 9.10);
       // vinheta em tela cheia
-      tl.to("#cam", { opacity: 0, duration: 0.3, ease: "sine.inOut" }, 22.94);
+      tl.to("#cam", { opacity: 0, duration: 0.35, ease: "sine.inOut" }, 22.74);
       window.__timelines["main"] = tl;
     </script>
   </body>

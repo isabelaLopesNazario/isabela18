@@ -332,7 +332,7 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       <!-- Metade de baixo: ela falando -->
       <div id="cam">
         <video id="fala1" class="clip" src="assets/fala.mp4" data-start="0" data-duration="{SAI+0.6:.2f}" data-media-start="0" data-track-index="1" muted playsinline></video>
-        <video id="fala2" class="clip" src="assets/fala.mp4" data-start="{VOLTA-0.6:.2f}" data-duration="{FALA_FIM-(VOLTA-0.6):.2f}" data-media-start="{VOLTA-0.6:.2f}" data-track-index="1" muted playsinline></video>
+        <video id="fala2" class="clip" src="assets/fala.mp4" data-start="{VOLTA-0.1:.2f}" data-duration="{FALA_FIM-(VOLTA-0.1):.2f}" data-media-start="{VOLTA-0.1:.2f}" data-track-index="1" muted playsinline></video>
       </div>
 {chr(10).join(hosts)}
     </div>
@@ -340,9 +340,9 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       const tl = gsap.timeline({{ paused: true }});
       // gráfico em tela cheia: a metade de baixo desce e depois volta, suave
       tl.fromTo("#cam", {{ y: 0 }}, {{ y: {1920-SPLIT_TOP+10}, duration: 0.55, ease: "power2.inOut" }}, {SAI:.2f});
-      tl.to("#cam", {{ y: 0, duration: 0.55, ease: "power2.inOut" }}, {VOLTA-0.6:.2f});
+      tl.to("#cam", {{ y: 0, duration: 0.55, ease: "power2.inOut" }}, {VOLTA-0.1:.2f});
       // vinheta em tela cheia
-      tl.to("#cam", {{ opacity: 0, duration: 0.3, ease: "sine.inOut" }}, {FALA_FIM-0.3:.2f});
+      tl.to("#cam", {{ opacity: 0, duration: 0.35, ease: "sine.inOut" }}, {FALA_FIM-0.5:.2f});
       window.__timelines["main"] = tl;
     </script>
   </body>
