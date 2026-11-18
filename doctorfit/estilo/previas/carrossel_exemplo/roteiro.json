@@ -1,0 +1,21 @@
+{
+  "slides": [
+    {"tipo": "capa", "foto": "fotos/halteres.jpg", "foco": "50% 35%",
+     "rotulo": "TREINO PERSONALIZADO",
+     "titulo": "NÃO É SÓ\n*treinar*",
+     "texto": "É treinar com **propósito**.",
+     "rodape": ["FOCO", "MÉTODO", "EVOLUÇÃO"]},
+    {"tipo": "texto", "foto": "fotos/app.jpg", "foco": "50% 40%",
+     "rotulo": "ACOMPANHAMENTO",
+     "titulo": "CADA TREINO\nNO *seu ritmo*",
+     "texto": "Seu professor registra cada série no app e ajusta o plano conforme a **sua evolução**.",
+     "vidro": true},
+    {"tipo": "texto",
+     "titulo": "ON !FOCO!\nOFF *desculpas*",
+     "texto": "Constância vence.\nUm treino de **cada vez**."},
+    {"tipo": "cta", "foto": "fotos/halteres.jpg", "foco": "50% 70%",
+     "titulo": "PRONTO PARA\nO *próximo passo?*",
+     "texto": "Na DoctorFit, seu treino tem **propósito**.",
+     "botao": "Agende sua aula experimental!"}
+  ]
+}
