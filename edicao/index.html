@@ -25,7 +25,7 @@
       <!-- Começo: ela em tela cheia -->
       <div id="camcheia">
         <video id="fala0" class="clip" src="assets/fala.mp4" data-start="0" data-duration="4.98" data-media-start="0" data-track-index="1" muted playsinline></video>
-        <video id="fala3" class="clip" src="assets/fala.mp4" data-start="20.00" data-duration="3.24" data-media-start="20.00" data-track-index="1" muted playsinline></video>
+        <video id="fala3" class="clip" src="assets/fala.mp4" data-start="20.10" data-duration="3.14" data-media-start="20.10" data-track-index="1" muted playsinline></video>
       </div>
       <!-- Final: tela da logo do vídeo bruto -->
       <video id="logo-final" class="clip" src="assets/logo_final_lento.mp4" data-start="22.8" data-duration="4.03" data-track-index="6" muted playsinline></video>
@@ -38,7 +38,7 @@
       <div id="caixa" data-composition-id="caixa" data-composition-src="compositions/caixa.html" data-start="4.38" data-duration="4.82" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
       <div id="problema" data-composition-id="problema" data-composition-src="compositions/problema.html" data-start="9.20" data-duration="4.35" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
       <div id="fechamento" data-composition-id="fechamento" data-composition-src="compositions/fechamento.html" data-start="13.55" data-duration="3.05" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
-      <div id="lista" data-composition-id="lista" data-composition-src="compositions/lista.html" data-start="16.60" data-duration="3.64" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
+      <div id="lista" data-composition-id="lista" data-composition-src="compositions/lista.html" data-start="16.60" data-duration="3.50" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
       <div id="legendas" data-composition-id="legendas" data-composition-src="compositions/legendas.html" data-start="0.00" data-duration="23.24" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920" style="z-index:5"></div>
       <div id="progresso" data-composition-id="progresso" data-composition-src="compositions/progresso.html" data-start="0.00" data-duration="26.83" data-track-index="4" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:6"></div>
     </div>
@@ -49,8 +49,10 @@
       tl.to("#camcheia", { opacity: 0, duration: 0.55, ease: "sine.inOut" }, 4.38);
       tl.to("#cam", { opacity: 1, duration: 0.5, ease: "sine.inOut" }, 9.10);
       // final: ela volta em tela cheia para o convite
-      tl.to("#camcheia", { opacity: 1, duration: 0.45, ease: "sine.inOut" }, 20.06);
-      tl.set("#cam", { opacity: 0 }, 20.53);
+      // troca direta no corte da 2ª gravação; a imagem entra levemente aproximada e se acomoda
+      tl.set("#camcheia", { opacity: 1, transformOrigin: "540px 760px" }, 20.10);
+      tl.fromTo("#camcheia", { scale: 1.06 }, { scale: 1, duration: 0.7, ease: "power2.out" }, 20.10);
+      tl.set("#cam", { opacity: 0 }, 20.10);
       // final: dissolve suave dela para a logo
       tl.fromTo("#logo-final", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.inOut" }, 22.8);
       window.__timelines["main"] = tl;

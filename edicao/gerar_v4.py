@@ -222,17 +222,17 @@ li_css = f"""
       font-size: 34px; font-weight: 800; text-align: center; line-height: 60px; }}
     .li.on .n {{ background: {GOLD}; color: {NAVY_T}; }}
 """
-body = ['      <div id="ls-ct" class="clip" data-start="0" data-duration="3.64"><div id="ls-t" class="tit">Fechando o mês <span class="ouro">certo</span></div></div>']
+body = ['      <div id="ls-ct" class="clip" data-start="0" data-duration="3.50"><div id="ls-t" class="tit">Fechando o mês <span class="ouro">certo</span></div></div>']
 js = [foco("#ls-t", 0.0, 0.4)]
 for i, (n, txt, t) in enumerate(itens):
     top = 490 + i * 116
-    body.append(f'      <div id="ls-c{n}" class="clip" data-start="{t:.2f}" data-duration="{3.64-t:.2f}"><div id="ls-i{n}" class="card li on" style="top:{top}px"><span class="n">{n}</span><span>{html.escape(txt)}</span></div></div>')
+    body.append(f'      <div id="ls-c{n}" class="clip" data-start="{t:.2f}" data-duration="{3.50-t:.2f}"><div id="ls-i{n}" class="card li on" style="top:{top}px"><span class="n">{n}</span><span>{html.escape(txt)}</span></div></div>')
     js.append(entra(f"#ls-i{n}", t + 0.02, 0.45, 16))
     if i > 0:
         prev = itens[i-1][0]
         js.append(f'    tl.to("#ls-i{prev}", {{ borderColor: "rgba(255,255,255,.14)", boxShadow: "0 0 0 rgba(0,0,0,0)", duration: 0.4, ease: "sine.inOut" }}, {t:.2f});')
         js.append(f'    tl.to("#ls-i{prev} .n", {{ backgroundColor: "rgba(255,255,255,.12)", color: "{BRANCO}", duration: 0.4, ease: "sine.inOut" }}, {t:.2f});')
-comp("lista", 3.64, li_css, "\n".join(body), "\n".join(js))
+comp("lista", 3.50, li_css, "\n".join(body), "\n".join(js))
 
 # cta 20.24–23.24 local: PHcont 21.85→1.61 ; link 22.57→2.33
 comp("cta", 3.0, f"""
@@ -280,7 +280,7 @@ G = [("Imposto alto",0.16),("não é",0.96),("*destino,*",1.30),("muitas vezes",
 ("Imagina",13.72),("fechar o mês",14.12),("pagando",14.69),("*exatamente*",15.16),("o que deve,",15.84),("nem um *real*",16.60),("a mais.",17.19),
 ("E *reinvestir*",17.55),("essa",18.25),("*diferença*",18.53),("no seu *negócio*",19.16),("*Agende*",20.24),("uma *análise*",20.73),("com a",21.54),("*PHcont,*",21.85),
 ("link aqui *embaixo*",22.57)]
-ENDS = {"no seu *negócio*": 20.24, "a mais.": 17.55, "*planejamento*": 4.38, "*caixa*": 9.20, "link aqui *embaixo*": FALA_FIM}
+ENDS = {"no seu *negócio*": 20.10, "a mais.": 17.55, "*planejamento*": 4.38, "*caixa*": 9.20, "link aqui *embaixo*": FALA_FIM}
 divs, gjs = [], []
 for i, (txt, s) in enumerate(G):
     e = ENDS.get(txt, G[i+1][1] if i+1 < len(G) else FALA_FIM)
@@ -310,7 +310,7 @@ def host(cid, s, d, z, track, kind="graphics"):
             f'data-duration="{d:.2f}" data-track-index="{track}" data-track-kind="{kind}" data-width="1080" data-height="1920" style="z-index:{z}"></div>')
 
 CENAS = [("caixa", 4.38, 9.20), ("problema", 9.20, 13.55),
-         ("fechamento", 13.55, 16.60), ("lista", 16.60, 20.24)]
+         ("fechamento", 13.55, 16.60), ("lista", 16.60, 20.10)]
 hosts = [host("fundo", 0, TOTAL, 1, 0)]
 hosts += [host(m, s, e - s, 3, 2) for m, s, e in CENAS]
 hosts += [host("legendas", 0, FALA_FIM, 5, 3, "captions"), host("progresso", 0, TOTAL, 6, 4)]
@@ -342,7 +342,7 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       <!-- Começo: ela em tela cheia -->
       <div id="camcheia">
         <video id="fala0" class="clip" src="assets/fala.mp4" data-start="0" data-duration="{SAI+0.6:.2f}" data-media-start="0" data-track-index="1" muted playsinline></video>
-        <video id="fala3" class="clip" src="assets/fala.mp4" data-start="20.00" data-duration="{FALA_FIM-20.0:.2f}" data-media-start="20.00" data-track-index="1" muted playsinline></video>
+        <video id="fala3" class="clip" src="assets/fala.mp4" data-start="20.10" data-duration="{FALA_FIM-20.1:.2f}" data-media-start="20.10" data-track-index="1" muted playsinline></video>
       </div>
       <!-- Final: tela da logo do vídeo bruto -->
       <video id="logo-final" class="clip" src="assets/logo_final_lento.mp4" data-start="{LOGO_INI}" data-duration="{LOGO_DUR}" data-track-index="6" muted playsinline></video>
@@ -360,8 +360,10 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       tl.to("#camcheia", {{ opacity: 0, duration: 0.55, ease: "sine.inOut" }}, {SAI:.2f});
       tl.to("#cam", {{ opacity: 1, duration: 0.5, ease: "sine.inOut" }}, {VOLTA-0.1:.2f});
       // final: ela volta em tela cheia para o convite
-      tl.to("#camcheia", {{ opacity: 1, duration: 0.45, ease: "sine.inOut" }}, 20.06);
-      tl.set("#cam", {{ opacity: 0 }}, 20.53);
+      // troca direta no corte da 2ª gravação; a imagem entra levemente aproximada e se acomoda
+      tl.set("#camcheia", {{ opacity: 1, transformOrigin: "540px 760px" }}, 20.10);
+      tl.fromTo("#camcheia", {{ scale: 1.06 }}, {{ scale: 1, duration: 0.7, ease: "power2.out" }}, 20.10);
+      tl.set("#cam", {{ opacity: 0 }}, 20.10);
       // final: dissolve suave dela para a logo
       tl.fromTo("#logo-final", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.6, ease: "sine.inOut" }}, {LOGO_INI});
       window.__timelines["main"] = tl;
