@@ -1,21 +1,28 @@
 <template>
   <style>
     #root { position: absolute; inset: 0; }
-    #v-fundo { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #000000; }
-    #v-logo { position: absolute; left: 350px; top: 540px; width: 380px; }
-    #v-link { position: absolute; left: 0; top: 1150px; width: 1080px; text-align: center; font-family: "Poppins", sans-serif; font-weight: 600; font-size: 40px; letter-spacing: .2em; color: #bba372; }
+    .tit { position: absolute; left: 192px; width: 696px; text-align: center; font-family: "Oswald", sans-serif; font-weight: 700;
+      color: #f7f5f6; line-height: 1.02; text-transform: uppercase; text-shadow: 0 6px 30px rgba(0,0,0,.45); }
+    .ouro { color: #c9ad6e; }
+    .card { position: absolute; left: 180px; width: 720px; border-radius: 22px; background: rgba(8,14,30,.82);
+      border: 3px solid rgba(255,255,255,.14); font-family: "Poppins", sans-serif; color: #f7f5f6; }
+    .card.on { border-color: #c9ad6e; box-shadow: 0 0 28px rgba(201,173,110,.45), inset 0 0 18px rgba(201,173,110,.12); }
+
+    #vn-logo { position: absolute; left: 360px; top: 560px; width: 360px; }
+    #vn-link { position: absolute; left: 0; top: 1140px; width: 1080px; text-align: center; font-family: "Poppins", sans-serif; font-weight: 700;
+      font-size: 40px; letter-spacing: .2em; color: #c9ad6e; }
+
   </style>
   <div id="root" data-composition-id="vinheta" data-width="1080" data-height="1920">
-    <div id="v-clip" class="clip" data-start="0" data-duration="2.4">
-      <div id="v-fundo"></div>
-      <img id="v-logo" src="assets/logo_branca.png" alt="PHcont" />
-      <div id="v-link">LINK NA BIO</div>
+    <div id="vn-c" class="clip" data-start="0" data-duration="2.40">
+      <img id="vn-logo" src="assets/logo_branca.png" alt="PHcont" />
+      <div id="vn-link">LINK NA BIO</div>
     </div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#v-logo", { opacity: 0, scale: 1.06, filter: "blur(10px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.6, ease: "expo.out" }, 0.05);
-    tl.fromTo("#v-link", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, 0.3);
+    tl.fromTo("#vn-logo", { opacity: 0, scale: 1.08, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.6, ease: "expo.out" }, 0.0);
+    tl.fromTo("#vn-link", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power4.out" }, 0.25);
     window.__timelines["vinheta"] = tl;
   </script>
 </template>

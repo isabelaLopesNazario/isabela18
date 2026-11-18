@@ -1,0 +1,22 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    .tit { position: absolute; left: 192px; width: 696px; text-align: center; font-family: "Oswald", sans-serif; font-weight: 700;
+      color: #f7f5f6; line-height: 1.02; text-transform: uppercase; text-shadow: 0 6px 30px rgba(0,0,0,.45); }
+    .ouro { color: #c9ad6e; }
+    .card { position: absolute; left: 180px; width: 720px; border-radius: 22px; background: rgba(8,14,30,.82);
+      border: 3px solid rgba(255,255,255,.14); font-family: "Poppins", sans-serif; color: #f7f5f6; }
+    .card.on { border-color: #c9ad6e; box-shadow: 0 0 28px rgba(201,173,110,.45), inset 0 0 18px rgba(201,173,110,.12); }
+
+    #pg { position: absolute; left: 0; top: 0; width: 1080px; height: 8px; background: #c9ad6e; transform-origin: 0 50%; }
+
+  </style>
+  <div id="root" data-composition-id="progresso" data-width="1080" data-height="1920">
+    <div id="pg-c" class="clip" data-start="0" data-duration="25.64" data-layout-ignore><div id="pg"></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#pg", { scaleX: 0 }, { scaleX: 1, duration: 25.64, ease: "none" }, 0);
+    window.__timelines["progresso"] = tl;
+  </script>
+</template>

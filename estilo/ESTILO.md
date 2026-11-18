@@ -87,3 +87,17 @@ Ficam em `estilo/referencias/`:
 2. `ref2_motion_editorial.mov`: tipografia serifada editorial, partículas, números.
 3. `ref3_tutorial_tela.mp4`: tutorial de tela gravada com título no topo e legenda em itálico.
 4. `ref4_talking_head.mp4`: rosto + painel de motion dividido, passos numerados, legenda palavra a palavra.
+
+## Versão 2 (aprovada como direção): estilo explicador, refs. 5 e 6
+
+Feedback da cliente na v1: título muito no alto e visual parecido demais com as capas do feed. Do feed vêm **só as cores e a logo**.
+
+- **Estrutura:** alternar entre a apresentadora em tela cheia e telas animadas nos pontos principais (a voz continua por baixo).
+- **Fundo das telas animadas:** azul-marinho profundo com brilho no centro, grade em perspectiva embaixo, pontinhos de luz e "vidros" translúcidos flutuando devagar.
+- **Etiqueta fixa** no topo: pílula escura "● PHCONT" com o ponto bordô.
+- **Título:** centralizado, um pouco abaixo do topo (≈ y 420–720), fonte condensada pesada (Oswald 700) em caixa-alta, branco com a palavra-chave em dourado.
+- **Cartões:** escuros e translúcidos, cantos arredondados; o item ativo ganha borda dourada com brilho; itens numerados com quadradinho dourado; comparação com selo "VS" dourado; o lado negativo usa bordô.
+- **Gráficos:** barras dentro de cartão, barra principal dourada com brilho, barra negativa bordô.
+- **Legenda:** caixa-alta, Poppins 800, branca com sombra, 2–3 palavras, palavra-chave em caixa **dourada** com texto marinho; fixa em y ≈ 1130.
+- **Barra de progresso** dourada fina no topo.
+- **Final:** foto da apresentadora em círculo com borda dourada, título "Agende uma análise", botão com cursor clicando; vinheta com a logo no mesmo fundo.

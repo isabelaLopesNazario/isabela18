@@ -5,105 +5,45 @@
     <meta name="viewport" content="width=1080, height=1920" />
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
     <style>
-      :root {
-        --marinho: #1f2b42;
-        --bordo: #7a2a33;
-        --dourado: #bba372;
-        --branco: #f7f5f6;
-        --preto: #000000;
-      }
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      html, body {
-        width: 1080px;
-        height: 1920px;
-        overflow: hidden;
-        background: var(--preto);
-      }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #070d1c; }
       #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
-      #cam { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 1; }
-      #fala { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+      #cam { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 2; }
+      #cam video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
     </style>
   </head>
   <body>
-    <div
-      id="root"
-      data-composition-id="main"
-      data-start="0"
-      data-duration="25.64"
-      data-width="1080"
-      data-height="1920"
-    >
-      <!-- Câmera: wrapper sem tempo (zoom e tela dividida) -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="25.64" data-width="1080" data-height="1920">
+      <!-- Voz da apresentadora (contínua) -->
+      <audio id="voz" class="clip" src="assets/fala.mp4" data-start="0" data-duration="23.24" data-track-index="5" data-volume="1"></audio>
+      <!-- Trechos em que ela aparece em tela cheia -->
       <div id="cam">
-        <video
-          id="fala"
-          class="clip"
-          src="assets/fala.mp4"
-          data-start="0"
-          data-duration="23.24"
-          data-track-index="0"
-          data-has-audio="true"
-          playsinline
-        ></video>
+        <video id="f1" class="clip" src="assets/fala.mp4" data-start="2.07" data-duration="2.31" data-media-start="2.07" data-track-index="1" muted playsinline></video>
+        <video id="f2" class="clip" src="assets/fala.mp4" data-start="9.20" data-duration="1.38" data-media-start="9.20" data-track-index="1" muted playsinline></video>
+        <video id="f3" class="clip" src="assets/fala.mp4" data-start="13.55" data-duration="3.05" data-media-start="13.55" data-track-index="1" muted playsinline></video>
       </div>
-
-      <!-- Cenas em tela cheia -->
-      <div id="gancho" data-composition-id="gancho" data-composition-src="compositions/gancho.html"
-        data-start="0" data-duration="2.07" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index:3"></div>
-      <div id="planejamento" data-composition-id="planejamento" data-composition-src="compositions/planejamento.html"
-        data-start="2.07" data-duration="2.23" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index:3"></div>
-
-      <!-- Painel marinho (tela dividida) -->
-      <div id="painel" data-composition-id="painel" data-composition-src="compositions/painel.html"
-        data-start="4.3" data-duration="16.2" data-track-index="2" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index:2"></div>
-      <div id="faturamento" data-composition-id="faturamento" data-composition-src="compositions/faturamento.html"
-        data-start="4.3" data-duration="4.8" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index:3"></div>
-      <div id="tributada" data-composition-id="tributada" data-composition-src="compositions/tributada.html"
-        data-start="9.1" data-duration="4.45" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index:3"></div>
-      <div id="fechamento" data-composition-id="fechamento" data-composition-src="compositions/fechamento.html"
-        data-start="13.55" data-duration="3.89" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index:3"></div>
-      <div id="reinvestir" data-composition-id="reinvestir" data-composition-src="compositions/reinvestir.html"
-        data-start="17.44" data-duration="2.66" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index:3"></div>
-
-      <!-- Chamada final -->
-      <div id="cta" data-composition-id="cta" data-composition-src="compositions/cta.html"
-        data-start="20.1" data-duration="2.36" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index:3"></div>
-      <div id="link" data-composition-id="link" data-composition-src="compositions/link.html"
-        data-start="22.46" data-duration="0.78" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index:3"></div>
-      <div id="vinheta" data-composition-id="vinheta" data-composition-src="compositions/vinheta.html"
-        data-start="23.24" data-duration="2.4" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index:10"></div>
-
-      <!-- Legendas -->
-      <div id="legendas" data-composition-id="legendas" data-composition-src="compositions/legendas.html"
-        data-start="0" data-duration="22.46" data-track-index="3" data-track-kind="captions"
-        data-width="1080" data-height="1920" style="z-index:5"></div>
+      <div id="fundo" data-composition-id="fundo" data-composition-src="compositions/fundo.html" data-start="0.00" data-duration="25.64" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:1"></div>
+      <div id="abertura" data-composition-id="abertura" data-composition-src="compositions/abertura.html" data-start="0.00" data-duration="2.07" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
+      <div id="caixa" data-composition-id="caixa" data-composition-src="compositions/caixa.html" data-start="4.38" data-duration="4.82" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
+      <div id="problema" data-composition-id="problema" data-composition-src="compositions/problema.html" data-start="10.58" data-duration="2.97" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
+      <div id="lista" data-composition-id="lista" data-composition-src="compositions/lista.html" data-start="16.60" data-duration="3.64" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
+      <div id="cta" data-composition-id="cta" data-composition-src="compositions/cta.html" data-start="20.24" data-duration="3.00" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
+      <div id="vinheta" data-composition-id="vinheta" data-composition-src="compositions/vinheta.html" data-start="23.24" data-duration="2.40" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
+      <div id="legendas" data-composition-id="legendas" data-composition-src="compositions/legendas.html" data-start="0.00" data-duration="23.24" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920" style="z-index:5"></div>
+      <div id="progresso" data-composition-id="progresso" data-composition-src="compositions/progresso.html" data-start="0.00" data-duration="25.64" data-track-index="4" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:6"></div>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
-      // Gancho: punch-in em "não é destino"
-      tl.set("#cam", { transformOrigin: "540px 720px", scale: 1, y: 0 }, 0);
-      tl.set("#cam", { scale: 1.12 }, 0.96);
-      tl.set("#cam", { scale: 1 }, 2.07);
-      // Tela dividida: o rosto desce para baixo do painel
-      tl.to("#cam", { y: 520, duration: 0.5, ease: "power3.out" }, 4.3);
-      // Ênfase em "tributada"
-      tl.set("#cam", { scale: 1.1 }, 12.97);
-      tl.set("#cam", { scale: 1 }, 13.55);
-      // Volta para tela cheia
-      tl.to("#cam", { y: 0, duration: 0.4, ease: "power3.inOut" }, 20.1);
-      // Ênfase em "PHcont"
-      tl.set("#cam", { scale: 1.08 }, 21.85);
-      tl.set("#cam", { scale: 1 }, 22.46);
+      tl.set("#cam", { transformOrigin: "540px 720px", scale: 1 }, 0);
+      // f1: punch-in em "planejamento"
+      tl.set("#cam", { scale: 1.12 }, 3.35);
+      tl.set("#cam", { scale: 1 }, 4.38);
+      // f2: entra já levemente aproximado
+      tl.set("#cam", { scale: 1.06 }, 9.20);
+      tl.set("#cam", { scale: 1 }, 10.58);
+      // f3: punch-in em "exatamente"
+      tl.set("#cam", { scale: 1.1 }, 15.16);
+      tl.set("#cam", { scale: 1 }, 16.60);
       window.__timelines["main"] = tl;
     </script>
   </body>

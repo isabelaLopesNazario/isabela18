@@ -1,0 +1,96 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    .tit { position: absolute; left: 192px; width: 696px; text-align: center; font-family: "Oswald", sans-serif; font-weight: 700;
+      color: #f7f5f6; line-height: 1.02; text-transform: uppercase; text-shadow: 0 6px 30px rgba(0,0,0,.45); }
+    .ouro { color: #c9ad6e; }
+    .card { position: absolute; left: 180px; width: 720px; border-radius: 22px; background: rgba(8,14,30,.82);
+      border: 3px solid rgba(255,255,255,.14); font-family: "Poppins", sans-serif; color: #f7f5f6; }
+    .card.on { border-color: #c9ad6e; box-shadow: 0 0 28px rgba(201,173,110,.45), inset 0 0 18px rgba(201,173,110,.12); }
+
+    #bg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden;
+      background: radial-gradient(ellipse 90% 60% at 50% 36%, #1b2d55 0%, #0f1c3a 42%, #070d1c 100%); }
+    #bg-grade { position: absolute; left: -540px; top: 1180px; width: 2160px; height: 900px; transform-origin: 50% 0%;
+      transform: perspective(700px) rotateX(62deg);
+      background-image: linear-gradient(rgba(140,170,230,.22) 2px, transparent 2px), linear-gradient(90deg, rgba(140,170,230,.22) 2px, transparent 2px);
+      background-size: 120px 120px; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 40%); mask-image: linear-gradient(180deg, transparent 0%, #000 40%); }
+    .st { position: absolute; border-radius: 50%; background: #e8dcc0; display: block; }
+    .vidro { position: absolute; border-radius: 18px; background: rgba(210,220,240,.07); border: 2px solid rgba(255,255,255,.08); filter: blur(1.5px); padding: 18px; }
+    .vidro b { display: block; height: 10px; border-radius: 5px; background: rgba(255,255,255,.08); margin: 12px 0; }
+    .vidro b:first-child { width: 40%; background: rgba(201,173,110,.18); }
+    #bg-pill { position: absolute; left: 0; top: 300px; width: 1080px; text-align: center; }
+    #bg-pill span { display: inline-block; padding: 12px 30px; border-radius: 40px; background: rgba(6,11,24,.85); border: 2px solid rgba(255,255,255,.1);
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 30px; letter-spacing: .2em; color: #f7f5f6; }
+    #bg-pill i { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #a33a46; margin-right: 14px; vertical-align: 3px;
+      box-shadow: 0 0 12px #a33a46; }
+
+  </style>
+  <div id="root" data-composition-id="fundo" data-width="1080" data-height="1920">
+    <div id="bg-clip" class="clip" data-start="0" data-duration="25.64" data-layout-ignore>
+      <div id="bg">
+        <div id="bg-grade"></div>
+        <i class="st" style="left:683px;top:468px;opacity:0.47;width:3px;height:3px"></i>
+        <i class="st" style="left:212px;top:908px;opacity:0.57;width:3px;height:3px"></i>
+        <i class="st" style="left:196px;top:1048px;opacity:0.48;width:3px;height:3px"></i>
+        <i class="st" style="left:889px;top:281px;opacity:0.70;width:3px;height:3px"></i>
+        <i class="st" style="left:146px;top:1341px;opacity:0.57;width:3px;height:3px"></i>
+        <i class="st" style="left:115px;top:1300px;opacity:0.72;width:4px;height:5px"></i>
+        <i class="st" style="left:315px;top:1267px;opacity:0.31;width:4px;height:3px"></i>
+        <i class="st" style="left:231px;top:1351px;opacity:0.56;width:3px;height:4px"></i>
+        <i class="st" style="left:219px;top:1281px;opacity:0.64;width:3px;height:3px"></i>
+        <i class="st" style="left:1036px;top:1248px;opacity:0.49;width:4px;height:5px"></i>
+        <i class="st" style="left:948px;top:900px;opacity:0.41;width:3px;height:3px"></i>
+        <i class="st" style="left:187px;top:1336px;opacity:0.42;width:5px;height:4px"></i>
+        <i class="st" style="left:939px;top:749px;opacity:0.58;width:3px;height:3px"></i>
+        <i class="st" style="left:876px;top:497px;opacity:0.67;width:3px;height:5px"></i>
+        <i class="st" style="left:883px;top:240px;opacity:0.78;width:3px;height:4px"></i>
+        <i class="st" style="left:716px;top:877px;opacity:0.58;width:5px;height:3px"></i>
+        <i class="st" style="left:211px;top:712px;opacity:0.51;width:3px;height:3px"></i>
+        <i class="st" style="left:654px;top:1485px;opacity:0.57;width:5px;height:4px"></i>
+        <i class="st" style="left:810px;top:870px;opacity:0.26;width:5px;height:4px"></i>
+        <i class="st" style="left:364px;top:1411px;opacity:0.31;width:3px;height:3px"></i>
+        <i class="st" style="left:608px;top:424px;opacity:0.66;width:5px;height:5px"></i>
+        <i class="st" style="left:1036px;top:325px;opacity:0.34;width:5px;height:4px"></i>
+        <i class="st" style="left:300px;top:1041px;opacity:0.73;width:4px;height:5px"></i>
+        <i class="st" style="left:754px;top:939px;opacity:0.78;width:3px;height:3px"></i>
+        <i class="st" style="left:380px;top:469px;opacity:0.38;width:3px;height:3px"></i>
+        <i class="st" style="left:1013px;top:1366px;opacity:0.35;width:4px;height:3px"></i>
+        <i class="st" style="left:318px;top:1018px;opacity:0.54;width:4px;height:3px"></i>
+        <i class="st" style="left:130px;top:1095px;opacity:0.74;width:5px;height:5px"></i>
+        <i class="st" style="left:837px;top:967px;opacity:0.31;width:5px;height:3px"></i>
+        <i class="st" style="left:410px;top:297px;opacity:0.79;width:5px;height:3px"></i>
+        <i class="st" style="left:245px;top:856px;opacity:0.58;width:3px;height:3px"></i>
+        <i class="st" style="left:329px;top:1258px;opacity:0.31;width:4px;height:3px"></i>
+        <i class="st" style="left:164px;top:585px;opacity:0.59;width:3px;height:4px"></i>
+        <i class="st" style="left:731px;top:1393px;opacity:0.45;width:3px;height:3px"></i>
+        <i class="st" style="left:1019px;top:1114px;opacity:0.51;width:4px;height:3px"></i>
+        <i class="st" style="left:315px;top:369px;opacity:0.66;width:4px;height:5px"></i>
+        <i class="st" style="left:350px;top:1217px;opacity:0.26;width:4px;height:3px"></i>
+        <i class="st" style="left:75px;top:1241px;opacity:0.41;width:3px;height:4px"></i>
+        <i class="st" style="left:771px;top:502px;opacity:0.45;width:3px;height:4px"></i>
+        <i class="st" style="left:476px;top:1415px;opacity:0.70;width:3px;height:3px"></i>
+        <i class="st" style="left:840px;top:624px;opacity:0.36;width:5px;height:4px"></i>
+        <i class="st" style="left:79px;top:217px;opacity:0.68;width:5px;height:4px"></i>
+        <i class="st" style="left:416px;top:1399px;opacity:0.78;width:5px;height:4px"></i>
+        <i class="st" style="left:766px;top:324px;opacity:0.37;width:3px;height:5px"></i>
+        <i class="st" style="left:422px;top:851px;opacity:0.36;width:3px;height:5px"></i>
+        <i class="st" style="left:724px;top:1477px;opacity:0.30;width:3px;height:5px"></i>
+        <div id="bg-v0" class="vidro" style="left:-60px;top:360px;width:330px;height:230px"><b></b><b></b><b></b></div>
+        <div id="bg-v1" class="vidro" style="left:760px;top:230px;width:300px;height:210px"><b></b><b></b><b></b></div>
+        <div id="bg-v2" class="vidro" style="left:40px;top:1380px;width:360px;height:250px"><b></b><b></b><b></b></div>
+        <div id="bg-v3" class="vidro" style="left:700px;top:1250px;width:340px;height:240px"><b></b><b></b><b></b></div>
+        <div id="bg-v4" class="vidro" style="left:860px;top:880px;width:260px;height:180px"><b></b><b></b><b></b></div>
+        <div id="bg-pill"><span><i></i>PHCONT</span></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#bg-v0", { x: 0, y: 0 }, { x: -45, y: -67, duration: 25.64, ease: "none" }, 0);
+    tl.fromTo("#bg-v1", { x: 0, y: 0 }, { x: 32, y: 69, duration: 25.64, ease: "none" }, 0);
+    tl.fromTo("#bg-v2", { x: 0, y: 0 }, { x: 53, y: -86, duration: 25.64, ease: "none" }, 0);
+    tl.fromTo("#bg-v3", { x: 0, y: 0 }, { x: -35, y: -41, duration: 25.64, ease: "none" }, 0);
+    tl.fromTo("#bg-v4", { x: 0, y: 0 }, { x: -48, y: 81, duration: 25.64, ease: "none" }, 0);
+    window.__timelines["fundo"] = tl;
+  </script>
+</template>
