@@ -16,7 +16,8 @@ NAVY_T = "#0b1426"
 BRANCO = "#f7f5f6"
 SUAVE = "power2.out"
 
-TOTAL = 25.64
+LOGO_DUR = 1.84               # tela da logo do vídeo bruto
+TOTAL = 23.24 + LOGO_DUR
 FALA_FIM = 23.24
 CHART = (4.38, 9.20)          # gráfico em tela cheia
 SPLIT_TOP = 980               # onde começa a metade de baixo (vídeo)
@@ -282,7 +283,7 @@ for i, (txt, s) in enumerate(G):
     parts = re.findall(r'\*[^*]+\*|[^\s*]+', txt)
     inner = " ".join(
         f'<span class="w{" hl" if p.startswith("*") else ""}">{html.escape(p.strip("*").upper())}</span>' for p in parts)
-    top = 1500 if s < CHART[0] else (1200 if s < CHART[1] else 868)
+    top = 1500 if (s < CHART[0] or s >= 20.24) else (1200 if s < CHART[1] else 868)
     divs.append(f'    <div id="lg{i}" class="grupo clip" data-start="{s:.2f}" data-duration="{e-s:.2f}" style="top:{top}px"><div id="lg{i}-i" class="gi">{inner}</div></div>')
     gjs.append(f'    tl.fromTo("#lg{i}-i", {{ opacity: 0, y: 10 }}, {{ opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }}, {s:.2f});')
 comp("legendas", FALA_FIM, f"""
@@ -305,7 +306,7 @@ def host(cid, s, d, z, track, kind="graphics"):
             f'data-duration="{d:.2f}" data-track-index="{track}" data-track-kind="{kind}" data-width="1080" data-height="1920" style="z-index:{z}"></div>')
 
 CENAS = [("caixa", 4.38, 9.20), ("problema", 9.20, 13.55),
-         ("fechamento", 13.55, 16.60), ("lista", 16.60, 20.24), ("cta", 20.24, 23.24), ("vinheta", 23.24, TOTAL)]
+         ("fechamento", 13.55, 16.60), ("lista", 16.60, 20.24)]
 hosts = [host("fundo", 0, TOTAL, 1, 0)]
 hosts += [host(m, s, e - s, 3, 2) for m, s, e in CENAS]
 hosts += [host("legendas", 0, FALA_FIM, 5, 3, "captions"), host("progresso", 0, TOTAL, 6, 4)]
@@ -321,7 +322,10 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       html, body {{ width: 1080px; height: 1920px; overflow: hidden; background: #070d1c; }}
       #root {{ position: relative; width: 100%; height: 100%; overflow: hidden; }}
       #cam {{ position: absolute; left: 0; top: {SPLIT_TOP}px; width: 1080px; height: {1920-SPLIT_TOP}px; overflow: hidden; z-index: 4;
-        border-top: 6px solid {GOLD}; }}
+        border-top: 2px solid rgba(201,173,110,.55); box-shadow: 0 -10px 40px rgba(0,0,0,.55), 0 -2px 18px rgba(201,173,110,.25); }}
+      #cam-sombra {{ position: absolute; left: 0; top: 0; width: 1080px; height: 220px; z-index: 2;
+        background: linear-gradient(180deg, rgba(9,16,34,.92) 0%, rgba(9,16,34,.55) 45%, rgba(9,16,34,0) 100%); }}
+      #logo-final {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 8; }}
       #camcheia {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 4; }}
       #camcheia video {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }}
       #cam video {{ position: absolute; left: 0; top: -500px; width: 1080px; height: 1920px; object-fit: cover; }}
@@ -334,10 +338,14 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       <!-- Começo: ela em tela cheia -->
       <div id="camcheia">
         <video id="fala0" class="clip" src="assets/fala.mp4" data-start="0" data-duration="{SAI+0.6:.2f}" data-media-start="0" data-track-index="1" muted playsinline></video>
+        <video id="fala3" class="clip" src="assets/fala.mp4" data-start="19.95" data-duration="{FALA_FIM-19.95:.2f}" data-media-start="19.95" data-track-index="1" muted playsinline></video>
       </div>
+      <!-- Final: tela da logo do vídeo bruto -->
+      <video id="logo-final" class="clip" src="assets/logo_final.mp4" data-start="{FALA_FIM}" data-duration="{LOGO_DUR}" data-track-index="6" muted playsinline></video>
       <!-- Metade de baixo: ela falando -->
       <div id="cam">
-        <video id="fala2" class="clip" src="assets/fala.mp4" data-start="{VOLTA-0.1:.2f}" data-duration="{FALA_FIM-(VOLTA-0.1):.2f}" data-media-start="{VOLTA-0.1:.2f}" data-track-index="1" muted playsinline></video>
+        <video id="fala2" class="clip" src="assets/fala.mp4" data-start="{VOLTA-0.1:.2f}" data-duration="{20.6-(VOLTA-0.1):.2f}" data-media-start="{VOLTA-0.1:.2f}" data-track-index="1" muted playsinline></video>
+        <div id="cam-sombra"></div>
       </div>
 {chr(10).join(hosts)}
     </div>
@@ -347,8 +355,9 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       tl.set("#cam", {{ y: {1920-SPLIT_TOP+10} }}, 0);
       tl.fromTo("#camcheia", {{ y: 0 }}, {{ y: 1930, duration: 0.6, ease: "power2.inOut" }}, {SAI:.2f});
       tl.to("#cam", {{ y: 0, duration: 0.55, ease: "power2.inOut" }}, {VOLTA-0.1:.2f});
-      // vinheta em tela cheia
-      tl.to("#cam", {{ opacity: 0, duration: 0.35, ease: "sine.inOut" }}, {FALA_FIM-0.5:.2f});
+      // final: ela volta em tela cheia para o convite
+      tl.to("#camcheia", {{ y: 0, duration: 0.55, ease: "power2.inOut" }}, 19.95);
+      tl.set("#cam", {{ opacity: 0 }}, 20.52);
       window.__timelines["main"] = tl;
     </script>
   </body>
