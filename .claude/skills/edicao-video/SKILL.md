@@ -1,6 +1,6 @@
 ---
 name: edicao-video
-description: Processo base de edição de vídeos verticais (Reels/TikTok/Shorts) com HyperFrames, FFmpeg e Whisper em português — receber o vídeo bruto (arquivo ou Google Drive), transcrever, cortar pausas, montar, conferir travadas e entregar. Use sempre que a pessoa mandar um vídeo bruto para editar, pedir corte de pausas, legenda, transcrição, letreiros ou "edita esse vídeo". A identidade visual NÃO está aqui: ela vem da skill da empresa (/phcont ou /doctorfit). Se a mensagem não disser de qual empresa é o vídeo, pergunte antes de editar.
+description: Processo base de edição de vídeos verticais (Reels/TikTok/Shorts) com HyperFrames, FFmpeg e Whisper em português — receber o vídeo bruto (arquivo ou Google Drive), transcrever, cortar pausas, montar, conferir travadas e entregar. Use sempre que a pessoa mandar um vídeo bruto para editar, pedir corte de pausas, legenda, transcrição, letreiros ou "edita esse vídeo". A identidade visual NÃO está aqui, ela vem da skill da empresa (/phcont ou /doctorfit). Se a mensagem não disser de qual empresa é o vídeo, pergunte antes de editar.
 ---
 
 # Edição de vídeo: processo base
