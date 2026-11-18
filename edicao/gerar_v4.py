@@ -16,8 +16,9 @@ NAVY_T = "#0b1426"
 BRANCO = "#f7f5f6"
 SUAVE = "power2.out"
 
-LOGO_DUR = 1.84               # tela da logo do vídeo bruto
-TOTAL = 23.24 + LOGO_DUR
+LOGO_DUR = 4.03               # tela da logo do vídeo bruto (entrada desacelerada + pausa)
+LOGO_INI = 22.80              # a logo começa a aparecer por cima dela
+TOTAL = LOGO_INI + LOGO_DUR
 FALA_FIM = 23.24
 CHART = (4.38, 9.20)          # gráfico em tela cheia
 SPLIT_TOP = 860               # onde começa a metade de baixo (vídeo)
@@ -344,7 +345,7 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
         <video id="fala3" class="clip" src="assets/fala.mp4" data-start="20.00" data-duration="{FALA_FIM-20.0:.2f}" data-media-start="20.00" data-track-index="1" muted playsinline></video>
       </div>
       <!-- Final: tela da logo do vídeo bruto -->
-      <video id="logo-final" class="clip" src="assets/logo_final.mp4" data-start="{FALA_FIM}" data-duration="{LOGO_DUR}" data-track-index="6" muted playsinline></video>
+      <video id="logo-final" class="clip" src="assets/logo_final_lento.mp4" data-start="{LOGO_INI}" data-duration="{LOGO_DUR}" data-track-index="6" muted playsinline></video>
       <!-- Metade de baixo: ela falando -->
       <div id="cam">
         <video id="fala2" class="clip" src="assets/fala.mp4" data-start="{VOLTA-0.1:.2f}" data-duration="{20.6-(VOLTA-0.1):.2f}" data-media-start="{VOLTA-0.1:.2f}" data-track-index="1" muted playsinline></video>
@@ -361,6 +362,8 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       // final: ela volta em tela cheia para o convite
       tl.to("#camcheia", {{ opacity: 1, duration: 0.45, ease: "sine.inOut" }}, 20.06);
       tl.set("#cam", {{ opacity: 0 }}, 20.53);
+      // final: dissolve suave dela para a logo
+      tl.fromTo("#logo-final", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.6, ease: "sine.inOut" }}, {LOGO_INI});
       window.__timelines["main"] = tl;
     </script>
   </body>
