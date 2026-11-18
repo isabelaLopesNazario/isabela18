@@ -20,7 +20,7 @@ LOGO_DUR = 1.84               # tela da logo do vídeo bruto
 TOTAL = 23.24 + LOGO_DUR
 FALA_FIM = 23.24
 CHART = (4.38, 9.20)          # gráfico em tela cheia
-SPLIT_TOP = 980               # onde começa a metade de baixo (vídeo)
+SPLIT_TOP = 860               # onde começa a metade de baixo (vídeo)
 
 BASE_CSS = f"""
     #root {{ position: absolute; inset: 0; }}
@@ -35,6 +35,9 @@ BASE_CSS = f"""
     .card.on {{ border-color: {GOLD}; box-shadow: 0 0 28px rgba(201,173,110,.4), inset 0 0 18px rgba(201,173,110,.1); }}
 """
 
+SOBE = 100                    # quanto as telas animadas sobem
+SEM_SUBIR = {"fundo", "legendas", "progresso"}
+
 def comp(cid, dur, css, body, js, saida=True):
     if saida:  # saída suave de toda a cena
         js += f'\n    tl.to("#{cid}-w", {{ opacity: 0, duration: 0.22, ease: "power2.in" }}, {dur - 0.24:.2f});'
@@ -42,7 +45,7 @@ def comp(cid, dur, css, body, js, saida=True):
   <style>{BASE_CSS}{css}
   </style>
   <div id="root" data-composition-id="{cid}" data-width="1080" data-height="1920">
-    <div id="{cid}-w">
+    <div id="{cid}-w"{"" if cid in SEM_SUBIR else f' style="transform: translateY(-{SOBE}px)"'}>
 {body}
     </div>
   </div>
@@ -84,7 +87,7 @@ comp("fundo", TOTAL, f"""
     .vidro {{ position: absolute; border-radius: 18px; background: rgba(210,220,240,.07); border: 2px solid rgba(255,255,255,.08); filter: blur(1.5px); padding: 18px; }}
     .vidro b {{ display: block; height: 10px; border-radius: 5px; background: rgba(255,255,255,.08); margin: 12px 0; }}
     .vidro b:first-child {{ width: 40%; background: rgba(201,173,110,.18); }}
-    #bg-pill {{ position: absolute; left: 0; top: 292px; width: 1080px; text-align: center; }}
+    #bg-pill {{ position: absolute; left: 0; top: 196px; width: 1080px; text-align: center; }}
     #bg-pill span {{ display: inline-block; padding: 10px 28px; border-radius: 40px; background: rgba(6,11,24,.85); border: 2px solid rgba(255,255,255,.1);
       font-family: "Poppins", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: .2em; color: {BRANCO}; }}
     #bg-pill i {{ display: inline-block; width: 13px; height: 13px; border-radius: 50%; background: {BORDO_L}; margin-right: 14px; vertical-align: 3px;
@@ -188,11 +191,11 @@ comp("problema", 4.35, f"""
 comp("fechamento", 3.05, f"""
     #fc-t {{ top: 390px; font-size: 76px; }}
     .fc-nome {{ position: absolute; left: 180px; font-family: "Poppins", sans-serif; font-weight: 600; font-size: 32px; color: rgba(247,245,246,.85); }}
-    #fc-n1 {{ top: 505px; }}  #fc-n2 {{ top: 615px; }}
+    #fc-n1 {{ top: 522px; }}  #fc-n2 {{ top: 630px; }}
     .fc-barra {{ position: absolute; left: 180px; width: 720px; height: 40px; border-radius: 8px; transform-origin: 0 50%; }}
-    #fc-b1 {{ top: 552px; background: rgba(247,245,246,.9); }}
-    #fc-b2 {{ top: 662px; background: {GOLD}; box-shadow: 0 0 20px rgba(201,173,110,.4); }}
-    #fc-tag {{ position: absolute; left: 0; width: 1080px; top: 740px; text-align: center; font-family: "Poppins", sans-serif; font-weight: 800;
+    #fc-b1 {{ top: 568px; background: rgba(247,245,246,.9); }}
+    #fc-b2 {{ top: 676px; background: {GOLD}; box-shadow: 0 0 20px rgba(201,173,110,.4); }}
+    #fc-tag {{ position: absolute; left: 0; width: 1080px; top: 748px; text-align: center; font-family: "Poppins", sans-serif; font-weight: 800;
       font-size: 34px; letter-spacing: .1em; color: {GOLD}; }}
 """, """      <div id="fc-ct" class="clip" data-start="0" data-duration="3.05"><div id="fc-t" class="tit">Pagando o <span class="ouro">certo</span></div></div>
       <div id="fc-cl" class="clip" data-start="0.5" data-duration="2.55">
@@ -283,7 +286,7 @@ for i, (txt, s) in enumerate(G):
     parts = re.findall(r'\*[^*]+\*|[^\s*]+', txt)
     inner = " ".join(
         f'<span class="w{" hl" if p.startswith("*") else ""}">{html.escape(p.strip("*").upper())}</span>' for p in parts)
-    top = 1500 if (s < CHART[0] or s >= 20.24) else (1200 if s < CHART[1] else 868)
+    top = 1500 if (s < CHART[0] or s >= 20.24) else (1100 if s < CHART[1] else 762)
     divs.append(f'    <div id="lg{i}" class="grupo clip" data-start="{s:.2f}" data-duration="{e-s:.2f}" style="top:{top}px"><div id="lg{i}-i" class="gi">{inner}</div></div>')
     gjs.append(f'    tl.fromTo("#lg{i}-i", {{ opacity: 0, y: 10 }}, {{ opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }}, {s:.2f});')
 comp("legendas", FALA_FIM, f"""
@@ -328,7 +331,7 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       #logo-final {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 8; }}
       #camcheia {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 4; }}
       #camcheia video {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }}
-      #cam video {{ position: absolute; left: 0; top: -500px; width: 1080px; height: 1920px; object-fit: cover; }}
+      #cam video {{ position: absolute; left: 0; top: -420px; width: 1080px; height: 1920px; object-fit: cover; }}
     </style>
   </head>
   <body>
