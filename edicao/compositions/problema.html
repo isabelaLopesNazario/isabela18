@@ -40,12 +40,12 @@
   <script>
     const tl = gsap.timeline({ paused: true });
     tl.fromTo("#pb-t", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, 0.10);
-    tl.fromTo("#pb-c1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 1.38);
+    tl.fromTo("#pb-c1", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.38);
     tl.fromTo("#pb-risco", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "sine.inOut" }, 2.05);
     tl.fromTo("#pb-vs", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power2.out" }, 2.46);
-    tl.fromTo("#pb-c2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 2.70);
+    tl.fromTo("#pb-c2", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 2.70);
     tl.to("#pb-c1", { opacity: 0.45, duration: 0.5, ease: "sine.inOut" }, 3.77);
-    tl.to("#problema-w", { opacity: 0, duration: 0.22, ease: "power2.in" }, 4.11);
+    tl.to("#problema-w", { opacity: 0, duration: 0.32, ease: "sine.inOut" }, 4.01);
     window.__timelines["problema"] = tl;
   </script>
 </template>

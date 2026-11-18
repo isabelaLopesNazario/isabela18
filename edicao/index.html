@@ -25,7 +25,7 @@
       <!-- Começo: ela em tela cheia -->
       <div id="camcheia">
         <video id="fala0" class="clip" src="assets/fala.mp4" data-start="0" data-duration="4.98" data-media-start="0" data-track-index="1" muted playsinline></video>
-        <video id="fala3" class="clip" src="assets/fala.mp4" data-start="19.95" data-duration="3.29" data-media-start="19.95" data-track-index="1" muted playsinline></video>
+        <video id="fala3" class="clip" src="assets/fala.mp4" data-start="20.00" data-duration="3.24" data-media-start="20.00" data-track-index="1" muted playsinline></video>
       </div>
       <!-- Final: tela da logo do vídeo bruto -->
       <video id="logo-final" class="clip" src="assets/logo_final.mp4" data-start="23.24" data-duration="1.84" data-track-index="6" muted playsinline></video>
@@ -45,12 +45,12 @@
     <script>
       const tl = gsap.timeline({ paused: true });
       // gráfico em tela cheia: a metade de baixo desce e depois volta, suave
-      tl.set("#cam", { y: 1070 }, 0);
-      tl.fromTo("#camcheia", { y: 0 }, { y: 1930, duration: 0.6, ease: "power2.inOut" }, 4.38);
-      tl.to("#cam", { y: 0, duration: 0.55, ease: "power2.inOut" }, 9.10);
+      tl.set("#cam", { opacity: 0 }, 0);
+      tl.to("#camcheia", { opacity: 0, duration: 0.55, ease: "sine.inOut" }, 4.38);
+      tl.to("#cam", { opacity: 1, duration: 0.5, ease: "sine.inOut" }, 9.10);
       // final: ela volta em tela cheia para o convite
-      tl.to("#camcheia", { y: 0, duration: 0.55, ease: "power2.inOut" }, 19.95);
-      tl.set("#cam", { opacity: 0 }, 20.52);
+      tl.to("#camcheia", { opacity: 1, duration: 0.45, ease: "sine.inOut" }, 20.06);
+      tl.set("#cam", { opacity: 0 }, 20.53);
       window.__timelines["main"] = tl;
     </script>
   </body>

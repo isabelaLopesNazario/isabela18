@@ -40,7 +40,7 @@ SEM_SUBIR = {"fundo", "legendas", "progresso"}
 
 def comp(cid, dur, css, body, js, saida=True):
     if saida:  # saída suave de toda a cena
-        js += f'\n    tl.to("#{cid}-w", {{ opacity: 0, duration: 0.22, ease: "power2.in" }}, {dur - 0.24:.2f});'
+        js += f'\n    tl.to("#{cid}-w", {{ opacity: 0, duration: 0.32, ease: "sine.inOut" }}, {dur - 0.34:.2f});'
     (C / f"{cid}.html").write_text(f"""<template>
   <style>{BASE_CSS}{css}
   </style>
@@ -57,7 +57,7 @@ def comp(cid, dur, css, body, js, saida=True):
 </template>
 """)
 
-def entra(sel, t, d=0.45, y=24):
+def entra(sel, t, d=0.5, y=14):
     """Entrada suave: sobe um pouco e aparece, sem mola."""
     return f'    tl.fromTo("{sel}", {{ opacity: 0, y: {y} }}, {{ opacity: 1, y: 0, duration: {d}, ease: "{SUAVE}" }}, {t:.2f});'
 
@@ -341,7 +341,7 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       <!-- Começo: ela em tela cheia -->
       <div id="camcheia">
         <video id="fala0" class="clip" src="assets/fala.mp4" data-start="0" data-duration="{SAI+0.6:.2f}" data-media-start="0" data-track-index="1" muted playsinline></video>
-        <video id="fala3" class="clip" src="assets/fala.mp4" data-start="19.95" data-duration="{FALA_FIM-19.95:.2f}" data-media-start="19.95" data-track-index="1" muted playsinline></video>
+        <video id="fala3" class="clip" src="assets/fala.mp4" data-start="20.00" data-duration="{FALA_FIM-20.0:.2f}" data-media-start="20.00" data-track-index="1" muted playsinline></video>
       </div>
       <!-- Final: tela da logo do vídeo bruto -->
       <video id="logo-final" class="clip" src="assets/logo_final.mp4" data-start="{FALA_FIM}" data-duration="{LOGO_DUR}" data-track-index="6" muted playsinline></video>
@@ -355,12 +355,12 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
     <script>
       const tl = gsap.timeline({{ paused: true }});
       // gráfico em tela cheia: a metade de baixo desce e depois volta, suave
-      tl.set("#cam", {{ y: {1920-SPLIT_TOP+10} }}, 0);
-      tl.fromTo("#camcheia", {{ y: 0 }}, {{ y: 1930, duration: 0.6, ease: "power2.inOut" }}, {SAI:.2f});
-      tl.to("#cam", {{ y: 0, duration: 0.55, ease: "power2.inOut" }}, {VOLTA-0.1:.2f});
+      tl.set("#cam", {{ opacity: 0 }}, 0);
+      tl.to("#camcheia", {{ opacity: 0, duration: 0.55, ease: "sine.inOut" }}, {SAI:.2f});
+      tl.to("#cam", {{ opacity: 1, duration: 0.5, ease: "sine.inOut" }}, {VOLTA-0.1:.2f});
       // final: ela volta em tela cheia para o convite
-      tl.to("#camcheia", {{ y: 0, duration: 0.55, ease: "power2.inOut" }}, 19.95);
-      tl.set("#cam", {{ opacity: 0 }}, 20.52);
+      tl.to("#camcheia", {{ opacity: 1, duration: 0.45, ease: "sine.inOut" }}, 20.06);
+      tl.set("#cam", {{ opacity: 0 }}, 20.53);
       window.__timelines["main"] = tl;
     </script>
   </body>
