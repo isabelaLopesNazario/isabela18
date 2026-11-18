@@ -196,22 +196,20 @@ comp("cta", 3.0, f"""
     #ct-av {{ position: absolute; left: 440px; top: 380px; width: 200px; height: 200px; border-radius: 50%; overflow: hidden;
       border: 6px solid {GOLD}; box-shadow: 0 0 30px rgba(201,173,110,.5); }}
     #ct-av img {{ width: 100%; height: 100%; display: block; }}
-    #ct-t {{ top: 610px; font-size: 88px; }}
-    #ct-s {{ position: absolute; left: 0; top: 812px; width: 1080px; text-align: center; font-family: "Poppins", sans-serif; font-weight: 600;
+    #ct-t {{ top: 400px; font-size: 88px; }}
+    #ct-s {{ position: absolute; left: 0; top: 600px; width: 1080px; text-align: center; font-family: "Poppins", sans-serif; font-weight: 600;
       font-size: 30px; color: rgba(247,245,246,.85); }}
-    #ct-bw {{ position: absolute; left: 0; top: 890px; width: 1080px; text-align: center; }}
+    #ct-bw {{ position: absolute; left: 0; top: 670px; width: 1080px; text-align: center; }}
     #ct-btn {{ display: inline-block; position: relative; padding: 22px 52px; border-radius: 60px; border: 4px solid {GOLD}; background: rgba(8,14,30,.85);
       font-family: "Poppins", sans-serif; font-weight: 800; font-size: 36px; letter-spacing: .06em; color: {GOLD}; }}
     #ct-btn2 {{ position: absolute; inset: -4px; border-radius: 60px; background: {GOLD}; color: {NAVY_T}; padding: 22px 0; text-align: center; }}
-    #ct-cur {{ position: absolute; left: 690px; top: 960px; width: 64px; }}
+    #ct-cur {{ position: absolute; left: 690px; top: 740px; width: 64px; }}
 """, f"""    <div id="ct-c" class="clip" data-start="0" data-duration="3">
-      <div id="ct-av"><img src="assets/avatar.png" alt="" /></div>
       <div id="ct-t" class="tit">Agende uma <span class="ouro">análise</span></div>
       <div id="ct-s">com a PHcont · link aqui embaixo</div>
       <div id="ct-bw"><span id="ct-btn">AGENDAR ANÁLISE<span id="ct-btn2">✓ LINK NA BIO</span></span></div>
       <svg id="ct-cur" viewBox="0 0 24 24"><path d="M4 2 L4 20 L9 15 L12.5 22 L15.5 20.6 L12 13.8 L19 13.8 Z" fill="#fff" stroke="#0b1426" stroke-width="1.4" stroke-linejoin="round"/></svg>
     </div>""", "\n".join([
-    pop("#ct-av", 0.0, 0.4),
     blur_in("#ct-t", 0.08),
     blur_in("#ct-s", 0.9, 0.2, 6),
     pop("#ct-btn", 1.2, 0.3),
@@ -251,10 +249,11 @@ for i, (txt, s) in enumerate(G):
     parts = re.findall(r'\*[^*]+\*|[^\s*]+', txt)
     inner = " ".join(
         f'<span class="w{" hl" if p.startswith("*") else ""}">{html.escape(p.strip("*").upper())}</span>' for p in parts)
-    divs.append(f'    <div id="lg{i}" class="grupo clip" data-start="{s:.2f}" data-duration="{e-s:.2f}"><div id="lg{i}-i" class="gi">{inner}</div></div>')
+    top = 868 if s >= 20.24 else 1360
+    divs.append(f'    <div id="lg{i}" class="grupo clip" data-start="{s:.2f}" data-duration="{e-s:.2f}" style="top:{top}px"><div id="lg{i}-i" class="gi">{inner}</div></div>')
     gjs.append(f'    tl.fromTo("#lg{i}-i", {{ opacity: 0, scale: 0.9 }}, {{ opacity: 1, scale: 1, duration: 0.1, ease: "power3.out" }}, {s:.2f});')
 comp("legendas", FALA_FIM, f"""
-    .grupo {{ position: absolute; left: 0; top: 1130px; width: 1080px; height: 110px; text-align: center; overflow: visible; }}
+    .grupo {{ position: absolute; left: 0; width: 1080px; height: 110px; text-align: center; overflow: visible; }}
     .gi {{ display: inline-block; font-family: "Poppins", sans-serif; font-weight: 800; font-size: 58px; line-height: 1.3; color: {BRANCO};
       white-space: nowrap; letter-spacing: .01em; text-shadow: 0 4px 16px rgba(0,0,0,.7), 0 0 3px rgba(0,0,0,.6); }}
     .w {{ margin: 0 4px; }}
@@ -290,6 +289,8 @@ hosts += [host("legendas", 0, FALA_FIM, 5, 3, "captions"), host("progresso", 0, 
       #root {{ position: relative; width: 100%; height: 100%; overflow: hidden; }}
       #cam {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 2; }}
       #cam video {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }}
+      #cam2 {{ position: absolute; left: 0; top: 980px; width: 1080px; height: 940px; overflow: hidden; z-index: 4; border-top: 6px solid #c9ad6e; }}
+      #cam2 video {{ position: absolute; left: 0; top: -500px; width: 1080px; height: 1920px; object-fit: cover; }}
     </style>
   </head>
   <body>
@@ -299,6 +300,10 @@ hosts += [host("legendas", 0, FALA_FIM, 5, 3, "captions"), host("progresso", 0, 
       <!-- Trechos em que ela aparece em tela cheia -->
       <div id="cam">
 {videos}
+      </div>
+      <!-- Tela dividida do final: ela embaixo -->
+      <div id="cam2">
+        <video id="f4" class="clip" src="assets/fala.mp4" data-start="20.24" data-duration="3.00" data-media-start="20.24" data-track-index="1" muted playsinline></video>
       </div>
 {chr(10).join(hosts)}
     </div>
@@ -314,6 +319,9 @@ hosts += [host("legendas", 0, FALA_FIM, 5, 3, "captions"), host("progresso", 0, 
       // f3: punch-in em "exatamente"
       tl.set("#cam", {{ scale: 1.1 }}, 15.16);
       tl.set("#cam", {{ scale: 1 }}, 16.60);
+      // final: a metade de baixo sobe para entrar
+      tl.fromTo("#cam2", {{ y: 940 }}, {{ y: 0, duration: 0.45, ease: "power3.out" }}, 20.24);
+      tl.set("#cam2", {{ y: 940 }}, 23.24);
       window.__timelines["main"] = tl;
     </script>
   </body>

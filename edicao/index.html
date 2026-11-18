@@ -10,6 +10,8 @@
       #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
       #cam { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 2; }
       #cam video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+      #cam2 { position: absolute; left: 0; top: 980px; width: 1080px; height: 940px; overflow: hidden; z-index: 4; border-top: 6px solid #c9ad6e; }
+      #cam2 video { position: absolute; left: 0; top: -500px; width: 1080px; height: 1920px; object-fit: cover; }
     </style>
   </head>
   <body>
@@ -21,6 +23,10 @@
         <video id="f1" class="clip" src="assets/fala.mp4" data-start="2.07" data-duration="2.31" data-media-start="2.07" data-track-index="1" muted playsinline></video>
         <video id="f2" class="clip" src="assets/fala.mp4" data-start="9.20" data-duration="1.38" data-media-start="9.20" data-track-index="1" muted playsinline></video>
         <video id="f3" class="clip" src="assets/fala.mp4" data-start="13.55" data-duration="3.05" data-media-start="13.55" data-track-index="1" muted playsinline></video>
+      </div>
+      <!-- Tela dividida do final: ela embaixo -->
+      <div id="cam2">
+        <video id="f4" class="clip" src="assets/fala.mp4" data-start="20.24" data-duration="3.00" data-media-start="20.24" data-track-index="1" muted playsinline></video>
       </div>
       <div id="fundo" data-composition-id="fundo" data-composition-src="compositions/fundo.html" data-start="0.00" data-duration="25.64" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:1"></div>
       <div id="abertura" data-composition-id="abertura" data-composition-src="compositions/abertura.html" data-start="0.00" data-duration="2.07" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
@@ -44,6 +50,9 @@
       // f3: punch-in em "exatamente"
       tl.set("#cam", { scale: 1.1 }, 15.16);
       tl.set("#cam", { scale: 1 }, 16.60);
+      // final: a metade de baixo sobe para entrar
+      tl.fromTo("#cam2", { y: 940 }, { y: 0, duration: 0.45, ease: "power3.out" }, 20.24);
+      tl.set("#cam2", { y: 940 }, 23.24);
       window.__timelines["main"] = tl;
     </script>
   </body>
