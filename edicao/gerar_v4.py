@@ -282,7 +282,7 @@ for i, (txt, s) in enumerate(G):
     parts = re.findall(r'\*[^*]+\*|[^\s*]+', txt)
     inner = " ".join(
         f'<span class="w{" hl" if p.startswith("*") else ""}">{html.escape(p.strip("*").upper())}</span>' for p in parts)
-    top = 1200 if CHART[0] <= s < CHART[1] else 868
+    top = 1500 if s < CHART[0] else (1200 if s < CHART[1] else 868)
     divs.append(f'    <div id="lg{i}" class="grupo clip" data-start="{s:.2f}" data-duration="{e-s:.2f}" style="top:{top}px"><div id="lg{i}-i" class="gi">{inner}</div></div>')
     gjs.append(f'    tl.fromTo("#lg{i}-i", {{ opacity: 0, y: 10 }}, {{ opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }}, {s:.2f});')
 comp("legendas", FALA_FIM, f"""
@@ -304,7 +304,7 @@ def host(cid, s, d, z, track, kind="graphics"):
     return (f'      <div id="{cid}" data-composition-id="{cid}" data-composition-src="compositions/{cid}.html" data-start="{s:.2f}" '
             f'data-duration="{d:.2f}" data-track-index="{track}" data-track-kind="{kind}" data-width="1080" data-height="1920" style="z-index:{z}"></div>')
 
-CENAS = [("abertura", 0.0, 2.07), ("planejamento", 2.07, 4.38), ("caixa", 4.38, 9.20), ("problema", 9.20, 13.55),
+CENAS = [("caixa", 4.38, 9.20), ("problema", 9.20, 13.55),
          ("fechamento", 13.55, 16.60), ("lista", 16.60, 20.24), ("cta", 20.24, 23.24), ("vinheta", 23.24, TOTAL)]
 hosts = [host("fundo", 0, TOTAL, 1, 0)]
 hosts += [host(m, s, e - s, 3, 2) for m, s, e in CENAS]
@@ -322,6 +322,8 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       #root {{ position: relative; width: 100%; height: 100%; overflow: hidden; }}
       #cam {{ position: absolute; left: 0; top: {SPLIT_TOP}px; width: 1080px; height: {1920-SPLIT_TOP}px; overflow: hidden; z-index: 4;
         border-top: 6px solid {GOLD}; }}
+      #camcheia {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 4; }}
+      #camcheia video {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }}
       #cam video {{ position: absolute; left: 0; top: -500px; width: 1080px; height: 1920px; object-fit: cover; }}
     </style>
   </head>
@@ -329,9 +331,12 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
     <div id="root" data-composition-id="main" data-start="0" data-duration="{TOTAL}" data-width="1080" data-height="1920">
       <!-- Voz da apresentadora (contínua) -->
       <audio id="voz" class="clip" src="assets/fala.mp4" data-start="0" data-duration="{FALA_FIM}" data-track-index="5" data-volume="1"></audio>
+      <!-- Começo: ela em tela cheia -->
+      <div id="camcheia">
+        <video id="fala0" class="clip" src="assets/fala.mp4" data-start="0" data-duration="{SAI+0.6:.2f}" data-media-start="0" data-track-index="1" muted playsinline></video>
+      </div>
       <!-- Metade de baixo: ela falando -->
       <div id="cam">
-        <video id="fala1" class="clip" src="assets/fala.mp4" data-start="0" data-duration="{SAI+0.6:.2f}" data-media-start="0" data-track-index="1" muted playsinline></video>
         <video id="fala2" class="clip" src="assets/fala.mp4" data-start="{VOLTA-0.1:.2f}" data-duration="{FALA_FIM-(VOLTA-0.1):.2f}" data-media-start="{VOLTA-0.1:.2f}" data-track-index="1" muted playsinline></video>
       </div>
 {chr(10).join(hosts)}
@@ -339,7 +344,8 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
     <script>
       const tl = gsap.timeline({{ paused: true }});
       // gráfico em tela cheia: a metade de baixo desce e depois volta, suave
-      tl.fromTo("#cam", {{ y: 0 }}, {{ y: {1920-SPLIT_TOP+10}, duration: 0.55, ease: "power2.inOut" }}, {SAI:.2f});
+      tl.set("#cam", {{ y: {1920-SPLIT_TOP+10} }}, 0);
+      tl.fromTo("#camcheia", {{ y: 0 }}, {{ y: 1930, duration: 0.6, ease: "power2.inOut" }}, {SAI:.2f});
       tl.to("#cam", {{ y: 0, duration: 0.55, ease: "power2.inOut" }}, {VOLTA-0.1:.2f});
       // vinheta em tela cheia
       tl.to("#cam", {{ opacity: 0, duration: 0.35, ease: "sine.inOut" }}, {FALA_FIM-0.5:.2f});
