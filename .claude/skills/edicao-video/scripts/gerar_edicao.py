@@ -407,7 +407,10 @@ def aplicar_marca(texto):
         return f"rgba({R},{G_},{B},"
     texto = re.sub(r"rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,", _rgba, texto)
     texto = texto.replace(REF["pilula"], MARCA["pilula"]).replace(REF["nome"], MARCA["nome"])
-    return texto.replace(REF["logo"], MARCA["logo"])
+    texto = texto.replace(REF["logo"], MARCA["logo"])
+    if MARCA.get("css_extra"):            # ajustes de estilo da marca (ex.: título em itálico)
+        texto = texto.replace("  </style>", f"    {MARCA['css_extra']}\n  </style>", 1)
+    return texto
 
 usadas = {"fundo", "legendas", "progresso"} | {c for c, _, _ in CENAS}
 for f in C.glob("*.html"):

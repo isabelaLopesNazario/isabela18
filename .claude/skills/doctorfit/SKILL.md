@@ -17,35 +17,30 @@ a logo nem o nome da PHcont num vídeo da DoctorFit.
 Pastas da DoctorFit no repositório: `doctorfit/bruto/`, `doctorfit/trabalho/`, `doctorfit/edicao/`,
 `doctorfit/final/`, `doctorfit/estilo/`.
 
-## Status: identidade ainda não preenchida
+## Identidade (preenchida a partir da logo, do feed e das amostras da cliente)
 
-O `marca.json` está marcado com `"_a_preencher"`, e o gerador se recusa a rodar enquanto isso existir. Antes do
-primeiro vídeo, peça à pessoa:
-1. **A logo** (PNG, de preferência com fundo transparente).
-2. **As cores** da marca, se souber os códigos. Se não souber, tire da logo e do feed.
-3. **Print do feed do Instagram** da DoctorFit.
+Material salvo em `doctorfit/estilo/` (logo original, feed, referências e `previa_cores.png`). A logo com fundo
+transparente está em `assets/logo_transparente.png`. No projeto, copie para `edicao/assets/logo_doctorfit.png`.
 
-Com o material em mãos:
-- Tire a paleta amostrando pixels da logo e do feed, como foi feito para a PHcont.
-- Faça a logo com fundo transparente (quando vier sobre fundo preto: alpha = máximo dos canais RGB). Salve em
-  `assets/` desta skill e em `doctorfit/estilo/marca/`.
-- Preencha **todas** as chaves de cor do `marca.json`, mapeando pelo papel de cada cor:
+**Visual da marca:** fundo preto/grafite, **verde-limão neon** como destaque, texto branco. Os títulos do feed são em
+letra condensada **em itálico** e caixa-alta (branco + palavra-chave em limão), com um tracinho limão embaixo e curvas
+limão decorativas. O tom é energético e motivacional ("MotivAÇÃO, DedicAÇÃO…", "ON foco / OFF desculpas").
 
-| Chave | Papel no vídeo |
-|---|---|
-| `destaque` | cor de destaque: palavra-chave do título, caixa da legenda, barras e bordas ativas, barra de progresso |
-| `texto_sobre_destaque` | texto dentro da caixa de destaque (precisa de bom contraste com `destaque`) |
-| `negativo`, `negativo_claro`, `negativo_texto` | lado "ruim" das comparações (VS), etiqueta, ponto da pílula |
-| `texto` | texto principal (normalmente branco) |
-| `fundo_centro`, `fundo_meio`, `fundo_borda` | degradê do fundo das telas animadas (do centro para a borda) |
-| `escuro`, `cartao`, `pilula_fundo` | sombra da divisão, fundo dos cartões e da pílula (tons bem escuros da cor de fundo) |
-| `grade`, `estrela`, `vidro` | detalhes do fundo: grade em perspectiva, pontinhos de luz, vidros translúcidos |
+| Cor | Hex | De onde veio | Uso |
+|---|---|---|---|
+| Verde-limão | `#CCF200` | feed (logo `#D0EC5C`) | destaque: títulos, caixa da legenda, barras, bordas ativas, barra de progresso |
+| Preto | `#0C0C0C` | feed | texto sobre o limão, base dos fundos |
+| Branco | `#F8F8F8` | logo | texto principal |
+| Verde-escuro | `#447038` | amostra da cliente | tom do brilho no centro do fundo (`fundo_centro` `#1D2A18`) |
+| Verde | `#50B434` | amostra da cliente | grade em perspectiva do fundo |
+| Vermelho | `#D63A3A` | referência ON/OFF | lado negativo das comparações (o "OFF") |
 
-- Mostre à pessoa uma prévia (snapshot de uma tela animada e de uma tela dividida) para aprovar as cores.
-- Remova a chave `"_a_preencher"` e atualize esta seção com a paleta aprovada.
+Fontes: títulos em Oswald 700 **itálico** (`css_extra` no `marca.json`), legenda e cartões em Poppins.
 
-Se a DoctorFit tiver uma tela de logo no fim do vídeo bruto, use ela como na PHcont (desacelerada e parada ~2 s).
-Se não tiver, faça a logo surgir com uma dissolvência suave sobre o fundo da marca.
+Tudo isso está no `marca.json`. O gerador da `edicao-video` aplica sozinho.
+
+**A confirmar com a cliente:** se a tela final usa a logo do próprio vídeo bruto (como na PHcont) ou uma vinheta
+animada da logo sobre o fundo preto, e qual é a chamada final padrão (o feed usa "Agende sua aula experimental!").
 
 ## Preferências da cliente para a DoctorFit
 
