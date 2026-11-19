@@ -23,6 +23,14 @@ Takes de meme enviados (`mana/memes/`, gravações de tela — recorte a área �
 | `meme2.mov` | cachorro com sorrisinho debochado | 6,2 s (usar ~1,5–2 s) | `crop=1130:1460:72:382` | reação de deboche: quando ele percebe a voz fina ou quando ela tenta falar sério |
 | `meme3.mov` | créditos "Directed by Robert B. Weide" (fim de cena constrangedora) | 6,7 s | tela preta com texto (sem crop; cortar o topo com o texto "memes para poner…") | **final do vídeo**, logo depois do momento mais constrangedor |
 
+**Título escolhido pela usuária (texto no topo, o vídeo todo):**
+"EU ACHANDO QUE TÔ ARRASANDO, ENQUANTO TODO MUNDO RI DA MINHA VOZ" (usar exatamente assim, em maiúsculas, com
+emoji 💀 ou 😭 opcional no fim; letra grossa estilo TikTok, branca com contorno preto, em 2–3 linhas, no alto sem cobrir os rostos).
+
+Status: o arquivo recebido pelo chat veio **com só 2,7 s de imagem** (áudio completo de 72 s). Aguardando o original pelo Drive.
+Transcrição do áudio em `mana/trabalho/transcricao_audio.json` (momentos-chave: 6,9 s "Oi, gentiiim"; 36 s "Eu curto sua
+voz, né?"; 45–47 s "Alguém grava isso aí"; 50 s "Eu não acredito, ninguém falou nada pra mim"; 69 s "Eu não sabia, eu juro por Deus").
+
 Ideias de edição de humor:
 - **Gancho nos 2 primeiros segundos:** o momento mais engraçado (a risada ou a voz fina mais aguda) antes do contexto.
 - Texto de contexto curto no topo ("quando você testa o microfone… e esquece de desligar 💀").
