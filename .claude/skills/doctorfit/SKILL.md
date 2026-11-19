@@ -100,7 +100,7 @@ num histórico nesta seção (data, tema, estilo, o que foi novo).
 
 | Entrega | Arquivo | Estilo |
 |---|---|---|
-| Capa do feed: Novembro Azul (1080x1440, 3:4) | `doctorfit/final/doctorfit_novembro_azul_capa.png`, fonte `doctorfit/capas/novembro_azul/capa2.html` | **modelo da própria cliente** (`estilo/referencias/capas/ref_novembro_azul_cliente.png`): logo no alto à esquerda, título Anton inclinado em 2 linhas (branco + verde-limão), traço limão, subtítulo Poppins itálico, laço azul grande à direita, curvas limão nos cantos, foto inteira com só o alto escurecido |
+| Capa do feed: Novembro Azul (1080x1440, 3:4) — **APROVADA** | `doctorfit/final/doctorfit_novembro_azul_capa.png`, fonte `doctorfit/capas/novembro_azul/capa2.html` | **modelo da própria cliente** (`estilo/referencias/capas/ref_novembro_azul_cliente.png`): logo no alto à esquerda, título Anton inclinado em 2 linhas (branco + verde-limão), traço limão, subtítulo Poppins itálico, **laço 3D recortado da referência** (`laco_final.png`) colado ao título, curvas limão nos cantos, foto inteira com o alto escurecido, frase de fechamento centralizada no pé com degradê |
 
 ## Preferências da cliente para a DoctorFit
 
