@@ -90,7 +90,7 @@ estrelas = "\n".join(
 vidros = [(-60, 360, 330, 230), (760, 230, 300, 210), (40, 1380, 360, 250), (700, 1250, 340, 240), (860, 880, 260, 180)]
 vid_html = "\n".join(f'        <div id="bg-v{i}" class="vidro" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px"><b></b><b></b><b></b></div>'
                      for i, (x, y, w, h) in enumerate(vidros))
-vid_js = '    tl.fromTo("#bg-luz", { x: 0 }, { x: 2600, duration: 9, ease: "none", repeat: 2 }, 0);\n' + "\n".join(
+vid_js = "\n".join(
     f'    tl.fromTo("#bg-v{i}", {{ x: 0, y: 0 }}, {{ x: {random.choice([-1,1])*random.randint(30,60)}, y: {random.choice([-1,1])*random.randint(40,90)}, duration: {TOTAL}, ease: "none" }}, 0);'
     for i in range(len(vidros)))
 comp("fundo", TOTAL, f"""
@@ -106,7 +106,11 @@ comp("fundo", TOTAL, f"""
     .vidro b:first-child {{ width: 40%; background: rgba(201,173,110,.18); }}
     .vidro {{ display: none; }}
     #bg-pill {{ display: none; }}
-    #bg-luz {{ position: absolute; left: -900px; top: -400px; width: 700px; height: 2800px; }}
+    #bg-luz {{ display: none; }}
+    .st {{ display: none; }}
+    #bg::after {{ content: ""; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,.055) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,.055) 2px, transparent 2px);
+      background-size: 54px 54px; }}
     #bg-luz b {{ position: absolute; inset: 0; transform: rotate(24deg);
       background: linear-gradient(90deg, rgba(201,173,110,0) 0%, rgba(201,173,110,.10) 45%, rgba(255,240,210,.16) 50%, rgba(201,173,110,.10) 55%, rgba(201,173,110,0) 100%); }}
     #bg-pill {{ position: absolute; left: 0; top: 172px; width: 1080px; text-align: center; }}
@@ -123,119 +127,124 @@ comp("fundo", TOTAL, f"""
       </div>
     </div>""", vid_js, saida=False)
 
-# ================================================================ cenas do vídeo 2 (Regularização) — ESTILO B: editorial com ícones
-# Faixa de cima menor (0–700): conteúdo entre y 230 e 590; legenda em y ≈ 612.
+# ================================================================ cenas do vídeo 2 — ESTILO C: rascunho à mão + mapa + texto atrás dela
+# Faixa de cima (0–700): conteúdo entre y 200 e 590; legenda em y ≈ 612. Diagnóstico em tela cheia.
 
-def icone(nome, tam=96):
-    """Ícones de traço fino dourado, desenhados aqui (sem imagens externas)."""
-    p = {
-        "lupa": '<circle cx="42" cy="42" r="26"/><line x1="61" y1="61" x2="86" y2="86"/><path d="M30 42 l8 8 l16 -18"/>',
-        "documento": '<path d="M24 10 h38 l18 18 v62 h-56 z"/><path d="M62 10 v18 h18"/><path d="M36 58 l10 10 l20 -22"/>',
-        "predio": '<path d="M18 90 v-62 l30 -16 l30 16 v62"/><line x1="10" y1="90" x2="86" y2="90"/><path d="M36 42 h8 M52 42 h8 M36 58 h8 M52 58 h8"/><path d="M42 90 v-16 h12 v16"/>',
-        "escudo": '<path d="M48 8 l34 12 v26 c0 22 -15 36 -34 44 c-19 -8 -34 -22 -34 -44 v-26 z"/><path d="M34 48 l10 10 l20 -22"/>',
-    }[nome]
-    return (f'<svg class="ic" width="{tam}" height="{tam}" viewBox="0 0 96 96" fill="none" stroke="{GOLD}" stroke-width="4" '
-            f'stroke-linecap="round" stroke-linejoin="round">{p}</svg>')
-
-EST_B = f"""
-    .ed {{ position: absolute; left: 140px; width: 800px; text-align: center; font-family: "Playfair Display", serif; color: {BRANCO};
-      line-height: 1.05; text-shadow: 0 6px 30px rgba(0,0,0,.45); }}
-    .ed em {{ font-style: italic; color: {GOLD}; }}
-    .ic-w {{ position: absolute; left: 0; width: 1080px; text-align: center; }}
-    .ic {{ display: inline-block; filter: drop-shadow(0 0 14px rgba(201,173,110,.35)); }}
-    .chips {{ position: absolute; left: 0; width: 1080px; display: flex; justify-content: center; gap: 18px; }}
-    .chip {{ display: inline-flex; align-items: center; gap: 12px; padding: 14px 24px; border-radius: 40px; border: 2px solid rgba(201,173,110,.55);
-      background: rgba(8,14,30,.55); font-family: "Poppins", sans-serif; font-weight: 700; font-size: 30px; color: {BRANCO}; white-space: nowrap; }}
-    .chip .ok {{ width: 34px; height: 34px; border-radius: 50%; background: {GOLD}; color: {NAVY_T}; font-size: 22px; font-weight: 800;
-      text-align: center; line-height: 34px; }}
-    .chip.x {{ border-color: {BORDO_L}; color: #e5a3aa; position: relative; }}
-    .chip.x i {{ position: absolute; left: 18px; right: 18px; top: 50%; height: 5px; background: #d0606c; transform-origin: 0 50%; }}
-    .regua {{ position: absolute; left: 470px; width: 140px; height: 3px; background: {GOLD}; transform-origin: 50% 50%; }}
+FONTE_MAO = '@font-face { font-family: "Caveat"; src: url("assets/fonts/caveat.woff2") format("woff2"); font-weight: 400 700; }'
+EST_C = f"""
+    {FONTE_MAO}
+    .mao {{ font-family: "Caveat", cursive; font-weight: 700; color: {GOLD}; }}
+    .tt {{ position: absolute; left: 140px; width: 800px; text-align: center; font-family: "Oswald", sans-serif; font-weight: 700;
+      text-transform: uppercase; color: {BRANCO}; line-height: 1.02; }}
+    .tt em {{ font-family: "Caveat", cursive; font-style: normal; text-transform: none; color: {GOLD}; font-size: 1.25em; }}
+    .rab {{ position: absolute; overflow: visible; }}
+    .rab path, .rab circle, .rab rect, .rab line {{ fill: none; stroke: {BRANCO}; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }}
+    .rab .ouro {{ stroke: {GOLD}; }}
+    .rab .bordo {{ stroke: #d0606c; stroke-width: 6; }}
 """
 
-def desenha(sel, t, d=0.9):
-    """Ícone 'se desenha' (traço aparecendo) e acende."""
-    return (f'    tl.fromTo("{sel} .ic *", {{ strokeDasharray: 300, strokeDashoffset: 300 }}, '
-            f'{{ strokeDashoffset: 0, duration: {d}, ease: "sine.inOut", stagger: 0.08 }}, {t:.2f});')
+def risca(sel, t, d=0.8, stagger=0.06):
+    """O traço do rabisco aparece como se estivesse sendo desenhado."""
+    return (f'    tl.fromTo("{sel}", {{ strokeDasharray: 1400, strokeDashoffset: 1400 }}, '
+            f'{{ strokeDashoffset: 0, duration: {d}, ease: "sine.inOut", stagger: {stagger} }}, {t:.2f});')
 
-def palavra_a_palavra(sel, t, passo=0.09):
-    return (f'    tl.fromTo("{sel} .w", {{ opacity: 0, y: 12, filter: "blur(6px)" }}, '
-            f'{{ opacity: 1, y: 0, filter: "blur(0px)", duration: 0.35, ease: "power2.out", stagger: {passo} }}, {t:.2f});')
+def svg(id_, x, y, w, h, corpo):
+    return f'<svg id="{id_}" class="rab" style="left:{x}px;top:{y}px" width="{w}" height="{h}" viewBox="0 0 {w} {h}">{corpo}</svg>'
 
-def ws(txt):
-    """Quebra o título em palavras animáveis; *x* vira itálico dourado."""
-    out = []
-    for p in re.findall(r"\*[^*]+\*|\S+", txt):
-        if p.startswith("*"):
-            out.append(f'<span class="w" style="display:inline-block"><em>{html.escape(p.strip("*"))}</em></span>')
-        else:
-            out.append(f'<span class="w" style="display:inline-block">{html.escape(p)}</span>')
-    return " ".join(out)
+# ---------------------------------------------------------------- texto ATRÁS dela no gancho (0–5.64)
+comp("atras", 5.64, f"""
+    #at-sombra {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1000px;
+      background: linear-gradient(180deg, rgba(9,16,34,.78) 0%, rgba(9,16,34,.55) 45%, rgba(9,16,34,0) 100%); }}
+    .gig {{ position: absolute; left: 60px; width: 960px; text-align: center; font-family: "Oswald", sans-serif; font-weight: 700;
+      text-transform: uppercase; line-height: .9; letter-spacing: -.01em; color: rgba(247,245,246,.92); }}
+    .gig em {{ font-style: normal; color: {GOLD}; }}
+""", """      <div id="at-s" class="clip" data-start="0.4" data-duration="5.24"><div id="at-sombra"></div></div>
+      <div id="at-1" class="clip" data-start="0.55" data-duration="1.9"><div id="at-1i" class="gig" style="top:250px;font-size:250px">PEN<br>DÊNCIA?</div></div>
+      <div id="at-2" class="clip" data-start="2.45" data-duration="1.8"><div id="at-2i" class="gig" style="top:280px;font-size:230px">TRA<br><em>VADA?</em></div></div>
+      <div id="at-3" class="clip" data-start="4.25" data-duration="1.39"><div id="at-3i" class="gig" style="top:280px;font-size:200px">REGIME<br><em>ERRADO?</em></div></div>""",
+     "\n".join(['    tl.fromTo("#at-sombra", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "sine.inOut" }, 0.4);', foco("#at-1i", 0.55, 0.35), foco("#at-2i", 2.45, 0.3), foco("#at-3i", 4.25, 0.3), '    tl.to("#atras-w", { opacity: 0, duration: 0.5, ease: "sine.inOut" }, 5.04);']))
 
-# diagnóstico (TELA CHEIA) 5.04–9.91  local: diagnóstico 0.99 ; fiscal 1.81 ; cadastral 2.39 ; societário 3.12
+# ---------------------------------------------------------------- MAPA do diagnóstico (TELA CHEIA) 5.04–9.91
+# local: diagnóstico 0.99 ; fiscal 1.81 ; cadastral 2.39 ; societário 3.12
 D_DUR = 4.87
-dg_itens = [("01", "Fiscal", "impostos e obrigações", 1.81), ("02", "Cadastral", "CNPJ, inscrições e certidões", 2.39),
-            ("03", "Societário", "contrato social e sócios", 3.12)]
-body = [f'      <div id="dg-c0" class="clip" data-start="0.1" data-duration="{D_DUR-0.1:.2f}">',
-        f'        <div id="dg-ic" class="ic-w" style="top:236px">{icone("lupa", 100)}</div>',
-        f'        <div id="dg-t" class="ed" style="top:350px;font-size:80px">{ws("Diagnóstico da sua *empresa*")}</div>',
-        '        <div id="dg-r" class="regua" style="top:545px"></div>',
+CX, CY = 540, 880                       # centro do mapa (ela)
+nos = [("fiscal", 230, 650, "FISCAL", "impostos e obrigações", 1.81),
+       ("cadastral", 850, 650, "CADASTRAL", "CNPJ e certidões", 2.39),
+       ("societario", 540, 1200, "SOCIETÁRIO", "contrato e sócios", 3.12)]
+def _ramo(i, x, y):
+    import math
+    dx, dy = x - CX, y - CY; L = math.hypot(dx, dy); ux, uy = dx / L, dy / L
+    x0, y0 = CX + ux * 168, CY + uy * 168          # sai da borda da foto dela
+    x1, y1 = x - ux * 96, y - uy * 96              # chega na borda do círculo do tema
+    mx, my = (x0 + x1) / 2 - uy * 28, (y0 + y1) / 2 + ux * 28
+    return f'<path id="mp-l{i}" class="ouro" d="M{x0:.0f} {y0:.0f} Q {mx:.0f} {my:.0f} {x1:.0f} {y1:.0f}"/>'
+ramos = "".join(_ramo(i, x, y) for i, (_, x, y, *_r) in enumerate(nos))
+body = [f'      <div id="mp-ct" class="clip" data-start="0.15" data-duration="{D_DUR-0.15:.2f}">',
+        '        <div id="mp-t" class="tt" style="top:300px;font-size:74px">Diagnóstico da sua <em>empresa</em></div>',
+        f'        {svg("mp-ramos", 0, 0, 1080, 1300, ramos)}',
+        f'        <img id="mp-ela" src="assets/ela_circulo.png" style="position:absolute;left:{CX-160}px;top:{CY-160}px;width:320px;height:320px;border-radius:50%;box-shadow:0 0 0 6px rgba(201,173,110,.35)">',
+        f'        <div id="mp-nota" class="mao" style="position:absolute;left:{CX+150}px;top:{CY+110}px;font-size:48px;transform:rotate(-6deg)">a gente<br>analisa tudo</div>',
         '      </div>']
-js = [desenha("#dg-ic", 0.1, 1.0), palavra_a_palavra("#dg-t", 0.35),
-      '    tl.fromTo("#dg-r", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "sine.inOut" }, 0.9);']
-for i, (n, a, b, t) in enumerate(dg_itens):
-    top = 590 + i * 150
-    body.append(f'      <div id="dg-c{i+1}" class="clip" data-start="{t:.2f}" data-duration="{D_DUR-t:.2f}"><div id="dg-i{i}" class="dgi" style="top:{top}px">'
-                f'<span class="num">{n}</span><span class="nm">{a}<small>{html.escape(b)}</small></span></div></div>')
-    js.append(entra(f"#dg-i{i}", t + 0.02, 0.5, 12))
-    if i > 0:
-        js.append(f'    tl.to("#dg-i{i-1} .num", {{ color: "rgba(247,245,246,.35)", duration: 0.4, ease: "sine.inOut" }}, {t:.2f});')
-comp("diagnostico", D_DUR, EST_B + f"""
-    .dgi {{ position: absolute; left: 230px; width: 640px; height: 130px; display: flex; align-items: center; gap: 34px;
-      border-bottom: 1px solid rgba(201,173,110,.35); }}
-    .dgi .num {{ font-family: "Playfair Display", serif; font-style: italic; font-size: 84px; color: {GOLD}; width: 120px; }}
-    .dgi .nm {{ font-family: "Playfair Display", serif; font-size: 56px; color: {BRANCO}; line-height: 1; }}
-    .dgi small {{ display: block; font-family: "Poppins", sans-serif; font-size: 28px; font-weight: 600; opacity: .7; margin-top: 8px; }}
-""", "\n".join(body), "\n".join(js))
+js = [foco("#mp-t", 0.15, 0.45),
+      f'    tl.fromTo("#mp-ela", {{ opacity: 0, scale: 0.85 }}, {{ opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }}, 0.35);',
+      foco("#mp-nota", 0.95, 0.4)]
+for i, (k, x, y, nome, nota, t) in enumerate(nos):
+    body.append(f'      <div id="mp-c{i}" class="clip" data-start="{t:.2f}" data-duration="{D_DUR-t:.2f}">'
+                f'<div id="mp-n{i}" style="position:absolute;left:{x-160}px;top:{y-95}px;width:320px;height:300px;text-align:center">'
+                f'{svg(f"mp-o{i}", 65, 0, 190, 190, "<circle cx=\'95\' cy=\'95\' r=\'88\'/>")}'
+                f'<div style="position:absolute;left:0;width:320px;top:72px;font-family:Oswald,sans-serif;font-weight:700;font-size:{40 if len(nome) < 9 else 32}px;color:{BRANCO}">{nome}</div>'
+                f'<div class="mao" style="position:absolute;left:0;width:320px;top:198px;font-size:40px">{nota}</div></div></div>')
+    js.append(risca(f"#mp-l{i}", t - 0.15, 0.5))
+    js.append(risca(f"#mp-o{i} circle", t, 0.55))
+    js.append(foco(f"#mp-n{i} > div", t + 0.1, 0.35))
+comp("diagnostico", D_DUR, EST_C, "\n".join(body), "\n".join(js))
 
-# regulariza (dividida) 9.91–12.05  local: pendente 1.09
+# ---------------------------------------------------------------- regulariza (dividida) 9.91–12.05  local: pendente 1.09
 R_DUR = 2.14
-comp("regulariza", R_DUR, EST_B, f"""      <div id="rg-c" class="clip" data-start="0" data-duration="{R_DUR:.2f}">
-        <div id="rg-ic" class="ic-w" style="top:210px">{icone("documento", 84)}</div>
-        <div id="rg-t" class="ed" style="top:306px;font-size:64px">{ws("Regularizamos o que está *pendente*")}</div>
-        <div id="rg-ch" class="chips" style="top:486px">
-          <span id="rg-a" class="chip"><span class="ok">✓</span>CNPJ</span>
-          <span id="rg-b" class="chip"><span class="ok">✓</span>Certidão</span>
-          <span id="rg-d" class="chip"><span class="ok">✓</span>Regime</span>
-        </div>
-      </div>""", "\n".join([desenha("#rg-ic", 0.0, 0.8), palavra_a_palavra("#rg-t", 0.1, 0.07),
-                          entra("#rg-a", 0.75, 0.4, 10), entra("#rg-b", 0.95, 0.4, 10), entra("#rg-d", 1.15, 0.4, 10)]))
+doc = ('<path d="M20 10 h90 l40 40 v170 h-130 z"/><path d="M110 10 v40 h40"/>'
+       '<path d="M42 90 h80 M42 120 h80 M42 150 h50"/><circle class="ouro" cx="120" cy="185" r="34"/><path class="ouro" d="M104 186 l12 12 l22 -26"/>')
+itens = [("CNPJ", 0.6), ("certidão", 0.9), ("regime", 1.2)]
+linhas = "".join(f'<div id="rg-l{i}" class="mao" style="position:absolute;left:440px;top:{372 + i*68}px;font-size:58px;color:{BRANCO}">'
+                 f'{txt} <span style="color:{GOLD}">✓</span></div>' for i, (txt, _) in enumerate(itens))
+comp("regulariza", R_DUR, EST_C, f"""      <div id="rg-c" class="clip" data-start="0" data-duration="{R_DUR:.2f}">
+        <div id="rg-t" class="tt" style="top:205px;font-size:62px">Regularizamos o que está <em>pendente</em></div>
+        {svg("rg-doc", 240, 360, 170, 240, doc)}
+        {linhas}
+      </div>""", "\n".join([foco("#rg-t", 0.05, 0.35), risca("#rg-doc *", 0.15, 0.9, 0.05)]
+                         + [foco(f"#rg-l{i}", t, 0.3) for i, (_, t) in enumerate(itens)]))
 
-# negócio novo (dividida) 12.05–15.92  local: negócio 0.43 ; começamos 1.32 ; regime 2.03 ; estrutura 2.66
+# ---------------------------------------------------------------- negócio novo (dividida) 12.05–15.92
+# local: negócio 0.43 ; começamos 1.32 ; regime 2.03 ; estrutura 2.66
 N_DUR = 3.87
-comp("negocio", N_DUR, EST_B, f"""      <div id="ng-c" class="clip" data-start="0.1" data-duration="{N_DUR-0.1:.2f}">
-        <div id="ng-ic" class="ic-w" style="top:216px">{icone("predio", 84)}</div>
-        <div id="ng-t" class="ed" style="top:334px;font-size:80px">{ws("Negócio *novo?*")}</div>
-        <div id="ng-s" class="ic-w" style="top:436px;font-family:Poppins,sans-serif;font-weight:700;font-size:28px;letter-spacing:.2em;color:{GOLD}">JÁ COMEÇA CERTO</div>
-        <div id="ng-ch" class="chips" style="top:500px">
-          <span id="ng-a" class="chip"><span class="ok">✓</span>Regime certo</span>
-          <span id="ng-b" class="chip"><span class="ok">✓</span>Estrutura certa</span>
-        </div>
-      </div>""", "\n".join([desenha("#ng-ic", 0.0, 0.9), palavra_a_palavra("#ng-t", 0.33), foco("#ng-s", 1.22, 0.4),
-                          entra("#ng-a", 1.93, 0.45, 10), entra("#ng-b", 2.56, 0.45, 10)]))
+predio = ('<path d="M30 230 v-160 l70 -40 l70 40 v160"/><path d="M10 230 h180"/>'
+          '<path d="M62 100 h20 M118 100 h20 M62 140 h20 M118 140 h20 M62 180 h20 M118 180 h20"/><path d="M88 230 v-34 h24 v34"/>')
+seta = '<path class="ouro" d="M10 60 C 60 10, 120 10, 170 50"/><path class="ouro" d="M150 30 l22 20 l-28 10"/>'
+comp("negocio", N_DUR, EST_C, f"""      <div id="ng-c" class="clip" data-start="0.1" data-duration="{N_DUR-0.1:.2f}">
+        <div id="ng-t" class="tt" style="top:205px;font-size:80px">Negócio <em>novo?</em></div>
+        {svg("ng-pr", 210, 330, 200, 240, predio)}
+        {svg("ng-se", 400, 330, 190, 80, seta)}
+        <div id="ng-s" class="mao" style="position:absolute;left:590px;top:330px;font-size:50px;transform:rotate(-4deg)">já começa certo!</div>
+        <div id="ng-a" class="mao" style="position:absolute;left:470px;top:430px;font-size:56px;color:{BRANCO}">regime certo <span style="color:{GOLD}">✓</span></div>
+        <div id="ng-b" class="mao" style="position:absolute;left:470px;top:500px;font-size:56px;color:{BRANCO}">estrutura certa <span style="color:{GOLD}">✓</span></div>
+      </div>""", "\n".join([foco("#ng-t", 0.1, 0.4), risca("#ng-pr *", 0.3, 1.0, 0.05), risca("#ng-se *", 1.25, 0.45),
+                          foco("#ng-s", 1.4, 0.35), foco("#ng-a", 2.03, 0.35), foco("#ng-b", 2.66, 0.35)]))
 
-# primeiro ano (dividida) 15.92–18.29  local: surpresas 0.16 ; retrabalhos 0.84 ; primeiro 1.54
+# ---------------------------------------------------------------- primeiro ano (dividida) 15.92–18.29
+# local: surpresas 0.16 ; retrabalhos 0.84 ; primeiro 1.54
 P_DUR = 2.37
-comp("primeiro", P_DUR, EST_B, f"""      <div id="pa-c" class="clip" data-start="0" data-duration="{P_DUR:.2f}">
-        <div id="pa-ic" class="ic-w" style="top:216px">{icone("escudo", 84)}</div>
-        <div id="pa-t" class="ed" style="top:334px;font-size:76px">{ws("Primeiro ano *tranquilo*")}</div>
-        <div id="pa-ch" class="chips" style="top:480px">
-          <span id="pa-a" class="chip x">Surpresas<i id="pa-ra" data-layout-allow-occlusion></i></span>
-          <span id="pa-b" class="chip x">Retrabalho<i id="pa-rb" data-layout-allow-occlusion></i></span>
-        </div>
-      </div>""", "\n".join([desenha("#pa-ic", 0.0, 0.8), palavra_a_palavra("#pa-t", 0.05, 0.08),
-                          entra("#pa-a", 0.16, 0.4, 10), '    tl.fromTo("#pa-ra", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "sine.inOut" }, 0.5);',
-                          entra("#pa-b", 0.84, 0.4, 10), '    tl.fromTo("#pa-rb", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "sine.inOut" }, 1.15);']))
+cal = ('<rect x="10" y="30" width="170" height="160" rx="14"/><path d="M10 72 h170 M52 14 v34 M138 14 v34"/>'
+       '<path class="ouro" d="M60 132 l22 22 l46 -52"/>')
+comp("primeiro", P_DUR, EST_C, f"""      <div id="pa-c" class="clip" data-start="0" data-duration="{P_DUR:.2f}">
+        <div id="pa-t" class="tt" style="top:205px;font-size:80px">Primeiro <em>ano</em></div>
+        {svg("pa-cal", 220, 340, 190, 200, cal)}
+        <div id="pa-a" class="mao" style="position:absolute;left:470px;top:340px;font-size:58px;color:{BRANCO}">surpresas
+          {svg("pa-ra", 0, 10, 230, 50, '<path class="bordo" d="M0 30 C 40 10, 70 45, 110 25 S 180 10, 225 30"/>')}</div>
+        <div id="pa-b" class="mao" style="position:absolute;left:470px;top:410px;font-size:58px;color:{BRANCO}">retrabalho
+          {svg("pa-rb", 0, 10, 250, 50, '<path class="bordo" d="M0 30 C 40 10, 70 45, 120 25 S 200 10, 245 30"/>')}</div>
+        <div id="pa-ok" class="mao" style="position:absolute;left:470px;top:490px;font-size:64px">tranquilo ✓</div>
+      </div>""", "\n".join([foco("#pa-t", 0.05, 0.35), risca("#pa-cal *", 0.1, 0.8, 0.05),
+                          foco("#pa-a", 0.16, 0.3), risca("#pa-ra path", 0.45, 0.4),
+                          foco("#pa-b", 0.84, 0.3), risca("#pa-rb path", 1.1, 0.4), foco("#pa-ok", 1.54, 0.4)]))
 
 # ---------------------------------------------------------------- legendas
 G = [("CNPJ com",0.04),("*pendência,*",0.63),("certidão negativa",1.52),("*travada*",2.52),("ou empresa",3.24),("aberta no",3.76),("regime *errado?*",4.31),
@@ -250,7 +259,7 @@ for i, (txt, s) in enumerate(G):
     parts = re.findall(r'\*[^*]+\*|[^\s*]+', txt)
     inner = " ".join(
         f'<span class="w{" hl" if p.startswith("*") else ""}">{html.escape(p.strip("*").upper())}</span>' for p in parts)
-    top = 1500 if (s < CHART[0] or s >= CHEIA2) else (1100 if s < CHART[1] else 612)
+    top = 1500 if (s < CHART[0] or s >= CHEIA2) else (1430 if s < CHART[1] else 612)
     divs.append(f'    <div id="lg{i}" class="grupo clip" data-start="{s:.2f}" data-duration="{e-s:.2f}" style="top:{top}px"><div id="lg{i}-i" class="gi">{inner}</div></div>')
     gjs.append(f'    tl.fromTo("#lg{i}-i", {{ opacity: 0, y: 10 }}, {{ opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }}, {s:.2f});')
 comp("legendas", FALA_FIM, f"""
@@ -276,7 +285,7 @@ CENAS = [("diagnostico", 5.04, 9.91), ("regulariza", 9.91, 12.05),
          ("negocio", 12.05, 15.92), ("primeiro", 15.92, CHEIA2)]
 hosts = [host("fundo", 0, TOTAL, 1, 0)]
 hosts += [host(m, s, e - s, 3, 2) for m, s, e in CENAS]
-hosts += [host("legendas", 0, FALA_FIM, 5, 3, "captions"), host("progresso", 0, TOTAL, 6, 4)]
+hosts += [host("atras", 0, CHART[0] + 0.6, 5, 5), host("legendas", 0, FALA_FIM, 7, 3, "captions"), host("progresso", 0, TOTAL, 8, 4)]
 SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
 (P / "index.html").write_text(f"""<!doctype html>
 <html lang="pt-BR">
@@ -292,7 +301,8 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
         border-top: 2px solid rgba(201,173,110,.55); box-shadow: 0 -10px 40px rgba(0,0,0,.55), 0 -2px 18px rgba(201,173,110,.25); }}
       #cam-sombra {{ position: absolute; left: 0; top: 0; width: 1080px; height: 220px; z-index: 2;
         background: linear-gradient(180deg, rgba(9,16,34,.92) 0%, rgba(9,16,34,.55) 45%, rgba(9,16,34,0) 100%); }}
-      #logo-final {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 8; }}
+      #logo-final {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 9; }}
+      #recorte {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 6; }}
       #camcheia {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 4; }}
       #camcheia video {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }}
       #cam video {{ position: absolute; left: 0; top: -450px; width: 1080px; height: 1920px; object-fit: cover; }}
@@ -309,6 +319,8 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       </div>
       <!-- Final: tela da logo do vídeo bruto -->
       <video id="logo-final" class="clip" src="assets/logo_final_lento.mp4" data-start="{LOGO_INI}" data-duration="{LOGO_DUR}" data-track-index="6" muted playsinline></video>
+      <!-- Gancho: ela recortada na frente do texto gigante -->
+      <video id="recorte" class="clip" src="assets/ela_gancho.webm" data-start="0" data-duration="{SAI+0.6:.2f}" data-media-start="0" data-track-index="2" muted playsinline data-layout-allow-occlusion></video>
       <!-- Metade de baixo: ela falando -->
       <div id="cam">
         <video id="fala2" class="clip" src="assets/fala.mp4" data-start="{VOLTA:.2f}" data-duration="{CHEIA2+0.5-VOLTA:.2f}" data-media-start="{VOLTA:.2f}" data-track-index="1" muted playsinline></video>
@@ -320,7 +332,7 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       const tl = gsap.timeline({{ paused: true }});
       // gráfico em tela cheia: a metade de baixo desce e depois volta, suave
       tl.set("#cam", {{ opacity: 0 }}, 0);
-      tl.to("#camcheia", {{ opacity: 0, duration: 0.55, ease: "sine.inOut" }}, {SAI:.2f});
+      tl.to(["#camcheia", "#recorte"], {{ opacity: 0, duration: 0.55, ease: "sine.inOut" }}, {SAI:.2f});
       tl.to("#cam", {{ opacity: 1, duration: 0.5, ease: "sine.inOut" }}, {VOLTA:.2f});
       // final: ela volta em tela cheia para o convite
       // troca direta no corte da 2ª gravação; a imagem entra levemente aproximada e se acomoda
@@ -360,7 +372,7 @@ def aplicar_marca(texto):
         texto = texto.replace("  </style>", f"    {MARCA['css_extra']}\n  </style>", 1)
     return texto
 
-usadas = {"fundo", "legendas", "progresso"} | {c for c, _, _ in CENAS}
+usadas = {"fundo", "legendas", "progresso", "atras"} | {c for c, _, _ in CENAS}
 for f in C.glob("*.html"):
     if f.stem not in usadas:
         f.unlink()                       # cenas do modelo que este vídeo não usa

@@ -12,7 +12,8 @@
         border-top: 2px solid rgba(201,173,110,.55); box-shadow: 0 -10px 40px rgba(0,0,0,.55), 0 -2px 18px rgba(201,173,110,.25); }
       #cam-sombra { position: absolute; left: 0; top: 0; width: 1080px; height: 220px; z-index: 2;
         background: linear-gradient(180deg, rgba(9,16,34,.92) 0%, rgba(9,16,34,.55) 45%, rgba(9,16,34,0) 100%); }
-      #logo-final { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 8; }
+      #logo-final { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 9; }
+      #recorte { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 6; }
       #camcheia { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 4; }
       #camcheia video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
       #cam video { position: absolute; left: 0; top: -450px; width: 1080px; height: 1920px; object-fit: cover; }
@@ -29,6 +30,8 @@
       </div>
       <!-- Final: tela da logo do vídeo bruto -->
       <video id="logo-final" class="clip" src="assets/logo_final_lento.mp4" data-start="21.9" data-duration="3.73" data-track-index="6" muted playsinline></video>
+      <!-- Gancho: ela recortada na frente do texto gigante -->
+      <video id="recorte" class="clip" src="assets/ela_gancho.webm" data-start="0" data-duration="5.64" data-media-start="0" data-track-index="2" muted playsinline data-layout-allow-occlusion></video>
       <!-- Metade de baixo: ela falando -->
       <div id="cam">
         <video id="fala2" class="clip" src="assets/fala.mp4" data-start="9.91" data-duration="8.88" data-media-start="9.91" data-track-index="1" muted playsinline></video>
@@ -39,14 +42,15 @@
       <div id="regulariza" data-composition-id="regulariza" data-composition-src="compositions/regulariza.html" data-start="9.91" data-duration="2.14" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
       <div id="negocio" data-composition-id="negocio" data-composition-src="compositions/negocio.html" data-start="12.05" data-duration="3.87" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
       <div id="primeiro" data-composition-id="primeiro" data-composition-src="compositions/primeiro.html" data-start="15.92" data-duration="2.37" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
-      <div id="legendas" data-composition-id="legendas" data-composition-src="compositions/legendas.html" data-start="0.00" data-duration="22.23" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920" style="z-index:5"></div>
-      <div id="progresso" data-composition-id="progresso" data-composition-src="compositions/progresso.html" data-start="0.00" data-duration="25.63" data-track-index="4" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:6"></div>
+      <div id="atras" data-composition-id="atras" data-composition-src="compositions/atras.html" data-start="0.00" data-duration="5.64" data-track-index="5" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:5"></div>
+      <div id="legendas" data-composition-id="legendas" data-composition-src="compositions/legendas.html" data-start="0.00" data-duration="22.23" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920" style="z-index:7"></div>
+      <div id="progresso" data-composition-id="progresso" data-composition-src="compositions/progresso.html" data-start="0.00" data-duration="25.63" data-track-index="4" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:8"></div>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
       // gráfico em tela cheia: a metade de baixo desce e depois volta, suave
       tl.set("#cam", { opacity: 0 }, 0);
-      tl.to("#camcheia", { opacity: 0, duration: 0.55, ease: "sine.inOut" }, 5.04);
+      tl.to(["#camcheia", "#recorte"], { opacity: 0, duration: 0.55, ease: "sine.inOut" }, 5.04);
       tl.to("#cam", { opacity: 1, duration: 0.5, ease: "sine.inOut" }, 9.91);
       // final: ela volta em tela cheia para o convite
       // troca direta no corte da 2ª gravação; a imagem entra levemente aproximada e se acomoda

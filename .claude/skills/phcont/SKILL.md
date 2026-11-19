@@ -64,17 +64,18 @@ Regras:
 |---|---|---|
 | **A: Explicador com cartões** | fundo marinho com grade em perspectiva, estrelas e vidros; títulos Oswald maiúsculos com palavra dourada; cartões de vidro; lista numerada; "VS"; pílula "● PHCONT" | vídeo 1 (Planejamento tributário) |
 | **B: Editorial com ícones** | sem pílula, grade nem vidros; **feixe de luz dourado** atravessando o fundo; títulos em **Playfair Display** com palavra em itálico dourado, entrando **palavra por palavra**; **ícones de traço dourado que se desenham** (lupa, documento, prédio, escudo); etiquetas em linha ("chips") com ✓; numerais grandes em itálico (01, 02, 03) com linhas finas | vídeo 2 (Regularização) |
-| C: Dados e contadores (ideia) | números grandes contando, anéis de progresso, linha do tempo; tipografia mono para rótulos | — |
-| D: Tipografia cinética (ideia) | frase-chave gigante ocupando a faixa, palavras trocando no ritmo da fala, máscara revelando o texto | — |
-| E: Documento/papel (ideia) | fundo off-white com textura, "carimbo" dourado, cartões como fichas e notas fiscais estilizadas | — |
-| F: Mapa mental (ideia) | conceitos ligados por linhas douradas que se desenham, um nó acende por vez | — |
+| **C: Rascunho à mão + mapa** (ref. 7, `estilo/referencias/ref7_rascunho_mapa.mp4`) | fundo **papel quadriculado** escuro; **rabiscos de traço branco que se desenham** (documento com carimbo, prédio, calendário, setas); **anotações manuscritas em dourado** (fonte Caveat em `assets/fonts/`); **texto gigante ATRÁS dela** no gancho (ela recortada na frente); **mapa de ideias** com ela num círculo no centro e ramos dourados até os temas; itens riscados com rabisco bordô | vídeo 2 v3 (Regularização), **a cliente adorou o mapa e o recorte** |
+| D: Dados e contadores (ideia) | números grandes contando, anéis de progresso, linha do tempo; tipografia mono para rótulos | — |
+| E: Tipografia cinética (ideia) | frase-chave gigante ocupando a faixa, palavras trocando no ritmo da fala, máscara revelando o texto | — |
+| F: Documento/papel (ideia) | fundo off-white com textura, "carimbo" dourado, cartões como fichas e notas fiscais estilizadas | — |
 
 ### Histórico
 
 | Vídeo | Estilo | Elementos novos |
 |---|---|---|
 | 1. Planejamento tributário | A | gráfico de barras faturamento × caixa, VS, lista numerada |
-| 2. Regularização | B | ícones que se desenham, feixe de luz, títulos palavra por palavra, chips com ✓, numerais em itálico; layout novo (faixa animada menor) |
+| 2. Regularização (v2) | B | ícones que se desenham, feixe de luz, títulos palavra por palavra, chips com ✓, numerais em itálico; layout novo (faixa animada menor) |
+| 2. Regularização (v3) | C | texto gigante atrás dela (recorte), mapa com ela no centro, rabiscos que se desenham, letra manuscrita |
 
 ## Telas animadas (estilo A, o primeiro aprovado)
 

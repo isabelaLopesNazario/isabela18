@@ -23,7 +23,11 @@
     .vidro b:first-child { width: 40%; background: rgba(201,173,110,.18); }
     .vidro { display: none; }
     #bg-pill { display: none; }
-    #bg-luz { position: absolute; left: -900px; top: -400px; width: 700px; height: 2800px; }
+    #bg-luz { display: none; }
+    .st { display: none; }
+    #bg::after { content: ""; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,.055) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,.055) 2px, transparent 2px);
+      background-size: 54px 54px; }
     #bg-luz b { position: absolute; inset: 0; transform: rotate(24deg);
       background: linear-gradient(90deg, rgba(201,173,110,0) 0%, rgba(201,173,110,.10) 45%, rgba(255,240,210,.16) 50%, rgba(201,173,110,.10) 55%, rgba(201,173,110,0) 100%); }
     #bg-pill { position: absolute; left: 0; top: 172px; width: 1080px; text-align: center; }
@@ -96,7 +100,6 @@
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#bg-luz", { x: 0 }, { x: 2600, duration: 9, ease: "none", repeat: 2 }, 0);
     tl.fromTo("#bg-v0", { x: 0, y: 0 }, { x: -45, y: -67, duration: 25.63, ease: "none" }, 0);
     tl.fromTo("#bg-v1", { x: 0, y: 0 }, { x: 32, y: 69, duration: 25.63, ease: "none" }, 0);
     tl.fromTo("#bg-v2", { x: 0, y: 0 }, { x: 53, y: -86, duration: 25.63, ease: "none" }, 0);

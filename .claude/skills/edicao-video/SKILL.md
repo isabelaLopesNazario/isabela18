@@ -119,6 +119,20 @@ Boas práticas que valem para qualquer empresa (vieram dos ajustes da cliente):
   **exatamente no quadro do corte**, com a imagem nova entrando a 106% e se acomodando em 100% em 0,7 s.
 - Áreas seguras das redes: textos importantes entre x 120–888 e y 288–1248.
 
+### Recorte da pessoa (texto atrás dela, figurinha, círculo)
+
+A cliente gosta de **elementos atrás da pessoa** e de **ela recortada** dentro das animações.
+
+- Instale uma vez por sessão (o download automático falha por causa do CUDA):
+  `npm install onnxruntime-node@1.21.1 --onnxruntime-node-install-cuda=skip --prefix "/root/.cache/hyperframes/optional/onnxruntime-node@1.21.1"`
+- **Foto parada:** `hyperframes remove-background quadro.png -o recorte.png` gera um PNG transparente em ~1 s. Para
+  o "nó" do mapa, use um **círculo com borda branca** recortado do quadro. Fica melhor que figurinha com corte reto.
+- **Texto atrás dela em movimento:** recorte só o trecho necessário
+  (`ffmpeg -i fala.mp4 -t 5.7 ...` e depois `remove-background trecho.mp4 -o ela.webm --quality best`; ~1,7 quadro/s).
+  A ordem das camadas é: vídeo dela → escurecimento suave no alto → texto gigante → `<video>` do WebM recortado
+  (`data-layout-allow-occlusion`) → legenda. Faça o recorte sumir junto com o vídeo na transição.
+- Escureça o alto da tela atrás do texto gigante: branco sobre parede clara some.
+
 ## 7. Conferir antes de entregar
 
 - `hyperframes check` sem erros. Snapshots dos momentos-chave: textos sem encostar, nada sobre o rosto.
