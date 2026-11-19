@@ -38,8 +38,7 @@ Erros típicos de transcrição: "PH Count" → **PHcont**, "Agente de" → **Ag
 | **Convite final** | Ela **em tela cheia**, legenda no cinto. |
 | **Fim** | Dissolvência de 0,6 s para a **tela da logo do vídeo bruto** (fundo preto, "Link na bio!"), com a entrada na metade da velocidade e ~2 s parada. |
 
-Divisão entre as metades: sem linha grossa. Use um degradê escuro de ~220 px no topo do vídeo, um fio dourado de
-2 px a 55% e um brilho leve.
+Divisão entre as metades: **só um sombreado suave** (degradê de ~200 px no topo do vídeo, de 55% a 0%), sem linha.
 
 ## Variar o estilo a cada vídeo (pedido da cliente)
 
@@ -85,7 +84,6 @@ Estilo das referências 5 e 6 (`estilo/referencias/ref5_explicador_cartoes.mp4`,
 - Título centralizado em **Oswald 700 maiúsculo**, branco com a palavra-chave em **dourado**.
 - Cartões escuros translúcidos com cantos arredondados. O item ativo ganha borda dourada com brilho. Listas numeradas
   com quadradinho dourado. Comparação com selo **"VS"** dourado, e o lado negativo em bordô com texto riscado.
-- Barra de progresso dourada fina no topo.
 - Uma tela por ideia, trocando junto com a fala.
 
 ## Legenda
@@ -112,6 +110,9 @@ Fontes: Oswald (títulos), Poppins (legenda e cartões).
 3. **Legenda fora do tronco dela**: entre as metades na tela dividida, no cinto quando ela está em tela cheia.
 4. **Ela é a principal** no começo e no convite final. Animação por cima nesses trechos incomoda.
 5. **Mostrar mais dela** na tela dividida, não só o rosto. A partir do vídeo 2: faixa animada menor e mais alta (`SPLIT_TOP = 700`).
+9. **Sem barra de progresso** (a barra dourada de tempo no topo foi recusada).
+10. **Divisão entre as metades só com sombreado suave**, sem linha dourada e sem sombra forte.
+11. **Mapa grande e centralizado** na tela cheia (ela num círculo de ~390 px no centro, temas em círculos de ~220 px), com a legenda **mais baixa** (y ≈ 1640) para não cobrir o mapa. As anotações ficam para fora, onde as linhas não passam.
 8. **Nunca a mesma coisa sempre:** varie o estilo e traga elementos novos a cada vídeo (veja "Variar o estilo").
 6. **Vibe leve, gráficos subindo devagar, final calmo e sem travadas nos cortes**: veja as boas práticas da `edicao-video`.
 7. **Áudio sem trilha** por padrão (só a voz, a -14 LUFS). Pergunte antes de colocar música.

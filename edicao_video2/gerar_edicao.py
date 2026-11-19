@@ -167,33 +167,33 @@ comp("atras", 5.64, f"""
 # ---------------------------------------------------------------- MAPA do diagnóstico (TELA CHEIA) 5.04–9.91
 # local: diagnóstico 0.99 ; fiscal 1.81 ; cadastral 2.39 ; societário 3.12
 D_DUR = 4.87
-CX, CY = 540, 880                       # centro do mapa (ela)
-nos = [("fiscal", 230, 650, "FISCAL", "impostos e obrigações", 1.81),
-       ("cadastral", 850, 650, "CADASTRAL", "CNPJ e certidões", 2.39),
-       ("societario", 540, 1200, "SOCIETÁRIO", "contrato e sócios", 3.12)]
+CX, CY = 540, 960                       # centro do mapa (ela)
+nos = [("fiscal", 225, 650, "FISCAL", "impostos e<br>obrigações", 1.81),
+       ("cadastral", 855, 650, "CADASTRAL", "CNPJ e<br>certidões", 2.39),
+       ("societario", 540, 1330, "SOCIETÁRIO", "contrato e sócios", 3.12)]
 def _ramo(i, x, y):
     import math
     dx, dy = x - CX, y - CY; L = math.hypot(dx, dy); ux, uy = dx / L, dy / L
-    x0, y0 = CX + ux * 168, CY + uy * 168          # sai da borda da foto dela
-    x1, y1 = x - ux * 96, y - uy * 96              # chega na borda do círculo do tema
+    x0, y0 = CX + ux * 205, CY + uy * 205          # sai da borda da foto dela
+    x1, y1 = x - ux * 120, y - uy * 120              # chega na borda do círculo do tema
     mx, my = (x0 + x1) / 2 - uy * 28, (y0 + y1) / 2 + ux * 28
     return f'<path id="mp-l{i}" class="ouro" d="M{x0:.0f} {y0:.0f} Q {mx:.0f} {my:.0f} {x1:.0f} {y1:.0f}"/>'
 ramos = "".join(_ramo(i, x, y) for i, (_, x, y, *_r) in enumerate(nos))
 body = [f'      <div id="mp-ct" class="clip" data-start="0.15" data-duration="{D_DUR-0.15:.2f}">',
-        '        <div id="mp-t" class="tt" style="top:300px;font-size:74px">Diagnóstico da sua <em>empresa</em></div>',
+        '        <div id="mp-t" class="tt" style="top:290px;font-size:82px">Diagnóstico da sua <em>empresa</em></div>',
         f'        {svg("mp-ramos", 0, 0, 1080, 1300, ramos)}',
-        f'        <img id="mp-ela" src="assets/ela_circulo.png" style="position:absolute;left:{CX-160}px;top:{CY-160}px;width:320px;height:320px;border-radius:50%;box-shadow:0 0 0 6px rgba(201,173,110,.35)">',
-        f'        <div id="mp-nota" class="mao" style="position:absolute;left:{CX+150}px;top:{CY+110}px;font-size:48px;transform:rotate(-6deg)">a gente<br>analisa tudo</div>',
+        f'        <img id="mp-ela" src="assets/ela_circulo.png" style="position:absolute;left:{CX-195}px;top:{CY-195}px;width:390px;height:390px;border-radius:50%;box-shadow:0 0 0 6px rgba(201,173,110,.35)">',
+        f'        <div id="mp-nota" class="mao" style="position:absolute;left:{CX+175}px;top:{CY+150}px;font-size:52px;transform:rotate(-6deg)">a gente<br>analisa tudo</div>',
         '      </div>']
 js = [foco("#mp-t", 0.15, 0.45),
       f'    tl.fromTo("#mp-ela", {{ opacity: 0, scale: 0.85 }}, {{ opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }}, 0.35);',
       foco("#mp-nota", 0.95, 0.4)]
 for i, (k, x, y, nome, nota, t) in enumerate(nos):
     body.append(f'      <div id="mp-c{i}" class="clip" data-start="{t:.2f}" data-duration="{D_DUR-t:.2f}">'
-                f'<div id="mp-n{i}" style="position:absolute;left:{x-160}px;top:{y-95}px;width:320px;height:300px;text-align:center">'
-                f'{svg(f"mp-o{i}", 65, 0, 190, 190, "<circle cx=\'95\' cy=\'95\' r=\'88\'/>")}'
-                f'<div style="position:absolute;left:0;width:320px;top:72px;font-family:Oswald,sans-serif;font-weight:700;font-size:{40 if len(nome) < 9 else 32}px;color:{BRANCO}">{nome}</div>'
-                f'<div class="mao" style="position:absolute;left:0;width:320px;top:198px;font-size:40px">{nota}</div></div></div>')
+                f'<div id="mp-n{i}" style="position:absolute;left:{x-170}px;top:{y-115}px;width:340px;height:330px;text-align:center">'
+                f'{svg(f"mp-o{i}", 55, 0, 230, 230, "<circle cx=\'115\' cy=\'115\' r=\'108\'/>")}'
+                f'<div style="position:absolute;left:0;top:88px;font-family:Oswald,sans-serif;font-weight:700;font-size:{48 if len(nome) < 9 else 38}px;width:340px;color:{BRANCO}">{nome}</div>'
+                f'<div class="mao" style="position:absolute;left:0;top:238px;font-size:46px;width:340px;line-height:1;text-align:{["left","right","center"][i]};padding:0 10px">{nota}</div></div></div>')
     js.append(risca(f"#mp-l{i}", t - 0.15, 0.5))
     js.append(risca(f"#mp-o{i} circle", t, 0.55))
     js.append(foco(f"#mp-n{i} > div", t + 0.1, 0.35))
@@ -259,7 +259,7 @@ for i, (txt, s) in enumerate(G):
     parts = re.findall(r'\*[^*]+\*|[^\s*]+', txt)
     inner = " ".join(
         f'<span class="w{" hl" if p.startswith("*") else ""}">{html.escape(p.strip("*").upper())}</span>' for p in parts)
-    top = 1500 if (s < CHART[0] or s >= CHEIA2) else (1430 if s < CHART[1] else 612)
+    top = 1500 if (s < CHART[0] or s >= CHEIA2) else (1640 if s < CHART[1] else 612)
     divs.append(f'    <div id="lg{i}" class="grupo clip" data-start="{s:.2f}" data-duration="{e-s:.2f}" style="top:{top}px"><div id="lg{i}-i" class="gi">{inner}</div></div>')
     gjs.append(f'    tl.fromTo("#lg{i}-i", {{ opacity: 0, y: 10 }}, {{ opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }}, {s:.2f});')
 comp("legendas", FALA_FIM, f"""
@@ -285,7 +285,7 @@ CENAS = [("diagnostico", 5.04, 9.91), ("regulariza", 9.91, 12.05),
          ("negocio", 12.05, 15.92), ("primeiro", 15.92, CHEIA2)]
 hosts = [host("fundo", 0, TOTAL, 1, 0)]
 hosts += [host(m, s, e - s, 3, 2) for m, s, e in CENAS]
-hosts += [host("atras", 0, CHART[0] + 0.6, 5, 5), host("legendas", 0, FALA_FIM, 7, 3, "captions"), host("progresso", 0, TOTAL, 8, 4)]
+hosts += [host("atras", 0, CHART[0] + 0.6, 5, 5), host("legendas", 0, FALA_FIM, 7, 3, "captions")]
 SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
 (P / "index.html").write_text(f"""<!doctype html>
 <html lang="pt-BR">
@@ -298,9 +298,9 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       html, body {{ width: 1080px; height: 1920px; overflow: hidden; background: #070d1c; }}
       #root {{ position: relative; width: 100%; height: 100%; overflow: hidden; }}
       #cam {{ position: absolute; left: 0; top: {SPLIT_TOP}px; width: 1080px; height: {1920-SPLIT_TOP}px; overflow: hidden; z-index: 4;
-        border-top: 2px solid rgba(201,173,110,.55); box-shadow: 0 -10px 40px rgba(0,0,0,.55), 0 -2px 18px rgba(201,173,110,.25); }}
-      #cam-sombra {{ position: absolute; left: 0; top: 0; width: 1080px; height: 220px; z-index: 2;
-        background: linear-gradient(180deg, rgba(9,16,34,.92) 0%, rgba(9,16,34,.55) 45%, rgba(9,16,34,0) 100%); }}
+        box-shadow: 0 -8px 30px rgba(0,0,0,.25); }}
+      #cam-sombra {{ position: absolute; left: 0; top: 0; width: 1080px; height: 200px; z-index: 2;
+        background: linear-gradient(180deg, rgba(9,16,34,.55) 0%, rgba(9,16,34,.22) 45%, rgba(9,16,34,0) 100%); }}
       #logo-final {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 9; }}
       #recorte {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 6; }}
       #camcheia {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 4; }}

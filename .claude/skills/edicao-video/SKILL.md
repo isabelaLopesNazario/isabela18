@@ -117,6 +117,7 @@ Boas práticas que valem para qualquer empresa (vieram dos ajustes da cliente):
 - **Cortes entre gravações:** o fim de cada gravação costuma ter a pessoa quase parada. Nunca coloque dissolvência nem
   deslize por cima desse trecho: parece vídeo travando, e às vezes aparecem duas imagens dela. Troque o layout
   **exatamente no quadro do corte**, com a imagem nova entrando a 106% e se acomodando em 100% em 0,7 s.
+- Sem barra de progresso e sem linhas fortes nas divisões: só sombreado suave.
 - Áreas seguras das redes: textos importantes entre x 120–888 e y 288–1248.
 
 ### Recorte da pessoa (texto atrás dela, figurinha, círculo)

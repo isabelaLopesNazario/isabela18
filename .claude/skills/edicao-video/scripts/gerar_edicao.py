@@ -328,7 +328,7 @@ CENAS = [("caixa", 4.38, 9.20), ("problema", 9.20, 13.55),
          ("fechamento", 13.55, 16.60), ("lista", 16.60, 20.10)]
 hosts = [host("fundo", 0, TOTAL, 1, 0)]
 hosts += [host(m, s, e - s, 3, 2) for m, s, e in CENAS]
-hosts += [host("legendas", 0, FALA_FIM, 5, 3, "captions"), host("progresso", 0, TOTAL, 6, 4)]
+hosts += [host("legendas", 0, FALA_FIM, 5, 3, "captions")]
 SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
 (P / "index.html").write_text(f"""<!doctype html>
 <html lang="pt-BR">
@@ -341,9 +341,9 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       html, body {{ width: 1080px; height: 1920px; overflow: hidden; background: #070d1c; }}
       #root {{ position: relative; width: 100%; height: 100%; overflow: hidden; }}
       #cam {{ position: absolute; left: 0; top: {SPLIT_TOP}px; width: 1080px; height: {1920-SPLIT_TOP}px; overflow: hidden; z-index: 4;
-        border-top: 2px solid rgba(201,173,110,.55); box-shadow: 0 -10px 40px rgba(0,0,0,.55), 0 -2px 18px rgba(201,173,110,.25); }}
+        box-shadow: 0 -8px 30px rgba(0,0,0,.25); }}
       #cam-sombra {{ position: absolute; left: 0; top: 0; width: 1080px; height: 220px; z-index: 2;
-        background: linear-gradient(180deg, rgba(9,16,34,.92) 0%, rgba(9,16,34,.55) 45%, rgba(9,16,34,0) 100%); }}
+        background: linear-gradient(180deg, rgba(9,16,34,.55) 0%, rgba(9,16,34,.22) 45%, rgba(9,16,34,0) 100%); }}
       #logo-final {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 8; }}
       #camcheia {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 4; }}
       #camcheia video {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }}
@@ -412,7 +412,7 @@ def aplicar_marca(texto):
         texto = texto.replace("  </style>", f"    {MARCA['css_extra']}\n  </style>", 1)
     return texto
 
-usadas = {"fundo", "legendas", "progresso"} | {c for c, _, _ in CENAS}
+usadas = {"fundo", "legendas"} | {c for c, _, _ in CENAS}
 for f in C.glob("*.html"):
     if f.stem not in usadas:
         f.unlink()                       # cenas do modelo que este vídeo não usa
