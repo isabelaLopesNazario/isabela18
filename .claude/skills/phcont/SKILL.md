@@ -74,7 +74,7 @@ Regras:
 |---|---|---|
 | 1. Planejamento tributário | A | gráfico de barras faturamento × caixa, VS, lista numerada |
 | 2. Regularização (v2) | B | ícones que se desenham, feixe de luz, títulos palavra por palavra, chips com ✓, numerais em itálico; layout novo (faixa animada menor) |
-| 2. Regularização (v3–v5) | C | texto atrás dela (marinho, só a cabeça na frente), mapa com o prédio "sua empresa" no centro, rabiscos que se desenham, letra manuscrita |
+| 2. Regularização (v3–v6, **aprovado na v6**) | C | texto atrás dela (marinho, só a cabeça na frente), mapa com o prédio "sua empresa" no centro, rabiscos que se desenham, letra manuscrita |
 
 ## Telas animadas (estilo A, o primeiro aprovado)
 
