@@ -20,6 +20,21 @@ outra é o pior erro possível aqui.
 
 Fale com a pessoa em **português simples** (ela não é técnica): explique o que fez e por quê, sem jargão.
 
+## Modelos prontos nesta skill
+
+| Arquivo | O que é |
+|---|---|
+| `scripts/gerar_edicao.py` + `marca_referencia.json` | gerador base (layout aprovado, cores trocadas pelo `marca.json` da empresa) |
+| `modelos/estilos/estilo_A_explicador_cartoes.py` | vídeo 1 PHcont: cartões, gráfico de barras, VS, lista numerada |
+| `modelos/estilos/estilo_B_editorial_icones.py` | vídeo 2 PHcont v2: ícones que se desenham, títulos serifados palavra por palavra, chips ✓ |
+| `modelos/estilos/estilo_C_rascunho_mapa.py` | vídeo 2 PHcont aprovado: papel quadriculado, rabiscos, letra manuscrita, mapa, faixa animada menor |
+| `modelos/abertura/abertura_textos.cjs` + `montar_abertura.sh` | abertura com palavras ATRÁS dela, montada quadro a quadro (sem "pessoa dupla") |
+| `modelos/capa/foto.cjs` | transforma o HTML da capa em PNG 1080x1920 |
+
+Os geradores de estilo são **modelos do vídeo em que foram usados** (tempos, textos e legenda daquele vídeo). Copie o
+que combina com o vídeo novo, troque os dados e **varie o estilo** em relação aos últimos vídeos (veja a skill da empresa).
+A fonte manuscrita (Caveat) é baixada do Google Fonts para `edicao/assets/fonts/caveat.woff2`.
+
 ## 1. Preparar o ambiente (uma vez por sessão)
 
 O container é temporário: confira e reinstale o que faltar.
@@ -136,8 +151,8 @@ A cliente gosta de **elementos atrás da pessoa** e de **ela recortada** dentro 
   quadro a quadro, e aparece "ela dupla" (uma imagem atrás e outra na frente, com zoom diferente), o que a cliente recusou.
   Faça a abertura **pré-montada no ffmpeg**, quadro a quadro, usando só a máscara do recorte:
   1. Recorte o trecho: `remove-background trecho.mp4 -o ela.webm --quality best`.
-  2. Gere PNGs transparentes (1080x1920) do sombreado e de cada palavra com Playwright (`omitBackground: true`); veja o
-     modelo `edicao_video2/abertura_textos.js` no repositório.
+  2. Gere PNGs transparentes (1080x1920) do sombreado e de cada palavra com Playwright (`omitBackground: true`); use o
+     modelo `modelos/abertura/abertura_textos.cjs` desta skill (troque as palavras e posições).
   3. No ffmpeg: `[webm]alphaextract` vira a máscara; `[video][máscara]alphamerge` vira "ela" com as cores **originais**
      (decodifique o WebM com `-c:v libvpx-vp9` para ler o alpha); então vídeo → sombreado → palavras (com
      `fade ... alpha=1` e `enable=between(t,a,b)`) → "ela" por cima. Exporte `abertura.mp4` com `-g 30`.
@@ -149,10 +164,10 @@ A cliente gosta de **elementos atrás da pessoa** e de **ela recortada** dentro 
 ### Capa do Reels (quando pedirem)
 
 PNG 1080x1920. Tudo que importa fica no meio, entre y 240 e 1680, porque a grade do perfil mostra só o recorte 3:4
-central. Receita aprovada (vídeo 2 PHcont, `edicao_video2/capa/`): escolha um quadro com ela sorrindo e de boca quase
+central. Receita aprovada (vídeo 2 PHcont): escolha um quadro com ela sorrindo e de boca quase
 fechada; use o mesmo quadro desfocado com degradê da marca como fundo e o recorte dela (`remove-background`) por cima;
 a pergunta-gancho em duas linhas atrás dela, com **só o topo da cabeça** passando na frente da palavra grande; uma caixa
-com o benefício, uma linha de apoio, uma anotação manuscrita e a logo embaixo. Gere com Playwright (`capa/foto.cjs`).
+com o benefício, uma linha de apoio, uma anotação manuscrita e a logo embaixo. Gere com Playwright: `node modelos/capa/foto.cjs <capa.html> <saida.png>`. Os modelos de capa ficam na skill da empresa.
 
 ## 7. Conferir antes de entregar
 

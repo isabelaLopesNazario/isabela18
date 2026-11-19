@@ -20,6 +20,14 @@ Arquivos:
 
 Pastas da PHcont no repositório: `bruto/`, `trabalho/`, `edicao/`, `final/`, `estilo/` (na raiz).
 
+## Entregas aprovadas (para lembrar o padrão)
+
+| Entrega | Arquivo final no repositório | Estilo |
+|---|---|---|
+| Vídeo 1: Planejamento tributário | `final/phcont_planejamento_tributario_FINAL.mp4` | A: explicador com cartões |
+| Vídeo 2: Regularização | `final/phcont_regularizacao_FINAL.mp4` (= v8) | C: rascunho + mapa, palavras atrás dela |
+| Capa do vídeo 2 | `final/phcont_regularizacao_capa_FINAL.png` | capa editorial, sem etiqueta |
+
 ## A empresa
 
 Escritório de contabilidade sério e elegante. Os vídeos são de uma funcionária falando para a câmera, de camiseta
@@ -80,7 +88,7 @@ Regras:
 
 Diferente dos vídeos, nas **capas** a cliente quer o estilo do feed (`estilo/marca/feed_instagram_capas.jpg`): foto real dela
 (sem recorte nem sombra azul em volta, só vinheta leve), título **embaixo**, dentro do recorte 3:4 (y 240–1680). Dois
-modelos em `edicao_video2/capa/`:
+modelos em `capas/` desta skill (põem a foto `foto_capa.jpg` ao lado do HTML e geram o PNG com `modelos/capa/foto.cjs` da `edicao-video`):
 - `capa_caixas.html`: Poppins Bold branco em **caixas retas**, a 1ª linha marinho `#1F2B42` e a 2ª bordô `#7A2A33`, deslocada.
 - `capa_editorial.html` (**a escolhida pela cliente**, sem etiqueta pequena acima do título): degradê marinho embaixo, título **serifado** (Libre Caslon)
   branco com o final em **itálico dourado** e um traço bordô curto.
