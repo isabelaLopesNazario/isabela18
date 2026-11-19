@@ -75,6 +75,13 @@ Referências de carrossel: o feed da academia (`doctorfit/estilo/marca/feed_inst
 **A confirmar com a cliente:** se a tela final usa a logo do próprio vídeo bruto (como na PHcont) ou uma vinheta
 animada da logo sobre o fundo preto, e qual é a chamada final padrão (o feed usa "Agende sua aula experimental!").
 
+## Variar a cada vídeo e carrossel
+
+Como na PHcont, a cliente não quer a mesma receita sempre. Mantenha a identidade (preto, verde-limão, logo, títulos
+editoriais) e **mude o estilo das telas e dos slides a cada entrega**: varie a composição (texto atrás da pessoa, vidro
+fosco, palavra gigante, tipografia empilhada como "MotivAÇÃO", chave ON/OFF), os efeitos e as curvas. Anote cada entrega
+num histórico nesta seção (data, tema, estilo, o que foi novo).
+
 ## Preferências da cliente para a DoctorFit
 
 (Vazio por enquanto. Anote aqui cada ajuste pedido para a academia e o porquê.)

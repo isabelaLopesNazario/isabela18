@@ -33,7 +33,7 @@ Erros típicos de transcrição: "PH Count" → **PHcont**, "Agente de" → **Ag
 | Trecho | Layout |
 |---|---|
 | **Começo** (gancho, primeiras frases) | Ela **em tela cheia**, sem animação. Legenda na altura do cinto (y ≈ 1500). |
-| **Meio** | **Tela dividida**: animação em cima (conteúdo em y ≈ 200–750, pílula "● PHCONT" em y ≈ 196), legenda entre as metades (y ≈ 762), ela embaixo a partir de y = 860 (vídeo deslocado −420 px: cabeça, ombros e tronco). |
+| **Meio** | **Tela dividida, com ela como centro da atenção**: faixa animada **menor, no alto** (0–700; conteúdo em y ≈ 200–590), legenda entre as metades (y ≈ 612), ela embaixo a partir de **y = 700** (vídeo deslocado −450 px), ocupando quase 2/3 da tela. No gerador: `SPLIT_TOP = 700`, `SOBE = 0`, `#cam video { top: -450px }`. Pedido da cliente no vídeo 2: "a imagem um pouco mais pra cima e ela mais centro da atenção". |
 | **Gráfico principal** (o dado mais forte) | **Tela cheia** de animação, barras num cartão. Legenda em y ≈ 1100. |
 | **Convite final** | Ela **em tela cheia**, legenda no cinto. |
 | **Fim** | Dissolvência de 0,6 s para a **tela da logo do vídeo bruto** (fundo preto, "Link na bio!"), com a entrada na metade da velocidade e ~2 s parada. |
@@ -41,7 +41,42 @@ Erros típicos de transcrição: "PH Count" → **PHcont**, "Agente de" → **Ag
 Divisão entre as metades: sem linha grossa. Use um degradê escuro de ~220 px no topo do vídeo, um fio dourado de
 2 px a 55% e um brilho leve.
 
-## Telas animadas
+## Variar o estilo a cada vídeo (pedido da cliente)
+
+A cliente **não quer a mesma receita sempre**: "toda vez que eu te mandar um vídeo, referências diferentes, aplicações
+diferentes… tem que sempre ter alguma coisa diferente e que chame a atenção". A estrutura (começo e convite com ela em
+tela cheia, meio dividido, logo do bruto no fim) e a identidade (marinho, dourado, logo) ficam. **Mudam o estilo das
+telas animadas, os efeitos e os elementos visuais.**
+
+Regras:
+1. Antes de montar, leia o **histórico** abaixo e escolha um estilo **diferente dos 2 últimos vídeos**.
+2. Traga **pelo menos 1 elemento novo** que ainda não apareceu (um efeito, um tipo de gráfico, um ícone, uma transição).
+   Fontes de ideias: o catálogo do HyperFrames (`hyperframes catalog --json`, com cerca de 450 blocos de títulos, transições,
+   overlays, gráficos e tipografia cinética; veja a skill `hyperframes-registry`), as referências em `estilo/referencias/`
+   e elementos desenhados por você (ícones SVG de traço fino).
+3. Escolha elementos que **tenham a ver com o que ela fala** (lupa para diagnóstico, documento para certidão, gráfico
+   para números…). Não é enfeite solto.
+4. Ao entregar, conte em uma linha o que é novo neste vídeo e **anote no histórico**.
+
+### Catálogo de estilos (dentro da identidade PHcont)
+
+| Estilo | Visual | Usado em |
+|---|---|---|
+| **A: Explicador com cartões** | fundo marinho com grade em perspectiva, estrelas e vidros; títulos Oswald maiúsculos com palavra dourada; cartões de vidro; lista numerada; "VS"; pílula "● PHCONT" | vídeo 1 (Planejamento tributário) |
+| **B: Editorial com ícones** | sem pílula, grade nem vidros; **feixe de luz dourado** atravessando o fundo; títulos em **Playfair Display** com palavra em itálico dourado, entrando **palavra por palavra**; **ícones de traço dourado que se desenham** (lupa, documento, prédio, escudo); etiquetas em linha ("chips") com ✓; numerais grandes em itálico (01, 02, 03) com linhas finas | vídeo 2 (Regularização) |
+| C: Dados e contadores (ideia) | números grandes contando, anéis de progresso, linha do tempo; tipografia mono para rótulos | — |
+| D: Tipografia cinética (ideia) | frase-chave gigante ocupando a faixa, palavras trocando no ritmo da fala, máscara revelando o texto | — |
+| E: Documento/papel (ideia) | fundo off-white com textura, "carimbo" dourado, cartões como fichas e notas fiscais estilizadas | — |
+| F: Mapa mental (ideia) | conceitos ligados por linhas douradas que se desenham, um nó acende por vez | — |
+
+### Histórico
+
+| Vídeo | Estilo | Elementos novos |
+|---|---|---|
+| 1. Planejamento tributário | A | gráfico de barras faturamento × caixa, VS, lista numerada |
+| 2. Regularização | B | ícones que se desenham, feixe de luz, títulos palavra por palavra, chips com ✓, numerais em itálico; layout novo (faixa animada menor) |
+
+## Telas animadas (estilo A, o primeiro aprovado)
 
 Estilo das referências 5 e 6 (`estilo/referencias/ref5_explicador_cartoes.mp4`, `ref6_explicador_lista.mp4`):
 
@@ -75,6 +110,7 @@ Fontes: Oswald (títulos), Poppins (legenda e cartões).
 2. **Título centralizado e mais baixo**, nunca colado no topo.
 3. **Legenda fora do tronco dela**: entre as metades na tela dividida, no cinto quando ela está em tela cheia.
 4. **Ela é a principal** no começo e no convite final. Animação por cima nesses trechos incomoda.
-5. **Mostrar mais dela** na tela dividida, não só o rosto.
+5. **Mostrar mais dela** na tela dividida, não só o rosto. A partir do vídeo 2: faixa animada menor e mais alta (`SPLIT_TOP = 700`).
+8. **Nunca a mesma coisa sempre:** varie o estilo e traga elementos novos a cada vídeo (veja "Variar o estilo").
 6. **Vibe leve, gráficos subindo devagar, final calmo e sem travadas nos cortes**: veja as boas práticas da `edicao-video`.
 7. **Áudio sem trilha** por padrão (só a voz, a -14 LUFS). Pergunte antes de colocar música.

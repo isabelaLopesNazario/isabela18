@@ -105,6 +105,10 @@ hyperframes render --output ../final/<nome>_v1.mp4
 
 Boas práticas que valem para qualquer empresa (vieram dos ajustes da cliente):
 
+- **Cada vídeo com algo novo:** a cliente não quer a mesma receita sempre. A estrutura e a identidade ficam; o estilo das
+  telas, os efeitos e os elementos visuais mudam a cada vídeo. Siga a seção "Variar o estilo" e o histórico da skill da
+  empresa, e use o catálogo do HyperFrames como fonte de ideias.
+
 - **Vibe leve:** entradas suaves (opacidade + poucos px, `power2.out`/`sine.inOut`), trocas por dissolvência. Nada de
   zoom brusco, efeito de mola (`back.out`) ou elementos deslizando pela tela.
 - **Gráficos sobem devagar e contínuos** (~2 s), acompanhando a fala.
