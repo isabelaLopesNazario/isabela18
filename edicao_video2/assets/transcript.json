@@ -1,0 +1,398 @@
+[
+  {
+    "text": "CNPJ",
+    "start": 0.04,
+    "end": 0.34,
+    "id": "w0"
+  },
+  {
+    "text": "com",
+    "start": 0.34,
+    "end": 0.58,
+    "id": "w1"
+  },
+  {
+    "text": "pendência,",
+    "start": 0.63,
+    "end": 1.46,
+    "id": "w2"
+  },
+  {
+    "text": "certidão",
+    "start": 1.52,
+    "end": 1.91,
+    "id": "w3"
+  },
+  {
+    "text": "negativa,",
+    "start": 1.91,
+    "end": 2.5,
+    "id": "w4"
+  },
+  {
+    "text": "travada",
+    "start": 2.52,
+    "end": 3,
+    "id": "w5"
+  },
+  {
+    "text": "ou",
+    "start": 3.24,
+    "end": 3.32,
+    "id": "w6"
+  },
+  {
+    "text": "empresa",
+    "start": 3.32,
+    "end": 3.76,
+    "id": "w7"
+  },
+  {
+    "text": "aberta",
+    "start": 3.76,
+    "end": 4.16,
+    "id": "w8"
+  },
+  {
+    "text": "no",
+    "start": 4.16,
+    "end": 4.31,
+    "id": "w9"
+  },
+  {
+    "text": "regime",
+    "start": 4.31,
+    "end": 4.77,
+    "id": "w10"
+  },
+  {
+    "text": "errado?",
+    "start": 4.77,
+    "end": 5.24,
+    "id": "w11"
+  },
+  {
+    "text": "A",
+    "start": 5.28,
+    "end": 5.31,
+    "id": "w12"
+  },
+  {
+    "text": "gente",
+    "start": 5.31,
+    "end": 5.68,
+    "id": "w13"
+  },
+  {
+    "text": "faz",
+    "start": 5.68,
+    "end": 5.88,
+    "id": "w14"
+  },
+  {
+    "text": "um",
+    "start": 5.91,
+    "end": 6.02,
+    "id": "w15"
+  },
+  {
+    "text": "diagnóstico",
+    "start": 6.03,
+    "end": 6.85,
+    "id": "w16"
+  },
+  {
+    "text": "fiscal,",
+    "start": 6.85,
+    "end": 7.35,
+    "id": "w17"
+  },
+  {
+    "text": "cadastral",
+    "start": 7.43,
+    "end": 8.09,
+    "id": "w18"
+  },
+  {
+    "text": "e",
+    "start": 8.09,
+    "end": 8.15,
+    "id": "w19"
+  },
+  {
+    "text": "societário",
+    "start": 8.16,
+    "end": 8.89,
+    "id": "w20"
+  },
+  {
+    "text": "da",
+    "start": 8.89,
+    "end": 9.03,
+    "id": "w21"
+  },
+  {
+    "text": "sua",
+    "start": 9.03,
+    "end": 9.25,
+    "id": "w22"
+  },
+  {
+    "text": "empresa.",
+    "start": 9.25,
+    "end": 9.84,
+    "id": "w23"
+  },
+  {
+    "text": "Globalizamos",
+    "start": 9.88,
+    "end": 10.53,
+    "id": "w24"
+  },
+  {
+    "text": "o",
+    "start": 10.53,
+    "end": 10.59,
+    "id": "w25"
+  },
+  {
+    "text": "que",
+    "start": 10.59,
+    "end": 10.77,
+    "id": "w26"
+  },
+  {
+    "text": "está",
+    "start": 10.77,
+    "end": 11,
+    "id": "w27"
+  },
+  {
+    "text": "pendente",
+    "start": 11,
+    "end": 11.52,
+    "id": "w28"
+  },
+  {
+    "text": "e,",
+    "start": 11.52,
+    "end": 11.68,
+    "id": "w29"
+  },
+  {
+    "text": "se",
+    "start": 11.68,
+    "end": 11.81,
+    "id": "w30"
+  },
+  {
+    "text": "for",
+    "start": 11.81,
+    "end": 11.95,
+    "id": "w31"
+  },
+  {
+    "text": "abrir",
+    "start": 12.09,
+    "end": 12.34,
+    "id": "w32"
+  },
+  {
+    "text": "um",
+    "start": 12.36,
+    "end": 12.48,
+    "id": "w33"
+  },
+  {
+    "text": "negócio",
+    "start": 12.48,
+    "end": 12.85,
+    "id": "w34"
+  },
+  {
+    "text": "novo,",
+    "start": 13.08,
+    "end": 13.37,
+    "id": "w35"
+  },
+  {
+    "text": "já",
+    "start": 13.37,
+    "end": 13.48,
+    "id": "w36"
+  },
+  {
+    "text": "começamos",
+    "start": 13.48,
+    "end": 13.96,
+    "id": "w37"
+  },
+  {
+    "text": "no",
+    "start": 13.96,
+    "end": 14.04,
+    "id": "w38"
+  },
+  {
+    "text": "regime",
+    "start": 14.08,
+    "end": 14.48,
+    "id": "w39"
+  },
+  {
+    "text": "e",
+    "start": 14.48,
+    "end": 14.53,
+    "id": "w40"
+  },
+  {
+    "text": "na",
+    "start": 14.55,
+    "end": 14.68,
+    "id": "w41"
+  },
+  {
+    "text": "estrutura",
+    "start": 14.71,
+    "end": 15.36,
+    "id": "w42"
+  },
+  {
+    "text": "certos,",
+    "start": 15.36,
+    "end": 15.92,
+    "id": "w43"
+  },
+  {
+    "text": "sem",
+    "start": 15.92,
+    "end": 16.08,
+    "id": "w44"
+  },
+  {
+    "text": "surpresas",
+    "start": 16.08,
+    "end": 16.54,
+    "id": "w45"
+  },
+  {
+    "text": "e",
+    "start": 16.56,
+    "end": 16.58,
+    "id": "w46"
+  },
+  {
+    "text": "sem",
+    "start": 16.6,
+    "end": 16.76,
+    "id": "w47"
+  },
+  {
+    "text": "retrabalhos",
+    "start": 16.76,
+    "end": 17.35,
+    "id": "w48"
+  },
+  {
+    "text": "no",
+    "start": 17.35,
+    "end": 17.46,
+    "id": "w49"
+  },
+  {
+    "text": "primeiro",
+    "start": 17.46,
+    "end": 17.86,
+    "id": "w50"
+  },
+  {
+    "text": "ano.",
+    "start": 17.88,
+    "end": 18.28,
+    "id": "w51"
+  },
+  {
+    "text": "Fale",
+    "start": 18.32,
+    "end": 18.53,
+    "id": "w52"
+  },
+  {
+    "text": "com",
+    "start": 18.53,
+    "end": 18.72,
+    "id": "w53"
+  },
+  {
+    "text": "a",
+    "start": 18.72,
+    "end": 18.77,
+    "id": "w54"
+  },
+  {
+    "text": "gente",
+    "start": 18.81,
+    "end": 19.1,
+    "id": "w55"
+  },
+  {
+    "text": "antes",
+    "start": 19.1,
+    "end": 19.42,
+    "id": "w56"
+  },
+  {
+    "text": "que",
+    "start": 19.42,
+    "end": 19.61,
+    "id": "w57"
+  },
+  {
+    "text": "a",
+    "start": 19.61,
+    "end": 19.66,
+    "id": "w58"
+  },
+  {
+    "text": "pendência",
+    "start": 19.8,
+    "end": 20.25,
+    "id": "w59"
+  },
+  {
+    "text": "vire",
+    "start": 20.25,
+    "end": 20.39,
+    "id": "w60"
+  },
+  {
+    "text": "problema.",
+    "start": 20.53,
+    "end": 21.28,
+    "id": "w61"
+  },
+  {
+    "text": "Clique",
+    "start": 21.32,
+    "end": 21.58,
+    "id": "w62"
+  },
+  {
+    "text": "no",
+    "start": 21.58,
+    "end": 21.68,
+    "id": "w63"
+  },
+  {
+    "text": "Saiba",
+    "start": 21.68,
+    "end": 21.92,
+    "id": "w64"
+  },
+  {
+    "text": "Mais.",
+    "start": 21.95,
+    "end": 22.2,
+    "id": "w65"
+  }
+]

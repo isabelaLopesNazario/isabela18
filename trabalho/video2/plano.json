@@ -2,24 +2,109 @@
   "video": "bruto/video2_bruto.mov",
   "empresa": "phcont",
   "resumo": "Vídeo da PHcont (25 s) sobre regularização: CNPJ com pendência, certidão negativa travada ou empresa no regime errado. A PHcont faz diagnóstico fiscal, cadastral e societário, regulariza as pendências e, para empresa nova, já começa no regime e na estrutura certos, sem surpresas no primeiro ano. CTA: 'Clique no Saiba Mais!'.",
-  "status": "aguardando_aprovacao",
+  "status": "aprovado",
   "correcoes_transcricao": [
-    {"original": "Clarizamos", "correto": "Regularizamos", "obs": "confirmar"},
-    {"original": "nas seturas certas", "correto": "nas estruturas certas", "obs": "confirmar"}
+    {
+      "original": "Clarizamos",
+      "correto": "Regularizamos",
+      "obs": "confirmado pela cliente"
+    },
+    {
+      "original": "nas seturas certas",
+      "correto": "nas estruturas certas",
+      "obs": "confirmado pela cliente"
+    }
   ],
-  "gravacoes": [[0, 5.5], [5.5, 10.37], [10.37, 19.13], [19.13, 23.07]],
+  "gravacoes": [
+    [
+      0,
+      5.5
+    ],
+    [
+      5.5,
+      10.37
+    ],
+    [
+      10.37,
+      19.13
+    ],
+    [
+      19.13,
+      23.07
+    ]
+  ],
   "cortes": [
-    {"id": "C1", "inicio": "00:00:01.420", "fim": "00:00:01.640", "tipo": "pausa_longa", "descricao": "entre 'pendência' e 'certidão'"},
-    {"id": "C2", "inicio": "00:00:03.400", "fim": "00:00:03.640", "tipo": "pausa_longa", "descricao": "entre 'travada' e 'ou empresa'"},
-    {"id": "C3", "inicio": "00:00:16.250", "fim": "00:00:16.630", "tipo": "pausa_longa", "descricao": "entre 'certas' e 'sem surpresas'"}
+    {
+      "id": "C1",
+      "inicio": "00:00:01.420",
+      "fim": "00:00:01.640",
+      "tipo": "pausa_longa",
+      "descricao": "entre 'pendência' e 'certidão'"
+    },
+    {
+      "id": "C2",
+      "inicio": "00:00:03.400",
+      "fim": "00:00:03.640",
+      "tipo": "pausa_longa",
+      "descricao": "entre 'travada' e 'ou empresa'"
+    },
+    {
+      "id": "C3",
+      "inicio": "00:00:16.250",
+      "fim": "00:00:16.630",
+      "tipo": "pausa_longa",
+      "descricao": "entre 'certas' e 'sem surpresas'"
+    }
   ],
   "elementos": [
-    {"id": "E1", "layout": "tela cheia (ela)", "inicio": "00:00", "fim": "00:05.5", "descricao": "Gancho: ela em tela cheia, sem animação. Legenda no cinto."},
-    {"id": "E2", "layout": "tela cheia (animação)", "inicio": "00:05.5", "fim": "00:10.4", "descricao": "DIAGNÓSTICO da sua empresa: três cartões que acendem quando ela fala FISCAL, CADASTRAL e SOCIETÁRIO. Troca exatamente no corte da gravação."},
-    {"id": "E3", "layout": "tela dividida", "inicio": "00:10.4", "fim": "00:12.0", "descricao": "REGULARIZAMOS o que está pendente: CNPJ, certidão negativa e regime recebem um ✓ um a um."},
-    {"id": "E4", "layout": "tela dividida", "inicio": "00:12.0", "fim": "00:16.2", "descricao": "NEGÓCIO NOVO: lista 'Regime certo' e 'Estrutura certa' acendendo."},
-    {"id": "E5", "layout": "tela dividida", "inicio": "00:16.6", "fim": "00:19.1", "descricao": "PRIMEIRO ANO sem surpresas: 'Surpresas' e 'Retrabalho' riscados em bordô."},
-    {"id": "E6", "layout": "tela cheia (ela)", "inicio": "00:19.1", "fim": "00:23.0", "descricao": "Convite: 'Fale com a gente antes que a pendência vire problema. Clique no Saiba Mais!'. Troca exatamente no corte da gravação."},
-    {"id": "E7", "layout": "logo do bruto", "inicio": "00:23.0", "fim": "fim", "descricao": "Dissolvência suave para a tela da logo do vídeo bruto, desacelerada, com ~2 s parada."}
+    {
+      "id": "E1",
+      "layout": "tela cheia (ela)",
+      "inicio": "00:00",
+      "fim": "00:05.5",
+      "descricao": "Gancho: ela em tela cheia, sem animação. Legenda no cinto."
+    },
+    {
+      "id": "E2",
+      "layout": "tela cheia (animação)",
+      "inicio": "00:05.5",
+      "fim": "00:10.4",
+      "descricao": "DIAGNÓSTICO da sua empresa: três cartões que acendem quando ela fala FISCAL, CADASTRAL e SOCIETÁRIO. Troca exatamente no corte da gravação."
+    },
+    {
+      "id": "E3",
+      "layout": "tela dividida",
+      "inicio": "00:10.4",
+      "fim": "00:12.0",
+      "descricao": "REGULARIZAMOS o que está pendente: CNPJ, certidão negativa e regime recebem um ✓ um a um."
+    },
+    {
+      "id": "E4",
+      "layout": "tela dividida",
+      "inicio": "00:12.0",
+      "fim": "00:16.2",
+      "descricao": "NEGÓCIO NOVO: lista 'Regime certo' e 'Estrutura certa' acendendo."
+    },
+    {
+      "id": "E5",
+      "layout": "tela dividida",
+      "inicio": "00:16.6",
+      "fim": "00:19.1",
+      "descricao": "PRIMEIRO ANO sem surpresas: 'Surpresas' e 'Retrabalho' riscados em bordô."
+    },
+    {
+      "id": "E6",
+      "layout": "tela cheia (ela)",
+      "inicio": "00:19.1",
+      "fim": "00:23.0",
+      "descricao": "Convite: 'Fale com a gente antes que a pendência vire problema. Clique no Saiba Mais!'. Troca exatamente no corte da gravação."
+    },
+    {
+      "id": "E7",
+      "layout": "logo do bruto",
+      "inicio": "00:23.0",
+      "fim": "fim",
+      "descricao": "Dissolvência suave para a tela da logo do vídeo bruto, desacelerada, com ~2 s parada."
+    }
   ]
 }

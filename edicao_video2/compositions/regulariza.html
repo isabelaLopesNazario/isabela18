@@ -1,0 +1,44 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    .tit { position: absolute; left: 160px; width: 760px; text-align: center; font-family: "Oswald", sans-serif; font-weight: 700;
+      color: #f7f5f6; line-height: 1.04; text-transform: uppercase; text-shadow: 0 6px 30px rgba(0,0,0,.45); }
+    .tag { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .tag span { display: inline-block; padding: 8px 22px; border-radius: 8px; background: #7a2a33; font-family: "Poppins", sans-serif;
+      font-weight: 700; font-size: 28px; letter-spacing: .16em; color: #f7f5f6; }
+    .ouro { color: #c9ad6e; }
+    .card { position: absolute; border-radius: 22px; background: rgba(8,14,30,.82); border: 3px solid rgba(255,255,255,.14);
+      font-family: "Poppins", sans-serif; color: #f7f5f6; }
+    .card.on { border-color: #c9ad6e; box-shadow: 0 0 28px rgba(201,173,110,.4), inset 0 0 18px rgba(201,173,110,.1); }
+
+    #rg-t { top: 390px; font-size: 76px; }
+    .rg { left: 240px; width: 600px; height: 76px; padding: 0 26px; display: flex; align-items: center; gap: 22px; font-size: 34px; font-weight: 700; }
+    .rg .cx { flex: none; width: 46px; height: 46px; border-radius: 10px; border: 3px solid rgba(255,255,255,.35); position: relative; }
+    .rg .ok { position: absolute; inset: -3px; border-radius: 10px; background: #c9ad6e; color: #0b1426; font-size: 32px; font-weight: 800;
+      text-align: center; line-height: 46px; }
+
+  </style>
+  <div id="root" data-composition-id="regulariza" data-width="1080" data-height="1920">
+    <div id="regulariza-w" style="transform: translateY(-100px)">
+      <div id="rg-ct" class="clip" data-start="0" data-duration="2.14"><div id="rg-t" class="tit">Regularizamos o que está <span class="ouro">pendente</span></div></div>
+      <div id="rg-c0" class="clip" data-start="0.2" data-duration="1.94"><div id="rg-i0" class="card rg" style="top:600px"><span class="cx"><span id="rg-v0" class="ok">✓</span></span><span>CNPJ</span></div></div>
+      <div id="rg-c1" class="clip" data-start="0.2" data-duration="1.94"><div id="rg-i1" class="card rg" style="top:688px"><span class="cx"><span id="rg-v1" class="ok">✓</span></span><span>Certidão negativa</span></div></div>
+      <div id="rg-c2" class="clip" data-start="0.2" data-duration="1.94"><div id="rg-i2" class="card rg" style="top:776px"><span class="cx"><span id="rg-v2" class="ok">✓</span></span><span>Regime tributário</span></div></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#rg-t", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 0.05);
+    tl.fromTo("#rg-i0", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 0.20);
+    tl.fromTo("#rg-v0", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 0.45);
+    tl.to("#rg-i0", { borderColor: "#c9ad6e", duration: 0.3, ease: "sine.inOut" }, 0.45);
+    tl.fromTo("#rg-i1", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 0.26);
+    tl.fromTo("#rg-v1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 0.80);
+    tl.to("#rg-i1", { borderColor: "#c9ad6e", duration: 0.3, ease: "sine.inOut" }, 0.80);
+    tl.fromTo("#rg-i2", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 0.32);
+    tl.fromTo("#rg-v2", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 1.15);
+    tl.to("#rg-i2", { borderColor: "#c9ad6e", duration: 0.3, ease: "sine.inOut" }, 1.15);
+    tl.to("#regulariza-w", { opacity: 0, duration: 0.32, ease: "sine.inOut" }, 1.80);
+    window.__timelines["regulariza"] = tl;
+  </script>
+</template>
