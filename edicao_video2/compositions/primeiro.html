@@ -27,10 +27,8 @@
       <div id="pa-c" class="clip" data-start="0" data-duration="2.37">
         <div id="pa-t" class="tt" style="top:205px;font-size:80px">Primeiro <em>ano</em></div>
         <svg id="pa-cal" class="rab" style="left:220px;top:340px" width="190" height="200" viewBox="0 0 190 200"><rect x="10" y="30" width="170" height="160" rx="14"/><path d="M10 72 h170 M52 14 v34 M138 14 v34"/><path class="ouro" d="M60 132 l22 22 l46 -52"/></svg>
-        <div id="pa-a" class="mao" style="position:absolute;left:470px;top:340px;font-size:58px;color:#f7f5f6">surpresas
-          <svg id="pa-ra" class="rab" style="left:0px;top:10px" width="230" height="50" viewBox="0 0 230 50"><path class="bordo" d="M0 30 C 40 10, 70 45, 110 25 S 180 10, 225 30"/></svg></div>
-        <div id="pa-b" class="mao" style="position:absolute;left:470px;top:410px;font-size:58px;color:#f7f5f6">retrabalho
-          <svg id="pa-rb" class="rab" style="left:0px;top:10px" width="250" height="50" viewBox="0 0 250 50"><path class="bordo" d="M0 30 C 40 10, 70 45, 120 25 S 200 10, 245 30"/></svg></div>
+        <div id="pa-a" class="mao" style="position:absolute;left:470px;top:340px;font-size:58px;color:#f7f5f6"><span style="position:relative;display:inline-block">surpresas<i id="pa-ra" style="position:absolute;left:-6px;right:-6px;top:52%;height:6px;background:#d0606c;border-radius:3px;transform-origin:0 50%" data-layout-allow-occlusion></i></span></div>
+        <div id="pa-b" class="mao" style="position:absolute;left:470px;top:410px;font-size:58px;color:#f7f5f6"><span style="position:relative;display:inline-block">retrabalhos<i id="pa-rb" style="position:absolute;left:-6px;right:-6px;top:52%;height:6px;background:#d0606c;border-radius:3px;transform-origin:0 50%" data-layout-allow-occlusion></i></span></div>
         <div id="pa-ok" class="mao" style="position:absolute;left:470px;top:490px;font-size:64px">tranquilo ✓</div>
       </div>
     </div>
@@ -40,9 +38,9 @@
     tl.fromTo("#pa-t", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power2.out" }, 0.05);
     tl.fromTo("#pa-cal *", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.8, ease: "sine.inOut", stagger: 0.05 }, 0.10);
     tl.fromTo("#pa-a", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power2.out" }, 0.16);
-    tl.fromTo("#pa-ra path", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.4, ease: "sine.inOut", stagger: 0.06 }, 0.45);
+    tl.fromTo("#pa-ra", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "sine.inOut" }, 0.45);
     tl.fromTo("#pa-b", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power2.out" }, 0.84);
-    tl.fromTo("#pa-rb path", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.4, ease: "sine.inOut", stagger: 0.06 }, 1.10);
+    tl.fromTo("#pa-rb", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "sine.inOut" }, 1.1);
     tl.fromTo("#pa-ok", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 1.54);
     tl.to("#primeiro-w", { opacity: 0, duration: 0.32, ease: "sine.inOut" }, 2.03);
     window.__timelines["primeiro"] = tl;

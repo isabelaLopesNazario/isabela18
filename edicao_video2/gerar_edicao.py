@@ -236,14 +236,12 @@ cal = ('<rect x="10" y="30" width="170" height="160" rx="14"/><path d="M10 72 h1
 comp("primeiro", P_DUR, EST_C, f"""      <div id="pa-c" class="clip" data-start="0" data-duration="{P_DUR:.2f}">
         <div id="pa-t" class="tt" style="top:205px;font-size:80px">Primeiro <em>ano</em></div>
         {svg("pa-cal", 220, 340, 190, 200, cal)}
-        <div id="pa-a" class="mao" style="position:absolute;left:470px;top:340px;font-size:58px;color:{BRANCO}">surpresas
-          {svg("pa-ra", 0, 10, 230, 50, '<path class="bordo" d="M0 30 C 40 10, 70 45, 110 25 S 180 10, 225 30"/>')}</div>
-        <div id="pa-b" class="mao" style="position:absolute;left:470px;top:410px;font-size:58px;color:{BRANCO}">retrabalho
-          {svg("pa-rb", 0, 10, 250, 50, '<path class="bordo" d="M0 30 C 40 10, 70 45, 120 25 S 200 10, 245 30"/>')}</div>
+        <div id="pa-a" class="mao" style="position:absolute;left:470px;top:340px;font-size:58px;color:{BRANCO}"><span style="position:relative;display:inline-block">surpresas<i id="pa-ra" style="position:absolute;left:-6px;right:-6px;top:52%;height:6px;background:#d0606c;border-radius:3px;transform-origin:0 50%" data-layout-allow-occlusion></i></span></div>
+        <div id="pa-b" class="mao" style="position:absolute;left:470px;top:410px;font-size:58px;color:{BRANCO}"><span style="position:relative;display:inline-block">retrabalhos<i id="pa-rb" style="position:absolute;left:-6px;right:-6px;top:52%;height:6px;background:#d0606c;border-radius:3px;transform-origin:0 50%" data-layout-allow-occlusion></i></span></div>
         <div id="pa-ok" class="mao" style="position:absolute;left:470px;top:490px;font-size:64px">tranquilo ✓</div>
       </div>""", "\n".join([foco("#pa-t", 0.05, 0.35), risca("#pa-cal *", 0.1, 0.8, 0.05),
-                          foco("#pa-a", 0.16, 0.3), risca("#pa-ra path", 0.45, 0.4),
-                          foco("#pa-b", 0.84, 0.3), risca("#pa-rb path", 1.1, 0.4), foco("#pa-ok", 1.54, 0.4)]))
+                          foco("#pa-a", 0.16, 0.3), '    tl.fromTo("#pa-ra", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "sine.inOut" }, 0.45);',
+                          foco("#pa-b", 0.84, 0.3), '    tl.fromTo("#pa-rb", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "sine.inOut" }, 1.1);', foco("#pa-ok", 1.54, 0.4)]))
 
 # ---------------------------------------------------------------- legendas
 G = [("CNPJ com",0.04),("*pendência,*",0.63),("certidão negativa",1.52),("*travada*",2.52),("ou empresa",3.24),("aberta no",3.76),("regime *errado?*",4.31),
@@ -284,7 +282,7 @@ CENAS = [("diagnostico", 5.04, 9.91), ("regulariza", 9.91, 12.05),
          ("negocio", 12.05, 15.92), ("primeiro", 15.92, CHEIA2)]
 hosts = [host("fundo", 0, TOTAL, 1, 0)]
 hosts += [host(m, s, e - s, 3, 2) for m, s, e in CENAS]
-hosts += [host("atras", 0, CHART[0] + 0.6, 5, 5), host("legendas", 0, FALA_FIM, 7, 3, "captions")]
+hosts += [host("legendas", 0, FALA_FIM, 7, 3, "captions")]
 SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
 (P / "index.html").write_text(f"""<!doctype html>
 <html lang="pt-BR">
@@ -301,7 +299,6 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       #cam-sombra {{ position: absolute; left: 0; top: 0; width: 1080px; height: 200px; z-index: 2;
         background: linear-gradient(180deg, rgba(9,16,34,.55) 0%, rgba(9,16,34,.22) 45%, rgba(9,16,34,0) 100%); }}
       #logo-final {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 9; }}
-      #recorte {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 6; }}
       #camcheia {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 4; }}
       #camcheia video {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }}
       #cam video {{ position: absolute; left: 0; top: -450px; width: 1080px; height: 1920px; object-fit: cover; }}
@@ -313,13 +310,11 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       <audio id="voz" class="clip" src="assets/fala.mp4" data-start="0" data-duration="{FALA_FIM}" data-track-index="5" data-volume="1"></audio>
       <!-- Começo: ela em tela cheia -->
       <div id="camcheia">
-        <video id="fala0" class="clip" src="assets/fala.mp4" data-start="0" data-duration="{SAI+0.6:.2f}" data-media-start="0" data-track-index="1" muted playsinline></video>
+        <video id="fala0" class="clip" src="assets/abertura.mp4" data-start="0" data-duration="{SAI+0.6:.2f}" data-media-start="0" data-track-index="1" muted playsinline></video>
         <video id="fala3" class="clip" src="assets/fala.mp4" data-start="{CHEIA2:.2f}" data-duration="{FALA_FIM-CHEIA2:.2f}" data-media-start="{CHEIA2:.2f}" data-track-index="1" muted playsinline></video>
       </div>
       <!-- Final: tela da logo do vídeo bruto -->
       <video id="logo-final" class="clip" src="assets/logo_final_lento.mp4" data-start="{LOGO_INI}" data-duration="{LOGO_DUR}" data-track-index="6" muted playsinline></video>
-      <!-- Gancho: ela recortada na frente do texto gigante -->
-      <video id="recorte" class="clip" src="assets/ela_gancho.webm" data-start="0" data-duration="{SAI+0.6:.2f}" data-media-start="0" data-track-index="2" muted playsinline data-layout-allow-occlusion></video>
       <!-- Metade de baixo: ela falando -->
       <div id="cam">
         <video id="fala2" class="clip" src="assets/fala.mp4" data-start="{VOLTA:.2f}" data-duration="{CHEIA2+0.5-VOLTA:.2f}" data-media-start="{VOLTA:.2f}" data-track-index="1" muted playsinline></video>
@@ -331,7 +326,7 @@ SAI, VOLTA = CHART  # a metade de baixo desce no gráfico e volta depois
       const tl = gsap.timeline({{ paused: true }});
       // gráfico em tela cheia: a metade de baixo desce e depois volta, suave
       tl.set("#cam", {{ opacity: 0 }}, 0);
-      tl.to(["#camcheia", "#recorte"], {{ opacity: 0, duration: 0.55, ease: "sine.inOut" }}, {SAI:.2f});
+      tl.to("#camcheia", {{ opacity: 0, duration: 0.55, ease: "sine.inOut" }}, {SAI:.2f});
       tl.to("#cam", {{ opacity: 1, duration: 0.5, ease: "sine.inOut" }}, {VOLTA:.2f});
       // final: ela volta em tela cheia para o convite
       // troca direta no corte da 2ª gravação; a imagem entra levemente aproximada e se acomoda

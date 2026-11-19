@@ -118,6 +118,7 @@ Boas práticas que valem para qualquer empresa (vieram dos ajustes da cliente):
   deslize por cima desse trecho: parece vídeo travando, e às vezes aparecem duas imagens dela. Troque o layout
   **exatamente no quadro do corte**, com a imagem nova entrando a 106% e se acomodando em 100% em 0,7 s.
 - Sem barra de progresso e sem linhas fortes nas divisões: só sombreado suave.
+- Riscar palavra: **linha reta** vermelha/bordô, não em onda.
 - Áreas seguras das redes: textos importantes entre x 120–888 e y 288–1248.
 
 ### Recorte da pessoa (texto atrás dela, figurinha, círculo)
@@ -128,14 +129,18 @@ A cliente gosta de **elementos atrás da pessoa** e de **ela recortada** dentro 
   `npm install onnxruntime-node@1.21.1 --onnxruntime-node-install-cuda=skip --prefix "/root/.cache/hyperframes/optional/onnxruntime-node@1.21.1"`
 - **Foto parada:** `hyperframes remove-background quadro.png -o recorte.png` gera um PNG transparente em ~1 s. Para
   o "nó" do mapa, use um **círculo com borda branca** recortado do quadro. Fica melhor que figurinha com corte reto.
-- **Texto atrás dela em movimento:** recorte só o trecho necessário
-  (`ffmpeg -i fala.mp4 -t 5.7 ...` e depois `remove-background trecho.mp4 -o ela.webm --quality best`; ~1,7 quadro/s).
-  A ordem das camadas é: vídeo dela → escurecimento suave no alto → texto gigante → `<video>` do WebM recortado
-  (`data-layout-allow-occlusion`) → legenda. Faça o recorte sumir junto com o vídeo na transição.
-- **Texto atrás dela:** NÃO escureça o fundo atrás do texto (o escurecimento fica atrás do recorte e não por cima dele,
-  e ela aparece em "duas camadas" de tons diferentes: a cliente recusou). Use **texto escuro (marinho) com palavra-chave
-  dourada**, em uma linha só, tamanho médio (~140–170 px), e posicione de modo que **só o topo da cabeça** passe na frente
-  das letras.
+- **Texto atrás dela em movimento: NUNCA sobreponha o WebM recortado ao vídeo no HyperFrames.** Os dois não batem
+  quadro a quadro, e aparece "ela dupla" (uma imagem atrás e outra na frente, com zoom diferente), o que a cliente recusou.
+  Faça a abertura **pré-montada no ffmpeg**, quadro a quadro, usando só a máscara do recorte:
+  1. Recorte o trecho: `remove-background trecho.mp4 -o ela.webm --quality best`.
+  2. Gere PNGs transparentes (1080x1920) do sombreado e de cada palavra com Playwright (`omitBackground: true`); veja o
+     modelo `edicao_video2/abertura_textos.js` no repositório.
+  3. No ffmpeg: `[webm]alphaextract` vira a máscara; `[video][máscara]alphamerge` vira "ela" com as cores **originais**
+     (decodifique o WebM com `-c:v libvpx-vp9` para ler o alpha); então vídeo → sombreado → palavras (com
+     `fade ... alpha=1` e `enable=between(t,a,b)`) → "ela" por cima. Exporte `abertura.mp4` com `-g 30`.
+  4. No gerador, use `abertura.mp4` como fonte do primeiro trecho em tela cheia (no lugar de `fala.mp4`).
+- **Texto atrás dela:** sombreado **azul-marinho** suave no alto (só no fundo, porque ela fica por cima, sem sombra),
+  palavras brancas com a palavra-chave em dourado, em uma linha, ~140–170 px, e **só o topo da cabeça** passando na frente.
 - **Mapa:** no centro, use um **desenho do tema** (ex.: prédio "SUA EMPRESA"), não o rosto dela num círculo (recusado).
 
 ## 7. Conferir antes de entregar
