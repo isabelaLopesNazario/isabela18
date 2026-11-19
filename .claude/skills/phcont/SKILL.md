@@ -26,7 +26,13 @@ Pastas da PHcont no repositório: `bruto/`, `trabalho/`, `edicao/`, `final/`, `e
 |---|---|---|
 | Vídeo 1: Planejamento tributário | `final/phcont_planejamento_tributario_FINAL.mp4` | A: explicador com cartões |
 | Vídeo 2: Regularização | `final/phcont_regularizacao_FINAL.mp4` (= v8) | C: rascunho + mapa, palavras atrás dela |
+| Legenda do vídeo 2 | `final/phcont_regularizacao_legenda.txt` | gancho em pergunta + emoji 🚨, problema real, lista com ✔️ (fiscal/cadastral/societário), benefício, CTA "Clique no Saiba Mais ou link na bio", 9 hashtags (#PHcont primeiro) |
 | Capa do vídeo 2 | `final/phcont_regularizacao_capa_FINAL.png` | capa editorial, sem etiqueta |
+
+## Legenda do post
+
+Ao entregar um vídeo, ofereça a legenda no padrão aprovado (veja "Legenda do vídeo 2" acima): português claro,
+frases curtas, sem jargão contábil pesado, e salve em `final/<video>_legenda.txt`.
 
 ## A empresa
 
