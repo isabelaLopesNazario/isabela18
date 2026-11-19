@@ -64,8 +64,7 @@ for m in small medium; do curl -sSL --retry 4 -o ggml-$m.bin https://huggingface
 - GitHub aceita até 100 MB por arquivo (25 MB pelo site).
 
 Pastas, separadas por empresa: `<empresa>/bruto/`, `<empresa>/trabalho/`, `<empresa>/edicao/`, `<empresa>/final/`
-(por exemplo `doctorfit/final/`). Os arquivos da PHcont que já existem na raiz do repositório (`bruto/`, `edicao/`,
-`final/`…) são da PHcont.
+(por exemplo `doctorfit/final/`). A PHcont fica em `phcont/` e a DoctorFit em `doctorfit/`; um projeto de edição por vídeo (`edicao_video1`, `edicao_video2`…).
 
 ## 3. Transcrever
 

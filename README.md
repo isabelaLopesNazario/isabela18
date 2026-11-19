@@ -1,10 +1,11 @@
-# Edição de vídeos
+# Edição de vídeos e posts
 
-| Pasta | Para que serve |
+| Pasta | Empresa |
 |---|---|
-| `bruto/` | Coloque aqui os vídeos originais (até 100 MB por arquivo no GitHub) |
-| `estilo/` | `ESTILO.md` com o seu jeito de editar e as referências |
-| `trabalho/` | Transcrições, plano de edição e arquivos intermediários |
-| `final/` | Vídeos prontos |
+| `phcont/` | PHcont, Assessoria e Consultoria Contábil |
+| `doctorfit/` | DoctorFit, academia |
+| `.claude/skills/` | skills: `edicao-video` (processo), `phcont`, `doctorfit` |
+| `skills/` | as skills empacotadas (.skill) para salvar no perfil |
 
-Ferramentas: FFmpeg, HyperFrames, Whisper (português) e yt-dlp.
+Dentro de cada empresa: `bruto/` (originais), `estilo/` (marca e referências), `trabalho/` (transcrições e planos),
+`edicao_videoN/` (projeto de cada vídeo), `final/` (vídeos, capas e legendas prontos).

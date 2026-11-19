@@ -18,16 +18,16 @@ Arquivos:
 - `assets/logo_branca_transparente.png` (fundo escuro), `assets/logo_marinho_transparente.png` (fundo claro).
   No projeto, a logo branca vai em `edicao/assets/logo_branca.png`.
 
-Pastas da PHcont no repositório: `bruto/`, `trabalho/`, `edicao/`, `final/`, `estilo/` (na raiz).
+Pastas da PHcont no repositório: `phcont/bruto/`, `phcont/trabalho/`, `phcont/edicao_videoN/` (um projeto por vídeo), `phcont/final/`, `phcont/estilo/`.
 
 ## Entregas aprovadas (para lembrar o padrão)
 
 | Entrega | Arquivo final no repositório | Estilo |
 |---|---|---|
-| Vídeo 1: Planejamento tributário | `final/phcont_planejamento_tributario_FINAL.mp4` | A: explicador com cartões |
-| Vídeo 2: Regularização | `final/phcont_regularizacao_FINAL.mp4` (= v8) | C: rascunho + mapa, palavras atrás dela |
-| Legenda do vídeo 2 | `final/phcont_regularizacao_legenda.txt` | gancho em pergunta + emoji 🚨, problema real, lista com ✔️ (fiscal/cadastral/societário), benefício, CTA "Clique no Saiba Mais ou link na bio", 9 hashtags (#PHcont primeiro) |
-| Capa do vídeo 2 | `final/phcont_regularizacao_capa_FINAL.png` | capa editorial, sem etiqueta |
+| Vídeo 1: Planejamento tributário | `phcont/final/phcont_planejamento_tributario_FINAL.mp4` | A: explicador com cartões |
+| Vídeo 2: Regularização | `phcont/final/phcont_regularizacao_FINAL.mp4` (= v8) | C: rascunho + mapa, palavras atrás dela |
+| Legenda do vídeo 2 | `phcont/final/phcont_regularizacao_legenda.txt` | gancho em pergunta + emoji 🚨, problema real, lista com ✔️ (fiscal/cadastral/societário), benefício, CTA "Clique no Saiba Mais ou link na bio", 9 hashtags (#PHcont primeiro) |
+| Capa do vídeo 2 | `phcont/final/phcont_regularizacao_capa_FINAL.png` | capa editorial, sem etiqueta |
 
 ## Legenda do post
 
@@ -65,7 +65,7 @@ Regras:
 1. Antes de montar, leia o **histórico** abaixo e escolha um estilo **diferente dos 2 últimos vídeos**.
 2. Traga **pelo menos 1 elemento novo** que ainda não apareceu (um efeito, um tipo de gráfico, um ícone, uma transição).
    Fontes de ideias: o catálogo do HyperFrames (`hyperframes catalog --json`, com cerca de 450 blocos de títulos, transições,
-   overlays, gráficos e tipografia cinética; veja a skill `hyperframes-registry`), as referências em `estilo/referencias/`
+   overlays, gráficos e tipografia cinética; veja a skill `hyperframes-registry`), as referências em `phcont/estilo/referencias/`
    e elementos desenhados por você (ícones SVG de traço fino).
 3. Escolha elementos que **tenham a ver com o que ela fala** (lupa para diagnóstico, documento para certidão, gráfico
    para números…). Não é enfeite solto.
@@ -77,7 +77,7 @@ Regras:
 |---|---|---|
 | **A: Explicador com cartões** | fundo marinho com grade em perspectiva, estrelas e vidros; títulos Oswald maiúsculos com palavra dourada; cartões de vidro; lista numerada; "VS"; pílula "● PHCONT" | vídeo 1 (Planejamento tributário) |
 | **B: Editorial com ícones** | sem pílula, grade nem vidros; **feixe de luz dourado** atravessando o fundo; títulos em **Playfair Display** com palavra em itálico dourado, entrando **palavra por palavra**; **ícones de traço dourado que se desenham** (lupa, documento, prédio, escudo); etiquetas em linha ("chips") com ✓; numerais grandes em itálico (01, 02, 03) com linhas finas | vídeo 2 (Regularização) |
-| **C: Rascunho à mão + mapa** (ref. 7, `estilo/referencias/ref7_rascunho_mapa.mp4`) | fundo **papel quadriculado** escuro; **rabiscos de traço branco que se desenham** (documento com carimbo, prédio, calendário, setas); **anotações manuscritas em dourado** (fonte Caveat em `assets/fonts/`); **texto gigante ATRÁS dela** no gancho (ela recortada na frente); **mapa de ideias** com ela num círculo no centro e ramos dourados até os temas; itens riscados com rabisco bordô | vídeo 2 v3 (Regularização), **a cliente adorou o mapa e o recorte** |
+| **C: Rascunho à mão + mapa** (ref. 7, `phcont/estilo/referencias/ref7_rascunho_mapa.mp4`) | fundo **papel quadriculado** escuro; **rabiscos de traço branco que se desenham** (documento com carimbo, prédio, calendário, setas); **anotações manuscritas em dourado** (fonte Caveat em `assets/fonts/`); **texto gigante ATRÁS dela** no gancho (ela recortada na frente); **mapa de ideias** com ela num círculo no centro e ramos dourados até os temas; itens riscados com rabisco bordô | vídeo 2 v3 (Regularização), **a cliente adorou o mapa e o recorte** |
 | D: Dados e contadores (ideia) | números grandes contando, anéis de progresso, linha do tempo; tipografia mono para rótulos | — |
 | E: Tipografia cinética (ideia) | frase-chave gigante ocupando a faixa, palavras trocando no ritmo da fala, máscara revelando o texto | — |
 | F: Documento/papel (ideia) | fundo off-white com textura, "carimbo" dourado, cartões como fichas e notas fiscais estilizadas | — |
@@ -92,7 +92,7 @@ Regras:
 
 ## Capas do Reels (pedido da cliente: seguir as capas do feed)
 
-Diferente dos vídeos, nas **capas** a cliente quer o estilo do feed (`estilo/marca/feed_instagram_capas.jpg`): foto real dela
+Diferente dos vídeos, nas **capas** a cliente quer o estilo do feed (`phcont/estilo/marca/feed_instagram_capas.jpg`): foto real dela
 (sem recorte nem sombra azul em volta, só vinheta leve), título **embaixo**, dentro do recorte 3:4 (y 240–1680). Dois
 modelos em `capas/` desta skill (põem a foto `foto_capa.jpg` ao lado do HTML e geram o PNG com `modelos/capa/foto.cjs` da `edicao-video`):
 - `capa_caixas.html`: Poppins Bold branco em **caixas retas**, a 1ª linha marinho `#1F2B42` e a 2ª bordô `#7A2A33`, deslocada.
@@ -101,7 +101,7 @@ modelos em `capas/` desta skill (põem a foto `foto_capa.jpg` ao lado do HTML e 
 
 ## Telas animadas (estilo A, o primeiro aprovado)
 
-Estilo das referências 5 e 6 (`estilo/referencias/ref5_explicador_cartoes.mp4`, `ref6_explicador_lista.mp4`):
+Estilo das referências 5 e 6 (`phcont/estilo/referencias/ref5_explicador_cartoes.mp4`, `ref6_explicador_lista.mp4`):
 
 - Fundo azul-marinho com brilho no centro, grade em perspectiva embaixo, pontinhos de luz e "vidros" translúcidos andando devagar.
 - Título centralizado em **Oswald 700 maiúsculo**, branco com a palavra-chave em **dourado**.
