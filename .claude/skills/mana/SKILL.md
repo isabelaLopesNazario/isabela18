@@ -27,7 +27,7 @@ Takes de meme enviados (`mana/memes/`, gravações de tela — recorte a área �
 "EU ACHANDO QUE TÔ ARRASANDO, ENQUANTO TODO MUNDO RI DA MINHA VOZ" (usar exatamente assim, em maiúsculas, com
 emoji 💀 ou 😭 opcional no fim; letra grossa estilo TikTok, branca com contorno preto, em 2–3 linhas, no alto sem cobrir os rostos).
 
-Status: o arquivo recebido pelo chat veio **com só 2,7 s de imagem** (áudio completo de 72 s). Aguardando o original pelo Drive.
+Arquivo bom: `mana/bruto/live.mov` (Drive, 1440x2560, 60 fps). O envio pelo chat cortou a imagem em 2,7 s, então peça sempre pelo Drive. A gravação começa com 1,8 s de vinheta "glitch": comece em 1,9 s.
 Transcrição do áudio em `mana/trabalho/transcricao_audio.json` (momentos-chave: 6,9 s "Oi, gentiiim"; 36 s "Eu curto sua
 voz, né?"; 45–47 s "Alguém grava isso aí"; 50 s "Eu não acredito, ninguém falou nada pra mim"; 69 s "Eu não sabia, eu juro por Deus").
 
@@ -49,3 +49,4 @@ Ideias de edição de humor:
 
 | Vídeo | Arquivo | O que foi feito |
 |---|---|---|
+| 1. Live com a voz fina (v1) | `mana/final/mana_voz_fina_v1.mp4`, montagem `mana/edicao_video1/montar.py` (ffmpeg puro) | título fixo no topo (Anton, branco + última linha amarela), corte do trecho morno 27–35,5 s, 7 zooms ~1,7x no rosto dele nas risadas, cachorro debochado após "Eu curto sua voz, né?", plateia rindo após "alguém grava isso aí", créditos "Directed by Robert B. Weide" no fim; áudio -14 LUFS |
