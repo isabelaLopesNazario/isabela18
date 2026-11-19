@@ -20,6 +20,10 @@ Ideias de edição de humor:
 - **Gancho nos 2 primeiros segundos:** o momento mais engraçado (a risada ou a voz fina mais aguda) antes do contexto.
 - Texto de contexto curto no topo ("quando você testa o microfone… e esquece de desligar 💀").
 - **Zoom rápido (punch-in) e congelamento** de quadro nas reações, com o meme entrando logo depois.
+- **Pedido da usuária: toda vez que o cara da batalha rir, dar zoom (punch-in) no rosto dele rindo.** Para achar os
+  risos: ouça picos de áudio (`hyperframes audio`/`silencedetect` + transcrição com "[risos]"/"kkk"), confirme olhando
+  os quadros, e faça o zoom centrado no rosto dele (no lado da tela onde ele aparece na live dividida), entrando rápido
+  (0,15 s) e saindo quando o riso acaba.
 - Legenda palavra por palavra estilo TikTok (branca, contorno preto, palavra-chave colorida).
 - Efeitos sonoros curtos (boing, record scratch, risada) em volume baixo, só se a usuária quiser.
 - Memes: corte só o trecho certo (0,5–2 s), encaixe logo depois do gatilho e volte para a live.
