@@ -52,6 +52,7 @@ def montar():
     ps = pecas()
     entradas, filtros, rotulos = [], [], []
     extra = []
+    com_titulo = []
     for i, p in enumerate(ps):
         if p[0] == "live":
             _, s, e, zoom = p
@@ -65,8 +66,10 @@ def montar():
             v = (f"[{i}:v]fps=30,{crop},scale=1080:{CONT_H}:force_original_aspect_ratio=decrease,"
                  f"pad=1080:1920:(ow-iw)/2:{CONT_Y}+({CONT_H}-ih)/2:black")
         if p is not ps[-1]:
-            v += "," + titulo(i == 0)
-        filtros.append(v + f",setsar=1,format=yuv420p[b{i}]")
+            filtros.append(v + f",setsar=1[r{i}]")
+            com_titulo.append((i, (e - s) if p[0] == "live" else (mb - ma)))
+        else:
+            filtros.append(v + f",setsar=1,format=yuv420p[b{i}]")
         filtros.append(f"[{i}:a]aresample=48000,aformat=channel_layouts=stereo[a{i}]")
         rotulos.append((i, f"[a{i}]"))
 
@@ -74,6 +77,17 @@ def montar():
     n = len(ps)
     entradas += ["-loop", "1", "-t", "60", "-i", "fx/boneco.png", "-loop", "1", "-t", "60", "-i", "fx/interrogacao.png"]
     gi, qi = n, n + 1
+    # título (PNG retrô + seleção) sobre cada trecho; no 1º entra com fade e tremendo junto com o glitch
+    for k, (i, d) in enumerate(com_titulo):
+        ti = n + 2 + k
+        entradas += ["-loop", "1", "-t", f"{d:.3f}", "-i", "fx/titulo.png"]
+        if i == 0:
+            filtros.append(f"[{ti}:v]format=rgba,fade=t=in:st=0.25:d=0.35:alpha=1[t{i}]")
+            x = "'if(lt(t,1.8),10*sin(t*70)*(1.8-t),0)'"
+        else:
+            filtros.append(f"[{ti}:v]format=rgba[t{i}]")
+            x = "0"
+        filtros.append(f"[r{i}][t{i}]overlay=x={x}:y=150:shortest=1:eof_action=repeat,format=yuv420p[b{i}]")
     finais = {i: f"[b{i}]" for i in range(n)}
     for i, T in extra:
         D = 3.4

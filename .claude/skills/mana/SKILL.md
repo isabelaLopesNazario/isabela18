@@ -23,6 +23,11 @@ Takes de meme enviados (`mana/memes/`, gravações de tela — recorte a área �
 | `meme2.mov` | cachorro com sorrisinho debochado | 6,2 s (usar ~1,5–2 s) | `crop=1130:1460:72:382` | reação de deboche: quando ele percebe a voz fina ou quando ela tenta falar sério |
 | `meme3.mov` | créditos "Directed by Robert B. Weide" (fim de cena constrangedora) | 6,7 s | tela preta com texto (sem crop; cortar o topo com o texto "memes para poner…") | **final do vídeo**, logo depois do momento mais constrangedor |
 
+**Estilo do título (aprovado na v2):** mistura das referências `mana/estilo/ref_titulo_retro.jpg` ("Magical Night":
+serifada retrô Fraunces 900 SOFT/WONK, **amarelo `#FFE14D` com sombra vermelha deslocada**) e `ref_titulo_selecao.jpg`
+(texto "selecionado": a punchline em **vermelho num retângulo azul-claro de seleção**, com alças azuis e o **cursor do mouse**).
+Gerado como PNG transparente (`edicao_video1/titulo.html` + `titulo.cjs`) e sobreposto no topo (y 150).
+
 **Título escolhido pela usuária (texto no topo, o vídeo todo):**
 "EU ACHANDO QUE TÔ ARRASANDO, ENQUANTO TODO MUNDO RI DA MINHA VOZ" (usar exatamente assim, em maiúsculas, com
 emoji 💀 ou 😭 opcional no fim; letra grossa estilo TikTok, branca com contorno preto, em 2–3 linhas, no alto sem cobrir os rostos).
