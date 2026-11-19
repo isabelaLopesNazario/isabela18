@@ -366,11 +366,22 @@ def aplicar_marca(texto):
         texto = texto.replace("  </style>", f"    {MARCA['css_extra']}\n  </style>", 1)
     return texto
 
+# ---------------------------------------------------------------- suavidade (pedido da cliente: animações mais lentas)
+SUAVIDADE = 1.8      # multiplica a duração das ENTRADAS (tl.fromTo); o momento em que cada coisa começa não muda
+
+def suavizar(texto):
+    def linha(m):
+        l = m.group(0)
+        l = re.sub(r"duration: ([0-9.]+)", lambda d: f"duration: {min(float(d.group(1)) * SUAVIDADE, 2.4) if float(d.group(1)) < 5 else float(d.group(1)):.2f}", l)
+        l = re.sub(r"stagger: ([0-9.]+)", lambda d: f"stagger: {float(d.group(1)) * 1.5:.2f}", l)
+        return l
+    return re.sub(r"tl\.fromTo\([^\n]*", linha, texto)
+
 usadas = {"fundo", "legendas", "progresso", "atras"} | {c for c, _, _ in CENAS}
 for f in C.glob("*.html"):
     if f.stem not in usadas:
         f.unlink()                       # cenas do modelo que este vídeo não usa
     else:
-        f.write_text(aplicar_marca(f.read_text()))
+        f.write_text(suavizar(aplicar_marca(f.read_text())))
 (P / "index.html").write_text(aplicar_marca((P / "index.html").read_text()))
 print(f"ok: marca {MARCA['nome']}")

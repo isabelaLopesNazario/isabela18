@@ -38,19 +38,19 @@
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#mp-t", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.45, ease: "power2.out" }, 0.15);
-    tl.fromTo("#mp-emp *", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 1.0, ease: "sine.inOut", stagger: 0.05 }, 0.30);
-    tl.fromTo("#mp-emp-t", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 0.80);
-    tl.fromTo("#mp-nota", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 0.95);
-    tl.fromTo("#mp-l0", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.5, ease: "sine.inOut", stagger: 0.06 }, 1.66);
-    tl.fromTo("#mp-o0 circle", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.55, ease: "sine.inOut", stagger: 0.06 }, 1.81);
-    tl.fromTo("#mp-n0 > div", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power2.out" }, 1.91);
-    tl.fromTo("#mp-l1", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.5, ease: "sine.inOut", stagger: 0.06 }, 2.24);
-    tl.fromTo("#mp-o1 circle", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.55, ease: "sine.inOut", stagger: 0.06 }, 2.39);
-    tl.fromTo("#mp-n1 > div", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power2.out" }, 2.49);
-    tl.fromTo("#mp-l2", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.5, ease: "sine.inOut", stagger: 0.06 }, 2.97);
-    tl.fromTo("#mp-o2 circle", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.55, ease: "sine.inOut", stagger: 0.06 }, 3.12);
-    tl.fromTo("#mp-n2 > div", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power2.out" }, 3.22);
+    tl.fromTo("#mp-t", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.81, ease: "power2.out" }, 0.15);
+    tl.fromTo("#mp-emp *", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 1.80, ease: "sine.inOut", stagger: 0.08 }, 0.30);
+    tl.fromTo("#mp-emp-t", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.72, ease: "power2.out" }, 0.80);
+    tl.fromTo("#mp-nota", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.72, ease: "power2.out" }, 0.95);
+    tl.fromTo("#mp-l0", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.90, ease: "sine.inOut", stagger: 0.09 }, 1.66);
+    tl.fromTo("#mp-o0 circle", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.99, ease: "sine.inOut", stagger: 0.09 }, 1.81);
+    tl.fromTo("#mp-n0 > div", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.63, ease: "power2.out" }, 1.91);
+    tl.fromTo("#mp-l1", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.90, ease: "sine.inOut", stagger: 0.09 }, 2.24);
+    tl.fromTo("#mp-o1 circle", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.99, ease: "sine.inOut", stagger: 0.09 }, 2.39);
+    tl.fromTo("#mp-n1 > div", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.63, ease: "power2.out" }, 2.49);
+    tl.fromTo("#mp-l2", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.90, ease: "sine.inOut", stagger: 0.09 }, 2.97);
+    tl.fromTo("#mp-o2 circle", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.99, ease: "sine.inOut", stagger: 0.09 }, 3.12);
+    tl.fromTo("#mp-n2 > div", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.63, ease: "power2.out" }, 3.22);
     tl.to("#diagnostico-w", { opacity: 0, duration: 0.32, ease: "sine.inOut" }, 4.53);
     window.__timelines["diagnostico"] = tl;
   </script>

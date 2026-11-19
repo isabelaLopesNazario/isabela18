@@ -118,6 +118,9 @@ Boas práticas que valem para qualquer empresa (vieram dos ajustes da cliente):
   deslize por cima desse trecho: parece vídeo travando, e às vezes aparecem duas imagens dela. Troque o layout
   **exatamente no quadro do corte**, com a imagem nova entrando a 106% e se acomodando em 100% em 0,7 s.
 - Sem barra de progresso e sem linhas fortes nas divisões: só sombreado suave.
+- **Animações lentas e suaves:** a cliente achou as entradas rápidas demais. O gerador multiplica a duração de toda
+  entrada por `SUAVIDADE = 1.8` (texto ~0,6–0,9 s, desenhos ~1,5–1,8 s), sem mudar o momento em que cada coisa começa.
+  Se escrever cenas à mão, já use durações nesse ritmo.
 - Riscar palavra: **linha reta** vermelha/bordô, não em onda.
 - Áreas seguras das redes: textos importantes entre x 120–888 e y 288–1248.
 
