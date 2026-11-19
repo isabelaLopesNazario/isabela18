@@ -146,6 +146,14 @@ A cliente gosta de **elementos atrás da pessoa** e de **ela recortada** dentro 
   palavras brancas com a palavra-chave em dourado, em uma linha, ~140–170 px, e **só o topo da cabeça** passando na frente.
 - **Mapa:** no centro, use um **desenho do tema** (ex.: prédio "SUA EMPRESA"), não o rosto dela num círculo (recusado).
 
+### Capa do Reels (quando pedirem)
+
+PNG 1080x1920. Tudo que importa fica no meio, entre y 240 e 1680, porque a grade do perfil mostra só o recorte 3:4
+central. Receita aprovada (vídeo 2 PHcont, `edicao_video2/capa/`): escolha um quadro com ela sorrindo e de boca quase
+fechada; use o mesmo quadro desfocado com degradê da marca como fundo e o recorte dela (`remove-background`) por cima;
+a pergunta-gancho em duas linhas atrás dela, com **só o topo da cabeça** passando na frente da palavra grande; uma caixa
+com o benefício, uma linha de apoio, uma anotação manuscrita e a logo embaixo. Gere com Playwright (`capa/foto.cjs`).
+
 ## 7. Conferir antes de entregar
 
 - `hyperframes check` sem erros. Snapshots dos momentos-chave: textos sem encostar, nada sobre o rosto.
