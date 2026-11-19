@@ -238,10 +238,9 @@ comp("primeiro", P_DUR, EST_C, f"""      <div id="pa-c" class="clip" data-start=
         {svg("pa-cal", 220, 340, 190, 200, cal)}
         <div id="pa-a" class="mao" style="position:absolute;left:470px;top:340px;font-size:58px;color:{BRANCO}"><span style="position:relative;display:inline-block">surpresas<i id="pa-ra" style="position:absolute;left:-6px;right:-6px;top:52%;height:6px;background:#d0606c;border-radius:3px;transform-origin:0 50%" data-layout-allow-occlusion></i></span></div>
         <div id="pa-b" class="mao" style="position:absolute;left:470px;top:410px;font-size:58px;color:{BRANCO}"><span style="position:relative;display:inline-block">retrabalhos<i id="pa-rb" style="position:absolute;left:-6px;right:-6px;top:52%;height:6px;background:#d0606c;border-radius:3px;transform-origin:0 50%" data-layout-allow-occlusion></i></span></div>
-        <div id="pa-ok" class="mao" style="position:absolute;left:470px;top:490px;font-size:64px">tranquilo ✓</div>
       </div>""", "\n".join([foco("#pa-t", 0.05, 0.35), risca("#pa-cal *", 0.1, 0.8, 0.05),
                           foco("#pa-a", 0.16, 0.3), '    tl.fromTo("#pa-ra", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "sine.inOut" }, 0.45);',
-                          foco("#pa-b", 0.84, 0.3), '    tl.fromTo("#pa-rb", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "sine.inOut" }, 1.1);', foco("#pa-ok", 1.54, 0.4)]))
+                          foco("#pa-b", 0.84, 0.3), '    tl.fromTo("#pa-rb", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "sine.inOut" }, 1.1);']))
 
 # ---------------------------------------------------------------- legendas
 G = [("CNPJ com",0.04),("*pendência,*",0.63),("certidão negativa",1.52),("*travada*",2.52),("ou empresa",3.24),("aberta no",3.76),("regime *errado?*",4.31),

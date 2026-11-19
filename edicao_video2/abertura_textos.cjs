@@ -9,7 +9,7 @@ const quadros = {
   sombra: `<div class="s"></div>`,
   t1: `<div class="g" style="top:385px;font-size:170px">PENDÊNCIA<em>?</em></div>`,
   t2: `<div class="g" style="top:385px;font-size:170px">TRAVADA<em>?</em></div>`,
-  t3: `<div class="g" style="top:405px;font-size:140px">REGIME <em>ERRADO?</em></div>`,
+  t3: `<div class="g" style="top:415px;font-size:116px">REGIME <em>ERRADO?</em></div>`,
 };
 (async () => {
   const b = await chromium.launch();
