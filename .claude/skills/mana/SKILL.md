@@ -16,6 +16,13 @@ Contexto: numa live de batalha, ela testava o microfone (apertando o botão a vo
 mas a live inteira saiu com a voz fina, e a pessoa da batalha começou a rir. Objetivo: deixar o momento engraçado,
 encaixando takes de meme que a usuária vai mandar.
 
+Takes de meme enviados (`mana/memes/`, gravações de tela — recorte a área útil antes de usar):
+| Arquivo | Meme | Duração | Área útil (crop) | Onde encaixa |
+|---|---|---|---|---|
+| `meme1.mov` | plateia rindo/aplaudindo (vídeo antigo) | 1,3 s | `crop=1032:970:66:592` | logo depois de uma risada grande ou no "auge" da voz fina |
+| `meme2.mov` | cachorro com sorrisinho debochado | 6,2 s (usar ~1,5–2 s) | `crop=1130:1460:72:382` | reação de deboche: quando ele percebe a voz fina ou quando ela tenta falar sério |
+| `meme3.mov` | créditos "Directed by Robert B. Weide" (fim de cena constrangedora) | 6,7 s | tela preta com texto (sem crop; cortar o topo com o texto "memes para poner…") | **final do vídeo**, logo depois do momento mais constrangedor |
+
 Ideias de edição de humor:
 - **Gancho nos 2 primeiros segundos:** o momento mais engraçado (a risada ou a voz fina mais aguda) antes do contexto.
 - Texto de contexto curto no topo ("quando você testa o microfone… e esquece de desligar 💀").
