@@ -82,7 +82,7 @@ Diferente dos vídeos, nas **capas** a cliente quer o estilo do feed (`estilo/ma
 (sem recorte nem sombra azul em volta, só vinheta leve), título **embaixo**, dentro do recorte 3:4 (y 240–1680). Dois
 modelos em `edicao_video2/capa/`:
 - `capa_caixas.html`: Poppins Bold branco em **caixas retas**, a 1ª linha marinho `#1F2B42` e a 2ª bordô `#7A2A33`, deslocada.
-- `capa_editorial.html`: degradê marinho embaixo, etiqueta dourada em maiúsculas, título **serifado** (Libre Caslon)
+- `capa_editorial.html` (**a escolhida pela cliente**, sem etiqueta pequena acima do título): degradê marinho embaixo, título **serifado** (Libre Caslon)
   branco com o final em **itálico dourado** e um traço bordô curto.
 
 ## Telas animadas (estilo A, o primeiro aprovado)
