@@ -35,6 +35,19 @@ limão decorativas. O tom é energético e motivacional ("MotivAÇÃO, DedicAÇ�
 | Verde | `#50B434` | amostra da cliente | cor de apoio da marca (reserva) |
 | Vermelho | `#D63A3A` | referência ON/OFF | lado negativo das comparações (o "OFF") |
 
+## Feed real da academia (@doctorfitpalhoca) e capas do feed
+
+Print do feed: `doctorfit/estilo/marca/feed_doctorfitpalhoca.png`. O padrão das capas de lá: **foto real de professor ou
+aluno** (camiseta DoctorFit) em ambiente da academia com luz verde; título em **condensada itálica pesada maiúscula**
+(estilo Anton/Bebas inclinado), branco com palavras-chave em **verde-limão**, às vezes uma palavra numa **caixa limão
+com texto preto**, e um **traço limão** sob o título; título no lado esquerdo ou embaixo, sem cobrir o rosto.
+
+Referências de capa que a cliente gosta (`doctorfit/estilo/referencias/capas/ref_01…11.jpg`): tipografia empilhada
+(MotivAÇÃO), serifada grande com palavra em caixa colorida, chave ON/OFF, serifada com palavra em itálico misturado,
+texto sobre foto de céu/paisagem com "seleção" e cursor, títulos de cinema com letra manuscrita, cartazes de corrida
+(condensada fina + itálica + traço vermelho + rodapé técnico), "GYM TIME" com objeto passando por cima do texto,
+vidro fosco sobre foto, "MOVIMENTO É SAÚDE" com curvas limão, frase com caixa atrás de parte do texto.
+
 ## Visual das telas animadas no vídeo (estrutura igual à PHcont, visual editorial)
 
 A cliente escolheu **a mesma estrutura da PHcont** (tela dividida com a animação em cima e ela embaixo, gráfico em tela
