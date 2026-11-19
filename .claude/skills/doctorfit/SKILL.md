@@ -72,8 +72,9 @@ explicação → prova/benefício → CTA), mostre os textos para aprovar e só 
 
 Referências de carrossel: o feed da academia (`doctorfit/estilo/marca/feed_instagram.png`) e as `ed_*.jpg`.
 
-**A confirmar com a cliente:** se a tela final usa a logo do próprio vídeo bruto (como na PHcont) ou uma vinheta
-animada da logo sobre o fundo preto, e qual é a chamada final padrão (o feed usa "Agende sua aula experimental!").
+**Final do vídeo e chamada (confirmado pela cliente):** chamada padrão "**Agende sua aula experimental!**". No fim, use a
+tela de logo do próprio vídeo bruto quando existir (desacelerada e parada ~2 s, como na PHcont); quando não existir,
+faça uma vinheta animada da logo sobre o fundo preto. Entregue sempre **vídeo + capa + legenda**.
 
 ## Variar a cada vídeo e carrossel
 
