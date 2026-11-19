@@ -72,21 +72,23 @@ def montar():
 
     # bonequinho 3D (😱) atravessando a tela + interrogações 3D
     n = len(ps)
-    entradas += ["-loop", "1", "-t", "60", "-i", "fx/grito.png", "-loop", "1", "-t", "60", "-i", "fx/interrogacao.png"]
+    entradas += ["-loop", "1", "-t", "60", "-i", "fx/boneco.png", "-loop", "1", "-t", "60", "-i", "fx/interrogacao.png"]
     gi, qi = n, n + 1
     finais = {i: f"[b{i}]" for i in range(n)}
     for i, T in extra:
-        D = 2.8
-        filtros.append(f"[{gi}:v]scale=320:-1,format=rgba,rotate='0.22*sin(2*PI*t*2.5)':c=none:ow=rotw(0.3):oh=roth(0.3)[g{i}]")
-        filtros.append(f"[{qi}:v]scale=150:-1,format=rgba,split=3[q{i}a][q{i}b][q{i}c]")
-        cadeia = f"[b{i}][g{i}]overlay=x='-380+(t-{T})*{(1080 + 760) / D:.1f}':y='1020+50*sin((t-{T})*9)':enable='between(t,{T},{T + D})':shortest=1[c{i}0]"
-        filtros.append(cadeia)
-        pos = [(180, 760, 0.35), (720, 700, 0.75), (430, 1180, 1.15)]
+        D = 3.4
+        filtros.append(f"[{gi}:v]scale=-1:430,format=rgba[g{i}]")
+        filtros.append(f"[{qi}:v]scale=110:-1,format=rgba,split=3[q{i}a][q{i}b][q{i}c]")
+        # entra andando da esquerda (0,6 s), para no centro balançando de leve, sai pela direita no fim
+        bx = (f"if(lt(t-{T},0.6),-200+(t-{T})/0.6*640,if(lt(t-{T},{D - 0.5}),440+6*sin((t-{T})*5),"
+              f"440+(t-{T}-{D - 0.5})/0.5*700))")
+        filtros.append(f"[b{i}][g{i}]overlay=x='{bx}':y='1475+4*abs(sin((t-{T})*9))':enable='between(t,{T},{T + D})':shortest=1[c{i}0]")
+        pos = [(320, 1490, 0.7), (640, 1470, 1.0), (720, 1590, 1.3)]
         ant = f"[c{i}0]"
         for k, (qx, qy, dt) in enumerate(pos):
             lab = f"[q{i}{'abc'[k]}]"
             nome = f"[c{i}{k + 1}]"
-            filtros.append(f"{ant}{lab}overlay=x={qx}:y='{qy}-30*abs(sin((t-{T}-{dt})*6))':enable='between(t,{T + dt},{T + dt + 1.6})':shortest=1{nome}")
+            filtros.append(f"{ant}{lab}overlay=x={qx}:y='{qy}-25*abs(sin((t-{T}-{dt})*6))':enable='between(t,{T + dt},{T + D - 0.5})':shortest=1{nome}")
             ant = nome
         finais[i] = ant
 

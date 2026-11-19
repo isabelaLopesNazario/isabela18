@@ -36,7 +36,7 @@ Ideias de edição de humor:
 - Texto de contexto curto no topo ("quando você testa o microfone… e esquece de desligar 💀").
 - **Zoom rápido (punch-in) e congelamento** de quadro nas reações, com o meme entrando logo depois.
 - **Zoom nas risadas (ajustado na v2):** só em **algumas** risadas (3), e **leve** (até ~1,28x), indo e voltando suave (0,6 s), sem perder a tela dividida. Não fazer zoom forte nem em todas.
-- **Efeito "bonequinho 3D":** emoji 3D 😱 (Microsoft Fluent Emoji, licença MIT, em `mana/edicao_video1/fx/`) atravessando a tela balançando, com ❓ 3D quicando, no momento em que ela fala "eu não acredito". Para outros momentos, outros emojis do mesmo pacote (`https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/<Nome>/3D/<nome>_3d.png`).
+- **Efeito "bonequinho 3D" (versão aprovada pela usuária):** o **bonequinho branco 3D pensativo** da referência dela (`mana/edicao_video1/fx/boneco.png`, recortado com `remove-background`), que entra andando pela **faixa preta de baixo** (sem cobrir a live), para coçando a cabeça e sai, com ❓ 3D quicando em volta da cabeça. Versão anterior: emoji 3D 😱 (Microsoft Fluent Emoji, licença MIT, em `mana/edicao_video1/fx/`) atravessando a tela balançando, com ❓ 3D quicando, no momento em que ela fala "eu não acredito". Para outros momentos, outros emojis do mesmo pacote (`https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/<Nome>/3D/<nome>_3d.png`).
 - (pedido original: toda vez que o cara rir, zoom no rosto dele) Para achar os
   risos: ouça picos de áudio (`hyperframes audio`/`silencedetect` + transcrição com "[risos]"/"kkk"), confirme olhando
   os quadros, e faça o zoom centrado no rosto dele (no lado da tela onde ele aparece na live dividida), entrando rápido
