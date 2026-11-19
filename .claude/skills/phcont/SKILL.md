@@ -76,6 +76,15 @@ Regras:
 | 2. Regularização (v2) | B | ícones que se desenham, feixe de luz, títulos palavra por palavra, chips com ✓, numerais em itálico; layout novo (faixa animada menor) |
 | 2. Regularização (v3–v6, **aprovado na v6**) | C | texto atrás dela (marinho, só a cabeça na frente), mapa com o prédio "sua empresa" no centro, rabiscos que se desenham, letra manuscrita |
 
+## Capas do Reels (pedido da cliente: seguir as capas do feed)
+
+Diferente dos vídeos, nas **capas** a cliente quer o estilo do feed (`estilo/marca/feed_instagram_capas.jpg`): foto real dela
+(sem recorte nem sombra azul em volta, só vinheta leve), título **embaixo**, dentro do recorte 3:4 (y 240–1680). Dois
+modelos em `edicao_video2/capa/`:
+- `capa_caixas.html`: Poppins Bold branco em **caixas retas**, a 1ª linha marinho `#1F2B42` e a 2ª bordô `#7A2A33`, deslocada.
+- `capa_editorial.html`: degradê marinho embaixo, etiqueta dourada em maiúsculas, título **serifado** (Libre Caslon)
+  branco com o final em **itálico dourado** e um traço bordô curto.
+
 ## Telas animadas (estilo A, o primeiro aprovado)
 
 Estilo das referências 5 e 6 (`estilo/referencias/ref5_explicador_cartoes.mp4`, `ref6_explicador_lista.mp4`):
