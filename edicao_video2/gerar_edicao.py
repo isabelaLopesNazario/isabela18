@@ -153,16 +153,14 @@ def svg(id_, x, y, w, h, corpo):
 
 # ---------------------------------------------------------------- texto ATRÁS dela no gancho (0–5.64)
 comp("atras", 5.64, f"""
-    #at-sombra {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1000px;
-      background: linear-gradient(180deg, rgba(9,16,34,.78) 0%, rgba(9,16,34,.55) 45%, rgba(9,16,34,0) 100%); }}
-    .gig {{ position: absolute; left: 60px; width: 960px; text-align: center; font-family: "Oswald", sans-serif; font-weight: 700;
-      text-transform: uppercase; line-height: .9; letter-spacing: -.01em; color: rgba(247,245,246,.92); }}
-    .gig em {{ font-style: normal; color: {GOLD}; }}
-""", """      <div id="at-s" class="clip" data-start="0.4" data-duration="5.24"><div id="at-sombra"></div></div>
-      <div id="at-1" class="clip" data-start="0.55" data-duration="1.9"><div id="at-1i" class="gig" style="top:250px;font-size:250px">PEN<br>DÊNCIA?</div></div>
-      <div id="at-2" class="clip" data-start="2.45" data-duration="1.8"><div id="at-2i" class="gig" style="top:280px;font-size:230px">TRA<br><em>VADA?</em></div></div>
-      <div id="at-3" class="clip" data-start="4.25" data-duration="1.39"><div id="at-3i" class="gig" style="top:280px;font-size:200px">REGIME<br><em>ERRADO?</em></div></div>""",
-     "\n".join(['    tl.fromTo("#at-sombra", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "sine.inOut" }, 0.4);', foco("#at-1i", 0.55, 0.35), foco("#at-2i", 2.45, 0.3), foco("#at-3i", 4.25, 0.3), '    tl.to("#atras-w", { opacity: 0, duration: 0.5, ease: "sine.inOut" }, 5.04);']))
+    .gig {{ position: absolute; left: 40px; width: 1000px; text-align: center; font-family: "Oswald", sans-serif; font-weight: 700;
+      text-transform: uppercase; line-height: 1; letter-spacing: .005em; color: #14203a; white-space: nowrap;
+      text-shadow: 0 0 18px rgba(255,255,255,.35); }}
+    .gig em {{ font-style: normal; color: {GOLD}; text-shadow: 0 2px 10px rgba(9,16,34,.35); }}
+""", """      <div id="at-1" class="clip" data-start="0.55" data-duration="1.9"><div id="at-1i" class="gig" style="top:385px;font-size:170px">PENDÊNCIA<em>?</em></div></div>
+      <div id="at-2" class="clip" data-start="2.45" data-duration="1.8"><div id="at-2i" class="gig" style="top:385px;font-size:170px">TRAVADA<em>?</em></div></div>
+      <div id="at-3" class="clip" data-start="4.25" data-duration="1.39"><div id="at-3i" class="gig" style="top:405px;font-size:140px">REGIME <em>ERRADO?</em></div></div>""",
+     "\n".join([foco("#at-1i", 0.55, 0.35), foco("#at-2i", 2.45, 0.3), foco("#at-3i", 4.25, 0.3), '    tl.to("#atras-w", { opacity: 0, duration: 0.5, ease: "sine.inOut" }, 5.04);']))
 
 # ---------------------------------------------------------------- MAPA do diagnóstico (TELA CHEIA) 5.04–9.91
 # local: diagnóstico 0.99 ; fiscal 1.81 ; cadastral 2.39 ; societário 3.12
@@ -174,19 +172,20 @@ nos = [("fiscal", 225, 650, "FISCAL", "impostos e<br>obrigações", 1.81),
 def _ramo(i, x, y):
     import math
     dx, dy = x - CX, y - CY; L = math.hypot(dx, dy); ux, uy = dx / L, dy / L
-    x0, y0 = CX + ux * 205, CY + uy * 205          # sai da borda da foto dela
+    x0, y0 = CX + ux * 160, CY - 20 + uy * (160 if uy < 0.9 else 225)          # sai da borda da foto dela
     x1, y1 = x - ux * 120, y - uy * 120              # chega na borda do círculo do tema
-    mx, my = (x0 + x1) / 2 - uy * 28, (y0 + y1) / 2 + ux * 28
+    k = 28 if uy < 0.9 else 0
+    mx, my = (x0 + x1) / 2 - uy * k, (y0 + y1) / 2 + ux * k
     return f'<path id="mp-l{i}" class="ouro" d="M{x0:.0f} {y0:.0f} Q {mx:.0f} {my:.0f} {x1:.0f} {y1:.0f}"/>'
 ramos = "".join(_ramo(i, x, y) for i, (_, x, y, *_r) in enumerate(nos))
 body = [f'      <div id="mp-ct" class="clip" data-start="0.15" data-duration="{D_DUR-0.15:.2f}">',
         '        <div id="mp-t" class="tt" style="top:290px;font-size:82px">Diagnóstico da sua <em>empresa</em></div>',
         f'        {svg("mp-ramos", 0, 0, 1080, 1300, ramos)}',
-        f'        <img id="mp-ela" src="assets/ela_circulo.png" style="position:absolute;left:{CX-195}px;top:{CY-195}px;width:390px;height:390px;border-radius:50%;box-shadow:0 0 0 6px rgba(201,173,110,.35)">',
-        f'        <div id="mp-nota" class="mao" style="position:absolute;left:{CX+175}px;top:{CY+150}px;font-size:52px;transform:rotate(-6deg)">a gente<br>analisa tudo</div>',
+        f'        {svg("mp-emp", CX-150, CY-170, 300, 300, "<circle class=\'ouro\' cx=\'150\' cy=\'150\' r=\'140\'/><path d=\'M95 225 v-110 l55 -32 l55 32 v110\'/><path d=\'M78 225 h144\'/><path d=\'M118 135 h16 M166 135 h16 M118 165 h16 M166 165 h16 M118 195 h16 M166 195 h16\'/><path d=\'M141 225 v-24 h18 v24\'/>")}',
+        f'        <div id="mp-emp-t" style="position:absolute;left:{CX-200}px;top:{CY+140}px;width:400px;text-align:center;font-family:Oswald,sans-serif;font-weight:700;font-size:44px;color:{BRANCO}">SUA EMPRESA</div>',        f'        <div id="mp-nota" class="mao" style="position:absolute;left:{CX+165}px;top:{CY+40}px;font-size:50px;transform:rotate(-6deg)">a gente<br>analisa tudo</div>',
         '      </div>']
 js = [foco("#mp-t", 0.15, 0.45),
-      f'    tl.fromTo("#mp-ela", {{ opacity: 0, scale: 0.85 }}, {{ opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }}, 0.35);',
+      risca("#mp-emp *", 0.3, 1.0, 0.05), foco("#mp-emp-t", 0.8, 0.4),
       foco("#mp-nota", 0.95, 0.4)]
 for i, (k, x, y, nome, nota, t) in enumerate(nos):
     body.append(f'      <div id="mp-c{i}" class="clip" data-start="{t:.2f}" data-duration="{D_DUR-t:.2f}">'

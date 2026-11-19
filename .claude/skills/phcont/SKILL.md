@@ -74,7 +74,7 @@ Regras:
 |---|---|---|
 | 1. Planejamento tributário | A | gráfico de barras faturamento × caixa, VS, lista numerada |
 | 2. Regularização (v2) | B | ícones que se desenham, feixe de luz, títulos palavra por palavra, chips com ✓, numerais em itálico; layout novo (faixa animada menor) |
-| 2. Regularização (v3) | C | texto gigante atrás dela (recorte), mapa com ela no centro, rabiscos que se desenham, letra manuscrita |
+| 2. Regularização (v3–v5) | C | texto atrás dela (marinho, só a cabeça na frente), mapa com o prédio "sua empresa" no centro, rabiscos que se desenham, letra manuscrita |
 
 ## Telas animadas (estilo A, o primeiro aprovado)
 
@@ -112,7 +112,7 @@ Fontes: Oswald (títulos), Poppins (legenda e cartões).
 5. **Mostrar mais dela** na tela dividida, não só o rosto. A partir do vídeo 2: faixa animada menor e mais alta (`SPLIT_TOP = 700`).
 9. **Sem barra de progresso** (a barra dourada de tempo no topo foi recusada).
 10. **Divisão entre as metades só com sombreado suave**, sem linha dourada e sem sombra forte.
-11. **Mapa grande e centralizado** na tela cheia (ela num círculo de ~390 px no centro, temas em círculos de ~220 px), com a legenda **mais baixa** (y ≈ 1640) para não cobrir o mapa. As anotações ficam para fora, onde as linhas não passam.
+11. **Mapa grande e centralizado** na tela cheia (no centro um desenho do tema, como o prédio "SUA EMPRESA"; o rosto dela no círculo foi recusado, temas em círculos de ~220 px), com a legenda **mais baixa** (y ≈ 1640) para não cobrir o mapa. As anotações ficam para fora, onde as linhas não passam.
 8. **Nunca a mesma coisa sempre:** varie o estilo e traga elementos novos a cada vídeo (veja "Variar o estilo").
 6. **Vibe leve, gráficos subindo devagar, final calmo e sem travadas nos cortes**: veja as boas práticas da `edicao-video`.
 7. **Áudio sem trilha** por padrão (só a voz, a -14 LUFS). Pergunte antes de colocar música.

@@ -132,7 +132,11 @@ A cliente gosta de **elementos atrás da pessoa** e de **ela recortada** dentro 
   (`ffmpeg -i fala.mp4 -t 5.7 ...` e depois `remove-background trecho.mp4 -o ela.webm --quality best`; ~1,7 quadro/s).
   A ordem das camadas é: vídeo dela → escurecimento suave no alto → texto gigante → `<video>` do WebM recortado
   (`data-layout-allow-occlusion`) → legenda. Faça o recorte sumir junto com o vídeo na transição.
-- Escureça o alto da tela atrás do texto gigante: branco sobre parede clara some.
+- **Texto atrás dela:** NÃO escureça o fundo atrás do texto (o escurecimento fica atrás do recorte e não por cima dele,
+  e ela aparece em "duas camadas" de tons diferentes: a cliente recusou). Use **texto escuro (marinho) com palavra-chave
+  dourada**, em uma linha só, tamanho médio (~140–170 px), e posicione de modo que **só o topo da cabeça** passe na frente
+  das letras.
+- **Mapa:** no centro, use um **desenho do tema** (ex.: prédio "SUA EMPRESA"), não o rosto dela num círculo (recusado).
 
 ## 7. Conferir antes de entregar
 

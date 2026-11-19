@@ -26,9 +26,10 @@
     <div id="diagnostico-w" style="transform: translateY(-0px)">
       <div id="mp-ct" class="clip" data-start="0.15" data-duration="4.72">
         <div id="mp-t" class="tt" style="top:290px;font-size:82px">Diagnóstico da sua <em>empresa</em></div>
-        <svg id="mp-ramos" class="rab" style="left:0px;top:0px" width="1080" height="1300" viewBox="0 0 1080 1300"><path id="mp-l0" class="ouro" d="M394 816 Q 372 755 311 734"/><path id="mp-l1" class="ouro" d="M686 816 Q 747 795 769 734"/><path id="mp-l2" class="ouro" d="M540 1165 Q 512 1188 540 1210"/></svg>
-        <img id="mp-ela" src="assets/ela_circulo.png" style="position:absolute;left:345px;top:765px;width:390px;height:390px;border-radius:50%;box-shadow:0 0 0 6px rgba(201,173,110,.35)">
-        <div id="mp-nota" class="mao" style="position:absolute;left:715px;top:1110px;font-size:52px;transform:rotate(-6deg)">a gente<br>analisa tudo</div>
+        <svg id="mp-ramos" class="rab" style="left:0px;top:0px" width="1080" height="1300" viewBox="0 0 1080 1300"><path id="mp-l0" class="ouro" d="M426 828 Q 388 761 311 734"/><path id="mp-l1" class="ouro" d="M654 828 Q 731 801 769 734"/><path id="mp-l2" class="ouro" d="M540 1165 Q 540 1188 540 1210"/></svg>
+        <svg id="mp-emp" class="rab" style="left:390px;top:790px" width="300" height="300" viewBox="0 0 300 300"><circle class='ouro' cx='150' cy='150' r='140'/><path d='M95 225 v-110 l55 -32 l55 32 v110'/><path d='M78 225 h144'/><path d='M118 135 h16 M166 135 h16 M118 165 h16 M166 165 h16 M118 195 h16 M166 195 h16'/><path d='M141 225 v-24 h18 v24'/></svg>
+        <div id="mp-emp-t" style="position:absolute;left:340px;top:1100px;width:400px;text-align:center;font-family:Oswald,sans-serif;font-weight:700;font-size:44px;color:#f7f5f6">SUA EMPRESA</div>
+        <div id="mp-nota" class="mao" style="position:absolute;left:705px;top:1000px;font-size:50px;transform:rotate(-6deg)">a gente<br>analisa tudo</div>
       </div>
       <div id="mp-c0" class="clip" data-start="1.81" data-duration="3.06"><div id="mp-n0" style="position:absolute;left:55px;top:535px;width:340px;height:330px;text-align:center"><svg id="mp-o0" class="rab" style="left:55px;top:0px" width="230" height="230" viewBox="0 0 230 230"><circle cx='115' cy='115' r='108'/></svg><div style="position:absolute;left:0;top:88px;font-family:Oswald,sans-serif;font-weight:700;font-size:48px;width:340px;color:#f7f5f6">FISCAL</div><div class="mao" style="position:absolute;left:0;top:238px;font-size:46px;width:340px;line-height:1;text-align:left;padding:0 10px">impostos e<br>obrigações</div></div></div>
       <div id="mp-c1" class="clip" data-start="2.39" data-duration="2.48"><div id="mp-n1" style="position:absolute;left:685px;top:535px;width:340px;height:330px;text-align:center"><svg id="mp-o1" class="rab" style="left:55px;top:0px" width="230" height="230" viewBox="0 0 230 230"><circle cx='115' cy='115' r='108'/></svg><div style="position:absolute;left:0;top:88px;font-family:Oswald,sans-serif;font-weight:700;font-size:38px;width:340px;color:#f7f5f6">CADASTRAL</div><div class="mao" style="position:absolute;left:0;top:238px;font-size:46px;width:340px;line-height:1;text-align:right;padding:0 10px">CNPJ e<br>certidões</div></div></div>
@@ -38,7 +39,8 @@
   <script>
     const tl = gsap.timeline({ paused: true });
     tl.fromTo("#mp-t", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.45, ease: "power2.out" }, 0.15);
-    tl.fromTo("#mp-ela", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, 0.35);
+    tl.fromTo("#mp-emp *", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 1.0, ease: "sine.inOut", stagger: 0.05 }, 0.30);
+    tl.fromTo("#mp-emp-t", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 0.80);
     tl.fromTo("#mp-nota", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 0.95);
     tl.fromTo("#mp-l0", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.5, ease: "sine.inOut", stagger: 0.06 }, 1.66);
     tl.fromTo("#mp-o0 circle", { strokeDasharray: 1400, strokeDashoffset: 1400 }, { strokeDashoffset: 0, duration: 0.55, ease: "sine.inOut", stagger: 0.06 }, 1.81);
