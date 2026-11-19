@@ -100,7 +100,7 @@ num histórico nesta seção (data, tema, estilo, o que foi novo).
 
 | Entrega | Arquivo | Estilo |
 |---|---|---|
-| Capa do feed: Novembro Azul (1080x1350) | `doctorfit/final/doctorfit_novembro_azul_capa.png`, fonte em `doctorfit/capas/novembro_azul/` | padrão do feed: título Anton itálico em cima (azul da campanha `#4A9BFF` + caixa limão), laço azul, foto real com degradê em cima e embaixo, texto de apoio embaixo e logo |
+| Capa do feed: Novembro Azul (1080x1440, 3:4) | `doctorfit/final/doctorfit_novembro_azul_capa.png`, fonte `doctorfit/capas/novembro_azul/capa2.html` | **modelo da própria cliente** (`estilo/referencias/capas/ref_novembro_azul_cliente.png`): logo no alto à esquerda, título Anton inclinado em 2 linhas (branco + verde-limão), traço limão, subtítulo Poppins itálico, laço azul grande à direita, curvas limão nos cantos, foto inteira com só o alto escurecido |
 
 ## Preferências da cliente para a DoctorFit
 
