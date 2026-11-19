@@ -96,6 +96,12 @@ editoriais) e **mude o estilo das telas e dos slides a cada entrega**: varie a c
 fosco, palavra gigante, tipografia empilhada como "MotivAÇÃO", chave ON/OFF), os efeitos e as curvas. Anote cada entrega
 num histórico nesta seção (data, tema, estilo, o que foi novo).
 
+## Histórico de entregas
+
+| Entrega | Arquivo | Estilo |
+|---|---|---|
+| Capa do feed: Novembro Azul (1080x1350) | `doctorfit/final/doctorfit_novembro_azul_capa.png`, fonte em `doctorfit/capas/novembro_azul/` | padrão do feed: título Anton itálico em cima (azul da campanha `#4A9BFF` + caixa limão), laço azul, foto real com degradê em cima e embaixo, texto de apoio embaixo e logo |
+
 ## Preferências da cliente para a DoctorFit
 
 (Vazio por enquanto. Anote aqui cada ajuste pedido para a academia e o porquê.)
