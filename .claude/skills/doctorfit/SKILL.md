@@ -102,6 +102,11 @@ num histórico nesta seção (data, tema, estilo, o que foi novo).
 |---|---|---|
 | Capa do feed: Novembro Azul (1080x1440, 3:4) — **APROVADA** | `doctorfit/final/doctorfit_novembro_azul_capa.png`, fonte `doctorfit/capas/novembro_azul/capa2.html` | **modelo da própria cliente** (`estilo/referencias/capas/ref_novembro_azul_cliente.png`): logo no alto à esquerda, título Anton inclinado em 2 linhas (branco + verde-limão), traço limão, subtítulo Poppins itálico, **laço 3D recortado da referência** (`laco_final.png`) colado ao título, curvas limão nos cantos, foto inteira com o alto escurecido, frase de fechamento centralizada no pé com degradê |
 
+## Legenda do post (DoctorFit)
+
+A cliente prefere legenda **simples e curta**: 1 frase de abertura com emoji, 1 frase com a mensagem, 1 pergunta para
+engajar, 5–6 hashtags (#DoctorFit e #Palhoça sempre). Modelo aprovado: `doctorfit/final/doctorfit_novembro_azul_legenda.txt`.
+
 ## Preferências da cliente para a DoctorFit
 
 (Vazio por enquanto. Anote aqui cada ajuste pedido para a academia e o porquê.)
