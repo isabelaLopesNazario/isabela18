@@ -101,7 +101,7 @@ num histórico nesta seção (data, tema, estilo, o que foi novo).
 | Entrega | Arquivo | Estilo |
 |---|---|---|
 | Capa do feed: Novembro Azul (1080x1440, 3:4) — **APROVADA** | `doctorfit/final/doctorfit_novembro_azul_capa.png`, fonte `doctorfit/capas/novembro_azul/capa2.html` | **modelo da própria cliente** (`estilo/referencias/capas/ref_novembro_azul_cliente.png`): logo no alto à esquerda, título Anton inclinado em 2 linhas (branco + verde-limão), traço limão, subtítulo Poppins itálico, **laço 3D recortado da referência** (`laco_final.png`) colado ao título, curvas limão nos cantos, foto inteira com o alto escurecido, frase de fechamento centralizada no pé com degradê |
-| Capa do feed: Consciência Negra (1080x1440) | `doctorfit/final/doctorfit_consciencia_negra_capa.png`, fonte `doctorfit/capas/consciencia_negra/` | refs da cliente (`estilo/referencias/capas/consciencia_negra/`): fundo marrom com granulado, faixa lateral de padrão africano (SVG), título Anton creme em bloco, data entre linhas douradas, **punho em gravura CC0 (rawpixel) recolorido em dourado** com sol de raios atrás, frase serifada, só um traço limão de acento; sem foto da academia (cliente não tinha) |
+| Capa do feed: Consciência Negra (1080x1440) | `doctorfit/final/doctorfit_consciencia_negra_capa.png`, fonte `doctorfit/capas/consciencia_negra/capa_df.html` | 1ª versão em marrom/dourado (refs) foi **recusada: a cliente quer sempre a estética DoctorFit** (preto, verde-limão, branco). Final: logo no alto à esquerda, título Anton inclinado (branco + "NEGRA" limão), data em caixa limão, frase Poppins itálico, **punho em gravura CC0 recolorido em branco** com sol de raios limão, faixa de padrão africano em limão/branco/verde-escuro à direita, curva limão no canto |
 
 ## Legenda do post (DoctorFit)
 
@@ -116,4 +116,4 @@ automático. Guarde o crédito num `CREDITOS.txt` ao lado da capa. Nunca use as 
 
 ## Preferências da cliente para a DoctorFit
 
-(Vazio por enquanto. Anote aqui cada ajuste pedido para a academia e o porquê.)
+- **Sempre a estética da DoctorFit**, mesmo em datas comemorativas: fundo preto/grafite, títulos em verde-limão e branco, título Anton inclinado. Cores do tema (azul do Novembro Azul, marrom/dourado etc.) entram só como detalhe, nunca como paleta principal.
