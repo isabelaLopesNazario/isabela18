@@ -101,11 +101,18 @@ num histórico nesta seção (data, tema, estilo, o que foi novo).
 | Entrega | Arquivo | Estilo |
 |---|---|---|
 | Capa do feed: Novembro Azul (1080x1440, 3:4) — **APROVADA** | `doctorfit/final/doctorfit_novembro_azul_capa.png`, fonte `doctorfit/capas/novembro_azul/capa2.html` | **modelo da própria cliente** (`estilo/referencias/capas/ref_novembro_azul_cliente.png`): logo no alto à esquerda, título Anton inclinado em 2 linhas (branco + verde-limão), traço limão, subtítulo Poppins itálico, **laço 3D recortado da referência** (`laco_final.png`) colado ao título, curvas limão nos cantos, foto inteira com o alto escurecido, frase de fechamento centralizada no pé com degradê |
+| Capa do feed: Consciência Negra (1080x1440) | `doctorfit/final/doctorfit_consciencia_negra_capa.png`, fonte `doctorfit/capas/consciencia_negra/` | refs da cliente (`estilo/referencias/capas/consciencia_negra/`): fundo marrom com granulado, faixa lateral de padrão africano (SVG), título Anton creme em bloco, data entre linhas douradas, **punho em gravura CC0 (rawpixel) recolorido em dourado** com sol de raios atrás, frase serifada, só um traço limão de acento; sem foto da academia (cliente não tinha) |
 
 ## Legenda do post (DoctorFit)
 
 A cliente prefere legenda **simples e curta**: 1 frase de abertura com emoji, 1 frase com a mensagem, 1 pergunta para
 engajar, 5–6 hashtags (#DoctorFit e #Palhoça sempre). Modelo aprovado: `doctorfit/final/doctorfit_novembro_azul_legenda.txt`.
+
+## Imagens de terceiros
+
+Quando não houver foto da academia: use só imagens com licença livre para uso comercial (CC0/domínio público), encontradas
+pela API do **Openverse** (`api.openverse.org/v1/images/?q=...&license_type=commercial,modification`); Unsplash/Pexels bloqueiam acesso
+automático. Guarde o crédito num `CREDITOS.txt` ao lado da capa. Nunca use as fotos das referências (outras marcas, fotos de imprensa).
 
 ## Preferências da cliente para a DoctorFit
 
