@@ -158,6 +158,10 @@ A cliente gosta de **elementos atrás da pessoa** e de **ela recortada** dentro 
   4. No gerador, use `abertura.mp4` como fonte do primeiro trecho em tela cheia (no lugar de `fala.mp4`).
 - **Texto atrás dela:** sombreado **azul-marinho** suave no alto (só no fundo, porque ela fica por cima, sem sombra),
   palavras brancas com a palavra-chave em dourado, em uma linha, ~140–170 px, e **só o topo da cabeça** passando na frente.
+- **Recorte de foto parada sobre cor forte (ex.: palavra limão atrás da pessoa):** o PNG do `remove-background` tem borda
+  semitransparente que deixa a cor de trás "vazar" no contorno do rosto. Limpe: alpha com limiar 0,5 + erosão de 1 px +
+  desfoque de 0,8 px, e na faixa da borda corte o verde (G = min(G, max(R,B))). Modelo: `doctorfit/capas/consciencia_negra/`
+  (`aluna_recorte_limpo.png`). Confira com um zoom no rosto antes de entregar.
 - **Mapa:** no centro, use um **desenho do tema** (ex.: prédio "SUA EMPRESA"), não o rosto dela num círculo (recusado).
 
 ### Capa do Reels (quando pedirem)
