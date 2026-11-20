@@ -1,0 +1,386 @@
+[
+  {
+    "text": "que",
+    "start": 0,
+    "end": 0.2,
+    "id": "w0"
+  },
+  {
+    "text": "ela",
+    "start": 0.45,
+    "end": 0.7,
+    "id": "w1"
+  },
+  {
+    "text": "não",
+    "start": 0.7,
+    "end": 1.05,
+    "id": "w2"
+  },
+  {
+    "text": "percebeu,",
+    "start": 1.05,
+    "end": 2.03,
+    "id": "w3"
+  },
+  {
+    "text": "porque",
+    "start": 2.06,
+    "end": 2.13,
+    "id": "w4"
+  },
+  {
+    "text": "quando",
+    "start": 2.13,
+    "end": 2.19,
+    "id": "w5"
+  },
+  {
+    "text": "ela",
+    "start": 2.24,
+    "end": 2.28,
+    "id": "w6"
+  },
+  {
+    "text": "falou",
+    "start": 2.28,
+    "end": 2.37,
+    "id": "w7"
+  },
+  {
+    "text": "que",
+    "start": 2.39,
+    "end": 2.42,
+    "id": "w8"
+  },
+  {
+    "text": "tinha",
+    "start": 2.42,
+    "end": 2.51,
+    "id": "w9"
+  },
+  {
+    "text": "que",
+    "start": 2.51,
+    "end": 2.55,
+    "id": "w10"
+  },
+  {
+    "text": "segurar,",
+    "start": 2.65,
+    "end": 2.74,
+    "id": "w11"
+  },
+  {
+    "text": "ela",
+    "start": 2.79,
+    "end": 2.92,
+    "id": "w12"
+  },
+  {
+    "text": "tirou",
+    "start": 2.98,
+    "end": 3.23,
+    "id": "w13"
+  },
+  {
+    "text": "e",
+    "start": 3.24,
+    "end": 3.25,
+    "id": "w14"
+  },
+  {
+    "text": "continuou",
+    "start": 3.35,
+    "end": 3.72,
+    "id": "w15"
+  },
+  {
+    "text": "com",
+    "start": 3.72,
+    "end": 3.79,
+    "id": "w16"
+  },
+  {
+    "text": "a",
+    "start": 3.79,
+    "end": 3.81,
+    "id": "w17"
+  },
+  {
+    "text": "voz",
+    "start": 3.81,
+    "end": 3.83,
+    "id": "w18"
+  },
+  {
+    "text": "fina.",
+    "start": 3.93,
+    "end": 4.21,
+    "id": "w19"
+  },
+  {
+    "text": "Aí",
+    "start": 4.22,
+    "end": 4.31,
+    "id": "w20"
+  },
+  {
+    "text": "eu",
+    "start": 4.31,
+    "end": 4.41,
+    "id": "w21"
+  },
+  {
+    "text": "fui",
+    "start": 4.41,
+    "end": 4.42,
+    "id": "w22"
+  },
+  {
+    "text": "dando",
+    "start": 4.67,
+    "end": 4.84,
+    "id": "w23"
+  },
+  {
+    "text": "corda,",
+    "start": 4.84,
+    "end": 5.19,
+    "id": "w24"
+  },
+  {
+    "text": "ela",
+    "start": 5.2,
+    "end": 5.3,
+    "id": "w25"
+  },
+  {
+    "text": "continuou",
+    "start": 5.38,
+    "end": 5.8,
+    "id": "w26"
+  },
+  {
+    "text": "falando,",
+    "start": 5.96,
+    "end": 6.28,
+    "id": "w27"
+  },
+  {
+    "text": "entendeu?",
+    "start": 6.3,
+    "end": 6.77,
+    "id": "w28"
+  },
+  {
+    "text": "Aí",
+    "start": 6.96,
+    "end": 7.03,
+    "id": "w29"
+  },
+  {
+    "text": "eu",
+    "start": 7.03,
+    "end": 7.1,
+    "id": "w30"
+  },
+  {
+    "text": "comecei",
+    "start": 7.1,
+    "end": 7.34,
+    "id": "w31"
+  },
+  {
+    "text": "a",
+    "start": 7.34,
+    "end": 7.4,
+    "id": "w32"
+  },
+  {
+    "text": "rir,",
+    "start": 7.4,
+    "end": 7.54,
+    "id": "w33"
+  },
+  {
+    "text": "ela",
+    "start": 7.54,
+    "end": 7.59,
+    "id": "w34"
+  },
+  {
+    "text": "não",
+    "start": 7.64,
+    "end": 7.74,
+    "id": "w35"
+  },
+  {
+    "text": "percebeu,",
+    "start": 7.74,
+    "end": 8.05,
+    "id": "w36"
+  },
+  {
+    "text": "eu",
+    "start": 8.12,
+    "end": 8.14,
+    "id": "w37"
+  },
+  {
+    "text": "falei,",
+    "start": 8.18,
+    "end": 8.49,
+    "id": "w38"
+  },
+  {
+    "text": "mas",
+    "start": 8.49,
+    "end": 8.59,
+    "id": "w39"
+  },
+  {
+    "text": "ela",
+    "start": 8.7,
+    "end": 8.71,
+    "id": "w40"
+  },
+  {
+    "text": "nem",
+    "start": 8.72,
+    "end": 8.82,
+    "id": "w41"
+  },
+  {
+    "text": "sabe",
+    "start": 8.82,
+    "end": 8.95,
+    "id": "w42"
+  },
+  {
+    "text": "que",
+    "start": 9.02,
+    "end": 9.08,
+    "id": "w43"
+  },
+  {
+    "text": "eu",
+    "start": 9.08,
+    "end": 9.14,
+    "id": "w44"
+  },
+  {
+    "text": "tava",
+    "start": 9.2,
+    "end": 9.3,
+    "id": "w45"
+  },
+  {
+    "text": "com",
+    "start": 9.3,
+    "end": 9.41,
+    "id": "w46"
+  },
+  {
+    "text": "a",
+    "start": 9.41,
+    "end": 9.44,
+    "id": "w47"
+  },
+  {
+    "text": "voz",
+    "start": 9.44,
+    "end": 9.51,
+    "id": "w48"
+  },
+  {
+    "text": "fina.",
+    "start": 9.66,
+    "end": 9.92,
+    "id": "w49"
+  },
+  {
+    "text": "Eu",
+    "start": 9.92,
+    "end": 10.01,
+    "id": "w50"
+  },
+  {
+    "text": "não",
+    "start": 10.01,
+    "end": 10.12,
+    "id": "w51"
+  },
+  {
+    "text": "sabia,",
+    "start": 10.37,
+    "end": 10.48,
+    "id": "w52"
+  },
+  {
+    "text": "eu",
+    "start": 10.48,
+    "end": 10.55,
+    "id": "w53"
+  },
+  {
+    "text": "juro",
+    "start": 10.57,
+    "end": 10.75,
+    "id": "w54"
+  },
+  {
+    "text": "por",
+    "start": 10.75,
+    "end": 10.89,
+    "id": "w55"
+  },
+  {
+    "text": "Deus,",
+    "start": 10.89,
+    "end": 11.17,
+    "id": "w56"
+  },
+  {
+    "text": "eu",
+    "start": 11.17,
+    "end": 11.26,
+    "id": "w57"
+  },
+  {
+    "text": "pensei",
+    "start": 11.26,
+    "end": 11.54,
+    "id": "w58"
+  },
+  {
+    "text": "que",
+    "start": 11.66,
+    "end": 11.67,
+    "id": "w59"
+  },
+  {
+    "text": "tinha",
+    "start": 11.68,
+    "end": 11.92,
+    "id": "w60"
+  },
+  {
+    "text": "que",
+    "start": 11.92,
+    "end": 12.06,
+    "id": "w61"
+  },
+  {
+    "text": "ficar",
+    "start": 12.06,
+    "end": 12.29,
+    "id": "w62"
+  },
+  {
+    "text": "segurando.",
+    "start": 12.3,
+    "end": 12.95,
+    "id": "w63"
+  }
+]

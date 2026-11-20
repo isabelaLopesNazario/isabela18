@@ -1,0 +1,296 @@
+[
+  {
+    "text": "Eaí",
+    "start": 0,
+    "end": 0.43,
+    "id": "w0"
+  },
+  {
+    "text": "ele",
+    "start": 0.43,
+    "end": 0.85,
+    "id": "w1"
+  },
+  {
+    "text": "joga",
+    "start": 0.92,
+    "end": 1.45,
+    "id": "w2"
+  },
+  {
+    "text": "na",
+    "start": 1.45,
+    "end": 1.74,
+    "id": "w3"
+  },
+  {
+    "text": "IA",
+    "start": 1.74,
+    "end": 2.02,
+    "id": "w4"
+  },
+  {
+    "text": "ali,",
+    "start": 2.02,
+    "end": 2.6,
+    "id": "w5"
+  },
+  {
+    "text": "e",
+    "start": 2.66,
+    "end": 2.72,
+    "id": "w6"
+  },
+  {
+    "text": "aí",
+    "start": 2.72,
+    "end": 2.97,
+    "id": "w7"
+  },
+  {
+    "text": "já",
+    "start": 2.97,
+    "end": 3.22,
+    "id": "w8"
+  },
+  {
+    "text": "faz,",
+    "start": 3.22,
+    "end": 3.75,
+    "id": "w9"
+  },
+  {
+    "text": "tudo",
+    "start": 3.86,
+    "end": 4.06,
+    "id": "w10"
+  },
+  {
+    "text": "dançando",
+    "start": 4.06,
+    "end": 4.59,
+    "id": "w11"
+  },
+  {
+    "text": "e",
+    "start": 4.68,
+    "end": 4.74,
+    "id": "w12"
+  },
+  {
+    "text": "tal,",
+    "start": 4.74,
+    "end": 5.11,
+    "id": "w13"
+  },
+  {
+    "text": "bem",
+    "start": 5.11,
+    "end": 5.27,
+    "id": "w14"
+  },
+  {
+    "text": "legal.",
+    "start": 5.27,
+    "end": 5.68,
+    "id": "w15"
+  },
+  {
+    "text": "É",
+    "start": 5.68,
+    "end": 5.73,
+    "id": "w16"
+  },
+  {
+    "text": "uma",
+    "start": 5.73,
+    "end": 5.89,
+    "id": "w17"
+  },
+  {
+    "text": "massa,",
+    "start": 5.89,
+    "end": 6.25,
+    "id": "w18"
+  },
+  {
+    "text": "é",
+    "start": 6.25,
+    "end": 6.3,
+    "id": "w19"
+  },
+  {
+    "text": "uma",
+    "start": 6.3,
+    "end": 6.45,
+    "id": "w20"
+  },
+  {
+    "text": "massa",
+    "start": 6.46,
+    "end": 6.72,
+    "id": "w21"
+  },
+  {
+    "text": "os",
+    "start": 6.72,
+    "end": 6.8,
+    "id": "w22"
+  },
+  {
+    "text": "caras,",
+    "start": 6.85,
+    "end": 7.18,
+    "id": "w23"
+  },
+  {
+    "text": "tipo,",
+    "start": 7.18,
+    "end": 7.56,
+    "id": "w24"
+  },
+  {
+    "text": "você",
+    "start": 7.56,
+    "end": 7.78,
+    "id": "w25"
+  },
+  {
+    "text": "nem",
+    "start": 7.78,
+    "end": 7.94,
+    "id": "w26"
+  },
+  {
+    "text": "percebe",
+    "start": 7.94,
+    "end": 8.32,
+    "id": "w27"
+  },
+  {
+    "text": "como",
+    "start": 8.34,
+    "end": 8.54,
+    "id": "w28"
+  },
+  {
+    "text": "faz,",
+    "start": 8.54,
+    "end": 8.73,
+    "id": "w29"
+  },
+  {
+    "text": "tá",
+    "start": 8.81,
+    "end": 8.92,
+    "id": "w30"
+  },
+  {
+    "text": "ligado?",
+    "start": 8.92,
+    "end": 9.31,
+    "id": "w31"
+  },
+  {
+    "text": "Mas",
+    "start": 9.44,
+    "end": 9.62,
+    "id": "w32"
+  },
+  {
+    "text": "aí",
+    "start": 9.62,
+    "end": 9.66,
+    "id": "w33"
+  },
+  {
+    "text": "você",
+    "start": 9.82,
+    "end": 9.98,
+    "id": "w34"
+  },
+  {
+    "text": "faz",
+    "start": 9.98,
+    "end": 10.16,
+    "id": "w35"
+  },
+  {
+    "text": "mais",
+    "start": 10.16,
+    "end": 10.4,
+    "id": "w36"
+  },
+  {
+    "text": "uma",
+    "start": 10.4,
+    "end": 10.56,
+    "id": "w37"
+  },
+  {
+    "text": "aleatória,",
+    "start": 10.61,
+    "end": 11.24,
+    "id": "w38"
+  },
+  {
+    "text": "pra",
+    "start": 11.24,
+    "end": 11.42,
+    "id": "w39"
+  },
+  {
+    "text": "que",
+    "start": 11.42,
+    "end": 11.6,
+    "id": "w40"
+  },
+  {
+    "text": "tá",
+    "start": 11.6,
+    "end": 11.72,
+    "id": "w41"
+  },
+  {
+    "text": "bom.",
+    "start": 11.72,
+    "end": 11.96,
+    "id": "w42"
+  },
+  {
+    "text": "Eu",
+    "start": 11.96,
+    "end": 12.01,
+    "id": "w43"
+  },
+  {
+    "text": "cuido",
+    "start": 12.05,
+    "end": 12.3,
+    "id": "w44"
+  },
+  {
+    "text": "de",
+    "start": 12.34,
+    "end": 12.41,
+    "id": "w45"
+  },
+  {
+    "text": "sua",
+    "start": 12.41,
+    "end": 12.56,
+    "id": "w46"
+  },
+  {
+    "text": "voz,",
+    "start": 12.56,
+    "end": 12.8,
+    "id": "w47"
+  },
+  {
+    "text": "né?",
+    "start": 12.8,
+    "end": 12.96,
+    "id": "w48"
+  }
+]

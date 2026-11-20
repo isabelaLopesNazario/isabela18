@@ -1,0 +1,86 @@
+[
+  {
+    "text": "ficar",
+    "start": 0.02,
+    "end": 0.32,
+    "id": "w0"
+  },
+  {
+    "text": "pegando.",
+    "start": 0.32,
+    "end": 0.95,
+    "id": "w1"
+  },
+  {
+    "text": "Eu",
+    "start": 0.95,
+    "end": 1.09,
+    "id": "w2"
+  },
+  {
+    "text": "lembrei.",
+    "start": 1.09,
+    "end": 1.72,
+    "id": "w3"
+  },
+  {
+    "text": "Eu",
+    "start": 1.72,
+    "end": 1.85,
+    "id": "w4"
+  },
+  {
+    "text": "percebi,",
+    "start": 1.85,
+    "end": 2.38,
+    "id": "w5"
+  },
+  {
+    "text": "eu",
+    "start": 2.44,
+    "end": 2.52,
+    "id": "w6"
+  },
+  {
+    "text": "percebi",
+    "start": 2.62,
+    "end": 2.99,
+    "id": "w7"
+  },
+  {
+    "text": "que",
+    "start": 3.13,
+    "end": 3.2,
+    "id": "w8"
+  },
+  {
+    "text": "ela",
+    "start": 3.2,
+    "end": 3.39,
+    "id": "w9"
+  },
+  {
+    "text": "não,",
+    "start": 3.39,
+    "end": 3.71,
+    "id": "w10"
+  },
+  {
+    "text": "que",
+    "start": 3.71,
+    "end": 3.9,
+    "id": "w11"
+  },
+  {
+    "text": "ela",
+    "start": 3.9,
+    "end": 4.09,
+    "id": "w12"
+  },
+  {
+    "text": "não...",
+    "start": 4.09,
+    "end": 4.99,
+    "id": "w13"
+  }
+]

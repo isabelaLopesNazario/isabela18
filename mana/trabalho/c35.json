@@ -1,0 +1,266 @@
+[
+  {
+    "text": "Eaí",
+    "start": 0,
+    "end": 0.24,
+    "id": "w0"
+  },
+  {
+    "text": "tá",
+    "start": 0.24,
+    "end": 0.4,
+    "id": "w1"
+  },
+  {
+    "text": "bom,",
+    "start": 0.4,
+    "end": 0.67,
+    "id": "w2"
+  },
+  {
+    "text": "eu",
+    "start": 0.76,
+    "end": 0.94,
+    "id": "w3"
+  },
+  {
+    "text": "cuido",
+    "start": 1.09,
+    "end": 1.32,
+    "id": "w4"
+  },
+  {
+    "text": "de",
+    "start": 1.39,
+    "end": 1.49,
+    "id": "w5"
+  },
+  {
+    "text": "sua",
+    "start": 1.49,
+    "end": 1.7,
+    "id": "w6"
+  },
+  {
+    "text": "voz,",
+    "start": 1.7,
+    "end": 2.12,
+    "id": "w7"
+  },
+  {
+    "text": "né?",
+    "start": 2.12,
+    "end": 2.37,
+    "id": "w8"
+  },
+  {
+    "text": "Acho",
+    "start": 2.42,
+    "end": 2.65,
+    "id": "w9"
+  },
+  {
+    "text": "que",
+    "start": 2.76,
+    "end": 2.83,
+    "id": "w10"
+  },
+  {
+    "text": "ela",
+    "start": 2.85,
+    "end": 3,
+    "id": "w11"
+  },
+  {
+    "text": "sabe,",
+    "start": 3.06,
+    "end": 3.38,
+    "id": "w12"
+  },
+  {
+    "text": "né?",
+    "start": 3.38,
+    "end": 3.7,
+    "id": "w13"
+  },
+  {
+    "text": "Você",
+    "start": 3.7,
+    "end": 4.2,
+    "id": "w14"
+  },
+  {
+    "text": "sabe,",
+    "start": 4.2,
+    "end": 4.7,
+    "id": "w15"
+  },
+  {
+    "text": "né?",
+    "start": 4.7,
+    "end": 4.72,
+    "id": "w16"
+  },
+  {
+    "text": "Eu",
+    "start": 4.72,
+    "end": 4.79,
+    "id": "w17"
+  },
+  {
+    "text": "tenho,",
+    "start": 4.91,
+    "end": 5.13,
+    "id": "w18"
+  },
+  {
+    "text": "eu",
+    "start": 5.13,
+    "end": 5.22,
+    "id": "w19"
+  },
+  {
+    "text": "tenho",
+    "start": 5.22,
+    "end": 5.36,
+    "id": "w20"
+  },
+  {
+    "text": "a",
+    "start": 5.44,
+    "end": 5.49,
+    "id": "w21"
+  },
+  {
+    "text": "voz?",
+    "start": 5.49,
+    "end": 5.82,
+    "id": "w22"
+  },
+  {
+    "text": "Não,",
+    "start": 5.82,
+    "end": 6.03,
+    "id": "w23"
+  },
+  {
+    "text": "cara,",
+    "start": 6.03,
+    "end": 6.28,
+    "id": "w24"
+  },
+  {
+    "text": "você",
+    "start": 6.28,
+    "end": 6.44,
+    "id": "w25"
+  },
+  {
+    "text": "tá",
+    "start": 6.44,
+    "end": 6.49,
+    "id": "w26"
+  },
+  {
+    "text": "amando.",
+    "start": 6.52,
+    "end": 6.96,
+    "id": "w27"
+  },
+  {
+    "text": "É,",
+    "start": 6.96,
+    "end": 6.96,
+    "id": "w28"
+  },
+  {
+    "text": "eu",
+    "start": 6.96,
+    "end": 6.96,
+    "id": "w29"
+  },
+  {
+    "text": "já",
+    "start": 6.96,
+    "end": 6.96,
+    "id": "w30"
+  },
+  {
+    "text": "vi.",
+    "start": 6.96,
+    "end": 8.17,
+    "id": "w31"
+  },
+  {
+    "text": "Eu",
+    "start": 8.17,
+    "end": 8.847,
+    "id": "w32"
+  },
+  {
+    "text": "tô",
+    "start": 8.847,
+    "end": 9.523,
+    "id": "w33"
+  },
+  {
+    "text": "batendo",
+    "start": 9.523,
+    "end": 10.2,
+    "id": "w34"
+  },
+  {
+    "text": "aqui,",
+    "start": 10.2,
+    "end": 10.84,
+    "id": "w35"
+  },
+  {
+    "text": "pode",
+    "start": 11.29,
+    "end": 11.55,
+    "id": "w36"
+  },
+  {
+    "text": "ir.",
+    "start": 11.59,
+    "end": 12,
+    "id": "w37"
+  },
+  {
+    "text": "Grava",
+    "start": 12,
+    "end": 12.18,
+    "id": "w38"
+  },
+  {
+    "text": "isso",
+    "start": 12.19,
+    "end": 12.32,
+    "id": "w39"
+  },
+  {
+    "text": "aí,",
+    "start": 12.32,
+    "end": 12.46,
+    "id": "w40"
+  },
+  {
+    "text": "ó,",
+    "start": 12.46,
+    "end": 12.56,
+    "id": "w41"
+  },
+  {
+    "text": "alguém",
+    "start": 12.56,
+    "end": 12.67,
+    "id": "w42"
+  },
+  {
+    "text": "grava.",
+    "start": 12.76,
+    "end": 13,
+    "id": "w43"
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "text": "eu",
+    "start": 0,
+    "end": 0.3,
+    "id": "w0"
+  },
+  {
+    "text": "não",
+    "start": 0.3,
+    "end": 0.76,
+    "id": "w1"
+  },
+  {
+    "text": "acredito,",
+    "start": 0.91,
+    "end": 2.08,
+    "id": "w2"
+  },
+  {
+    "text": "ninguém",
+    "start": 2.08,
+    "end": 2.37,
+    "id": "w3"
+  },
+  {
+    "text": "falou",
+    "start": 2.37,
+    "end": 2.58,
+    "id": "w4"
+  },
+  {
+    "text": "nada",
+    "start": 2.58,
+    "end": 2.75,
+    "id": "w5"
+  },
+  {
+    "text": "pra",
+    "start": 2.75,
+    "end": 2.87,
+    "id": "w6"
+  },
+  {
+    "text": "mim,",
+    "start": 2.87,
+    "end": 3.06,
+    "id": "w7"
+  },
+  {
+    "text": "eu",
+    "start": 3.07,
+    "end": 3.15,
+    "id": "w8"
+  },
+  {
+    "text": "pensei",
+    "start": 3.15,
+    "end": 3.4,
+    "id": "w9"
+  },
+  {
+    "text": "que",
+    "start": 3.4,
+    "end": 3.49,
+    "id": "w10"
+  },
+  {
+    "text": "eu",
+    "start": 3.54,
+    "end": 3.58,
+    "id": "w11"
+  },
+  {
+    "text": "tinha",
+    "start": 3.62,
+    "end": 3.81,
+    "id": "w12"
+  },
+  {
+    "text": "que",
+    "start": 3.81,
+    "end": 3.93,
+    "id": "w13"
+  },
+  {
+    "text": "ficar",
+    "start": 3.93,
+    "end": 4.12,
+    "id": "w14"
+  },
+  {
+    "text": "pedaçando",
+    "start": 4.2,
+    "end": 4.48,
+    "id": "w15"
+  }
+]
