@@ -52,9 +52,20 @@ Ideias de edição de humor:
 
 Áudio: TikTok pode silenciar música protegida. Para música de fundo, a usuária escolhe pelo próprio app na hora de postar.
 
+## Preferências da Mana (v3)
+
+- **Título só na vinheta "TV com defeito"** do começo, grande e na frente do vídeo, tremendo junto; quando a imagem
+  estabiliza, o título **some** e o vídeo roda limpo.
+- **Poucos zooms:** só nas risadas mais fortes (2 no vídeo 1), leves (~1,28x), indo e voltando.
+- **Sem memes de vídeo inseridos e sem os créditos "Directed by…"** (ela não gostou, "não pegou bem").
+- Funciona: **frases engraçadas em destaque** (estilo do título, retrô amarelo) na faixa preta de baixo, e o
+  **bonequinho 3D pensativo com ❓**.
+- Montagem em 2 passos (`montar_v3.py`): base com cortes e zooms, depois os efeitos sobre a linha do tempo final.
+
 ## Histórico
 
 | Vídeo | Arquivo | O que foi feito |
 |---|---|---|
+| 1. Live com a voz fina (v3) | `mana/final/mana_voz_fina_v3.mp4`, `montar_v3.py` | título só na vinheta, 2 zooms, sem memes nem créditos, 3 frases em destaque, bonequinho |
 | 1. Live com a voz fina (v2) | `mana/final/mana_voz_fina_v2.mp4`, `mana/edicao_video1/montar_v2.py` | começo original com glitch + título tremendo, zoom leve em 3 risadas, 😱 + ❓ 3D no "eu não acredito", memes e créditos |
 | 1. Live com a voz fina (v1) | `mana/final/mana_voz_fina_v1.mp4`, montagem `mana/edicao_video1/montar.py` (ffmpeg puro) | título fixo no topo (Anton, branco + última linha amarela), corte do trecho morno 27–35,5 s, 7 zooms ~1,7x no rosto dele nas risadas, cachorro debochado após "Eu curto sua voz, né?", plateia rindo após "alguém grava isso aí", créditos "Directed by Robert B. Weide" no fim; áudio -14 LUFS |
