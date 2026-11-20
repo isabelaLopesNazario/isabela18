@@ -15,6 +15,7 @@ Arquivos:
 - `marca.json`: cores, logo e texto da pílula da PHcont. Use com o gerador da skill `edicao-video`
   (`python3 gerar_edicao.py . .claude/skills/phcont/marca.json`). Essa é a paleta de referência do gerador.
 - `references/estilo-completo.md`: manual de estilo com o histórico de feedback.
+- `assets/logo_branca_sem_texto.png`: **só "PH CONT"**, sem a frase pequena "Assessoria e Consultoria Contábil" (a cliente pediu assim nas capas, porque a frase fica ilegível em tamanho pequeno). Use esta nas capas.
 - `assets/logo_branca_transparente.png` (fundo escuro), `assets/logo_marinho_transparente.png` (fundo claro).
   No projeto, a logo branca vai em `edicao/assets/logo_branca.png`.
 
