@@ -27,6 +27,7 @@ Pastas da PHcont no repositório: `phcont/bruto/`, `phcont/trabalho/`, `phcont/e
 | Vídeo 1: Planejamento tributário | `phcont/final/phcont_planejamento_tributario_FINAL.mp4` | A: explicador com cartões |
 | Vídeo 2: Regularização | `phcont/final/phcont_regularizacao_FINAL.mp4` (= v8) | C: rascunho + mapa, palavras atrás dela |
 | Legenda do vídeo 2 | `phcont/final/phcont_regularizacao_legenda.txt` | gancho em pergunta + emoji 🚨, problema real, lista com ✔️ (fiscal/cadastral/societário), benefício, CTA "Clique no Saiba Mais ou link na bio", 9 hashtags (#PHcont primeiro) |
+| Capa do feed: Consciência Negra (1080x1440) | `phcont/final/phcont_consciencia_negra_capa.png`, fonte `phcont/capas/consciencia_negra/` | sem foto: **punho em gravura CC0 (rawpixel) recolorido em dourado** com sol de raios finos, fundo marinho com granulado, logo PHcont pequena no alto, título serifado Libre Caslon ("Dia da Consciência" branco + "*Negra*" itálico dourado), data em dourado espaçada, traço bordô, frase Poppins, faixa geométrica dourada fina no rodapé; legenda em `phcont_consciencia_negra_legenda.txt` |
 | Capa do vídeo 2 | `phcont/final/phcont_regularizacao_capa_FINAL.png` | capa editorial, sem etiqueta |
 
 ## Legenda do post
