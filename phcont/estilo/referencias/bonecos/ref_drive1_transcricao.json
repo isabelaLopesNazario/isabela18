@@ -1,0 +1,1118 @@
+[
+  {
+    "text": "20",
+    "start": 0.27,
+    "end": 0.59,
+    "id": "w0"
+  },
+  {
+    "text": "milhões",
+    "start": 0.59,
+    "end": 1.27,
+    "id": "w1"
+  },
+  {
+    "text": "de",
+    "start": 1.27,
+    "end": 1.37,
+    "id": "w2"
+  },
+  {
+    "text": "reais.",
+    "start": 1.45,
+    "end": 2.14,
+    "id": "w3"
+  },
+  {
+    "text": "Mas",
+    "start": 2.16,
+    "end": 2.28,
+    "id": "w4"
+  },
+  {
+    "text": "o",
+    "start": 2.28,
+    "end": 2.32,
+    "id": "w5"
+  },
+  {
+    "text": "que",
+    "start": 2.32,
+    "end": 2.46,
+    "id": "w6"
+  },
+  {
+    "text": "faz",
+    "start": 2.46,
+    "end": 2.52,
+    "id": "w7"
+  },
+  {
+    "text": "ela",
+    "start": 2.67,
+    "end": 2.74,
+    "id": "w8"
+  },
+  {
+    "text": "valer",
+    "start": 2.74,
+    "end": 3,
+    "id": "w9"
+  },
+  {
+    "text": "isso?",
+    "start": 3,
+    "end": 3.36,
+    "id": "w10"
+  },
+  {
+    "text": "A",
+    "start": 3.36,
+    "end": 3.41,
+    "id": "w11"
+  },
+  {
+    "text": "vaca",
+    "start": 3.45,
+    "end": 3.72,
+    "id": "w12"
+  },
+  {
+    "text": "mais",
+    "start": 3.72,
+    "end": 4.11,
+    "id": "w13"
+  },
+  {
+    "text": "valiosa",
+    "start": 4.12,
+    "end": 4.64,
+    "id": "w14"
+  },
+  {
+    "text": "do",
+    "start": 4.64,
+    "end": 4.76,
+    "id": "w15"
+  },
+  {
+    "text": "mundo",
+    "start": 4.76,
+    "end": 5.2,
+    "id": "w16"
+  },
+  {
+    "text": "é",
+    "start": 5.35,
+    "end": 5.4,
+    "id": "w17"
+  },
+  {
+    "text": "brasileira,",
+    "start": 5.4,
+    "end": 6.54,
+    "id": "w18"
+  },
+  {
+    "text": "foi",
+    "start": 6.54,
+    "end": 6.81,
+    "id": "w19"
+  },
+  {
+    "text": "avaliada",
+    "start": 6.81,
+    "end": 7.42,
+    "id": "w20"
+  },
+  {
+    "text": "em",
+    "start": 7.42,
+    "end": 7.58,
+    "id": "w21"
+  },
+  {
+    "text": "mais",
+    "start": 7.58,
+    "end": 7.89,
+    "id": "w22"
+  },
+  {
+    "text": "de",
+    "start": 7.9,
+    "end": 8.06,
+    "id": "w23"
+  },
+  {
+    "text": "20",
+    "start": 8.06,
+    "end": 8.53,
+    "id": "w24"
+  },
+  {
+    "text": "milhões",
+    "start": 8.7,
+    "end": 9.09,
+    "id": "w25"
+  },
+  {
+    "text": "de",
+    "start": 9.21,
+    "end": 9.26,
+    "id": "w26"
+  },
+  {
+    "text": "reais.",
+    "start": 9.26,
+    "end": 9.92,
+    "id": "w27"
+  },
+  {
+    "text": "Mas",
+    "start": 9.92,
+    "end": 10.14,
+    "id": "w28"
+  },
+  {
+    "text": "o",
+    "start": 10.17,
+    "end": 10.24,
+    "id": "w29"
+  },
+  {
+    "text": "que",
+    "start": 10.24,
+    "end": 10.48,
+    "id": "w30"
+  },
+  {
+    "text": "faz",
+    "start": 10.48,
+    "end": 10.7,
+    "id": "w31"
+  },
+  {
+    "text": "ela",
+    "start": 10.75,
+    "end": 10.96,
+    "id": "w32"
+  },
+  {
+    "text": "valer",
+    "start": 10.96,
+    "end": 11.36,
+    "id": "w33"
+  },
+  {
+    "text": "isso?",
+    "start": 11.36,
+    "end": 11.98,
+    "id": "w34"
+  },
+  {
+    "text": "A",
+    "start": 11.98,
+    "end": 12.44,
+    "id": "w35"
+  },
+  {
+    "text": "genética",
+    "start": 12.44,
+    "end": 13.04,
+    "id": "w36"
+  },
+  {
+    "text": "não",
+    "start": 13.3,
+    "end": 13.62,
+    "id": "w37"
+  },
+  {
+    "text": "tem",
+    "start": 13.62,
+    "end": 13.81,
+    "id": "w38"
+  },
+  {
+    "text": "patente.",
+    "start": 14.07,
+    "end": 14.64,
+    "id": "w39"
+  },
+  {
+    "text": "No",
+    "start": 14.64,
+    "end": 14.77,
+    "id": "w40"
+  },
+  {
+    "text": "Brasil,",
+    "start": 14.8,
+    "end": 15.45,
+    "id": "w41"
+  },
+  {
+    "text": "animal",
+    "start": 15.45,
+    "end": 15.93,
+    "id": "w42"
+  },
+  {
+    "text": "não",
+    "start": 16,
+    "end": 16.18,
+    "id": "w43"
+  },
+  {
+    "text": "pode",
+    "start": 16.19,
+    "end": 16.52,
+    "id": "w44"
+  },
+  {
+    "text": "ser",
+    "start": 16.52,
+    "end": 16.77,
+    "id": "w45"
+  },
+  {
+    "text": "patenteado.",
+    "start": 16.77,
+    "end": 17.83,
+    "id": "w46"
+  },
+  {
+    "text": "Ecom",
+    "start": 17.83,
+    "end": 18.16,
+    "id": "w47"
+  },
+  {
+    "text": "um",
+    "start": 18.16,
+    "end": 18.32,
+    "id": "w48"
+  },
+  {
+    "text": "pedacinho",
+    "start": 18.32,
+    "end": 19.03,
+    "id": "w49"
+  },
+  {
+    "text": "da",
+    "start": 19.17,
+    "end": 19.32,
+    "id": "w50"
+  },
+  {
+    "text": "pele",
+    "start": 19.32,
+    "end": 19.62,
+    "id": "w51"
+  },
+  {
+    "text": "dela,",
+    "start": 19.62,
+    "end": 20.01,
+    "id": "w52"
+  },
+  {
+    "text": "dá",
+    "start": 20.01,
+    "end": 20.05,
+    "id": "w53"
+  },
+  {
+    "text": "pra",
+    "start": 20.12,
+    "end": 20.35,
+    "id": "w54"
+  },
+  {
+    "text": "fazer",
+    "start": 20.58,
+    "end": 20.7,
+    "id": "w55"
+  },
+  {
+    "text": "um",
+    "start": 20.7,
+    "end": 20.72,
+    "id": "w56"
+  },
+  {
+    "text": "clone.",
+    "start": 20.76,
+    "end": 21.09,
+    "id": "w57"
+  },
+  {
+    "text": "Então,",
+    "start": 21.37,
+    "end": 21.89,
+    "id": "w58"
+  },
+  {
+    "text": "quem",
+    "start": 21.89,
+    "end": 22.34,
+    "id": "w59"
+  },
+  {
+    "text": "protege",
+    "start": 22.34,
+    "end": 23.13,
+    "id": "w60"
+  },
+  {
+    "text": "essa",
+    "start": 23.26,
+    "end": 23.58,
+    "id": "w61"
+  },
+  {
+    "text": "genética",
+    "start": 23.58,
+    "end": 24.48,
+    "id": "w62"
+  },
+  {
+    "text": "é",
+    "start": 24.48,
+    "end": 24.59,
+    "id": "w63"
+  },
+  {
+    "text": "outra",
+    "start": 24.59,
+    "end": 25.16,
+    "id": "w64"
+  },
+  {
+    "text": "lei,",
+    "start": 25.16,
+    "end": 25.77,
+    "id": "w65"
+  },
+  {
+    "text": "em",
+    "start": 25.77,
+    "end": 25.92,
+    "id": "w66"
+  },
+  {
+    "text": "vigor",
+    "start": 25.92,
+    "end": 26.3,
+    "id": "w67"
+  },
+  {
+    "text": "desde",
+    "start": 26.45,
+    "end": 26.71,
+    "id": "w68"
+  },
+  {
+    "text": "fevereiro",
+    "start": 26.71,
+    "end": 27.3,
+    "id": "w69"
+  },
+  {
+    "text": "de",
+    "start": 27.41,
+    "end": 27.44,
+    "id": "w70"
+  },
+  {
+    "text": "2025.",
+    "start": 27.86,
+    "end": 28.37,
+    "id": "w71"
+  },
+  {
+    "text": "Pra",
+    "start": 28.43,
+    "end": 28.97,
+    "id": "w72"
+  },
+  {
+    "text": "ela,",
+    "start": 28.98,
+    "end": 29.46,
+    "id": "w73"
+  },
+  {
+    "text": "clone,",
+    "start": 29.61,
+    "end": 29.99,
+    "id": "w74"
+  },
+  {
+    "text": "sêmen",
+    "start": 29.99,
+    "end": 30.36,
+    "id": "w75"
+  },
+  {
+    "text": "e",
+    "start": 30.36,
+    "end": 30.42,
+    "id": "w76"
+  },
+  {
+    "text": "embrião",
+    "start": 30.47,
+    "end": 30.96,
+    "id": "w77"
+  },
+  {
+    "text": "são",
+    "start": 30.96,
+    "end": 31.09,
+    "id": "w78"
+  },
+  {
+    "text": "a",
+    "start": 31.18,
+    "end": 31.26,
+    "id": "w79"
+  },
+  {
+    "text": "mesma",
+    "start": 31.26,
+    "end": 31.64,
+    "id": "w80"
+  },
+  {
+    "text": "coisa,",
+    "start": 31.64,
+    "end": 32.17,
+    "id": "w81"
+  },
+  {
+    "text": "material",
+    "start": 32.17,
+    "end": 32.58,
+    "id": "w82"
+  },
+  {
+    "text": "genético.",
+    "start": 32.78,
+    "end": 33.72,
+    "id": "w83"
+  },
+  {
+    "text": "O",
+    "start": 33.72,
+    "end": 33.85,
+    "id": "w84"
+  },
+  {
+    "text": "clone",
+    "start": 33.85,
+    "end": 34.52,
+    "id": "w85"
+  },
+  {
+    "text": "só",
+    "start": 34.52,
+    "end": 34.66,
+    "id": "w86"
+  },
+  {
+    "text": "ganha",
+    "start": 34.81,
+    "end": 35.44,
+    "id": "w87"
+  },
+  {
+    "text": "registro",
+    "start": 35.44,
+    "end": 36.53,
+    "id": "w88"
+  },
+  {
+    "text": "se",
+    "start": 36.54,
+    "end": 36.68,
+    "id": "w89"
+  },
+  {
+    "text": "o",
+    "start": 36.68,
+    "end": 36.81,
+    "id": "w90"
+  },
+  {
+    "text": "animal",
+    "start": 36.81,
+    "end": 37.17,
+    "id": "w91"
+  },
+  {
+    "text": "de",
+    "start": 37.17,
+    "end": 37.31,
+    "id": "w92"
+  },
+  {
+    "text": "origem",
+    "start": 37.31,
+    "end": 37.73,
+    "id": "w93"
+  },
+  {
+    "text": "estiver",
+    "start": 37.73,
+    "end": 38.16,
+    "id": "w94"
+  },
+  {
+    "text": "sob",
+    "start": 38.21,
+    "end": 38.42,
+    "id": "w95"
+  },
+  {
+    "text": "controle",
+    "start": 38.7,
+    "end": 38.98,
+    "id": "w96"
+  },
+  {
+    "text": "oficial.",
+    "start": 38.99,
+    "end": 39.66,
+    "id": "w97"
+  },
+  {
+    "text": "Eo",
+    "start": 39.76,
+    "end": 39.83,
+    "id": "w98"
+  },
+  {
+    "text": "laboratório",
+    "start": 39.86,
+    "end": 40.6,
+    "id": "w99"
+  },
+  {
+    "text": "que",
+    "start": 40.6,
+    "end": 40.81,
+    "id": "w100"
+  },
+  {
+    "text": "clonar",
+    "start": 40.81,
+    "end": 41.3,
+    "id": "w101"
+  },
+  {
+    "text": "material",
+    "start": 41.3,
+    "end": 41.7,
+    "id": "w102"
+  },
+  {
+    "text": "sem",
+    "start": 41.7,
+    "end": 42.04,
+    "id": "w103"
+  },
+  {
+    "text": "dono",
+    "start": 42.04,
+    "end": 42.46,
+    "id": "w104"
+  },
+  {
+    "text": "comprovado",
+    "start": 42.73,
+    "end": 43.29,
+    "id": "w105"
+  },
+  {
+    "text": "responde",
+    "start": 43.29,
+    "end": 43.95,
+    "id": "w106"
+  },
+  {
+    "text": "pelo",
+    "start": 43.95,
+    "end": 44.27,
+    "id": "w107"
+  },
+  {
+    "text": "prejuízo.",
+    "start": 44.27,
+    "end": 45.18,
+    "id": "w108"
+  },
+  {
+    "text": "A",
+    "start": 45.18,
+    "end": 45.26,
+    "id": "w109"
+  },
+  {
+    "text": "lei",
+    "start": 45.26,
+    "end": 45.5,
+    "id": "w110"
+  },
+  {
+    "text": "prevê",
+    "start": 45.5,
+    "end": 45.92,
+    "id": "w111"
+  },
+  {
+    "text": "multa",
+    "start": 45.92,
+    "end": 46.33,
+    "id": "w112"
+  },
+  {
+    "text": "de",
+    "start": 46.33,
+    "end": 46.49,
+    "id": "w113"
+  },
+  {
+    "text": "até",
+    "start": 46.49,
+    "end": 46.74,
+    "id": "w114"
+  },
+  {
+    "text": "1",
+    "start": 46.74,
+    "end": 46.99,
+    "id": "w115"
+  },
+  {
+    "text": "milhão",
+    "start": 46.99,
+    "end": 47.48,
+    "id": "w116"
+  },
+  {
+    "text": "e",
+    "start": 47.48,
+    "end": 47.56,
+    "id": "w117"
+  },
+  {
+    "text": "meio",
+    "start": 47.56,
+    "end": 47.89,
+    "id": "w118"
+  },
+  {
+    "text": "e",
+    "start": 47.89,
+    "end": 48.1,
+    "id": "w119"
+  },
+  {
+    "text": "até",
+    "start": 48.1,
+    "end": 48.34,
+    "id": "w120"
+  },
+  {
+    "text": "a",
+    "start": 48.34,
+    "end": 48.36,
+    "id": "w121"
+  },
+  {
+    "text": "esterilização",
+    "start": 48.36,
+    "end": 48.66,
+    "id": "w122"
+  },
+  {
+    "text": "do",
+    "start": 48.66,
+    "end": 49.01,
+    "id": "w123"
+  },
+  {
+    "text": "clone.",
+    "start": 49.01,
+    "end": 49.64,
+    "id": "w124"
+  },
+  {
+    "text": "Mas",
+    "start": 49.64,
+    "end": 49.91,
+    "id": "w125"
+  },
+  {
+    "text": "essa",
+    "start": 49.91,
+    "end": 50.27,
+    "id": "w126"
+  },
+  {
+    "text": "prova",
+    "start": 50.27,
+    "end": 50.71,
+    "id": "w127"
+  },
+  {
+    "text": "tem",
+    "start": 50.9,
+    "end": 50.99,
+    "id": "w128"
+  },
+  {
+    "text": "que",
+    "start": 50.99,
+    "end": 51.26,
+    "id": "w129"
+  },
+  {
+    "text": "existir",
+    "start": 51.41,
+    "end": 51.86,
+    "id": "w130"
+  },
+  {
+    "text": "antes",
+    "start": 52.06,
+    "end": 52.33,
+    "id": "w131"
+  },
+  {
+    "text": "do",
+    "start": 52.34,
+    "end": 52.52,
+    "id": "w132"
+  },
+  {
+    "text": "clone.",
+    "start": 52.52,
+    "end": 53.24,
+    "id": "w133"
+  },
+  {
+    "text": "Sem",
+    "start": 53.24,
+    "end": 53.5,
+    "id": "w134"
+  },
+  {
+    "text": "registro",
+    "start": 53.51,
+    "end": 54.23,
+    "id": "w135"
+  },
+  {
+    "text": "e",
+    "start": 54.23,
+    "end": 54.32,
+    "id": "w136"
+  },
+  {
+    "text": "sem",
+    "start": 54.32,
+    "end": 54.59,
+    "id": "w137"
+  },
+  {
+    "text": "teste",
+    "start": 54.59,
+    "end": 54.93,
+    "id": "w138"
+  },
+  {
+    "text": "de",
+    "start": 55.04,
+    "end": 55.28,
+    "id": "w139"
+  },
+  {
+    "text": "DNA,",
+    "start": 55.5,
+    "end": 55.74,
+    "id": "w140"
+  },
+  {
+    "text": "você",
+    "start": 56.01,
+    "end": 56.06,
+    "id": "w141"
+  },
+  {
+    "text": "não",
+    "start": 56.06,
+    "end": 56.3,
+    "id": "w142"
+  },
+  {
+    "text": "consegue",
+    "start": 56.3,
+    "end": 56.95,
+    "id": "w143"
+  },
+  {
+    "text": "mostrar",
+    "start": 56.95,
+    "end": 57.36,
+    "id": "w144"
+  },
+  {
+    "text": "que",
+    "start": 57.48,
+    "end": 57.75,
+    "id": "w145"
+  },
+  {
+    "text": "aquele",
+    "start": 57.9,
+    "end": 58.23,
+    "id": "w146"
+  },
+  {
+    "text": "animal",
+    "start": 58.23,
+    "end": 58.71,
+    "id": "w147"
+  },
+  {
+    "text": "veio",
+    "start": 58.71,
+    "end": 58.86,
+    "id": "w148"
+  },
+  {
+    "text": "da",
+    "start": 59.06,
+    "end": 59.19,
+    "id": "w149"
+  },
+  {
+    "text": "sua",
+    "start": 59.19,
+    "end": 59.43,
+    "id": "w150"
+  },
+  {
+    "text": "vaca.",
+    "start": 59.43,
+    "end": 59.99,
+    "id": "w151"
+  },
+  {
+    "text": "Então,",
+    "start": 59.99,
+    "end": 60.62,
+    "id": "w152"
+  },
+  {
+    "text": "você",
+    "start": 60.89,
+    "end": 60.96,
+    "id": "w153"
+  },
+  {
+    "text": "registra",
+    "start": 60.96,
+    "end": 61.58,
+    "id": "w154"
+  },
+  {
+    "text": "e",
+    "start": 61.63,
+    "end": 61.71,
+    "id": "w155"
+  },
+  {
+    "text": "faz",
+    "start": 61.71,
+    "end": 61.95,
+    "id": "w156"
+  },
+  {
+    "text": "o",
+    "start": 61.95,
+    "end": 61.99,
+    "id": "w157"
+  },
+  {
+    "text": "DNA",
+    "start": 62.05,
+    "end": 62.25,
+    "id": "w158"
+  },
+  {
+    "text": "enquanto",
+    "start": 62.78,
+    "end": 62.97,
+    "id": "w159"
+  },
+  {
+    "text": "ela",
+    "start": 62.97,
+    "end": 63.12,
+    "id": "w160"
+  },
+  {
+    "text": "ainda",
+    "start": 63.29,
+    "end": 63.63,
+    "id": "w161"
+  },
+  {
+    "text": "é",
+    "start": 63.64,
+    "end": 63.72,
+    "id": "w162"
+  },
+  {
+    "text": "bezerra.",
+    "start": 63.72,
+    "end": 64.62,
+    "id": "w163"
+  },
+  {
+    "text": "20",
+    "start": 64.62,
+    "end": 65.37,
+    "id": "w164"
+  },
+  {
+    "text": "milhões",
+    "start": 65.37,
+    "end": 66.25,
+    "id": "w165"
+  },
+  {
+    "text": "de",
+    "start": 66.25,
+    "end": 66.5,
+    "id": "w166"
+  },
+  {
+    "text": "reais",
+    "start": 66.5,
+    "end": 66.82,
+    "id": "w167"
+  },
+  {
+    "text": "numa",
+    "start": 67.38,
+    "end": 67.66,
+    "id": "w168"
+  },
+  {
+    "text": "vaca.",
+    "start": 67.66,
+    "end": 68.01,
+    "id": "w169"
+  },
+  {
+    "text": "Eo",
+    "start": 68.02,
+    "end": 68.18,
+    "id": "w170"
+  },
+  {
+    "text": "que",
+    "start": 68.29,
+    "end": 68.44,
+    "id": "w171"
+  },
+  {
+    "text": "mostra",
+    "start": 68.44,
+    "end": 68.96,
+    "id": "w172"
+  },
+  {
+    "text": "de",
+    "start": 68.96,
+    "end": 69.13,
+    "id": "w173"
+  },
+  {
+    "text": "onde",
+    "start": 69.13,
+    "end": 69.37,
+    "id": "w174"
+  },
+  {
+    "text": "veio",
+    "start": 69.47,
+    "end": 69.8,
+    "id": "w175"
+  },
+  {
+    "text": "cada",
+    "start": 69.81,
+    "end": 70.14,
+    "id": "w176"
+  },
+  {
+    "text": "pedacinho",
+    "start": 70.2,
+    "end": 70.92,
+    "id": "w177"
+  },
+  {
+    "text": "dela",
+    "start": 70.92,
+    "end": 71.14,
+    "id": "w178"
+  },
+  {
+    "text": "é",
+    "start": 71.14,
+    "end": 71.34,
+    "id": "w179"
+  },
+  {
+    "text": "um",
+    "start": 71.34,
+    "end": 71.51,
+    "id": "w180"
+  },
+  {
+    "text": "teste",
+    "start": 71.51,
+    "end": 71.94,
+    "id": "w181"
+  },
+  {
+    "text": "de",
+    "start": 71.94,
+    "end": 72.11,
+    "id": "w182"
+  },
+  {
+    "text": "DNA",
+    "start": 72.11,
+    "end": 72.37,
+    "id": "w183"
+  },
+  {
+    "text": "feito",
+    "start": 72.37,
+    "end": 72.8,
+    "id": "w184"
+  },
+  {
+    "text": "antes.",
+    "start": 72.8,
+    "end": 73.62,
+    "id": "w185"
+  }
+]
