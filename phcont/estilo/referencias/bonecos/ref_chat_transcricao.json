@@ -1,0 +1,392 @@
+[
+  {
+    "text": "Cada",
+    "start": 0,
+    "end": 0.29,
+    "id": "w0"
+  },
+  {
+    "text": "prefeitura",
+    "start": 0.37,
+    "end": 1.07,
+    "id": "w1"
+  },
+  {
+    "text": "tem",
+    "start": 1.19,
+    "end": 1.36,
+    "id": "w2"
+  },
+  {
+    "text": "seu",
+    "start": 1.36,
+    "end": 1.49,
+    "id": "w3"
+  },
+  {
+    "text": "emissor,",
+    "start": 1.62,
+    "end": 2.32,
+    "id": "w4"
+  },
+  {
+    "text": "cadastro,",
+    "start": 2.32,
+    "end": 3,
+    "id": "w5"
+  },
+  {
+    "text": "código",
+    "start": 3.23,
+    "end": 3.83,
+    "id": "w6"
+  },
+  {
+    "text": "e",
+    "start": 3.83,
+    "end": 4.15,
+    "id": "w7"
+  },
+  {
+    "text": "regras",
+    "start": 4.15,
+    "end": 4.62,
+    "id": "w8"
+  },
+  {
+    "text": "diferentes.",
+    "start": 4.62,
+    "end": 5.68,
+    "id": "w9"
+  },
+  {
+    "text": "Ao",
+    "start": 5.68,
+    "end": 5.82,
+    "id": "w10"
+  },
+  {
+    "text": "padrão",
+    "start": 5.86,
+    "end": 6.27,
+    "id": "w11"
+  },
+  {
+    "text": "nacional,",
+    "start": 6.27,
+    "end": 7.02,
+    "id": "w12"
+  },
+  {
+    "text": "existe",
+    "start": 7.02,
+    "end": 7.47,
+    "id": "w13"
+  },
+  {
+    "text": "para",
+    "start": 7.47,
+    "end": 7.57,
+    "id": "w14"
+  },
+  {
+    "text": "isso,",
+    "start": 7.87,
+    "end": 8.22,
+    "id": "w15"
+  },
+  {
+    "text": "unificar",
+    "start": 8.22,
+    "end": 8.62,
+    "id": "w16"
+  },
+  {
+    "text": "o",
+    "start": 8.62,
+    "end": 8.91,
+    "id": "w17"
+  },
+  {
+    "text": "processo",
+    "start": 8.91,
+    "end": 9.48,
+    "id": "w18"
+  },
+  {
+    "text": "e",
+    "start": 9.49,
+    "end": 9.52,
+    "id": "w19"
+  },
+  {
+    "text": "o",
+    "start": 9.52,
+    "end": 9.83,
+    "id": "w20"
+  },
+  {
+    "text": "modelo",
+    "start": 9.83,
+    "end": 10.08,
+    "id": "w21"
+  },
+  {
+    "text": "do",
+    "start": 10.08,
+    "end": 10.23,
+    "id": "w22"
+  },
+  {
+    "text": "documento.",
+    "start": 10.23,
+    "end": 11.08,
+    "id": "w23"
+  },
+  {
+    "text": "Ou",
+    "start": 11.08,
+    "end": 11.22,
+    "id": "w24"
+  },
+  {
+    "text": "seja,",
+    "start": 11.27,
+    "end": 11.81,
+    "id": "w25"
+  },
+  {
+    "text": "o",
+    "start": 11.81,
+    "end": 11.9,
+    "id": "w26"
+  },
+  {
+    "text": "modelo",
+    "start": 11.9,
+    "end": 12.45,
+    "id": "w27"
+  },
+  {
+    "text": "é",
+    "start": 12.45,
+    "end": 12.54,
+    "id": "w28"
+  },
+  {
+    "text": "nacional,",
+    "start": 12.54,
+    "end": 13.46,
+    "id": "w29"
+  },
+  {
+    "text": "mas",
+    "start": 13.46,
+    "end": 13.69,
+    "id": "w30"
+  },
+  {
+    "text": "na",
+    "start": 13.72,
+    "end": 13.91,
+    "id": "w31"
+  },
+  {
+    "text": "prática",
+    "start": 13.91,
+    "end": 14.55,
+    "id": "w32"
+  },
+  {
+    "text": "e",
+    "start": 14.55,
+    "end": 14.64,
+    "id": "w33"
+  },
+  {
+    "text": "no",
+    "start": 14.64,
+    "end": 14.82,
+    "id": "w34"
+  },
+  {
+    "text": "dia",
+    "start": 14.82,
+    "end": 14.92,
+    "id": "w35"
+  },
+  {
+    "text": "a",
+    "start": 14.92,
+    "end": 15.24,
+    "id": "w36"
+  },
+  {
+    "text": "dia,",
+    "start": 15.24,
+    "end": 15.7,
+    "id": "w37"
+  },
+  {
+    "text": "continua",
+    "start": 15.73,
+    "end": 16.4,
+    "id": "w38"
+  },
+  {
+    "text": "município",
+    "start": 16.4,
+    "end": 17.18,
+    "id": "w39"
+  },
+  {
+    "text": "por",
+    "start": 17.18,
+    "end": 17.41,
+    "id": "w40"
+  },
+  {
+    "text": "município.",
+    "start": 17.46,
+    "end": 18.26,
+    "id": "w41"
+  },
+  {
+    "text": "Por",
+    "start": 18.36,
+    "end": 18.57,
+    "id": "w42"
+  },
+  {
+    "text": "isso,",
+    "start": 18.57,
+    "end": 19,
+    "id": "w43"
+  },
+  {
+    "text": "a",
+    "start": 19,
+    "end": 19.07,
+    "id": "w44"
+  },
+  {
+    "text": "PHConte",
+    "start": 19.07,
+    "end": 19.57,
+    "id": "w45"
+  },
+  {
+    "text": "acompanha",
+    "start": 19.57,
+    "end": 20.21,
+    "id": "w46"
+  },
+  {
+    "text": "as",
+    "start": 20.21,
+    "end": 20.25,
+    "id": "w47"
+  },
+  {
+    "text": "regras",
+    "start": 20.35,
+    "end": 20.77,
+    "id": "w48"
+  },
+  {
+    "text": "de",
+    "start": 20.77,
+    "end": 20.91,
+    "id": "w49"
+  },
+  {
+    "text": "cada",
+    "start": 20.91,
+    "end": 21.2,
+    "id": "w50"
+  },
+  {
+    "text": "município,",
+    "start": 21.2,
+    "end": 21.99,
+    "id": "w51"
+  },
+  {
+    "text": "para",
+    "start": 22,
+    "end": 22.2,
+    "id": "w52"
+  },
+  {
+    "text": "as",
+    "start": 22.2,
+    "end": 22.5,
+    "id": "w53"
+  },
+  {
+    "text": "notas",
+    "start": 22.5,
+    "end": 22.61,
+    "id": "w54"
+  },
+  {
+    "text": "saírem",
+    "start": 22.61,
+    "end": 22.94,
+    "id": "w55"
+  },
+  {
+    "text": "certas",
+    "start": 22.94,
+    "end": 23.32,
+    "id": "w56"
+  },
+  {
+    "text": "e",
+    "start": 23.32,
+    "end": 23.38,
+    "id": "w57"
+  },
+  {
+    "text": "o",
+    "start": 23.38,
+    "end": 23.43,
+    "id": "w58"
+  },
+  {
+    "text": "ECS",
+    "start": 23.44,
+    "end": 23.61,
+    "id": "w59"
+  },
+  {
+    "text": "ser",
+    "start": 23.69,
+    "end": 23.76,
+    "id": "w60"
+  },
+  {
+    "text": "recolhido",
+    "start": 23.86,
+    "end": 24.37,
+    "id": "w61"
+  },
+  {
+    "text": "no",
+    "start": 24.37,
+    "end": 24.39,
+    "id": "w62"
+  },
+  {
+    "text": "lugar",
+    "start": 24.51,
+    "end": 24.8,
+    "id": "w63"
+  },
+  {
+    "text": "correto.",
+    "start": 24.8,
+    "end": 25.48,
+    "id": "w64"
+  }
+]
