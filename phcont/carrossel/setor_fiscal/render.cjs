@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 (async () => {
   const b = await chromium.launch();
-  const p = await b.newPage({ viewport: { width: 1080, height: 1350 }, deviceScaleFactor: 1 });
+  const p = await b.newPage({ viewport: { width: 1080, height: 1350 }, deviceScaleFactor: 2 });
   for (let i = 1; i <= 7; i++) {
     await p.goto('file://' + __dirname + '/carrossel.html?s=' + i, { waitUntil: 'networkidle' });
     await p.evaluate(() => document.fonts.ready);
