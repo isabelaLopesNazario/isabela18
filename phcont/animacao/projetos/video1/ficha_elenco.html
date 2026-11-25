@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;width:1800px;height:1100px;background:#dfe6ec}canvas{display:block}
+.r{position:absolute;bottom:22px;font:600 30px Poppins,Arial;color:#1f2b42;width:450px;text-align:center}</style></head><body>
+<canvas id="c" width="1800" height="1100"></canvas>
+<div class="r" style="left:0">Empresário</div><div class="r" style="left:450px">Contador PH</div><div class="r" style="left:900px">Atendente</div><div class="r" style="left:1350px">Concorrente</div>
+<script type="module">
+import * as THREE from "./lib/three.module.js";
+import { criarBoneco, vareta, lupa, quadro } from "./elenco.js";
+const r = new THREE.WebGLRenderer({ canvas: document.getElementById("c"), antialias: true, preserveDrawingBuffer: true });
+r.setSize(1800, 1100, false); r.shadowMap.enabled = true; r.shadowMap.type = THREE.PCFSoftShadowMap; r.outputColorSpace = THREE.SRGBColorSpace;
+const s = new THREE.Scene(); s.background = new THREE.Color("#dfe6ec");
+s.add(new THREE.HemisphereLight("#ffffff", "#c9d2da", 1.9));
+const sol = new THREE.DirectionalLight("#fffaf0", 2.2); sol.position.set(6, 12, 14); sol.castShadow = true; sol.shadow.mapSize.set(2048, 2048);
+Object.assign(sol.shadow.camera, { left: -16, right: 16, top: 10, bottom: -4 }); s.add(sol);
+const chao = new THREE.Mesh(new THREE.PlaneGeometry(60, 30), new THREE.MeshStandardMaterial({ color: "#e6ebef", roughness: 1 }));
+chao.rotation.x = -Math.PI / 2; chao.receiveShadow = true; s.add(chao);
+const tipos = ["empresario", "contador", "atendente", "concorrente"];
+tipos.forEach((t, i) => {
+  const b = criarBoneco(t); b.g.position.x = -6.9 + i * 4.6; b.g.rotation.y = 0; b.g.rotation.y = -0.25; s.add(b.g);
+  if (t === "contador") { b.bracos[1].rotation.z = 1.25; const v = vareta(); v.position.set(0, -1.6, 0); v.rotation.z = 0.0; b.bracos[1].add(v); b.boca.scale.set(1.1, 1.3, 1); }
+  if (t === "atendente") { b.bracos[0].rotation.z = -0.2; b.bracos[1].rotation.z = 0.2; }
+  if (t === "empresario") { b.bracos[0].rotation.z = -0.15; b.bracos[1].rotation.z = 0.15; }
+  if (t === "concorrente") { b.bracos[1].rotation.set(-1.45, 0, 0.55); const l = lupa(); l.scale.setScalar(0.62); l.position.set(-0.05, -1.95, 0.1); l.rotation.set(1.45, 0, -0.5); b.bracos[1].add(l); b.boca.rotation.z = 0; b.boca.position.y = -0.42; b.cab.rotation.x = 0.15; }
+});
+const cam = new THREE.PerspectiveCamera(28, 1800 / 1100, 0.1, 200); cam.position.set(0, 3.4, 24.5); cam.lookAt(0, 2.6, 0);
+r.render(s, cam); window.pronto = true;
+</script></body></html>

@@ -23,7 +23,14 @@ Pastas da PHcont no repositório: `phcont/bruto/`, `phcont/trabalho/`, `phcont/e
 
 ## Animações (pasta própria)
 
-**Bonequinho aprovado como modelo** (`phcont/animacao/referencias/boneco_modelo.png`, código em
+**Elenco (v1, a partir das referências da cliente em `phcont/animacao/referencias/`):** estilo **bloquinho low-poly sem
+contorno** (como o elenco que a equipe já tinha feito, `elenco_feito_pela_equipe.jpg`, e as refs IMEPPI): `MeshStandardMaterial`
+fosco, cabeça esférica, cabelo cobrindo laterais e nuca com franja de lado, sobrancelhas, olhos ovais brancos, sorriso.
+Personagens em `projetos/video1/elenco.js` (`criarBoneco("empresario"|"contador"|"atendente"|"concorrente")`): Empresário
+(camisa vermelha), **Contador PH** (terno marinho, camisa branca, **gravata dourada**, óculos redondos), Atendente (verde
+com crachá), Concorrente (laranja, cara preocupada). Adereços: `vareta()`, `lupa()`, `quadro()` (poses dos bonecos brancos
+de referência: apontar com vareta, mostrar no quadro, olhar pela lupa). Ficha: `referencias/elenco_phcont_v1.png`.
+Versão anterior (toon com contorno preto): **Bonequinho aprovado como modelo** (`phcont/animacao/referencias/boneco_modelo.png`, código em
 `phcont/animacao/projetos/video1/index.html`, Three.js dentro do HyperFrames, desenhado a partir de `hf-seek`): visual
 de **desenho animado com contorno preto** (casco invertido em `BackSide`) e **sombreamento chapado** (`MeshToonMaterial`
 com gradiente de 3 tons claros 200/235/255), cabeça esférica grande, cabelo em calota + topete, sobrancelhas, olhos
