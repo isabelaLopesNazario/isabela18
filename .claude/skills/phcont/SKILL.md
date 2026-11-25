@@ -65,6 +65,19 @@ só o estilo.
 | Capa do feed: Consciência Negra (1080x1440) | `phcont/final/phcont_consciencia_negra_capa.png`, fonte `phcont/capas/consciencia_negra/` | sem foto: **punho em gravura CC0 (rawpixel) recolorido em dourado** com sol de raios finos, fundo marinho com granulado, logo PHcont pequena no alto, título serifado Libre Caslon ("Dia da Consciência" branco + "*Negra*" itálico dourado), data em dourado espaçada, traço bordô, frase Poppins, faixa geométrica dourada fina no rodapé; legenda em `phcont_consciencia_negra_legenda.txt` |
 | Capa do vídeo 2 | `phcont/final/phcont_regularizacao_capa_FINAL.png` | capa editorial, sem etiqueta |
 
+## Carrossel do Instagram (aprovado: Setor Fiscal)
+
+Modelo em `phcont/carrossel/setor_fiscal/` (`carrossel.html` com um slide por `?s=N`, `render.cjs` gera os PNGs em `final/`).
+1080x1350 (4:5). Usar **só o texto do roteiro**, sem frases extras, sem letra manuscrita e sem emojis.
+- **Capa:** foto dela **inteira na capa, sem desfoque nos lados**, enquadrada da cabeça até as mãos; **pouca sombra
+  embaixo** (só o necessário para o título) e **sombreado em volta** (laterais, topo e vinheta). Rótulo dourado
+  espaçado + título Libre Caslon branco com final em itálico dourado + traço bordô. Sem "arraste".
+- **Slides internos:** fundo marinho com granulado e moldura fina dourada; numeral em itálico (02, 03…) + fio dourado +
+  rótulo; título serifado; listas com ícones de traço dourado em círculo (no lugar dos emojis); siglas como etiquetas;
+  alertas em cartões bordô; um slide claro (off-white) para variar; logo PH sem a frase pequena no rodapé + "2 / 7".
+- **Último slide:** outra foto dela + frase de fecho.
+- Entregar também a legenda do post (`final/<nome>_legenda.txt`).
+
 ## Legenda do post
 
 Ao entregar um vídeo, ofereça a legenda no padrão aprovado (veja "Legenda do vídeo 2" acima): português claro,
