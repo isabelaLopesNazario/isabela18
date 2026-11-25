@@ -23,6 +23,13 @@ Pastas da PHcont no repositório: `phcont/bruto/`, `phcont/trabalho/`, `phcont/e
 
 ## Animações (pasta própria)
 
+**Bonequinho aprovado como modelo** (`phcont/animacao/referencias/boneco_modelo.png`, código em
+`phcont/animacao/projetos/video1/index.html`, Three.js dentro do HyperFrames, desenhado a partir de `hf-seek`): visual
+de **desenho animado com contorno preto** (casco invertido em `BackSide`) e **sombreamento chapado** (`MeshToonMaterial`
+com gradiente de 3 tons claros 200/235/255), cabeça esférica grande, cabelo em calota + topete, sobrancelhas, olhos
+ovais brancos com pupila preta, **boca aberta sorrindo** (meia-lua escura, dentes e língua), pescoço, camisa em bloco
+com **crachá branco**, braços longos com mãos redondas, calça escura e sapatos marrons. Luz vinda da frente.
+
 Vídeos de **animação com bonequinhos** ficam separados em `phcont/animacao/` (`bruto/`, `referencias/`, `trabalho/`,
 `projetos/`, `final/`). Estilos G e G2 do catálogo. Sempre com **narração + legenda palavra por palavra + efeitos sonoros
 + música de fundo livre de direitos** (pedido da cliente). Reproduzir vídeos da própria PH é permitido; de outras marcas,
