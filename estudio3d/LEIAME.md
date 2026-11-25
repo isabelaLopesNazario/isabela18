@@ -70,7 +70,16 @@ Transição suave, piscada e respiração automáticas; boca abre e fecha nas po
 **Entradas**: `surge`, `cai`, `sobe`, `desliza`. **Saídas**: `some` (com poeira), `cai`.
 **Animações**: `flutua`, `gira`, `pulsa`, `inclina`.
 
-## Estilo visual (padrão: boneco palito cel-shaded)
+## Estilo visual
+
+**Padrão (`"estilo": "ph"`)**: idêntico ao vídeo de referência da PHCont (`phcont/animacao/referencias/ref_estilo_phcont_nfse_*.jpg`):
+boneco de blocos com contorno escuro fino, cabeça redonda bem grande, olhos grandes com aro, crachá branco no peito
+(terno com gravata dourada para contador/consultora), luz suave, céu em degradê azul-claro, árvores low-poly, fundo desfocado,
+legenda branca no meio-baixo da tela com destaque amarelo (`motor/elenco_ph.js`).
+
+Outros estilos: `"palito"` (boneco palito cel-shaded, luz em 3 faixas + borda clara) e `"bloco"` (o primeiro).
+
+### Estilo palito (opcional)
 
 - **Boneco palito** (`motor/elenco_palito.js`): cabeça grande, membros finos, olhos e bocas grandes, sobrancelhas que
   mudam com a pose. `"estilo": "bloco"` no roteiro volta ao boneco antigo.

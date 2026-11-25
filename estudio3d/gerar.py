@@ -306,7 +306,8 @@ def escrever_projeto(R, cenas, legs, proj, D):
     (proj / ".gitignore").write_text(".hyperframes/\n*.mp4\n*.wav\n")
     W, H = R.get("largura", 1080), R.get("altura", 1920)
     L = R.get("legenda", {})
-    dados = {"largura": W, "altura": H, "duracao": D, "marca": R.get("marca", {}), "cenas": cenas}
+    dados = {"largura": W, "altura": H, "duracao": D, "marca": R.get("marca", {}), "cenas": cenas,
+             **{k: R[k] for k in ("estilo", "borda", "max_plano") if k in R}}
     divs = "\n".join(f'      <div id="lg{i}" class="leg clip" data-start="{s}" data-duration="{d}" data-track-index="1">{h}</div>' for i, (s, d, h) in enumerate(legs))
     js = "\n".join(f'      tl.fromTo("#lg{i}", {{ scale: 0.86, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }}, {s});' for i, (s, d, h) in enumerate(legs))
     html = f"""<!doctype html>
@@ -320,10 +321,10 @@ def escrever_projeto(R, cenas, legs, proj, D):
       html, body {{ width: {W}px; height: {H}px; overflow: hidden; background: #cfe3f2; }}
       #root {{ position: relative; width: {W}px; height: {H}px; overflow: hidden; }}
       #cena {{ position: absolute; left: 0; top: 0; width: {W}px; height: {H}px; }}
-      .leg {{ position: absolute; left: 0; width: {W}px; top: {L.get('topo', 1560)}px; text-align: center; font-family: "Poppins", sans-serif;
-        font-weight: 800; font-size: {L.get('tamanho', 78)}px; color: #fff; letter-spacing: .01em;
-        -webkit-text-stroke: 11px #0b1426; paint-order: stroke fill; }}
-      .leg b {{ color: {L.get('cor_destaque', '#ffd45a')}; font-weight: 800; }}
+      .leg {{ position: absolute; left: 0; width: {W}px; top: {L.get('topo', 1330)}px; text-align: center; font-family: "Poppins", sans-serif;
+        font-weight: 800; font-size: {L.get('tamanho', 74)}px; color: #fff; letter-spacing: -.005em;
+        -webkit-text-stroke: 8px #10131a; paint-order: stroke fill; text-shadow: 0 5px 0 rgba(0,0,0,.28); }}
+      .leg b {{ color: {L.get('cor_destaque', '#ffd23f')}; font-weight: 800; }}
     </style>
   </head>
   <body>

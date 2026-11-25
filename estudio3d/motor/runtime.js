@@ -5,11 +5,13 @@
 import * as THREE from "./lib/three.module.js";
 import { criarBoneco, atualizarAtor } from "./elenco.js";
 import { criarPalito } from "./elenco_palito.js";
+import { criarPH, contornar } from "./elenco_ph.js";
 import { criarObjeto, criarCenario } from "./objetos.js";
 
 const R = window.__ROTEIRO;
 const W = R.largura || 1080, H = R.altura || 1920;
-const PALITO = (R.estilo || "palito") === "palito";
+const ESTILO = R.estilo || "ph";          // ph (padrão da referência) | palito | bloco
+const PALITO = ESTILO === "palito", PH = ESTILO === "ph";
 const MAX_PLANO = Math.min(2, R.max_plano || 1.9);
 const canvas = document.getElementById("cena");
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
@@ -34,7 +36,7 @@ const GRAD = (() => {
 const RIM = R.borda || { cor: "#ffffff", forca: 0.8 };
 const cacheMat = new Map();
 function toon(mat, rim) {
-  if (!mat || !mat.isMeshStandardMaterial) return mat;
+  if (!mat || !mat.isMeshStandardMaterial || PH) return mat;
   const chave = mat.uuid + (rim ? "r" : "");
   if (cacheMat.has(chave)) return cacheMat.get(chave);
   const m = new THREE.MeshToonMaterial({ color: mat.color, gradientMap: GRAD, map: mat.map || null, transparent: mat.transparent, opacity: mat.opacity, side: mat.side });
@@ -91,6 +93,15 @@ const quad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), blurMat);
 const quadScene = new THREE.Scene(); quadScene.add(quad);
 function passar(mat, destino) { quad.material = mat; renderer.setRenderTarget(destino); renderer.clear(); renderer.render(quadScene, quadCam); }
 
+// céu em degradê (azul claro em cima, quase branco no horizonte), como na referência
+const CEU_PH = (() => {
+  const c = document.createElement("canvas"); c.width = 4; c.height = 256;
+  const x = c.getContext("2d"), gr = x.createLinearGradient(0, 0, 0, 256);
+  gr.addColorStop(0, "#9fc6e3"); gr.addColorStop(0.55, "#d3e3ee"); gr.addColorStop(1, "#eef2f4");
+  x.fillStyle = gr; x.fillRect(0, 0, 4, 256);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+})();
+
 // ------------------------------------------------------------------ montagem
 const caixaDe = (obj) => {
   obj.updateMatrixWorld(true);
@@ -104,19 +115,19 @@ function montarCena(C, ci) {
   const scene = new THREE.Scene();
   const cen = criarCenario(C.cenario || "praca", R.marca || {});
   const ceu = new THREE.Color(cen.userData.ceu);
-  scene.background = ceu;
-  scene.fog = new THREE.Fog(cen.userData.ceu, 45, 100);
+  scene.background = PH ? CEU_PH : ceu;
+  scene.fog = new THREE.Fog(PH ? "#e6eef4" : cen.userData.ceu, 45, 100);
   aplicarToon(cen, false);
   scene.add(cen);
   const fundo = new THREE.Group(); fundo.add(cen); scene.add(fundo);
-  scene.add(new THREE.HemisphereLight("#ffffff", "#b9c4d0", 1.25));
-  const sol = new THREE.DirectionalLight("#fff6e6", 2.6); sol.position.set(7, 16, 12);
+  scene.add(new THREE.HemisphereLight("#ffffff", PH ? "#cfd6de" : "#b9c4d0", PH ? 2.1 : 1.25));
+  const sol = new THREE.DirectionalLight("#fff6e6", PH ? 1.7 : 2.6); sol.position.set(7, 16, 12);
   sol.castShadow = true; sol.shadow.mapSize.set(2048, 2048); sol.shadow.radius = 4; sol.shadow.bias = -0.0006; sol.shadow.normalBias = 0.05;
   Object.assign(sol.shadow.camera, { left: -16, right: 16, top: 16, bottom: -16 }); scene.add(sol);
 
   const fgMats = new Set();
   const atores = (C.atores || []).map((a) => {
-    const A = PALITO ? criarPalito(a.tipo, a.cores || {}) : criarBoneco(a.tipo, a.cores || {});
+    const A = PH ? criarPH(a.tipo, a.cores || {}) : PALITO ? criarPalito(a.tipo, a.cores || {}) : criarBoneco(a.tipo, a.cores || {});
     const esc = a.escala || 1;
     A.g.scale.setScalar(esc);
     if (a.segura) {
@@ -140,6 +151,7 @@ function montarCena(C, ci) {
     const obj = criarObjeto(o.tipo, o.props || {});
     grupo.add(obj);
     const ehFundo = o.fora || o.fundo;
+    if (PH && !ehFundo && o.contorno !== false) contornar(obj, 0.03);
     aplicarToon(obj, !ehFundo, ehFundo ? null : fgMats);
     (ehFundo ? fundo : scene).add(grupo);
     const [x = 0, y = 0, z = 0] = o.pos || [];
@@ -167,7 +179,7 @@ function montarCena(C, ci) {
   for (const o of objetos) if (!o.def.fora) caixa.union(o.caixa);
   if (caixa.isEmpty()) caixa.set(new THREE.Vector3(-3, 0, -1), new THREE.Vector3(3, 5, 1));
   const geral = enquadrar(caixa, cam, C.camera?.margem ?? 1.06);
-  return { C, ci, scene, fundo, cam, atores, objetos, fgMats, geral, ceu, planos: planejar(C, ci, atores, objetos) };
+  return { C, ci, scene, fundo, cam, atores, objetos, fgMats, geral, ceu: PH ? CEU_PH : ceu, planos: planejar(C, ci, atores, objetos) };
 }
 
 // distância para caber a caixa no quadro vertical (com espaço para a legenda embaixo)

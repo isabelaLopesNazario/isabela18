@@ -14,9 +14,7 @@
   "segura": 1.4
  },
  "legenda": {
-  "palavras": 2,
-  "topo": 1560,
-  "cor_destaque": "#ffd45a"
+  "palavras": 2
  },
  "musica": true,
  "musica_lufs": -31,
