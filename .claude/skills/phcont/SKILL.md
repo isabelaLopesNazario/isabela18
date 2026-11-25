@@ -30,7 +30,12 @@ Personagens em `projetos/video1/elenco.js` (`criarBoneco("empresario"|"contador"
 (camisa vermelha), **Contador PH** (terno marinho, camisa branca, **gravata dourada**, óculos redondos), Atendente (verde
 com crachá), Concorrente (laranja, cara preocupada). Adereços: `vareta()`, `lupa()`, `quadro()` (poses dos bonecos brancos
 de referência: apontar com vareta, mostrar no quadro, olhar pela lupa). Ficha: `referencias/elenco_phcont_v1.png`.
-Versão anterior (toon com contorno preto): **Mais referências da cliente (`phcont/animacao/referencias/ilustracoes/`):** alerta vermelho sobre planilha, rótulos de
+Versão anterior (toon com contorno preto): **Personagem principal: a "Consultora PH" (menina explicando)** — pedido da cliente, porque quem narra é mulher.
+`criarBoneco("consultora")`: cabelo castanho comprido com franja, cílios, blazer azul-marinho com gola em V branca, broche
+e faixa dourados, sapatos bordô; explica apontando a vareta para o quadro. Imagem: `referencias/consultora_phcont.png`.
+Ela conduz as cenas; empresário, atendente e concorrente entram como coadjuvantes.
+
+**Mais referências da cliente (`phcont/animacao/referencias/ilustracoes/`):** alerta vermelho sobre planilha, rótulos de
 vidro com ícone em volta do monitor (Prefeitura/Código/Cadastro/Regras/Nota Fiscal), nota fiscal com seta bifurcando
 para prefeitura e moeda, contador ilustrado no computador com checklist, mapa do Brasil com pinos amarelos, documentos com
 ciclo de segurança, três prédios de governo coloridos, e **uma arte da própria PH com bonecos brancos 3D (sem rosto) em

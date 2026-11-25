@@ -9,6 +9,7 @@ export const PERSONAGENS = {
   empresario: { pele: "#c8956b", camisa: "#d8463c", calca: "#2b3140", sapato: "#4a3326", cabelo: "#2a1d14", oculos: false, terno: false, cracha: false },
   contador:   { pele: "#7a4a2e", camisa: "#1f2b42", calca: "#1f2b42", sapato: "#3a2a20", cabelo: "#1d140e", oculos: true,  terno: true,  cracha: false },
   atendente:  { pele: "#8d5a3b", camisa: "#3aa35a", calca: "#2b3140", sapato: "#3a2a20", cabelo: "#1d140e", oculos: false, terno: false, cracha: true },
+  consultora: { pele: "#d9a07a", camisa: "#1f2b42", calca: "#1f2b42", sapato: "#7a2a33", cabelo: "#5a3420", oculos: false, terno: false, cracha: false, menina: true },
   concorrente:{ pele: "#e2b48e", camisa: "#e08a2e", calca: "#3a3f4c", sapato: "#4a3326", cabelo: "#6b4428", oculos: false, terno: false, cracha: false },
 };
 
@@ -50,11 +51,26 @@ export function criarBoneco(tipo = "empresario") {
   const franja = new THREE.Mesh(new THREE.SphereGeometry(0.5, 20, 14), MAT(P.cabelo));
   franja.scale.set(1.05, 0.33, 0.7); franja.position.set(0.2, 0.55, 0.6); franja.rotation.z = -0.35; cab.add(franja);
 
+  if (P.menina) {
+    // cabelo comprido caindo atrás e nos lados, com franja
+    const tras = new THREE.Mesh(new THREE.CapsuleGeometry(0.78, 1.1, 8, 20), MAT(P.cabelo));
+    tras.position.set(0, -0.55, -0.32); tras.scale.set(1.15, 1, 0.6); cab.add(tras);
+    for (const sx of [-1, 1]) {
+      const mecha = new THREE.Mesh(new THREE.CapsuleGeometry(0.22, 1.0, 6, 12), MAT(P.cabelo));
+      mecha.position.set(sx * 0.82, -0.45, 0.12); mecha.rotation.z = sx * 0.08; cab.add(mecha);
+    }
+    franja.scale.set(1.5, 0.4, 0.8); franja.position.set(0.12, 0.55, 0.58);
+    // blusa: gola em V branca, faixa dourada e colar
+    const gola = new THREE.Mesh(new THREE.ConeGeometry(0.28, 0.45, 3), MAT("#f2efe8")); gola.rotation.z = Math.PI; gola.position.set(0, 2.5, 0.315); gola.scale.z = 0.05; corpo.add(gola);
+    const faixa = new THREE.Mesh(new THREE.BoxGeometry(1.16, 0.08, 0.64), MAT("#c9ad6e", 0.4)); faixa.position.y = 1.4; corpo.add(faixa);
+    const broche = new THREE.Mesh(new THREE.SphereGeometry(0.07, 12, 8), MAT("#c9ad6e", 0.3)); broche.position.set(-0.32, 2.35, 0.33); corpo.add(broche);
+  }
   const olhos = [];
   for (const sx of [-0.3, 0.3]) {
     const br = new THREE.Mesh(new THREE.SphereGeometry(0.23, 24, 16), BASIC("#ffffff")); br.position.set(sx, 0.08, 0.74); br.scale.set(0.95, 1.1, 0.5); cab.add(br);
     const pu = new THREE.Mesh(new THREE.SphereGeometry(0.11, 16, 12), BASIC("#111111")); pu.position.set(sx, 0.06, 0.85); pu.scale.set(1, 1.15, 0.5); cab.add(pu);
     const sob = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.07, 0.06), BASIC(P.cabelo)); sob.position.set(sx, 0.42, 0.78); sob.rotation.z = sx < 0 ? 0.1 : -0.1; cab.add(sob);
+    if (P.menina) { const cilio = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.04, 0.04), BASIC("#111111")); cilio.position.set(sx + (sx < 0 ? -0.2 : 0.2), 0.27, 0.78); cilio.rotation.z = sx < 0 ? 0.6 : -0.6; cab.add(cilio); }
     olhos.push({ br, pu, sob });
   }
   if (P.oculos) {

@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;width:1080px;height:1350px}canvas{display:block}</style></head><body>
+<canvas id="c" width="1080" height="1350"></canvas>
+<script type="module">
+import * as THREE from "./lib/three.module.js";
+import { criarBoneco, vareta, quadro } from "./elenco.js";
+const r = new THREE.WebGLRenderer({ canvas: document.getElementById("c"), antialias: true, preserveDrawingBuffer: true });
+r.setSize(1080, 1350, false); r.shadowMap.enabled = true; r.shadowMap.type = THREE.PCFSoftShadowMap; r.outputColorSpace = THREE.SRGBColorSpace;
+const s = new THREE.Scene(); s.background = new THREE.Color("#dfe6ec");
+s.add(new THREE.HemisphereLight("#ffffff", "#c9d2da", 1.9));
+const sol = new THREE.DirectionalLight("#fffaf0", 2.2); sol.position.set(4, 12, 14); sol.castShadow = true; sol.shadow.mapSize.set(2048, 2048);
+Object.assign(sol.shadow.camera, { left: -10, right: 10, top: 10, bottom: -4 }); s.add(sol);
+const chao = new THREE.Mesh(new THREE.PlaneGeometry(60, 30), new THREE.MeshStandardMaterial({ color: "#e6ebef", roughness: 1 }));
+chao.rotation.x = -Math.PI / 2; chao.receiveShadow = true; s.add(chao);
+// quadro com IBS e CBS
+const cv = document.createElement("canvas"); cv.width = 1024; cv.height = 600; const x = cv.getContext("2d");
+x.fillStyle = "#ffffff"; x.fillRect(0, 0, 1024, 600);
+x.fillStyle = "#1f2b42"; x.font = "800 150px Poppins, Arial"; x.textAlign = "center"; x.fillText("IBS", 290, 280); x.fillText("CBS", 740, 280);
+x.fillStyle = "#c9ad6e"; x.font = "800 110px Poppins, Arial"; x.fillText("+", 515, 270);
+x.fillStyle = "#7a2a33"; x.font = "700 56px Poppins, Arial"; x.fillText("REFORMA TRIBUTÁRIA", 512, 450);
+const tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;
+const q = quadro(tx); q.position.set(1.6, 0, -0.6); q.rotation.y = -0.25; s.add(q);
+const m = criarBoneco("consultora"); m.g.position.set(-2.3, 0, 0.6); m.g.rotation.y = 0.35; s.add(m.g);
+m.bracos[1].rotation.z = 1.35; m.bracos[1].rotation.y = -0.3; const v = vareta(); v.position.set(0, -2.0, 0); m.bracos[1].add(v);
+m.bracos[0].rotation.z = -0.25; m.cab.rotation.y = 0.15;
+m.boca.scale.set(1.15, 1.4, 1);
+const cam = new THREE.PerspectiveCamera(30, 1080 / 1350, 0.1, 200); cam.position.set(-0.2, 3.6, 19.5); cam.lookAt(-0.1, 2.8, 0);
+r.render(s, cam); window.pronto = true;
+</script></body></html>
