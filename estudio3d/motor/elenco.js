@@ -91,6 +91,9 @@ export const POSES = {
   comemora:  { bE: [0, -2.8], bD: [0, 2.8], cab: [-0.15, 0], boca: "aberta", olhos: 1.1, salto: 0.5, pulo: 1, sob: -0.15 },
   triste:    { bE: [0, -0.05], bD: [0, 0.05], cab: [0.35, 0], boca: "triste", olhos: 0.9, salto: 0, sob: 0.45 },
   segura:    { bE: [0, -0.12], bD: [-1.3, 0.2], cab: [0.1, 0], boca: "sorriso", olhos: 1, salto: 0 },
+  desespero: { bE: [-0.9, -0.5], bD: [-2.5, -0.45], cab: [0.42, 0.1], boca: "triste", olhos: 0.9, salto: 0, sob: 0.45 },
+  ombros:    { bE: [-0.55, -1.0], bD: [-0.55, 1.0], cab: [0.05, 0.12], boca: "triste", olhos: 1.1, salto: 0.08 },
+  discursa:  { bE: [-0.8, -0.2], bD: [-0.25, 2.55], cab: [-0.08, 0], boca: "aberta", olhos: 1, salto: 0 },
   confuso:   { bE: [0, -0.15], bD: [-2.3, 0.9], cab: [0.1, 0.35], boca: "triste", olhos: 1.15, salto: 0, sob: 0.35 },
 };
 const lerp = (a, b, k) => a + (b - a) * k;

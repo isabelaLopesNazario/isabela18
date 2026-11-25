@@ -1,0 +1,22 @@
+{
+ "cenas": [
+  {
+   "n": 1,
+   "t0": 0.0,
+   "t1": 2.81,
+   "fala": "Por que cada *cidade* tem uma *regra* diferente?"
+  },
+  {
+   "n": 2,
+   "t0": 2.81,
+   "t1": 5.8,
+   "fala": "Cada *prefeitura* cuida da *nota fiscal* do seu jeito."
+  },
+  {
+   "n": 3,
+   "t0": 5.8,
+   "t1": 10.678,
+   "fala": "A resposta: o contador *acompanha* as regras de *cada* *município* por você."
+  }
+ ]
+}

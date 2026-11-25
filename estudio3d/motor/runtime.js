@@ -6,12 +6,13 @@ import * as THREE from "./lib/three.module.js";
 import { criarBoneco, atualizarAtor } from "./elenco.js";
 import { criarPalito } from "./elenco_palito.js";
 import { criarPH, contornar } from "./elenco_ph.js";
+import { criarBranco } from "./elenco_branco.js";
 import { criarObjeto, criarCenario } from "./objetos.js";
 
 const R = window.__ROTEIRO;
 const W = R.largura || 1080, H = R.altura || 1920;
 const ESTILO = R.estilo || "ph";          // ph (padrão da referência) | palito | bloco
-const PALITO = ESTILO === "palito", PH = ESTILO === "ph";
+const PALITO = ESTILO === "palito", PH = ESTILO === "ph", BRANCO = ESTILO === "branco";
 const MAX_PLANO = Math.min(2, R.max_plano || 1.9);
 const canvas = document.getElementById("cena");
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
@@ -36,7 +37,7 @@ const GRAD = (() => {
 const RIM = R.borda || { cor: "#ffffff", forca: 0.8 };
 const cacheMat = new Map();
 function toon(mat, rim) {
-  if (!mat || !mat.isMeshStandardMaterial || PH) return mat;
+  if (!mat || !mat.isMeshStandardMaterial || PH || BRANCO) return mat;
   const chave = mat.uuid + (rim ? "r" : "");
   if (cacheMat.has(chave)) return cacheMat.get(chave);
   const m = new THREE.MeshToonMaterial({ color: mat.color, gradientMap: GRAD, map: mat.map || null, transparent: mat.transparent, opacity: mat.opacity, side: mat.side });
@@ -120,14 +121,14 @@ function montarCena(C, ci) {
   aplicarToon(cen, false);
   scene.add(cen);
   const fundo = new THREE.Group(); fundo.add(cen); scene.add(fundo);
-  scene.add(new THREE.HemisphereLight("#ffffff", PH ? "#cfd6de" : "#b9c4d0", PH ? 2.1 : 1.25));
-  const sol = new THREE.DirectionalLight("#fff6e6", PH ? 1.7 : 2.6); sol.position.set(7, 16, 12);
+  scene.add(new THREE.HemisphereLight("#ffffff", PH || BRANCO ? "#cfd6de" : "#b9c4d0", BRANCO ? 1.9 : PH ? 2.1 : 1.25));
+  const sol = new THREE.DirectionalLight("#fff6e6", BRANCO ? 2.0 : PH ? 1.7 : 2.6); sol.position.set(7, 16, 12);
   sol.castShadow = true; sol.shadow.mapSize.set(2048, 2048); sol.shadow.radius = 4; sol.shadow.bias = -0.0006; sol.shadow.normalBias = 0.05;
   Object.assign(sol.shadow.camera, { left: -16, right: 16, top: 16, bottom: -16 }); scene.add(sol);
 
   const fgMats = new Set();
   const atores = (C.atores || []).map((a) => {
-    const A = PH ? criarPH(a.tipo, a.cores || {}) : PALITO ? criarPalito(a.tipo, a.cores || {}) : criarBoneco(a.tipo, a.cores || {});
+    const A = BRANCO ? criarBranco(a.tipo, a.cores || {}) : PH ? criarPH(a.tipo, a.cores || {}) : PALITO ? criarPalito(a.tipo, a.cores || {}) : criarBoneco(a.tipo, a.cores || {});
     const esc = a.escala || 1;
     A.g.scale.setScalar(esc);
     if (a.segura) {
@@ -188,7 +189,8 @@ function enquadrar(caixa, cam, margem = 1.06, fov = 36) {
   const fovV = THREE.MathUtils.degToRad(fov) / 2, fovH = Math.atan(Math.tan(fovV) * cam.aspect);
   const meiaL = (tam.x / 2) * margem + 0.35, meiaA = (tam.y / 2) * margem + 0.5;
   const d = Math.max(meiaL / Math.tan(fovH), meiaA / Math.tan(fovV)) + tam.z / 2;
-  return { alvo: new THREE.Vector3(centro.x, centro.y - tam.y * 0.08, centro.z), dist: d, alt: centro.y + d * 0.18, fov };
+  // estilo maquete: câmera mais alta, olhando de cima (quase isométrica)
+  return { alvo: new THREE.Vector3(centro.x, centro.y - tam.y * 0.08, centro.z), dist: d, alt: centro.y + d * (BRANCO ? 0.42 : 0.18), fov };
 }
 
 // divide a cena em planos de no máximo MAX_PLANO segundos e escolhe o tipo de cada um
@@ -327,7 +329,7 @@ function renderAt(t) {
   for (const m of S.fgMats) { m.colorWrite = false; m.depthWrite = false; }
   S.fundo.visible = true; S.scene.background = S.ceu;
   renderer.setRenderTarget(rtA); renderer.clear(); renderer.render(S.scene, S.cam);
-  const forca = P.tipo === "geral" ? 0.8 : 1.6;
+  const forca = BRANCO ? (P.tipo === "geral" ? 0.25 : 0.9) : P.tipo === "geral" ? 0.8 : 1.6; // maquete: a cidade aparece nítida no plano geral
   for (let i = 0; i < 2; i++) {
     blurMat.uniforms.tex.value = rtA.texture; blurMat.uniforms.dir.value.set(forca / BW, 0); passar(blurMat, rtB);
     blurMat.uniforms.tex.value = rtB.texture; blurMat.uniforms.dir.value.set(0, forca / BH); passar(blurMat, rtA);

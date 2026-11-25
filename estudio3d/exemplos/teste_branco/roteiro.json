@@ -1,0 +1,32 @@
+{
+ "nome_saida": "teste_branco.mp4",
+ "estilo": "branco",
+ "narracao": { "velocidade": 0.95 },
+ "legenda": { "palavras": 3 },
+ "musica": true,
+ "cenas": [
+  { "fala": "Por que cada *cidade* tem uma *regra* diferente?",
+    "cenario": "cidade_iso",
+    "atores": [ { "tipo": "empresario", "pos": [0, 0.5], "rot": 0.3,
+      "acoes": [ { "em": "inicio", "pose": "pensando" }, { "em": "regra", "pose": "ombros" } ] } ],
+    "objetos": [
+      { "tipo": "pino", "pos": [-4, 0, -3], "escala": 1.2, "entra": { "modo": "cai", "em": "cidade" } },
+      { "tipo": "pino", "pos": [4, 0, -3.5], "escala": 1.2, "cor": "#e8432f", "entra": { "modo": "cai", "em": "regra" } },
+      { "tipo": "pino", "pos": [0, 0, -5], "escala": 1.2, "entra": { "modo": "cai", "em": "diferente" } } ] },
+  { "fala": "Cada *prefeitura* cuida da *nota fiscal* do seu jeito.",
+    "cenario": "cidade_iso",
+    "atores": [ { "tipo": "empresario", "pos": [-1.2, 0.8], "rot": 0.2,
+      "acoes": [ { "em": "inicio", "pose": "parado" }, { "em": "jeito", "pose": "desespero" } ] } ],
+    "objetos": [
+      { "tipo": "documento", "props": { "titulo": "NFS-e" }, "pos": [2.2, 3.4, 0.6], "rot": [0, -0.3, 0.1], "entra": { "modo": "surge", "em": "nota" }, "anim": [ { "tipo": "flutua" } ] },
+      { "tipo": "pino", "pos": [3.4, 0, -2.4], "escala": 1.1, "entra": { "modo": "cai", "em": "prefeitura" } } ] },
+  { "fala": "A resposta: o contador *acompanha* as regras de *cada* *município* por você.",
+    "cenario": "cidade_iso",
+    "atores": [ { "tipo": "contador", "pos": [-0.8, 0.6], "rot": 0.25,
+      "segura": { "tipo": "vareta", "mao": "D" },
+      "acoes": [ { "em": "inicio", "pose": "discursa" }, { "em": "acompanha", "pose": "aponta" }, { "em": "voce", "pose": "explica" } ] } ],
+    "objetos": [
+      { "tipo": "palanque", "props": { "texto": "PHCONT" }, "pos": [-0.8, 0, 1.9], "rot": [0, 0.25, 0], "fundo": false },
+      { "tipo": "pino", "pos": [3.6, 0, -2.5], "escala": 1.1, "props": { "cor": "#2a9d4a" }, "entra": { "modo": "cai", "em": "municipio" } } ] }
+ ]
+}

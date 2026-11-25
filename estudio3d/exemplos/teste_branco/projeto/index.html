@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #cfe3f2; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+      #cena { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      .leg { position: absolute; left: 0; width: 1080px; top: 1330px; text-align: center; font-family: "Poppins", sans-serif;
+        font-weight: 800; font-size: 74px; color: #fff; letter-spacing: -.005em;
+        -webkit-text-stroke: 8px #10131a; paint-order: stroke fill; text-shadow: 0 5px 0 rgba(0,0,0,.28); }
+      .leg b { color: #ffd23f; font-weight: 800; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="10.678" data-width="1080" data-height="1920">
+      <canvas id="cena" class="clip" data-start="0" data-duration="10.678" data-track-index="0" width="1080" height="1920"></canvas>
+      <div id="lg0" class="leg clip" data-start="0.0" data-duration="0.73" data-track-index="1">POR QUE CADA</div>
+      <div id="lg1" class="leg clip" data-start="0.73" data-duration="0.88" data-track-index="1"><b>CIDADE</b> TEM UMA</div>
+      <div id="lg2" class="leg clip" data-start="1.61" data-duration="1.28" data-track-index="1"><b>REGRA</b> DIFERENTE?</div>
+      <div id="lg3" class="leg clip" data-start="2.89" data-duration="1.12" data-track-index="1">CADA <b>PREFEITURA</b> CUIDA</div>
+      <div id="lg4" class="leg clip" data-start="4.01" data-duration="0.83" data-track-index="1">DA <b>NOTA</b> <b>FISCAL</b></div>
+      <div id="lg5" class="leg clip" data-start="4.84" data-duration="0.74" data-track-index="1">DO SEU</div>
+      <div id="lg6" class="leg clip" data-start="5.58" data-duration="0.3" data-track-index="1">JEITO</div>
+      <div id="lg7" class="leg clip" data-start="5.88" data-duration="1.23" data-track-index="1">A RESPOSTA</div>
+      <div id="lg8" class="leg clip" data-start="7.11" data-duration="0.77" data-track-index="1">O CONTADOR <b>ACOMPANHA</b></div>
+      <div id="lg9" class="leg clip" data-start="7.88" data-duration="0.43" data-track-index="1">AS REGRAS DE</div>
+      <div id="lg10" class="leg clip" data-start="8.31" data-duration="1.38" data-track-index="1"><b>CADA</b> <b>MUNICÍPIO</b> POR</div>
+      <div id="lg11" class="leg clip" data-start="9.69" data-duration="0.75" data-track-index="1">VOCÊ</div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#lg0", { scale: 0.86, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, 0.0);
+      tl.fromTo("#lg1", { scale: 0.86, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, 0.73);
+      tl.fromTo("#lg2", { scale: 0.86, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, 1.61);
+      tl.fromTo("#lg3", { scale: 0.86, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, 2.89);
+      tl.fromTo("#lg4", { scale: 0.86, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, 4.01);
+      tl.fromTo("#lg5", { scale: 0.86, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, 4.84);
+      tl.fromTo("#lg6", { scale: 0.86, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, 5.58);
+      tl.fromTo("#lg7", { scale: 0.86, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, 5.88);
+      tl.fromTo("#lg8", { scale: 0.86, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, 7.11);
+      tl.fromTo("#lg9", { scale: 0.86, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, 7.88);
+      tl.fromTo("#lg10", { scale: 0.86, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, 8.31);
+      tl.fromTo("#lg11", { scale: 0.86, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, 9.69);
+      window.__timelines["main"] = tl;
+    </script>
+    <script>window.__ROTEIRO = {"largura": 1080, "altura": 1920, "duracao": 10.678, "marca": {}, "cenas": [{"fala": "Por que cada *cidade* tem uma *regra* diferente?", "cenario": "cidade_iso", "atores": [{"tipo": "empresario", "pos": [0, 0.5], "rot": 0.3, "acoes": [{"t": 0.0, "pose": "pensando"}, {"t": 1.61, "pose": "ombros"}], "andar": []}], "objetos": [{"tipo": "pino", "pos": [-4, 0, -3], "escala": 1.2, "entra": {"modo": "cai", "t": 0.73, "dur": 0.45}}, {"tipo": "pino", "pos": [4, 0, -3.5], "escala": 1.2, "cor": "#e8432f", "entra": {"modo": "cai", "t": 1.61, "dur": 0.45}}, {"tipo": "pino", "pos": [0, 0, -5], "escala": 1.2, "entra": {"modo": "cai", "t": 1.97, "dur": 0.45}}], "t0": 0.0, "t1": 2.81}, {"fala": "Cada *prefeitura* cuida da *nota fiscal* do seu jeito.", "cenario": "cidade_iso", "atores": [{"tipo": "empresario", "pos": [-1.2, 0.8], "rot": 0.2, "acoes": [{"t": 2.81, "pose": "parado"}, {"t": 5.58, "pose": "desespero"}], "andar": []}], "objetos": [{"tipo": "documento", "props": {"titulo": "NFS-e"}, "pos": [2.2, 3.4, 0.6], "rot": [0, -0.3, 0.1], "entra": {"modo": "surge", "t": 4.15, "dur": 0.45}, "anim": [{"tipo": "flutua", "t": 2.81}]}, {"tipo": "pino", "pos": [3.4, 0, -2.4], "escala": 1.1, "entra": {"modo": "cai", "t": 2.95, "dur": 0.45}}], "t0": 2.81, "t1": 5.8}, {"fala": "A resposta: o contador *acompanha* as regras de *cada* *município* por você.", "cenario": "cidade_iso", "atores": [{"tipo": "contador", "pos": [-0.8, 0.6], "rot": 0.25, "segura": {"tipo": "vareta", "mao": "D"}, "acoes": [{"t": 5.8, "pose": "discursa"}, {"t": 7.49, "pose": "aponta"}, {"t": 9.69, "pose": "explica"}], "andar": []}], "objetos": [{"tipo": "palanque", "props": {"texto": "PHCONT"}, "pos": [-0.8, 0, 1.9], "rot": [0, 0.25, 0], "fundo": false}, {"tipo": "pino", "pos": [3.6, 0, -2.5], "escala": 1.1, "props": {"cor": "#2a9d4a"}, "entra": {"modo": "cai", "t": 8.87, "dur": 0.45}}], "t0": 5.8, "t1": 10.678}], "estilo": "branco"};</script>
+    <script type="module">
+      window.__hf = window.__hf || {};
+      window.__hf.buildReady = window.__hf.buildReady || {};
+      window.__hf.buildReady["cena3d"] = (async () => {
+        try { await document.fonts.load('900 100px Poppins'); await document.fonts.load('800 100px Poppins'); } catch (e) {}
+        await import("./motor/runtime.js");
+      })();
+    </script>
+  </body>
+</html>

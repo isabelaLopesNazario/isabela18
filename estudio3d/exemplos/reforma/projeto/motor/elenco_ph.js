@@ -87,7 +87,7 @@ export function criarPH(tipo = "empresario", sobrescrever = {}) {
   const aberta = new THREE.Group(); aberta.position.set(0.04, -0.38, 0.95); cab.add(aberta);
   const fundo = new THREE.Mesh(new THREE.CircleGeometry(0.2, 28, Math.PI, Math.PI), BASIC("#3a1412")); aberta.add(fundo);
   const dentes = new THREE.Mesh(new THREE.PlaneGeometry(0.34, 0.06), BASIC("#ffffff")); dentes.position.set(0, -0.03, 0.005); aberta.add(dentes);
-  const lingua = new THREE.Mesh(new THREE.CircleGeometry(0.09, 16), BASIC("#d9605a")); lingua.position.set(0, -0.14, 0.004); aberta.add(lingua);
+  const lingua = new THREE.Mesh(new THREE.CircleGeometry(0.075, 16), BASIC("#d9605a")); lingua.position.set(0, -0.11, 0.004); aberta.add(lingua);
   const triste = new THREE.Mesh(new THREE.TorusGeometry(0.18, 0.04, 8, 22, Math.PI), BASIC("#1b1e26")); triste.position.set(0.04, -0.5, 0.9); cab.add(triste);
   [sorriso, triste, fundo, dentes, lingua].forEach((m) => (m.userData.semContorno = true));
 
