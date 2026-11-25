@@ -70,7 +70,7 @@ só o estilo.
 Modelo em `phcont/carrossel/setor_fiscal/` (`carrossel.html` com um slide por `?s=N`, `render.cjs` gera os PNGs em `final/`).
 1080x1350 (4:5). Usar **só o texto do roteiro**, sem frases extras, sem letra manuscrita e sem emojis.
 - **Capa:** foto dela **inteira na capa, sem desfoque nos lados**, enquadrada da cabeça até as mãos; **pouca sombra
-  embaixo** (só o necessário para o título) e **sombreado em volta** (laterais, topo e vinheta). Rótulo dourado
+  embaixo** (só o necessário para o título) e **sombreado em volta** (laterais, topo e vinheta). Título um pouco acima do rodapé (bloco a partir de y≈900, não colado embaixo). Rótulo dourado
   espaçado + título Libre Caslon branco com final em itálico dourado + traço bordô. Sem "arraste".
 - **Slides internos:** fundo marinho com granulado e moldura fina dourada; numeral em itálico (02, 03…) + fio dourado +
   rótulo; título serifado; listas com ícones de traço dourado em círculo (no lugar dos emojis); siglas como etiquetas;
