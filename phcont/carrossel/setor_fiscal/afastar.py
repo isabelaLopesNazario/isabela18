@@ -1,12 +1,13 @@
 """Afasta a foto (zoom out) aumentando a parede lisa em volta: replica a borda, suaviza só a parte nova e funde."""
 import sys, cv2, numpy as np
 src, dst, frac = sys.argv[1], sys.argv[2], float(sys.argv[3])   # frac = largura da foto no quadro final
+parte_cima = float(sys.argv[4]) if len(sys.argv) > 4 else 1.0  # quanto da parede nova vai em cima (1 = tudo em cima)
 im = cv2.imread(src); H, W = im.shape[:2]
 CW = int(round(W / frac)); CH = int(round(CW * 1350 / 1080))
-lado = (CW - W) // 2; topo = CH - H
-ext = cv2.copyMakeBorder(im, topo, 0, lado, CW - W - lado, cv2.BORDER_REPLICATE)
+lado = (CW - W) // 2; topo = int((CH - H) * parte_cima); baixo = CH - H - topo
+ext = cv2.copyMakeBorder(im, topo, baixo, lado, CW - W - lado, cv2.BORDER_REPLICATE)
 suave = cv2.GaussianBlur(ext, (0, 0), 25 * W / 1086)
-m = np.zeros((CH, CW), np.float32); m[topo:, lado:lado + W] = 1
+m = np.zeros((CH, CW), np.float32); m[topo:topo + H, lado:lado + W] = 1
 m = cv2.GaussianBlur(cv2.erode(m, np.ones((int(61 * W / 1086),) * 2)), (0, 0), 18 * W / 1086)[..., None]
 out = (ext * m + suave * (1 - m)).astype(np.uint8)
 # leve granulado na parte nova para não ficar lisa demais
