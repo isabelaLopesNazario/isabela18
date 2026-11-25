@@ -21,6 +21,13 @@ Arquivos:
 
 Pastas da PHcont no repositório: `phcont/bruto/`, `phcont/trabalho/`, `phcont/edicao_videoN/` (um projeto por vídeo), `phcont/final/`, `phcont/estilo/`.
 
+## Animações (pasta própria)
+
+Vídeos de **animação com bonequinhos** ficam separados em `phcont/animacao/` (`bruto/`, `referencias/`, `trabalho/`,
+`projetos/`, `final/`). Estilos G e G2 do catálogo. Sempre com **narração + legenda palavra por palavra + efeitos sonoros
++ música de fundo livre de direitos** (pedido da cliente). Reproduzir vídeos da própria PH é permitido; de outras marcas,
+só o estilo.
+
 ## Entregas aprovadas (para lembrar o padrão)
 
 | Entrega | Arquivo final no repositório | Estilo |
