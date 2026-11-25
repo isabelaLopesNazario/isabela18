@@ -70,6 +70,22 @@ Transição suave, piscada e respiração automáticas; boca abre e fecha nas po
 **Entradas**: `surge`, `cai`, `sobe`, `desliza`. **Saídas**: `some` (com poeira), `cai`.
 **Animações**: `flutua`, `gira`, `pulsa`, `inclina`.
 
+## Estilo visual (padrão: boneco palito cel-shaded)
+
+- **Boneco palito** (`motor/elenco_palito.js`): cabeça grande, membros finos, olhos e bocas grandes, sobrancelhas que
+  mudam com a pose. `"estilo": "bloco"` no roteiro volta ao boneco antigo.
+- **Luz em 3 faixas** (toon) + **borda clara na silhueta** (contraluz do alto à direita). Ajuste com
+  `"borda": {"cor": "#ffffff", "forca": 0.8}`.
+- **Fundo desfocado**: o cenário é desenhado em baixa resolução e desfocado; personagens e objetos ficam nítidos por cima.
+  Objetos de fundo (prédio distante) levam `"fundo": true` (ou `"fora": true`).
+- **Planos de no máximo 2 s**: cada cena é dividida em planos (geral, médio, rosto, objeto) e a câmera está sempre em
+  movimento (aproxima e gira). Rosto sempre no terço de cima, longe da legenda. Plano de objeto inclui quem o usa.
+  Para forçar: `"camera": {"planos": ["geral", "rosto", "objeto"]}`.
+- **Legenda**: no máximo 3 palavras por vez.
+- **Voz grátis**: sem `narracao.arquivo`, o sistema usa a voz neural grátis Piper (pt-BR), para aprovar o vídeo antes de
+  gastar crédito de voz paga. `"narracao": {"velocidade": 0.92}` ajusta o ritmo.
+- **Regras de roteiro**: a pergunta abre o vídeo e a resposta fecha; evite pausas maiores que 1 s.
+
 ## Para crescer
 
 - Novo personagem: acrescente as cores em `PERSONAGENS` (`elenco.js`).

@@ -53,7 +53,15 @@ def preparar_narracao(R, base, proj):
     else:  # voz-guia do sistema (rascunho)
         texto = " ".join(re.sub(r"\*", "", c["fala"]) for c in R["cenas"])
         tmp = proj / "assets" / "guia.wav"
-        sh(["espeak-ng", "-v", "pt-br", "-s", "150", "-w", str(tmp), texto])
+        modelo = Path("/root/.cache/piper/pt_BR-faber-medium.onnx")
+        if modelo.exists():  # voz grátis neural (Piper), bem mais natural que o espeak
+            r = subprocess.run([sys.executable, "-m", "piper", "-m", str(modelo), "-f", str(tmp),
+                                "--length-scale", str(N.get("velocidade", 0.92)), "--sentence-silence", "0.18"],
+                               input=texto, text=True, capture_output=True)
+            if r.returncode != 0:
+                raise SystemExit(r.stderr[-2000:])
+        else:
+            sh(["espeak-ng", "-v", "pt-br", "-s", "150", "-w", str(tmp), texto])
         sh(["ffmpeg", "-v", "error", "-y", "-i", str(tmp), "-af", "loudnorm=I=-14", "-ar", str(SR), "-ac", "2", str(saida)])
     return saida
 
@@ -172,7 +180,7 @@ def legendas(toks, R):
     L = R.get("legenda", {})
     if L.get("desligada"):
         return []
-    max_p = L.get("palavras", 2)
+    max_p = min(3, L.get("palavras", 2))  # regra: no máximo 3 palavras
     grupos, atual = [], []
     for i, t in enumerate(toks):
         atual.append(t)

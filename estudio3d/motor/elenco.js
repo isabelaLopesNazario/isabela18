@@ -86,12 +86,12 @@ export const POSES = {
   aponta:    { bE: [0, -0.18], bD: [0, 1.4], cab: [0, 0.25], boca: "aberta", olhos: 1, salto: 0 },
   explica:   { bE: [-0.7, -0.35], bD: [-0.7, 0.35], cab: [0, 0], boca: "aberta", olhos: 1, salto: 0 },
   acena:     { bE: [0, -0.12], bD: [0, 2.6], cab: [0, 0], boca: "sorriso", olhos: 1, salto: 0, aceno: 1 },
-  assustado: { bE: [-0.3, -2.4], bD: [-0.3, 2.4], cab: [-0.1, 0], boca: "aberta", olhos: 1.4, salto: 0.35 },
-  pensando:  { bE: [0, -0.15], bD: [-2.1, 0.55], cab: [0.18, -0.25], boca: "triste", olhos: 1, salto: 0 },
-  comemora:  { bE: [0, -2.8], bD: [0, 2.8], cab: [-0.15, 0], boca: "aberta", olhos: 1.1, salto: 0.5, pulo: 1 },
-  triste:    { bE: [0, -0.05], bD: [0, 0.05], cab: [0.35, 0], boca: "triste", olhos: 0.9, salto: 0 },
+  assustado: { bE: [-0.3, -2.4], bD: [-0.3, 2.4], cab: [-0.1, 0], boca: "aberta", olhos: 1.4, salto: 0.35, sob: 0.2 },
+  pensando:  { bE: [0, -0.15], bD: [-2.1, 0.55], cab: [0.18, -0.25], boca: "triste", olhos: 1, salto: 0, sob: 0.3 },
+  comemora:  { bE: [0, -2.8], bD: [0, 2.8], cab: [-0.15, 0], boca: "aberta", olhos: 1.1, salto: 0.5, pulo: 1, sob: -0.15 },
+  triste:    { bE: [0, -0.05], bD: [0, 0.05], cab: [0.35, 0], boca: "triste", olhos: 0.9, salto: 0, sob: 0.45 },
   segura:    { bE: [0, -0.12], bD: [-1.3, 0.2], cab: [0.1, 0], boca: "sorriso", olhos: 1, salto: 0 },
-  confuso:   { bE: [0, -0.15], bD: [-2.3, 0.9], cab: [0.1, 0.35], boca: "triste", olhos: 1.15, salto: 0 },
+  confuso:   { bE: [0, -0.15], bD: [-2.3, 0.9], cab: [0.1, 0.35], boca: "triste", olhos: 1.15, salto: 0, sob: 0.35 },
 };
 const lerp = (a, b, k) => a + (b - a) * k;
 const suave = (x) => { x = Math.min(1, Math.max(0, x)); return x * x * (3 - 2 * x); };
@@ -140,5 +140,7 @@ export function atualizarAtor(A, t, { acoes = [], andar = [], olharPara = null, 
   if (boca === "aberta") A.bocas.aberta.scale.set(1, 1.0 + Math.abs(Math.sin(t * 11)) * 0.35, 1);
   const pisca = (t + x * 0.37) % 3.1 > 2.97 ? 0.12 : 1;
   const ol = lerp(ant.olhos, atual.olhos, k);
-  A.olhos.forEach((o) => { o.br.scale.set(ol, ol * 1.1 * pisca, 0.5); o.pu.scale.set(1, 1.15 * pisca, 0.5); o.sob.position.y = 0.42 + (ol - 1) * 0.3; });
+  A.olhos.forEach((o) => { o.br.scale.set(ol, ol * 1.1 * pisca, 0.5); o.pu.scale.set(1, 1.15 * pisca, 0.5); o.sob.position.y = (o.sobY ?? 0.42) + (ol - 1) * 0.3;
+    if (o.sobRZ === undefined) o.sobRZ = o.sob.rotation.z;
+    const sa = lerp(ant.sob || 0, atual.sob || 0, k); o.sob.rotation.z = o.sobRZ + (o.sx < 0 ? sa : -sa); });
 }
