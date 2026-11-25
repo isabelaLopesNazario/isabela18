@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@400;500;600;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1080px;height:1350px;overflow:hidden;background:#0b1529}
 :root{--marinho:#1F2B42;--fundo1:#13213f;--fundo2:#070d1c;--bordo:#7A2A33;--bordo2:#A33A46;--ouro:#C9AD6E;--ouro2:#BBA372;--branco:#F7F5F6;--tinta:#0B1426}
@@ -47,20 +47,20 @@ html,body{width:1080px;height:1350px;overflow:hidden;background:#0b1529}
 .chip{font-size:21px;font-weight:600;letter-spacing:.12em;color:var(--ouro);border:1.5px solid rgba(201,173,110,.6);border-radius:40px;padding:6px 16px}
 .nota{position:absolute;left:96px;right:96px;font-size:34px;line-height:1.38;font-weight:400;color:rgba(247,245,246,.86)}
 .nota b{color:var(--ouro);font-weight:600}
-.mao{font-family:Caveat,cursive;font-weight:600;color:var(--ouro)}
 </style></head>
 <body>
 
 <!-- 1: CAPA -->
 <section class="s" id="s1">
-  <div style="position:absolute;inset:0;background:url(foto1.png) center 22%/cover"></div>
-  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,16,32,.25) 0%,rgba(9,16,32,0) 22%,rgba(9,16,32,0) 46%,rgba(11,19,38,.78) 62%,rgba(9,16,32,.96) 76%,#080e1d 100%)"></div>
-  <div style="position:absolute;left:84px;right:84px;top:888px">
+  <!-- foto mais aberta (corpo inteiro até o quadril): fundo com a própria foto desfocada + foto nítida com borda esfumada -->
+  <div style="position:absolute;inset:-40px;background:url(foto1.png) 20% 30%/cover;filter:blur(22px) brightness(.8)"></div>
+  <img src="foto1.png" style="position:absolute;right:-10px;top:-40px;height:1560px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14%)">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,16,32,.2) 0%,rgba(9,16,32,0) 18%,rgba(9,16,32,0) 56%,rgba(11,19,38,.75) 69%,rgba(9,16,32,.95) 80%,#080e1d 100%)"></div>
+  <div style="position:absolute;left:84px;right:84px;top:960px">
     <div class="rot" style="font-size:24px">SETOR FISCAL</div>
     <div style="margin-top:20px;font-family:'Libre Caslon Text',serif;font-weight:700;font-size:72px;line-height:1.08;letter-spacing:-.01em">Você sabe o que <em style="font-style:italic;font-weight:400;color:var(--ouro)">realmente resolvemos aqui?</em></div>
     <div class="traco"></div>
   </div>
-  <div class="pag" style="position:absolute;right:84px;bottom:72px">ARRASTE <svg viewBox="0 0 46 14"><path d="M0 7h43M37 1l6 6-6 6" stroke="#C9AD6E" stroke-width="2" fill="none"/></svg></div>
 </section>
 
 <!-- 2: O QUE É -->
@@ -96,7 +96,7 @@ html,body{width:1080px;height:1350px;overflow:hidden;background:#0b1529}
 <section class="s claro" id="s4"><div class="moldura"></div>
   <div class="topo"><div class="num">04</div><div class="fio"></div><div class="rot">ATENÇÃO</div></div>
   <div class="tit">O que <em>não é</em> do Fiscal<div class="traco"></div></div>
-  <div class="lista" style="top:470px">
+  <div class="lista" style="top:560px">
     <style>
       .claro .item{border-bottom-color:rgba(31,43,66,.14)}
       .nao{width:62px;height:62px;flex:none;border-radius:50%;background:var(--bordo);display:grid;place-items:center}
@@ -111,7 +111,6 @@ html,body{width:1080px;height:1350px;overflow:hidden;background:#0b1529}
     <div class="item"><div class="nao"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div><div class="txt">Distribuição de lucros</div><svg class="seta" viewBox="0 0 40 14"><path d="M0 7h37M31 1l6 6-6 6" stroke="#BBA372" stroke-width="2" fill="none"/></svg><div class="setor">CONTÁBIL</div></div>
     <div class="item"><div class="nao"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div><div class="txt">Cobrança de clientes</div><svg class="seta" viewBox="0 0 40 14"><path d="M0 7h37M31 1l6 6-6 6" stroke="#BBA372" stroke-width="2" fill="none"/></svg><div class="setor">FINANCEIRO</div></div>
   </div>
-  <div class="mao" style="position:absolute;left:96px;right:96px;top:1010px;font-size:54px;line-height:1.1;color:var(--bordo);transform:rotate(-2deg)">É aqui que muitos clientes se confundem <span style="font-family:Poppins">👀</span></div>
   <div class="rodape"><img src="logo_marinho_sem_texto.png"><div class="pag">4 / 7 <svg viewBox="0 0 46 14"><path d="M0 7h43M37 1l6 6-6 6" stroke="#7A2A33" stroke-width="2" fill="none"/></svg></div></div>
 </section>
 
