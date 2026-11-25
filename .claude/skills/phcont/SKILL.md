@@ -30,7 +30,15 @@ Personagens em `projetos/video1/elenco.js` (`criarBoneco("empresario"|"contador"
 (camisa vermelha), **Contador PH** (terno marinho, camisa branca, **gravata dourada**, óculos redondos), Atendente (verde
 com crachá), Concorrente (laranja, cara preocupada). Adereços: `vareta()`, `lupa()`, `quadro()` (poses dos bonecos brancos
 de referência: apontar com vareta, mostrar no quadro, olhar pela lupa). Ficha: `referencias/elenco_phcont_v1.png`.
-Versão anterior (toon com contorno preto): **Bonequinho aprovado como modelo** (`phcont/animacao/referencias/boneco_modelo.png`, código em
+Versão anterior (toon com contorno preto): **Mais referências da cliente (`phcont/animacao/referencias/ilustracoes/`):** alerta vermelho sobre planilha, rótulos de
+vidro com ícone em volta do monitor (Prefeitura/Código/Cadastro/Regras/Nota Fiscal), nota fiscal com seta bifurcando
+para prefeitura e moeda, contador ilustrado no computador com checklist, mapa do Brasil com pinos amarelos, documentos com
+ciclo de segurança, três prédios de governo coloridos, e **uma arte da própria PH com bonecos brancos 3D (sem rosto) em
+fundo marinho com faixas bordô e fio dourado** (dúvida "?" dourado, notebook com gráfico dourado e checklist dourado,
+comércio/fábrica/casa com moedas e seta dourada, aperto de mão com o contador de terno). Vídeo de ref.
+`ref_video_nfse_v2.mp4` (outro canal, muro de arrimo): diorama 3D, cortes em corte transversal, setas e pílulas de rótulo,
+chuva/partículas, câmera que passeia. Opção de estilo testada: `referencias/elenco_phcont_opcao_branco.png`.
+**Bonequinho aprovado como modelo** (`phcont/animacao/referencias/boneco_modelo.png`, código em
 `phcont/animacao/projetos/video1/index.html`, Three.js dentro do HyperFrames, desenhado a partir de `hf-seek`): visual
 de **desenho animado com contorno preto** (casco invertido em `BackSide`) e **sombreamento chapado** (`MeshToonMaterial`
 com gradiente de 3 tons claros 200/235/255), cabeça esférica grande, cabelo em calota + topete, sobrancelhas, olhos

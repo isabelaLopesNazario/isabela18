@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;width:1800px;height:1100px;background:#0f1c3a}canvas{display:block}</style></head><body>
+<canvas id="c" width="1800" height="1100"></canvas>
+<script type="module">
+import * as THREE from "./lib/three.module.js";
+import { vareta, lupa } from "./elenco.js";
+const r = new THREE.WebGLRenderer({ canvas: document.getElementById("c"), antialias: true, preserveDrawingBuffer: true });
+r.setSize(1800, 1100, false); r.shadowMap.enabled = true; r.shadowMap.type = THREE.PCFSoftShadowMap; r.outputColorSpace = THREE.SRGBColorSpace;
+const s = new THREE.Scene();
+const cv=document.createElement('canvas'); cv.width=1800; cv.height=1100; const x=cv.getContext('2d');
+const gr=x.createRadialGradient(900,450,100,900,550,1100); gr.addColorStop(0,'#1f2f55'); gr.addColorStop(1,'#0a1430'); x.fillStyle=gr; x.fillRect(0,0,1800,1100);
+x.fillStyle='#7a2a33'; x.beginPath(); x.moveTo(1800,700); x.lineTo(1800,1100); x.lineTo(1100,1100); x.closePath(); x.fill();
+x.strokeStyle='#c9ad6e'; x.lineWidth=5; x.beginPath(); x.moveTo(1000,1100); x.quadraticCurveTo(1500,900,1800,640); x.stroke();
+x.fillStyle='#7a2a33'; x.beginPath(); x.moveTo(0,0); x.lineTo(500,0); x.lineTo(0,260); x.closePath(); x.fill();
+x.strokeStyle='#c9ad6e'; x.beginPath(); x.moveTo(0,300); x.quadraticCurveTo(300,120,620,0); x.stroke();
+const bgt=new THREE.CanvasTexture(cv); bgt.colorSpace=THREE.SRGBColorSpace; s.background=bgt;
+s.add(new THREE.HemisphereLight("#ffffff", "#3a4560", 1.6));
+const sol = new THREE.DirectionalLight("#fff6e6", 2.6); sol.position.set(-5, 10, 12); sol.castShadow = true; sol.shadow.mapSize.set(2048,2048);
+Object.assign(sol.shadow.camera,{left:-12,right:12,top:10,bottom:-4}); s.add(sol);
+const chao=new THREE.Mesh(new THREE.PlaneGeometry(60,30),new THREE.ShadowMaterial({opacity:.35})); chao.rotation.x=-Math.PI/2; chao.receiveShadow=true; s.add(chao);
+const BR=()=>new THREE.MeshStandardMaterial({color:'#f1f1ef',roughness:.55});
+const cap=(rad,len,mat)=>new THREE.Mesh(new THREE.CapsuleGeometry(rad,len,8,16),mat);
+function boneco(terno){
+  const g=new THREE.Group(), m=BR();
+  const tronco=cap(0.62,1.0,terno?new THREE.MeshStandardMaterial({color:'#1b2238',roughness:.6}):m); tronco.position.y=2.35; tronco.scale.set(1,1,0.75); g.add(tronco);
+  if(terno){ const cam=new THREE.Mesh(new THREE.BoxGeometry(.42,.9,.05),new THREE.MeshStandardMaterial({color:'#f5f5f2'})); cam.position.set(0,2.7,.46); g.add(cam);
+    const gr=new THREE.Mesh(new THREE.BoxGeometry(.14,.8,.06),new THREE.MeshStandardMaterial({color:'#c9ad6e',roughness:.4,metalness:.2})); gr.position.set(0,2.6,.5); g.add(gr);}
+  const cab=new THREE.Mesh(new THREE.SphereGeometry(.95,40,30),m); cab.position.y=4.05; g.add(cab);
+  const br=[]; for(const sx of[-1,1]){ const b=new THREE.Group(); b.position.set(sx*.68,3.05,0); const a=cap(.2,1.1,terno?new THREE.MeshStandardMaterial({color:'#1b2238'}):m); a.position.y=-.65; b.add(a); const mao=new THREE.Mesh(new THREE.SphereGeometry(.24,20,14),m); mao.position.y=-1.35; b.add(mao); b.rotation.z=sx*.12; g.add(b); br.push(b);}
+  for(const sx of[-1,1]){ const p=cap(.26,1.15,terno?new THREE.MeshStandardMaterial({color:'#1b2238'}):m); p.position.set(sx*.3,.85,0); g.add(p); const pe=new THREE.Mesh(new THREE.SphereGeometry(.3,16,12),m); pe.scale.set(1,.5,1.5); pe.position.set(sx*.3,.12,.15); g.add(pe);}
+  g.traverse(o=>{if(o.isMesh){o.castShadow=true;}}); return {g,br,cab};
+}
+const a=boneco(false); a.g.position.x=-4.2; a.g.rotation.y=.25; s.add(a.g);
+a.br[1].rotation.set(-2.2,0,.5); a.cab.rotation.x=.1;
+const q=new THREE.Mesh(new THREE.TorusGeometry(.5,.13,12,30,Math.PI*1.4),new THREE.MeshStandardMaterial({color:'#c9ad6e',metalness:.5,roughness:.3})); q.position.set(-3.1,5.9,0); q.rotation.z=-.7; s.add(q);
+const pt=new THREE.Mesh(new THREE.SphereGeometry(.15,16,12),q.material); pt.position.set(-3.4,4.95,0); s.add(pt);
+const c=boneco(true); c.g.position.x=3.2; c.g.rotation.y=-.3; s.add(c.g);
+c.br[0].rotation.z=1.25; const v=vareta(); v.position.set(0,-2.0,0); c.br[0].add(v);
+const cam=new THREE.PerspectiveCamera(28,1800/1100,.1,200); cam.position.set(0,3.6,22); cam.lookAt(0,2.9,0);
+r.render(s,cam); window.pronto=true;
+</script></body></html>
