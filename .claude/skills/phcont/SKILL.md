@@ -141,6 +141,7 @@ Regras:
 | 1. Planejamento tributário | A | gráfico de barras faturamento × caixa, VS, lista numerada |
 | 2. Regularização (v2) | B | ícones que se desenham, feixe de luz, títulos palavra por palavra, chips com ✓, numerais em itálico; layout novo (faixa animada menor) |
 | 2. Regularização (v3–v6, **aprovado na v6**) | C | texto atrás dela (marinho, só a cabeça na frente), mapa com o prédio "sua empresa" no centro, rabiscos que se desenham, letra manuscrita |
+| 3. Reforma Tributária (v1, `phcont/edicao_video3/gerar.py`) | H | ela num cartão de cantos arredondados + infográfico em cima (mapa radial IBS+CBS, linhas mais/menos, linha do tempo com etapas, com plano × sem plano com pílula bordô), tributos grandes riscados em tela cheia, final com ela desfocada e a chamada no centro, legenda pequena em minúsculas |
 
 ## Capas do Reels (pedido da cliente: seguir as capas do feed)
 

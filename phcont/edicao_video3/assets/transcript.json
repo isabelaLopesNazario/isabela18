@@ -1,0 +1,506 @@
+[
+  {
+    "text": "SMS,",
+    "start": 0,
+    "end": 0.51,
+    "id": "w0"
+  },
+  {
+    "text": "ISS,",
+    "start": 0.62,
+    "end": 1.24,
+    "id": "w1"
+  },
+  {
+    "text": "PIS",
+    "start": 1.24,
+    "end": 1.61,
+    "id": "w2"
+  },
+  {
+    "text": "e",
+    "start": 1.61,
+    "end": 1.64,
+    "id": "w3"
+  },
+  {
+    "text": "COFINS",
+    "start": 1.76,
+    "end": 2.47,
+    "id": "w4"
+  },
+  {
+    "text": "vão",
+    "start": 2.47,
+    "end": 2.81,
+    "id": "w5"
+  },
+  {
+    "text": "acabar",
+    "start": 3.02,
+    "end": 3.53,
+    "id": "w6"
+  },
+  {
+    "text": "A",
+    "start": 3.64,
+    "end": 3.65,
+    "id": "w7"
+  },
+  {
+    "text": "sua",
+    "start": 3.76,
+    "end": 3.86,
+    "id": "w8"
+  },
+  {
+    "text": "empresa",
+    "start": 3.86,
+    "end": 4.15,
+    "id": "w9"
+  },
+  {
+    "text": "está",
+    "start": 4.28,
+    "end": 4.42,
+    "id": "w10"
+  },
+  {
+    "text": "pronta",
+    "start": 4.6,
+    "end": 4.83,
+    "id": "w11"
+  },
+  {
+    "text": "para",
+    "start": 4.83,
+    "end": 4.98,
+    "id": "w12"
+  },
+  {
+    "text": "o",
+    "start": 5.1,
+    "end": 5.11,
+    "id": "w13"
+  },
+  {
+    "text": "que",
+    "start": 5.11,
+    "end": 5.28,
+    "id": "w14"
+  },
+  {
+    "text": "vem",
+    "start": 5.28,
+    "end": 5.45,
+    "id": "w15"
+  },
+  {
+    "text": "no",
+    "start": 5.45,
+    "end": 5.54,
+    "id": "w16"
+  },
+  {
+    "text": "lugar?",
+    "start": 5.76,
+    "end": 5.92,
+    "id": "w17"
+  },
+  {
+    "text": "O",
+    "start": 5.92,
+    "end": 5.93,
+    "id": "w18"
+  },
+  {
+    "text": "IBS",
+    "start": 6.04,
+    "end": 6.41,
+    "id": "w19"
+  },
+  {
+    "text": "e",
+    "start": 6.41,
+    "end": 6.44,
+    "id": "w20"
+  },
+  {
+    "text": "o",
+    "start": 6.56,
+    "end": 6.65,
+    "id": "w21"
+  },
+  {
+    "text": "CBS",
+    "start": 6.65,
+    "end": 6.7,
+    "id": "w22"
+  },
+  {
+    "text": "mudam",
+    "start": 7.03,
+    "end": 7.56,
+    "id": "w23"
+  },
+  {
+    "text": "preço,",
+    "start": 7.68,
+    "end": 8.54,
+    "id": "w24"
+  },
+  {
+    "text": "margem",
+    "start": 8.54,
+    "end": 9.29,
+    "id": "w25"
+  },
+  {
+    "text": "e",
+    "start": 9.29,
+    "end": 9.41,
+    "id": "w26"
+  },
+  {
+    "text": "crédito",
+    "start": 9.41,
+    "end": 10.36,
+    "id": "w27"
+  },
+  {
+    "text": "Tem",
+    "start": 10.36,
+    "end": 10.54,
+    "id": "w28"
+  },
+  {
+    "text": "gente",
+    "start": 10.54,
+    "end": 10.85,
+    "id": "w29"
+  },
+  {
+    "text": "que",
+    "start": 10.85,
+    "end": 11.03,
+    "id": "w30"
+  },
+  {
+    "text": "vai",
+    "start": 11.03,
+    "end": 11.14,
+    "id": "w31"
+  },
+  {
+    "text": "pagar",
+    "start": 11.47,
+    "end": 11.52,
+    "id": "w32"
+  },
+  {
+    "text": "mais",
+    "start": 11.52,
+    "end": 11.7,
+    "id": "w33"
+  },
+  {
+    "text": "e",
+    "start": 11.82,
+    "end": 11.85,
+    "id": "w34"
+  },
+  {
+    "text": "tem",
+    "start": 11.85,
+    "end": 12,
+    "id": "w35"
+  },
+  {
+    "text": "gente",
+    "start": 12,
+    "end": 12.2,
+    "id": "w36"
+  },
+  {
+    "text": "que",
+    "start": 12.2,
+    "end": 12.48,
+    "id": "w37"
+  },
+  {
+    "text": "vai",
+    "start": 12.48,
+    "end": 12.6,
+    "id": "w38"
+  },
+  {
+    "text": "pagar",
+    "start": 12.6,
+    "end": 12.86,
+    "id": "w39"
+  },
+  {
+    "text": "menos",
+    "start": 12.86,
+    "end": 13.16,
+    "id": "w40"
+  },
+  {
+    "text": "Essa",
+    "start": 13.16,
+    "end": 13.48,
+    "id": "w41"
+  },
+  {
+    "text": "mudança",
+    "start": 13.48,
+    "end": 13.94,
+    "id": "w42"
+  },
+  {
+    "text": "dura",
+    "start": 14.27,
+    "end": 14.35,
+    "id": "w43"
+  },
+  {
+    "text": "um",
+    "start": 14.35,
+    "end": 14.5,
+    "id": "w44"
+  },
+  {
+    "text": "ano",
+    "start": 14.62,
+    "end": 14.76,
+    "id": "w45"
+  },
+  {
+    "text": "com",
+    "start": 14.76,
+    "end": 14.99,
+    "id": "w46"
+  },
+  {
+    "text": "regras",
+    "start": 14.99,
+    "end": 15.44,
+    "id": "w47"
+  },
+  {
+    "text": "diferentes",
+    "start": 15.44,
+    "end": 16.22,
+    "id": "w48"
+  },
+  {
+    "text": "a",
+    "start": 16.22,
+    "end": 16.29,
+    "id": "w49"
+  },
+  {
+    "text": "cada",
+    "start": 16.29,
+    "end": 16.6,
+    "id": "w50"
+  },
+  {
+    "text": "etapa",
+    "start": 16.6,
+    "end": 17.04,
+    "id": "w51"
+  },
+  {
+    "text": "Imagina",
+    "start": 17.04,
+    "end": 17.55,
+    "id": "w52"
+  },
+  {
+    "text": "atravessar",
+    "start": 17.55,
+    "end": 18.28,
+    "id": "w53"
+  },
+  {
+    "text": "essa",
+    "start": 18.28,
+    "end": 18.57,
+    "id": "w54"
+  },
+  {
+    "text": "mudança",
+    "start": 18.57,
+    "end": 18.91,
+    "id": "w55"
+  },
+  {
+    "text": "com",
+    "start": 19.16,
+    "end": 19.3,
+    "id": "w56"
+  },
+  {
+    "text": "um",
+    "start": 19.3,
+    "end": 19.4,
+    "id": "w57"
+  },
+  {
+    "text": "plano",
+    "start": 19.46,
+    "end": 19.81,
+    "id": "w58"
+  },
+  {
+    "text": "na",
+    "start": 19.81,
+    "end": 19.87,
+    "id": "w59"
+  },
+  {
+    "text": "mão",
+    "start": 20.06,
+    "end": 20.24,
+    "id": "w60"
+  },
+  {
+    "text": "Enquanto",
+    "start": 20.24,
+    "end": 20.73,
+    "id": "w61"
+  },
+  {
+    "text": "o",
+    "start": 20.73,
+    "end": 20.76,
+    "id": "w62"
+  },
+  {
+    "text": "concorrente",
+    "start": 20.88,
+    "end": 21.47,
+    "id": "w63"
+  },
+  {
+    "text": "ainda",
+    "start": 21.47,
+    "end": 21.78,
+    "id": "w64"
+  },
+  {
+    "text": "está",
+    "start": 21.78,
+    "end": 22.03,
+    "id": "w65"
+  },
+  {
+    "text": "tentando",
+    "start": 22.03,
+    "end": 22.53,
+    "id": "w66"
+  },
+  {
+    "text": "entender",
+    "start": 22.53,
+    "end": 23.02,
+    "id": "w67"
+  },
+  {
+    "text": "Fale",
+    "start": 23.08,
+    "end": 23.33,
+    "id": "w68"
+  },
+  {
+    "text": "com",
+    "start": 23.33,
+    "end": 23.52,
+    "id": "w69"
+  },
+  {
+    "text": "quem",
+    "start": 23.52,
+    "end": 23.77,
+    "id": "w70"
+  },
+  {
+    "text": "está",
+    "start": 23.77,
+    "end": 23.86,
+    "id": "w71"
+  },
+  {
+    "text": "estudando",
+    "start": 24.19,
+    "end": 24.57,
+    "id": "w72"
+  },
+  {
+    "text": "a",
+    "start": 24.57,
+    "end": 24.64,
+    "id": "w73"
+  },
+  {
+    "text": "mudança",
+    "start": 24.64,
+    "end": 24.98,
+    "id": "w74"
+  },
+  {
+    "text": "desde",
+    "start": 25.2,
+    "end": 25.39,
+    "id": "w75"
+  },
+  {
+    "text": "o",
+    "start": 25.39,
+    "end": 25.44,
+    "id": "w76"
+  },
+  {
+    "text": "primeiro",
+    "start": 25.5,
+    "end": 25.88,
+    "id": "w77"
+  },
+  {
+    "text": "dia",
+    "start": 26.1,
+    "end": 26.2,
+    "id": "w78"
+  },
+  {
+    "text": "Chame",
+    "start": 26.2,
+    "end": 26.45,
+    "id": "w79"
+  },
+  {
+    "text": "a",
+    "start": 26.45,
+    "end": 26.5,
+    "id": "w80"
+  },
+  {
+    "text": "gente",
+    "start": 26.5,
+    "end": 26.71,
+    "id": "w81"
+  },
+  {
+    "text": "no",
+    "start": 26.84,
+    "end": 26.85,
+    "id": "w82"
+  },
+  {
+    "text": "WhatsApp",
+    "start": 26.85,
+    "end": 26.98,
+    "id": "w83"
+  }
+]
